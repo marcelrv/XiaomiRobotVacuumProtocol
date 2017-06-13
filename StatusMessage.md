@@ -5,6 +5,12 @@
 
 ## Response
 
+clean_time in seconds
+clean_area in cm2
+
+states
+8 - ?
+
 ```
 {
     "id": 2,
