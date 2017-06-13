@@ -6,6 +6,23 @@
 ## Response
 
 ```
-{ "result": [ { "msg_ver": 4, "msg_seq": 18, "state": 8, "battery": 100, "clean_time": 955, "clean_area": 15370000, "error_code": 0, "map_present": 0, "in_cleaning": 0, "fan_power": 60, "dnd_enabled": 1 } ], "id": 1 }'
+{
+    "id": 2,
+    "result": [
+        {
+            "battery": 100,
+            "clean_area": 22902500,
+            "clean_time": 1468,
+            "dnd_enabled": 0,
+            "error_code": 0,
+            "fan_power": 60,
+            "in_cleaning": 0,
+            "map_present": 0,
+            "msg_seq": 37,
+            "msg_ver": 4,
+            "state": 8
+        }
+    ]
+}
 ```
 
