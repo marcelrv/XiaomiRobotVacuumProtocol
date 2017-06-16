@@ -1,18 +1,51 @@
 # Clean Summary
 
-{'method': 'get_clean_summary', 'id': 2}
+## Command
+| Key  | Value  | Comment  |
+| ------- | ----------- | ------- |
+| method | `get_clean_summary` |  | 
+| id   | [Integer] | is returned in the response used to link the send message to the response. |
+
+### Example
+`{'method': 'get_clean_summary', 'id': 2}`
 
 
-# result
-* total time (in Seconds)
-* total area (in cm2)
-* total cleanups
-* Array clean ID's
+## Response
 
-{ "result": [ 16414, 252165000, 9, [ 1497139200, 1496966400, 1496620800, 1496534400, 1496448000, 1496361600 ] ], "id": 2 }
+|  Key  | Example | Description |
+| ------------- | :------ | :------------------------------ |
+|  - |  `16414` | Total cleaning time in sec |
+|  - | `252165000` | total area (in cm2) |
+|  - | `9` | Total # cleanups |
+|  -  | `[ 1497139200, 1496966400, 1496620800, 1496534400, 1496448000, 1496361600 ]` | Array clean of cleaning records ID's |
 
+### Example Response
+```
+{
+   "result": [ 16414, 
+               252165000, 
+               9, 
+               [ 1497139200, 1496966400, 1496620800, 1496534400, 1496448000, 1496361600 ] ],
+   "id": 2 
+}
+```
 
- {'params': [1497139200], 'id': 2, 'method': 'get_clean_record'}
+# Clean Details
+## Command
+| Key  | Value  | Comment  |
+| ------- | :----------- | ------- |
+| method | `get_clean_record` |  | 
+| params | `[1497139200]` |  Cleaning ID| 
+| id   | [Integer] | is returned in the response used to link the send message to the response. |
+
+### Example
+```
+{
+'method': 'get_clean_record'
+'params': [1497139200], 
+'id': 2, 
+}
+```
  
   << {'id': 2, 'result': [[1497163727, 1497165195, 1468, 22902500, 0, 1]]}
 Clean #0: 2017-06-11 08:48:47-2017-06-11 09:13:15 (complete: True, unknown: 0)
