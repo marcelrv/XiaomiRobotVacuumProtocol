@@ -46,14 +46,24 @@
 'id': 2, 
 }
 ```
- 
-  << {'id': 2, 'result': [[1497163727, 1497165195, 1468, 22902500, 0, 1]]}
-Clean #0: 2017-06-11 08:48:47-2017-06-11 09:13:15 (complete: True, unknown: 0)
-  Area cleaned: 22.9025 mÂ²
-  Duration: (0:24:28)
-  
-DEBUG:mirobo.vacuum:  (ts: 2017-06-13 17:33:47) << {'id': 3, 'result': [[1496952381, 1496954766, 2385, 36525000, 0, 1]]}
-Clean #1: 2017-06-08 22:06:21-2017-06-08 22:46:06 (complete: True, unknown: 0)
-  Area cleaned: 36.525 mÂ²
-  Duration: (0:39:45)
 
+## Response
+
+|  Key  | Example | Description |
+| ------------- | :------ | :------------------------------ |
+|  - |  `1497163727` | Start time (unix timestamp) |
+|  - | `1497165195` | End time (unix timestamp) |
+|  - | `1468` | Cleaning duration in secs |
+|  -  | `22902500` | Area (in cm²) |
+|  -  | `0` | Errors?? |
+|  -  | `1` | Completed (Y/N) |
+
+### Example Response
+```
+{
+   "result": [ 
+              [1497163727, 1497165195, 1468, 22902500, 0, 1]
+             ],
+   "id": 2 
+}
+```
