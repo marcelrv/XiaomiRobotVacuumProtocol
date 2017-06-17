@@ -32,6 +32,7 @@ states
 }
 ```
 
+### Status Codes
 | Code | Description |
 | --- | ------------ |
 |  0 | Unknown |
