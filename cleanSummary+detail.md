@@ -1,5 +1,7 @@
 # Clean Summary
 
+These commands retreive the cleaning history from the vacuum.
+
 ## Command
 | Key  | Value  | Comment  |
 | ------- | ----------- | ------- |
