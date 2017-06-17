@@ -1,7 +1,7 @@
 # XiaomiRobotVacuumProtocol
 Attempt to describe the Xiaomi Robot Vacuum Protocol
 
-
+These commands are send using the Xiaomi [mi-home protocol](Protocol.md)
 Applications implementing this protocol
 
 * [Openhab](https://github.com/marcelrv/openhab2/tree/xiaomi-vacuum) (Java)
