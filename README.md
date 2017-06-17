@@ -2,6 +2,8 @@
 Attempt to describe the Xiaomi Robot Vacuum Protocol
 
 
+Applications implementing this protocol
+
 * [Openhab](https://github.com/marcelrv/openhab2/tree/xiaomi-vacuum) (Java)
 * [mirobo](https://github.com/rytilahti/python-mirobo)  (Python) 
 
@@ -37,3 +39,6 @@ Attempt to describe the Xiaomi Robot Vacuum Protocol
 |    LOG_UPLOAD_ENABLE | `enable_log_upload`| - | 
 |    SET_MODE | `set_custom_mode`| - | 
 |    GET_MODE | `get_custom_mode`| - | 
+
+
+Suggestions & improvements very welcome!
