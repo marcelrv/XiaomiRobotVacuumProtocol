@@ -13,19 +13,20 @@
 ## Response
 
 
+
 |  Key  | Example | Description |
 | ------------ |------ |------------------------------ |
-| 'battery' |  _100_ | Battery level |
-| 'clean_area'|  _22902500_ |  total area (in cm2) |
-| 'clean_time' | _1468_ |  Total cleaning time in sec |
-|  'dnd_enabled' | _0_ | Is Do Not Disturb enabled (0=disabled) |
-| 'error_code' | _0_ | Error code (0=no error. see list below) |
-| 'fan_power'| _60_ | Fan power |
-| 'in_cleaning'|  _0_ | Is device cleaning |
-| 'map_present`  | _0_ | Is map present |
-| 'msg_seq` | _37_ | Message sequence increments with each request |
-| 'msg_ver` | _4_ | Message version (seems always 4) |
-| 'state` | _8_ | Status code (see list below) |
+| `battery` |  _100_ | Battery level |
+| `clean_area`|  _22902500_ |  total area (in cm2) |
+| `clean_time` | _1468_ |  Total cleaning time in sec |
+|  `dnd_enabled` | _0_ | Is Do Not Disturb enabled (0=disabled) |
+| `error_code` | _0_ | Error code (0=no error. see list below) |
+| `fan_power`| _60_ | Fan power |
+| `in_cleaning`|  _0_ | Is device cleaning |
+| `map_present`  | _0_ | Is map present |
+| `msg_seq` | _37_ | Message sequence increments with each request |
+| `msg_ver` | _4_ | Message version (seems always 4) |
+| `state` | _8_ | Status code (see list below) |
 
 
 ### Example Response
