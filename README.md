@@ -2,12 +2,14 @@
 Attempt to describe the Xiaomi Robot Vacuum Protocol
 
 
+* [Openhab](https://github.com/marcelrv/openhab2/tree/xiaomi-vacuum) (Java)
+* [mirobo](https://github.com/rytilahti/python-mirobo)  (Python) 
+
 
 ## Commands
 
 | Type | Command | Description |
 | ------ | --------- | -----------| 
-| Cleaning History | `get_clean_summary` `get_clean_record` |  [Cleaning details](cleanSummary+detail.md)  |
 |    START_VACUUM | `app_start`| - | 
 |    STOP_VACUUM | `app_stop`| - | 
 |    START_SPOT | `app_spot`| - | 
@@ -16,8 +18,8 @@ Attempt to describe the Xiaomi Robot Vacuum Protocol
 |    FIND_ME | `find_me`| - | 
 |    CONSUMABLES_GET | `get_consumable`| - | 
 |    CONSUMABLES_RESET | `reset_consumable`| - | 
-|    CLEAN_SUMMARY_GET | `get_clean_summary`| - | 
-|    CLEAN_RECORD_GET | `get_clean_record`| - | 
+|    CLEAN_SUMMARY_GET | `get_clean_summary`| [Cleaning details](cleanSummary+detail.md) | 
+|    CLEAN_RECORD_GET | `get_clean_record`| [Cleaning details](cleanSummary+detail.md) | 
 |    CLEAN_RECORD_MAP_GET | `get_clean_record_map`| - | 
 |    GET_MAP | `get_map_v1`| - | 
 |    GET_STATUS | `get_status`| - | 
