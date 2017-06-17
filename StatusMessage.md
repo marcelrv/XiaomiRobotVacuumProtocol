@@ -32,3 +32,22 @@ states
 }
 ```
 
+| Code | Description |
+| --- | ------------ |
+|  0 | Unknown |
+| 1 | Initiating |
+| 2 | Sleeping |
+| 3 | Waiting |
+| 4 | ? |
+| 5 | Cleaning |
+| 6 | Back to home |
+| 7 | ? |
+| 8 | Charging |
+| 9 | Charging Error |
+| 10 | Pause | 
+| 11| Spot Cleaning |
+| 12 | In Error |
+| 13 | Shutting down |
+| 14 | Updating |
+| 15 | Docking |
+| 100 | Full |
