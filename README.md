@@ -13,19 +13,19 @@ Applications implementing this protocol
 
 | Type | Command | Description |
 | ------ | --------- | -----------| 
-|    START_VACUUM | `app_start`| - | 
-|    STOP_VACUUM | `app_stop`| - | 
-|    START_SPOT | `app_spot`| - | 
-|    PAUSE | `app_pause`| - | 
-|    CHARGE | `app_charge`| - | 
-|    FIND_ME | `find_me`| - | 
-|    CONSUMABLES_GET | `get_consumable`| - | 
-|    CONSUMABLES_RESET | `reset_consumable`| - | 
+|    START_VACUUM | `app_start`| Start vacuuming | 
+|    STOP_VACUUM | `app_stop`| Stop vacuuming | 
+|    START_SPOT | `app_spot`| Start spot cleaning | 
+|    PAUSE | `app_pause`| Pause cleaning | 
+|    CHARGE | `app_charge`| Start charging | 
+|    FIND_ME | `find_me`| Send findme | 
+|    CONSUMABLES_GET | `get_consumable`| Get consumables status | 
+|    CONSUMABLES_RESET | `reset_consumable`| Reset consumables | 
 |    CLEAN_SUMMARY_GET | `get_clean_summary`| [Cleaning details](cleanSummary+detail.md) | 
 |    CLEAN_RECORD_GET | `get_clean_record`| [Cleaning details](cleanSummary+detail.md) | 
 |    CLEAN_RECORD_MAP_GET | `get_clean_record_map`| - | 
 |    GET_MAP | `get_map_v1`| - | 
-|    GET_STATUS | `get_status`| - | 
+|    GET_STATUS | `get_status`| (Get the status information)[StatusMessage.md] | 
 |    GET_SERIAL_NUMBER | `get_serial_number`| - | 
 |    DND_GET | `get_dnd_timer`| - | 
 |    DND_SET | `set_dnd_timer`| - | 
@@ -38,8 +38,8 @@ Applications implementing this protocol
 |    SOUND_GET_CURRENT | `get_current_sound`| - | 
 |    LOG_UPLOAD_GET | `get_log_upload_status`| - | 
 |    LOG_UPLOAD_ENABLE | `enable_log_upload`| - | 
-|    SET_MODE | `set_custom_mode`| - | 
-|    GET_MODE | `get_custom_mode`| - | 
+|    SET_MODE | `set_custom_mode`| set the vacuum level | 
+|    GET_MODE | `get_custom_mode`| get the vacuum level | 
 
 
 Suggestions & improvements very welcome!
