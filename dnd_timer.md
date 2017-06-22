@@ -1,4 +1,4 @@
-# Get DND timing
+# Do Not Disturb settings
 
 Note. This describes the information you see in the DND configuration page in the MiHome App.
 The actual DND status comes from the status message
