@@ -25,9 +25,9 @@ Applications implementing this protocol
 |    CLEAN_RECORD_GET | `get_clean_record`| [Cleaning details](cleanSummary+detail.md) | 
 |    CLEAN_RECORD_MAP_GET | `get_clean_record_map`| - | 
 |    GET_MAP | `get_map_v1`| - | 
-|    GET_STATUS | `get_status`| [Get the status information](StatusMessage.md) | 
+|    GET_STATUS | `get_status`| [Get Status information](StatusMessage.md) | 
 |    GET_SERIAL_NUMBER | `get_serial_number`| [Get Serial #](getSerial.md) | 
-|    DND_GET | `get_dnd_timer`| - | 
+|    DND_GET | `get_dnd_timer`| [Do Not Disturb Settings](dnd_timer.md) | 
 |    DND_SET | `set_dnd_timer`| - | 
 |    DND_CLOSE | `close_dnd_timer`| - | 
 |    TIMER_SET | `set_timer`| - | 
