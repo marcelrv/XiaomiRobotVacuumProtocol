@@ -16,10 +16,10 @@ These commands retreive the cleaning history from the vacuum.
 
 |  Key  | Example | Description |
 | ------------- | :------ | :------------------------------ |
-|  - |  `16414` | Total cleaning time in sec |
-|  - | `252165000` | total area (in cm2) |
-|  - | `9` | Total # cleanups |
-|  -  | `[ 1497139200, 1496966400, 1496620800, 1496534400, 1496448000, 1496361600 ]` | Array clean of cleaning records ID's |
+|  - |  _16414_ | Total cleaning time in sec |
+|  - | _252165000_ | total area (in cm2) |
+|  - | _9_ | Total # cleanups |
+|  -  | _[ 1497139200, 1496966400, 1496620800, 1496534400, 1496448000, 1496361600 ]_ | Array clean of cleaning records ID's |
 
 ### Example Response
 ```
@@ -53,12 +53,12 @@ These commands retreive the cleaning history from the vacuum.
 
 |  Key  | Example | Description |
 | ------------- | :------ | :------------------------------ |
-|  - |  `1497163727` | Start time (unix timestamp) |
-|  - | `1497165195` | End time (unix timestamp) |
-|  - | `1468` | Cleaning duration in secs |
-|  -  | `22902500` | Area (in cm²) |
-|  -  | `0` | Errors?? |
-|  -  | `1` | Completed (Y/N) |
+|  - |  _1497163727_ | Start time (unix timestamp) |
+|  - | _1497165195_ | End time (unix timestamp) |
+|  - | _1468_ | Cleaning duration in secs |
+|  -  | _22902500_ | Area (in cm²) |
+|  -  | _0_ | Errors?? |
+|  -  | _1_ | Completed (Y/N) |
 
 ### Example Response
 ```
