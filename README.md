@@ -35,7 +35,7 @@ Applications implementing this protocol
 |    TIMER_GET | `get_timer`| - | 
 |    TIMER_DEL | `del_timer`| - | 
 |    SOUND_INSTALL | `dnld_install_sound`| - | 
-|    SOUND_GET_CURRENT | `get_current_sound`| - | 
+|    SOUND_GET_CURRENT | `get_current_sound`| [Current voice](CurrentVoice.md) | 
 |    LOG_UPLOAD_GET | `get_log_upload_status`| - | 
 |    LOG_UPLOAD_ENABLE | `enable_log_upload`| - | 
 |    SET_MODE | `set_custom_mode`| set the vacuum level | 
