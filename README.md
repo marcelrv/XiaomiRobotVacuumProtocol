@@ -1,4 +1,4 @@
-# XiaomiRobotVacuumProtocol
+# Xiaomi Robot Vacuum Protocol
 Attempt to describe the Xiaomi Robot Vacuum Protocol
 
 These commands are send using the Xiaomi [mi-home protocol](Protocol.md)
