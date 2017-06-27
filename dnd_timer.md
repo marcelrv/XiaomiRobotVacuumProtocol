@@ -12,11 +12,7 @@ The actual DND status comes from the status message
 ### Example
 `{'method': 'get_dnd_timer', 'id': 2}`
 
-## Result
-
 ## Response
-
-
 
 |  Key  | Example | Description |
 | ------------ |------ |------------------------------ |
