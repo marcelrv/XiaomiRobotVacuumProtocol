@@ -32,7 +32,7 @@ Applications implementing this protocol
 |    DND_CLOSE | `close_dnd_timer`| - | 
 |    TIMER_SET | `set_timer`| - | 
 |    TIMER_UPDATE | `upd_timer`| - | 
-|    TIMER_GET | `get_timer`| [Get Timers](et_timer.md) | 
+|    TIMER_GET | `get_timer`| [Get Timers](Get_timer.md) | 
 |    TIMER_DEL | `del_timer`| - | 
 |    SOUND_INSTALL | `dnld_install_sound`| - | 
 |    SOUND_GET_CURRENT | `get_current_sound`| [Current voice](CurrentVoice.md) | 
