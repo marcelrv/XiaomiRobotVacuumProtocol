@@ -1,7 +1,9 @@
 # Cleaning Timer
 
 This command sets the automatic start of the cleaning process.
-It uses a cron-like notation of the cleaning schedule
+It uses a cron-like notation of the cleaning schedule.
+Interestingly, once executed commands are not set to inactive, would these be active next year again?
+Likewise, seems any command can be scheduled
 
 ## Command
 | Key  | Value  | Comment  |
@@ -30,7 +32,7 @@ It uses a cron-like notation of the cleaning schedule
    │ │ │ │ │                                       7 is also Sunday)
    │ │ │ │ │
    │ │ │ │ │
-   * * * * *      command to execute
+   * * * * *      command to execute + parameter
  ['1 5 * * 0,6', ['start_clean', '']]]
  ```
  
