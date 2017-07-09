@@ -5,6 +5,7 @@ It uses a cron-like notation of the cleaning schedule.
 Interestingly, once executed commands are not set to inactive, would these be active next year again?
 Likewise, seems any command can be scheduled
 
+# Get Cleaning Timer Details
 ## Command
 | Key  | Value  | Comment  |
 | ------- | ----------- | ------- |
@@ -46,3 +47,28 @@ Likewise, seems any command can be scheduled
 	], 
 'id': 1}
 ```
+
+# Set Cleaning Timer Details
+## Command
+| Key  | Value  | Comment  |
+| ------- | ----------- | ------- |
+| method | `set_timer` |  | 
+| params | `  [[Time in miliseconds , [schedule, [command,parameter]]]] ` | See above for the schedule settings . Time in MS is used as sort of record id|   
+| id   | [Integer] | is returned in the response used to link the send message to the response. |
+
+### Example
+`{'id': 1, 'method': 'set_timer', 'params': [["1498595904821",["30 12 * * 1,2,3,4,5",["start_clean",""]]]] }`
+
+# Enable/Disable Timer
+## Command
+| Key  | Value  | Comment  |
+| ------- | ----------- | ------- |
+| method | `upd_timer` |  | 
+| params | `[ "timer ID", "on/off"]` | |   
+| id   | [Integer] | is returned in the response used to link the send message to the response. |
+
+### Example
+`{'id': 1, 'method': 'upd_timer', 'params': ["1498595904821","off"] }`
+
+### Response
+` { "result": 0, "id": 1 } `
