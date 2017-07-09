@@ -30,19 +30,19 @@ Applications implementing this protocol
 |    DND_GET | `get_dnd_timer`| [Do Not Disturb Settings](dnd_timer.md) | 
 |    DND_SET | `set_dnd_timer`| Set the do not disturb timings | 
 |    DND_CLOSE | `close_dnd_timer`| Disable the do not disturb function  | 
-|    TIMER_SET | `set_timer`| Add a timer | 
-|    TIMER_UPDATE | `upd_timer`| Activate/deactivate a timer | 
-|    TIMER_GET | `get_timer`| [Get Timers](Get_timer.md) | 
-|    TIMER_DEL | `del_timer`| Remove a timer | 
+|    TIMER_SET | `set_timer`| [Add a timer](Timer.md)(Timer.md) | 
+|    TIMER_UPDATE | `upd_timer`| [Activate/deactivate a timer](Timer.md) | 
+|    TIMER_GET | `get_timer`| [Get Timers](Timer.md) | 
+|    TIMER_DEL | `del_timer`| [Remove a timer](Timer.md) | 
 |    SOUND_INSTALL | `dnld_install_sound`| - | 
 |    SOUND_GET_CURRENT | `get_current_sound`| [Current voice](CurrentVoice.md) | 
 |    LOG_UPLOAD_GET | `get_log_upload_status`| - | 
 |    LOG_UPLOAD_ENABLE | `enable_log_upload`| - | 
 |    SET_MODE | `set_custom_mode`| set the vacuum level | 
 |    GET_MODE | `get_custom_mode`| get the vacuum level | 
-|    REMOTE_START | `app_rc_start`| Start remote control | 
-|    REMOTE_END | `app_rc_end`| End remote control | 
-|    REMOTE_MOVE | `app_rc_move`| Remote control move command | 
+|    REMOTE_START | `app_rc_start`| [Start remote control](remote_control.md)| 
+|    REMOTE_END | `app_rc_end`| [End remote control](remote_control.md) | 
+|    REMOTE_MOVE | `app_rc_move`| [Remote control move command](remote_control.md) | 
 
 
 
