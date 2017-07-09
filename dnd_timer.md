@@ -3,16 +3,17 @@
 Note. This describes the information you see in the DND configuration page in the MiHome App.
 The actual DND status comes from the status message
 
-## Command
+## Get details
+### Command
 | Key  | Value  | Comment  |
 | ------- | ----------- | ------- |
 | method | `get_dnd_timer` |  | 
 | id   | [Integer] | is returned in the response used to link the send message to the response. |
 
-### Example
+#### Example
 `{'method': 'get_dnd_timer', 'id': 2}`
 
-## Response
+### Response
 
 |  Key  | Example | Description |
 | ------------ |------ |------------------------------ |
@@ -22,7 +23,7 @@ The actual DND status comes from the status message
 |  `start_hour` | _22_ | Start Time DND (hour part) |
 | `start_minute` | _0_ | Start Time DND (minute part |
 
-### Example Response
+#### Example Response
 
 ```
 {
@@ -38,3 +39,17 @@ The actual DND status comes from the status message
     ]
 }
 ```
+
+## Set DND time
+
+### Command
+ Key  | Value  | Comment  |
+| ------- | ----------- | ------- |
+| method | `set_dnd_timer` |  | 
+| params | `[start hour, start minutes, end hour, end minutes` | 24 hour notation, not using am/pm | 
+| id   | [Integer] | is returned in the response used to link the send message to the response. |
+#
+### Example
+`{'method': 'set_dnd_timer', 'params': [22,0,8,0] , 'id': 2}`
+
+
