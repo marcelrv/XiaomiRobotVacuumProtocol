@@ -40,7 +40,7 @@ Applications implementing this protocol
 |    LOG_UPLOAD_GET | `get_log_upload_status`| - | 
 |    LOG_UPLOAD_ENABLE | `enable_log_upload`| - | 
 |    SET_MODE | `set_custom_mode`| [Set the vacuum level](FanPower.md) | 
-|    GET_MODE | `get_custom_mode`| (Get the vacuum level](FanPower.md) | 
+|    GET_MODE | `get_custom_mode`| [Get the vacuum level](FanPower.md) | 
 |    REMOTE_START | `app_rc_start`| [Start remote control](remote_control.md)| 
 |    REMOTE_END | `app_rc_end`| [End remote control](remote_control.md) | 
 |    REMOTE_MOVE | `app_rc_move`| [Remote control move command](remote_control.md) | 
