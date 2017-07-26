@@ -10,7 +10,7 @@ Applications implementing this protocol
 * [iobroker](https://github.com/ioBroker/ioBroker.mihome-vacuum/blob/master/README.md]) 
 
 
-## Commands
+## Vaccum Commands
 
 | Type | Command | Description |
 | ------ | --------- | -----------| 
@@ -45,6 +45,10 @@ Applications implementing this protocol
 |    REMOTE_END | `app_rc_end`| [End remote control](remote_control.md) | 
 |    REMOTE_MOVE | `app_rc_move`| [Remote control move command](remote_control.md) | 
 
-
+## Generic MiIO Commands
+| Type | Command | Description |
+| ------ | --------- | -----------| 
+|    INFO | `miIO.info`| [Get device info](miIOinfo.md) | 
+|    INFO | `miIO.config_router`| Set Wifi settings of the device | 
 
 Suggestions & improvements very welcome!
