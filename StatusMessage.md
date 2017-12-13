@@ -70,4 +70,5 @@
 | 13 | Shutting down |
 | 14 | Updating |
 | 15 | Docking |
+| 17 | Zone cleaning |
 | 100 | Full |
