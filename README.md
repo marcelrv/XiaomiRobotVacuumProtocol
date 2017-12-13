@@ -10,7 +10,7 @@ Applications implementing this protocol
 * [iobroker](https://github.com/ioBroker/ioBroker.mihome-vacuum/blob/master/README.md]) 
 
 
-## Vaccum Commands
+## Vacuum Commands
 
 | Type | Command | Description |
 | ------ | --------- | -----------| 
@@ -44,6 +44,14 @@ Applications implementing this protocol
 |    REMOTE_START | `app_rc_start`| [Start remote control](remote_control.md)| 
 |    REMOTE_END | `app_rc_end`| [End remote control](remote_control.md) | 
 |    REMOTE_MOVE | `app_rc_move`| [Remote control move command](remote_control.md) | 
+
+Robo Vacuum 2
+
+| Type | Command | Description |
+| ------ | --------- | -----------| 
+|    START_ZONE | `app_zoned_clean`| [Start zone vacuum](app_zoned_clean.md) | 
+
+app_zoned_clean
 
 ## Generic MiIO Commands
 | Type | Command | Description |
