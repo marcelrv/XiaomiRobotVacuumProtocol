@@ -33,7 +33,7 @@ It seems to be generic/applicable to all Xiaomi devices
 | `gw` |  _192.168.9.1_ | gateway  |
 | `model` |  _rockrobo.vacuum.v1_ |  Type of MiIO device |
 | `mac` |  _28:6C:07:AA:AA:AA_ | Device MAC address  |
-| `token` |  _4474746a612345678905612345678900_ |  Tolken for this device |
+| `token` |  _4474746a612345678905612345678900_ |  Token for this device |
 | `life` |  _62848_ | life in minutes? |
 
 
