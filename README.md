@@ -35,6 +35,8 @@ Applications implementing this protocol
 |    TIMER_UPDATE | `upd_timer`| [Activate/deactivate a timer](Timer.md) | 
 |    TIMER_GET | `get_timer`| [Get Timers](Timer.md) | 
 |    TIMER_DEL | `del_timer`| [Remove a timer](Timer.md) | 
+|    TIMERZONE_GET | `get_timezone`| [Get timezone](Timezone.md) | 
+|    TIMERZONE_SET | `set_timezone`| [Set timezone](Timezone.md) | 
 |    SOUND_INSTALL | `dnld_install_sound`| - | 
 |    SOUND_GET_CURRENT | `get_current_sound`| [Current voice](CurrentVoice.md) | 
 |    LOG_UPLOAD_GET | `get_log_upload_status`| - | 
@@ -44,6 +46,8 @@ Applications implementing this protocol
 |    REMOTE_START | `app_rc_start`| [Start remote control](remote_control.md)| 
 |    REMOTE_END | `app_rc_end`| [End remote control](remote_control.md) | 
 |    REMOTE_MOVE | `app_rc_move`| [Remote control move command](remote_control.md) | 
+|    GET_GATEWAY | `get_gateway`| [Get current gatway](MiscCmds.md) | 
+
 
 Robo Vacuum 2
 
@@ -51,12 +55,14 @@ Robo Vacuum 2
 | ------ | --------- | -----------| 
 |    START_ZONE | `app_zoned_clean`| [Start zone vacuum](app_zoned_clean.md) | 
 
-app_zoned_clean
 
 ## Generic MiIO Commands
 | Type | Command | Description |
 | ------ | --------- | -----------| 
 |    INFO | `miIO.info`| [Get device info](miIOinfo.md) | 
-|    INFO | `miIO.config_router`| Set Wifi settings of the device | 
+|    ROUTER | `miIO.config_router`| Set Wifi settings of the device | 
+|    OTA | `miIO.ota`| [Update firmware over air](miIOinfo.md)| 
+|    OTA_PROG | `miIO.get_ota_progress`| [Update firmware over air Progress](miIOinfo.md)| 
+|    OTA_STATE | `miIO.get_ota_state`| [Update firmware over air Status](miIOinfo.md) | 
 
 Suggestions & improvements very welcome!
