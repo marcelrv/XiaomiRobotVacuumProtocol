@@ -37,15 +37,14 @@ public class RRDraw extends JFrame {
     */
     private static final long serialVersionUID = 2623447051590306992L;
     JFrame parent;
-    QuickDrawPanel quickDrawPanel;
+    RRDrawPanel rrDrawPanel;
 
     public RRDraw() {
         super("File View Test Frame");
-        setSize(350, 200);
+        setSize(350, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         parent = this;
-        quickDrawPanel = new QuickDrawPanel();
-
+        rrDrawPanel = new RRDrawPanel();
         Container c = getContentPane();
         // The default BorderLayout will work better.
         // c.setLayout(new FlowLayout());
@@ -61,8 +60,10 @@ public class RRDraw extends JFrame {
                 int option = chooser.showOpenDialog(parent);
                 if (option == JFileChooser.APPROVE_OPTION) {
                     File file = chooser.getSelectedFile();
-                    loadImage(file);
-                    statusbar.setText("You chose " + file.getName());
+                    BufferedImage loadImage = loadImage(file);
+                    statusbar.setText(file.getName() + " size " + loadImage.getWidth() + "x" + loadImage.getHeight());
+                    // setSize(loadImage.getWidth(), loadImage.getHeight());
+                    rrDrawPanel.setSize(loadImage.getHeight(), loadImage.getWidth());
                 } else {
                     statusbar.setText("You cancelled.");
                 }
@@ -76,24 +77,24 @@ public class RRDraw extends JFrame {
         north.setBackground(Color.GRAY);
         north.setForeground(Color.BLUE);
         c.add(north, "First");
-        c.add(new JScrollPane(quickDrawPanel), "Center");
+        c.add(new JScrollPane(rrDrawPanel), "Center");
 
     }
 
     /**
      * load Gzipped RR file
      */
-    private void loadImage(File file) {
+    private BufferedImage loadImage(File file) {
         BufferedImage image = null;
         try {
 
             byte[] inputdata = readGZFile(file);
-            RRFile rf = new RRFile(inputdata);
+            RRFileDecoder rf = new RRFileDecoder(inputdata);
             System.out.println(rf.toSting());
             int l = (int) rf.getImgHeight();
             int w = (int) rf.getImgWidth();
             byte[] buffer = rf.getImage();
-            setSize(l, w);
+            setSize(w, l);
             // BufferedImage bufferedImage = new BufferedImage(l, w, BufferedImage.TYPE_BYTE_GRAY);
             image = flipHoriz(getGrayscale(l, buffer));
 
@@ -102,8 +103,9 @@ public class RRDraw extends JFrame {
             System.out.println("read error: " + e.getMessage());
         }
         if (image != null) {
-            quickDrawPanel.setImage(image);
+            rrDrawPanel.setImage(image);
         }
+        return image;
     }
 
     public static void main(String args[]) {
@@ -160,6 +162,10 @@ public class RRDraw extends JFrame {
 }
 
 class RRDrawPanel extends JPanel {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 8791558011928073284L;
     BufferedImage image;
     Dimension size = new Dimension();
 
@@ -195,62 +201,68 @@ class RRDrawPanel extends JPanel {
             revalidate(); // signal parent/scrollpane
         }
     }
+}
 
-    public class RRFile {
-        private byte[] image;
-        private long imgHeight;
-        private long imgWidth;
-        private long imagesize;
+class RRFileDecoder {
+    private byte[] image;
+    private long imgHeight;
+    private long imgWidth;
+    private long imagesize;
 
-        public RRFile(byte[] raw) {
-            this.setImgHeight((getUInt32(getBytes(raw, 0x38, 4))));
-            this.setImgWidth((getUInt32(getBytes(raw, 0x34, 4))));
-            this.setImagesize(getUInt32(getBytes(raw, 0x28, 4)));
-            this.image = java.util.Arrays.copyOfRange(raw, 0x3A, (int) imagesize);
-        }
+    public RRFileDecoder(byte[] raw) {
+        this.setImgHeight((getUInt32(getBytes(raw, 0x38, 4))));
+        this.setImgWidth((getUInt32(getBytes(raw, 0x34, 4))));
+        this.setImagesize(getUInt32(getBytes(raw, 0x28, 4)));
+        this.image = java.util.Arrays.copyOfRange(raw, 0x3A, (int) imagesize);
+    }
 
-        public byte[] getImage() {
-            return image;
-        }
+    public byte[] getImage() {
+        return image;
+    }
 
-        public void setImage(byte[] image) {
-            this.image = image;
-        }
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
 
-        public byte[] getBytes(byte[] raw, int pos, int len) {
-            return java.util.Arrays.copyOfRange(raw, pos, pos + len);
-        }
+    public byte[] getBytes(byte[] raw, int pos, int len) {
+        return java.util.Arrays.copyOfRange(raw, pos, pos + len);
+    }
 
-        public long getUInt32(byte[] bytes) {
-            long value = bytes[0] & 0xFF;
-            value |= (bytes[1] << 8) & 0xFFFF;
-            value |= (bytes[2] << 16) & 0xFFFFFF;
-            value |= (bytes[3] << 24) & 0xFFFFFFFF;
-            return value;
-        }
+    public long getUInt32(byte[] bytes) {
+        long value = bytes[0] & 0xFF;
+        value |= (bytes[1] << 8) & 0xFFFF;
+        value |= (bytes[2] << 16) & 0xFFFFFF;
+        value |= (bytes[3] << 24) & 0xFFFFFFFF;
+        return value;
+    }
 
-        public long getImagesize() {
-            return imagesize;
-        }
+    public long getImagesize() {
+        return imagesize;
+    }
 
-        public void setImagesize(long imagesize) {
-            this.imagesize = imagesize;
-        }
+    public void setImagesize(long imagesize) {
+        this.imagesize = imagesize;
+    }
 
-        public long getImgHeight() {
-            return imgHeight;
-        }
+    public long getImgHeight() {
+        return imgHeight;
+    }
 
-        public void setImgHeight(long imgHight) {
-            this.imgHeight = imgHight;
-        }
+    public void setImgHeight(long imgHight) {
+        this.imgHeight = imgHight;
+    }
 
-        public long getImgWidth() {
-            return imgWidth;
-        }
+    public long getImgWidth() {
+        return imgWidth;
+    }
 
-        public void setImgWidth(long imgWidth) {
-            this.imgWidth = imgWidth;
-        }
+    public void setImgWidth(long imgWidth) {
+        this.imgWidth = imgWidth;
+    }
+
+    public String toSting() {
+        String s = "Image Size: " + Long.toString(imagesize) + " height: " + Long.toString(imgHeight) + " width: "
+                + Long.toString(imgWidth);
+        return s;
     }
 }
