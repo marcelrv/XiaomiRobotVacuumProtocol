@@ -37,8 +37,9 @@ Applications implementing this protocol
 |    TIMER_DEL | `del_timer`| [Remove a timer](Timer.md) | 
 |    TIMERZONE_GET | `get_timezone`| [Get timezone](Timezone.md) | 
 |    TIMERZONE_SET | `set_timezone`| [Set timezone](Timezone.md) | 
-|    SOUND_INSTALL | `dnld_install_sound`| - | 
-|    SOUND_GET_CURRENT | `get_current_sound`| [Current voice](CurrentVoice.md) | 
+|    SOUND_INSTALL | `dnld_install_sound`| [Voice pack installation](install_sound.md) | 
+|    SOUND_GET_CURRENT | `get_current_sound` | [Current voice](CurrentVoice.md) | 
+|    SOUND_GET_VOLUME | `get_sound_volume` | - |
 |    LOG_UPLOAD_GET | `get_log_upload_status`| - | 
 |    LOG_UPLOAD_ENABLE | `enable_log_upload`| - | 
 |    SET_MODE | `set_custom_mode`| [Set the vacuum level](FanPower.md) | 
