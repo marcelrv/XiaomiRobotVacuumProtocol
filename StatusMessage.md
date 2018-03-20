@@ -60,7 +60,7 @@
 | 3 | Waiting |
 | 4 | ? |
 | 5 | Cleaning |
-| 6 | Back to home |
+| 6 | Returning home |
 | 7 | ? |
 | 8 | Charging |
 | 9 | Charging Error |
