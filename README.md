@@ -50,12 +50,12 @@ Applications implementing this protocol
 |    GET_GATEWAY | `get_gateway`| [Get current gatway](MiscCmds.md) | 
 
 
-Robo Vacuum 2
+Robo Vacuum v2 and v1 with firmware versions `3.3.9_003194` or newer
 
-| Type | Command | Description |
-| ------ | --------- | -----------| 
-|    START_ZONE | `app_zoned_clean`| [Start zone vacuum](app_zoned_clean.md) | 
-
+| Type        | Command           | Description                                      |
+| ------      | ---------         | -----------                                      |
+| START_ZONE  | `app_zoned_clean` | [Start zone vacuum](app_zoned_clean.md)          |
+| GOTO_TARGET | `app_goto_target` | [Send vacuum to coordinates](app_goto_target.md) |
 
 ## Generic MiIO Commands
 | Type | Command | Description |
