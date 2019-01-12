@@ -1,6 +1,7 @@
 # Fan Power
 
-This command gets/sets the fan level during the cleaning process.
+This command gets/sets the fan level during the cleaning process. 
+Fan level is also used to set the Mop mode of the Xiaomi Robot Vacuum 2.
 
 # Get Fan Level Details
 ## Command
@@ -27,6 +28,17 @@ This command gets/sets the fan level during the cleaning process.
 | method | `set_custom_mode` |  | 
 | params | `[40] ` | Desired fan level |   
 | id   | [Integer] | is returned in the response used to link the send message to the response. |
+
+To use mop mode, set the fan speed to 105
+Regular modes modes
+
+| Mode     | Level |
+| -------- | ----- | 
+| Quiet    | 38    |
+| Balanced | 60    |
+| Turbo    | 75    |
+| Max      | 100   |
+| Mob      | 105   |
 
 ### Example
 `{'method': 'set_custom_mode', 'params': [40],'id': 17694} `
