@@ -61,7 +61,7 @@
 | 4 | ? |
 | 5 | Cleaning |
 | 6 | Returning home |
-| 7 | ? |
+| 7 | Remote control |
 | 8 | Charging |
 | 9 | Charging Error |
 | 10 | Pause | 
