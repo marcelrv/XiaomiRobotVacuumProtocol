@@ -42,7 +42,7 @@ Position(hex)   Length  Information
 0x0C			4		Left Pos
 0x10            4       Image height
 0x14            4       Image width
-0x16             ..       grayscale image data (each pixel 1 byte) 
+0x18             ..       grayscale image data (each pixel 1 byte) 
 
 Data block type 3 (vacuum path)
 Position(hex)   Length  Information
@@ -53,8 +53,7 @@ Position(hex)   Length  Information
 0x08		      	4		setPointLength
 0x0C			      4		setPointSize
 0x10            4       setAngle
-0x14            4       Image width
-0x16             ..     array with data
+0x14             ..     Pairs of 2 Byte UInt16LE x/y coordinates in mm
 
 Data block type 4 (digest)
 Position(hex)   Length  Information
