@@ -61,6 +61,15 @@ Position(hex)   Length  Information
 0x00            2       block type
 0x02		      	4		CRC32 code?
 
+Data block type 8 (Robot Position)
+Position(hex)   Length  Information
+===================================================
+0x00            2       block type
+0x02			      2		unknown
+0x04            4       Length of datablock ( 8 bytes of header not counted) 
+0x08            4   x UInt32LE
+0x0c            4   y UInt32LE
+
 
 
 ```
