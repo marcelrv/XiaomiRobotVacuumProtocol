@@ -50,6 +50,34 @@
     ]
 }
 ```
+### Example Response for s6
+```
+{
+    "result": [
+        {
+            "msg_ver": 2,
+            "msg_seq": 52,
+            "state": 8,
+            "battery": 100,
+            "clean_time": 15,
+            "clean_area": 140000,
+            "error_code": 0,
+            "map_present": 1,
+            "in_cleaning": 0,
+            "in_returning": 0,
+            "in_fresh_state": 1,
+            "lab_status": 1,
+            "water_box_status": 1,
+            "fan_power": 102,
+            "dnd_enabled": 0,
+            "map_status": 3,
+            "lock_status": 0
+        }
+    ],
+    "id": 96
+}
+```
+
 
 ### Status Codes
 | Code | Description |
