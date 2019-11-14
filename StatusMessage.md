@@ -16,17 +16,23 @@
 
 |  Key  | Example | Description |
 | ------------ |------ |------------------------------ |
-| `battery` |  _100_ | Battery level |
-| `clean_area`|  _22902500_ |  total area (in cm2) |
-| `clean_time` | _1468_ |  Total cleaning time in sec |
-|  `dnd_enabled` | _0_ | Is Do Not Disturb enabled (0=disabled) |
+| `battery` | _100_ | Battery level |
+| `clean_area`| _22902500_ | Total area (in cm2) |
+| `clean_time` | _1468_ | Total cleaning time in sec |
+| `dnd_enabled` | _0_ | Is Do Not Disturb enabled (0=disabled) |
 | `error_code` | _0_ | Error code (0=no error. see list below) |
 | `fan_power`| _60_ | Fan power |
 | `in_cleaning`|  _0_ | Is device cleaning |
+| `in_fresh_state` | _0_ | ? |
+| `in_returning` | _1_ | Is returning to dock (0=no, 1=yes) |
+| `lab_status` | _1_ | ? |
+| `lock_status` | _0_ | ? |
 | `map_present`  | _0_ | Is map present |
+| `map_status`  | _3_ | ? |
 | `msg_seq` | _37_ | Message sequence increments with each request |
-| `msg_ver` | _4_ | Message version (seems always 4) |
+| `msg_ver` | _4_ | Message version (seems always 4 and 2 for s6) |
 | `state` | _8_ | Status code (see list below) |
+| `water_box_status` | _1_ | Is water tank mounted (0=no, 1=yes) |
 
 
 ### Example Response
@@ -82,7 +88,7 @@
 ### Status Codes
 | Code | Description |
 | --- | ------------ |
-|  0 | Unknown |
+| 0 | Unknown |
 | 1 | Initiating |
 | 2 | Sleeping |
 | 3 | Waiting |
@@ -93,11 +99,12 @@
 | 8 | Charging |
 | 9 | Charging Error |
 | 10 | Pause | 
-| 11| Spot Cleaning |
+| 11 | Spot Cleaning |
 | 12 | In Error |
 | 13 | Shutting down |
 | 14 | Updating |
 | 15 | Docking |
 | 16 | Go To |
 | 17 | Zone cleaning |
+| 18 | Room cleaning |
 | 100 | Full |
