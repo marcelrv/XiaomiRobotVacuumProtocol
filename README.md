@@ -7,7 +7,7 @@ Applications implementing this protocol
 
 * [Openhab](https://github.com/marcelrv/openhab2/tree/xiaomi-vacuum) (Java)
 * [mirobo](https://github.com/rytilahti/python-mirobo)  (Python) 
-* [iobroker](https://github.com/ioBroker/ioBroker.mihome-vacuum/blob/master/README.md]) 
+* [iobroker](https://github.com/iobroker-community-adapters/ioBroker.mihome-vacuum/blob/master/README.md]) 
 
 
 ## Vacuum Commands
