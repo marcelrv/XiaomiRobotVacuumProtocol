@@ -91,20 +91,53 @@
 | 0 | Unknown |
 | 1 | Initiating |
 | 2 | Sleeping |
-| 3 | Waiting |
-| 4 | ? |
+| 3 | Idle |
+| 4 | Remote Control |
 | 5 | Cleaning |
-| 6 | Returning home |
-| 7 | Remote control |
+| 6 | Returning Dock |
+| 7 | Manual Mode |
 | 8 | Charging |
 | 9 | Charging Error |
-| 10 | Pause | 
+| 10 | Paused | 
 | 11 | Spot Cleaning |
 | 12 | In Error |
-| 13 | Shutting down |
+| 13 | Shutting Down |
 | 14 | Updating |
 | 15 | Docking |
 | 16 | Go To |
-| 17 | Zone cleaning |
-| 18 | Room cleaning |
-| 100 | Full |
+| 17 | Zone Clean |
+| 18 | Room Clean |
+| 100 | Fully Charged |
+
+
+### Error Codes
+| Code | Description |
+| --- | ------------ |
+| 0 | No error |
+| 1 | Laser sensor fault |
+| 2 | Collision sensor fault |
+| 3 | Wheel floating |
+| 4 | Cliff sensor fault |
+| 5 | Main brush blocked |
+| 6 | Side brush blocked |
+| 7 | Wheel blocked |
+| 8 | Device stuck |
+| 9 | Dust bin missing |
+| 10 | Filter blocked |
+| 11 | Magnetic field detected |
+| 12 | Low battery |
+| 13 | Charging problem |
+| 14 | Battery failure |
+| 15 | Wall sensor fault |
+| 16 | Uneven surface |
+| 17 | Side brush failure |
+| 18 | Suction fan failure |
+| 19 | Unpowered charging station |
+| 20 | Unknown Error |
+| 21 | Laser pressure sensor problem |
+| 22 | Charge sensor problem |
+| 23 | Dock problem |
+| 254 | Bin full |
+| 255 | Internal error |
+| -1 | Unknown Error |
+
