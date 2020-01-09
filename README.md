@@ -51,19 +51,59 @@ Applications implementing this protocol
 
 Robo Vacuum v2 and v1 with firmware versions `3.3.9_003194` or newer
 
-| Type        | Command           | Description                                      |
-| ----------- | ----------------- | ------------------------------------------------ |
-| START_ZONE  | `app_zoned_clean` | [Start zone vacuum](app_zoned_clean.md)          |
-| GOTO_TARGET | `app_goto_target` | [Send vacuum to coordinates](app_goto_target.md) |
+| Type                     | Command                     | Description                                      |
+| ------------------------ | --------------------------- | ------------------------------------------------ |
+| START_ZONE               | `app_zoned_clean`           | [Start zone vacuum](app_zoned_clean.md)          |
+| GOTO_TARGET              | `app_goto_target`           | [Send vacuum to coordinates](app_goto_target.md) |
+| ZONED_CLEAN_RESUME       | `resume_zoned_clean`        | -                                                |
+| ZONED_CLEAN_STOP         | `stop_zoned_clean`          | -                                                |
+| SEGMENT_CLEAN_START      | `app_segment_clean`         | Start segment vacuum                             |
+| SEGMENT_CLEAN_RESUME     | `resume_segment_clean`      | -                                                |
+| SEGMENT_CLEAN_STOP       | `stop_segment_clean`        | -                                                |
+| WAKEUP_ROBOT             | `app_wakeup_robot`          | -                                                |
+| GET_LOCALE               | `app_get_locale`            | -                                                |
+| GET_INIT_STATUS          | `app_get_init_status`       | -                                                |
+| GET_FW_FEATURES          | `get_fw_features`           | -                                                |
+| SET_LAB_STATUS           | `set_lab_status`            | -                                                |
+| CLEAN_RECORD_DEL         | `del_clean_record`          | -                                                |
+| MAP_V1_FRESH_GET         | `get_fresh_map_v1`          | -                                                |
+| MAP_V1_PERSIST_GET       | `get_persist_map_v1`        | -                                                |
+| MAP_RECOVER              | `recover_map`               | -                                                |
+| MAP_RESET                | `reset_map`                 | -                                                |
+| MAP_SAVE                 | `save_map`                  | -                                                |
+| MAP_EDIT_START           | `start_edit_map`            | -                                                |
+| MAP_EDIT_END             | `end_edit_map`              | -                                                |
+| MAP_USE_NEW              | `use_new_map`               | -                                                |
+| MAP_USE_OLD              | `use_old_map`               | -                                                |
+| MAP_STATUS_GET           | `get_map_status`            | -                                                |
+| MAP_RECOVER_GET          | `get_recover_map`           | -                                                |
+| MAPS_RECOVER_GET         | `get_recover_maps`          | -                                                |
+| TIMER_SERVER_GET         | `get_server_timer`          | -                                                |
+| TIMER_SERVER_SET         | `set_server_timer`          | -                                                |
+| TIMER_SERVER_UPDATE      | `upd_server_timer`          | -                                                |
+| TIMER_SERVER_DEL         | `del_server_timer`          | -                                                |
+| SOUND_PROGRESS_GET       | `get_sound_progress`        | -                                                |
+| SOUND_VOLUME_CHANGE      | `change_sound_volume`       | -                                                |
+| SOUND_VOLUME_TEST        | `test_sound_volume`         | -                                                |
+| LOG_UPLOAD_USER          | `user_upload_log`           | -                                                |
+| CUSTOM_MODE_WATERBOX_GET | `get_water_box_custom_mode` | -                                                |
+| CUSTOM_MODE_WATERBOX_SET | `set_water_box_custom_mode` | -                                                |
+| CARPET_MODE_GET          | `get_carpet_mode`           | -                                                |
+| CARPET_MODE_SET          | `set_carpet_mode`           | -                                                |
+| SEGMENT_STATUS_GET       | `get_segment_status`        | -                                                |
+| SEGMENT_NAME             | `name_segment`              | -                                                |
+| SEGMENT_MERGE            | `merge_segment`             | -                                                |
+| SEGMENT_SPLIT            | `split_segment`             | -                                                |
 
 ## Generic MiIO Commands
 
-| Type      | Command                 | Description                                      |
-| --------- | ----------------------- | ------------------------------------------------ |
-| INFO      | `miIO.info`             | [Get device info](miIOinfo.md)                   |
-| ROUTER    | `miIO.config_router`    | Set Wifi settings of the device                  |
-| OTA       | `miIO.ota`              | [Update firmware over air](miIOinfo.md)          |
-| OTA_PROG  | `miIO.get_ota_progress` | [Update firmware over air Progress](miIOinfo.md) |
-| OTA_STATE | `miIO.get_ota_state`    | [Update firmware over air Status](miIOinfo.md)   |
+| Type       | Command                 | Description                                      |
+| ---------- | ----------------------- | ------------------------------------------------ |
+| INFO       | `miIO.info`             | [Get device info](miIOinfo.md)                   |
+| ROUTER     | `miIO.config_router`    | Set Wifi settings of the device                  |
+| OTA        | `miIO.ota`              | [Update firmware over air](miIOinfo.md)          |
+| OTA_PROG   | `miIO.get_ota_progress` | [Update firmware over air Progress](miIOinfo.md) |
+| OTA_STATE  | `miIO.get_ota_state`    | [Update firmware over air Status](miIOinfo.md)   |
+| WIFI_STATE | `miIO.wifi_assoc_state` | -                                                |
 
 Suggestions & improvements very welcome!
