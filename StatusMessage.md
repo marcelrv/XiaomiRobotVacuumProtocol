@@ -1,4 +1,4 @@
-# Status message
+# Status Message
 
 ## Command
 
@@ -7,61 +7,41 @@
 | method | `get_status` |                                                                            |
 | id     | [Integer]    | is returned in the response used to link the send message to the response. |
 
-### Example
+### Example Command
 
 `{'method': 'get_status', 'id': 2}`
 
 ## Response
 
-| Key                | Example    | Description                                   |
-| ------------------ | ---------- | --------------------------------------------- |
-| `battery`          | _100_      | Battery level                                 |
-| `clean_area`       | _22902500_ | Total area (in cm2)                           |
-| `clean_time`       | _1468_     | Total cleaning time in sec                    |
-| `dnd_enabled`      | _0_        | Is Do Not Disturb enabled (0=disabled)        |
-| `error_code`       | _0_        | Error code (0=no error. see list below)       |
-| `fan_power`        | _60_       | Fan power                                     |
-| `in_cleaning`      | _0_        | Is device cleaning                            |
-| `in_fresh_state`   | _0_        | ?                                             |
-| `in_returning`     | _1_        | Is returning to dock (0=no, 1=yes)            |
-| `lab_status`       | _1_        | ?                                             |
-| `lock_status`      | _0_        | ?                                             |
-| `map_present`      | _0_        | Is map present                                |
-| `map_status`       | _3_        | ?                                             |
-| `msg_seq`          | _37_       | Message sequence increments with each request |
-| `msg_ver`          | _4_        | Message version (seems always 4 and 2 for s6) |
-| `state`            | _8_        | Status code (see list below)                  |
-| `water_box_status` | _1_        | Is water tank mounted (0=no, 1=yes)           |
+| Key                         | Example  | Description                                         |
+| --------------------------- | -------- | --------------------------------------------------- |
+| `battery`                   | _100_    | Battery level (in %)                                |
+| `clean_area`                | _140000_ | Total area (in cm²)                                 |
+| `clean_time`                | _15_     | Total cleaning time (in s)                          |
+| `dnd_enabled`               | _0_      | Is 'Do Not Disturb' enabled (0=disabled, 1=enabled) |
+| `error_code`                | _0_      | Error code (see [list](#error-codes) below)         |
+| `fan_power`                 | _102_    | Fan power                                           |
+| `in_cleaning`               | _0_      | Is device cleaning                                  |
+| `in_fresh_state`            | _1_      | ?                                                   |
+| `in_returning`              | _0_      | Is returning to dock (0=no, 1=yes)                  |
+| `is_locating`               | _0_      | ?                                                   |
+| `lab_status`                | _1_      | ?                                                   |
+| `lock_status`               | _0_      | ?                                                   |
+| `map_present`               | _1_      | Is map present                                      |
+| `map_status`                | _3_      | ?                                                   |
+| `mop_forbidden_enable`      | _0_      | ?                                                   |
+| `msg_seq`                   | _52_     | Message sequence increments with each request       |
+| `msg_ver`                   | _2_      | Message version (seems always 4 and 2 for s6)       |
+| `state`                     | _8_      | Status code (see [list](#status-codes) below)       |
+| `water_box_carriage_status` | _0_      | ?                                                   |
+| `water_box_mode`            | _204_    | ?                                                   |
+| `water_box_status`          | _1_      | Is water tank mounted (0=no, 1=yes)                 |
 
 ### Example Response
 
 ```json
 {
-    "id": 2,
-    "result": [
-        {
-            "battery": 100,
-            "clean_area": 22902500,
-            "clean_time": 1468,
-            "dnd_enabled": 0,
-            "error_code": 0,
-            "fan_power": 60,
-            "in_cleaning": 0,
-            "map_present": 0,
-            "msg_seq": 37,
-            "msg_ver": 4,
-            "state": 8
-        }
-    ]
-}
-```
-
-### Example Response for s6
-
-```json
-{
-    "result": [
-        {
+    "result": [{
             "msg_ver": 2,
             "msg_seq": 52,
             "state": 8,
@@ -78,7 +58,11 @@
             "fan_power": 102,
             "dnd_enabled": 0,
             "map_status": 3,
-            "lock_status": 0
+            "is_locating": 0,
+            "lock_status": 0,
+            "water_box_mode": 204,
+            "water_box_carriage_status": 0,
+            "mop_forbidden_enable": 0
         }
     ],
     "id": 96
