@@ -5,9 +5,9 @@ These commands are send using the Xiaomi [mi-home protocol](Protocol.md)
 
 Applications implementing this protocol
 
-* [Openhab](https://github.com/marcelrv/openhab2/tree/xiaomi-vacuum) (Java)
-* [mirobo](https://github.com/rytilahti/python-mirobo)  (Python) 
-* [iobroker](https://github.com/iobroker-community-adapters/ioBroker.mihome-vacuum/blob/master/README.md]) 
+* [Openhab](https://github.com/openhab/openhab-addons/tree/2.5.x/bundles/org.openhab.binding.miio) (Java)
+* [mirobo](https://github.com/rytilahti/python-miio)  (Python)
+* [iobroker](https://github.com/iobroker-community-adapters/ioBroker.mihome-vacuum)
 
 
 ## Vacuum Commands
