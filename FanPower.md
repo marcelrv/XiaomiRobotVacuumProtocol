@@ -41,6 +41,16 @@ To use mop mode, set the fan speed to 105
 | Max      | 100   |
 | Mop      | 105   |
 
+### new extended  modes
+| Mode     | Level |
+| -------- | ----- | 
+| Silent | 101 | 
+| Balanced | 102 |
+| Turbo | 103 |
+| Max | 104 |
+| Gentle | 105 |
+| Customize (Auto) | 106 |
+
 ### Example
 `{'method': 'set_custom_mode', 'params': [40],'id': 17694} `
 
