@@ -1,17 +1,26 @@
 # Status Message
 
-## Command
+Retrieves the status informations of the device.
 
-| Key    | Value        | Comment                                                                    |
-| ------ | ------------ | -------------------------------------------------------------------------- |
-| method | `get_status` |                                                                            |
-| id     | [Integer]    | is returned in the response used to link the send message to the response. |
+## Get Status Message
 
-### Example Command
+### Command
 
-`{'method': 'get_status', 'id': 2}`
+| Key    | Value          | Comment                                                                             |
+| ------ | -------------- | ----------------------------------------------------------------------------------- |
+| method | `"get_status"` |                                                                                     |
+| id     | `id`           | Random integer which is returned in the response used to link request and response. |
 
-## Response
+#### Example
+
+```json
+{
+    "method": "get_status",
+    "id": 2
+}
+```
+
+### Response
 
 | Key                         | Example  | Description                                         |
 | --------------------------- | -------- | --------------------------------------------------- |
@@ -37,7 +46,7 @@
 | `water_box_mode`            | _204_    | ?                                                   |
 | `water_box_status`          | _1_      | Is water tank mounted (0=no, 1=yes)                 |
 
-### Example Response
+#### Example
 
 ```json
 {
@@ -68,6 +77,8 @@
     "id": 96
 }
 ```
+
+## Codes
 
 ### Status Codes
 

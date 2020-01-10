@@ -1,19 +1,41 @@
-# Voice Pack Installation Command
+# Voice Pack Installation
 
 This command initiates the download and installation of voicefiles
 
-## Command
-| Key  | Value  | Comment  |
-| ------- | ----------- | ------- |
-| method | `dnld_install_sound` |  | 
-| id   | [Integer] | is returned in the response used to link the send message to the response. |
-| params | `{"md5":"#MD5#","sid":1005,"url":"http://PATH TO SERVER/FILE.pkg","sver":2}` |  md5 = md5 checksum of the soundfile, sid = id of soundfile, url = url to download, sver = version of the soundfile for robot v2 and v1 with firmware versions 3.3.9_003194 or newer |
+## Install Sound
 
-### Example
+### Command
 
-`{"id": 1, "method": "dnld_install_sound", "params": {"md5":"#MD5#","sid":1005,"url":"http://PATH TO SERVER/FILE.pkg","sver":2} }`
+| Key    | Value                                                       | Comment                                                                                                                              |
+| ------ | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| method | `"dnld_install_sound"`                                      |                                                                                                                                      |
+| params | `{"md5":md5_checksum, "sid":id, "url":url, "sver":version}` | `md5_checksum` = md5 checksum of the soundfile, `sid` = id of sound file, `url` = url to download, `sver` = version of the soundfile |
+| id     | `id`                                                        | Random integer which is returned in the response used to link request and response.                                                  |
 
-### Example Response
-Standard response to succeeded commands
+#### Example
 
-`{ "result": 0, "id": 17694 }`
+```json
+{
+    "method": "dnld_install_sound",
+    "params": {
+        "md5": "#MD5#",
+        "sid": 1005,
+        "url": "http://PATH TO SERVER/FILE.pkg",
+        "sver": 2
+    },
+    "id": 1
+}
+```
+
+### Response
+
+Standard response to succeeded command.
+
+#### Example
+
+```json
+{
+    "result": ["ok"],
+    "id": 17694
+}
+```

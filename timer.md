@@ -1,74 +1,109 @@
 # Cleaning Timer
 
-This command sets the automatic start of the cleaning process.
+Gets / Sets the automatic start of the cleaning process.
 It uses a cron-like notation of the cleaning schedule.
-Interestingly, once executed commands are not set to inactive, would these be active next year again?
-Likewise, seems any command can be scheduled
 
-# Get Cleaning Timer Details
-## Command
-| Key  | Value  | Comment  |
-| ------- | ----------- | ------- |
-| method | `get_timer` |  | 
-| id   | [Integer] | is returned in the response used to link the send message to the response. |
+## Get Cleaning Timer
 
-### Example
-`{'id': 1, 'method': 'get_timer'}`
+### Command
 
-## Response
+| Key    | Value         | Comment                                                                             |
+| ------ | ------------- | ----------------------------------------------------------------------------------- |
+| method | `"get_timer"` |                                                                                     |
+| id     | `id`          | Random integer which is returned in the response used to link request and response. |
 
-|  Key  | Example | Description |
-| ------------ |------ |------------------------------ |
-|   |  _1498595924541_ | Entry time of this schedule (Unix time) |
-|   |  _on_ | Is this schedule active |
-|   |  _['38 9 28 6 *', ['start_clean', '']]]_ | Timing in [cron-like](https://en.wikipedia.org/wiki/Cron) notation. The time appears to be China timezone based (e.g. in Europe add + 6 hours to the CET time)|
+#### Example
 
-
+```json
+{
+    "method": "get_timer",
+    "id": 1
+}
 ```
+
+### Response
+
+| Key | Example                                 | Description                                                                                                                                                    |
+| --- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-` | _1498595924541_                         | timer_id corresponds to entry time of this schedule (Unix time)                                                                                                |
+| `-` | _on_                                    | Is this schedule active                                                                                                                                        |
+| `-` | _['38 9 28 6 *', ['start_clean', '']]]_ | Timing in [cron-like](https://en.wikipedia.org/wiki/Cron) notation. The time appears to be China timezone based (e.g. in Europe add + 6 hours to the CET time) |
+
+```txt
    ┌───────────── minute (0 - 59)
    │ ┌───────────── hour (0 - 23)
    │ │ ┌───────────── day of month (1 - 31)
    │ │ │ ┌───────────── month (1 - 12)
-   │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;
+   │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday,
    │ │ │ │ │                                       7 is also Sunday)
    │ │ │ │ │
    │ │ │ │ │
    * * * * *      command to execute + parameter
  ['1 5 * * 0,6', ['start_clean', '']]]
  ```
- 
-### Example Response
 
+#### Example
+
+```json
+{
+    "result": [
+        ["1498595924541", "on", ["38 10 * * 0,6", ["start_clean", ""]]],
+        ["1498595904821", "on", ["38 5 * * 1,2,3,4,5", ["start_clean", ""]]],
+        ["1498595882094", "on", ["38 9 28 6 *", ["start_clean", ""]]]
+    ],
+    "id": 1
+}
 ```
-{'result': [
-	['1498595924541', 'on', ['38 10 * * 0,6', ['start_clean', '']]], 
-	['1498595904821', 'on', ['38 5 * * 1,2,3,4,5', ['start_clean', '']]], 
-	['1498595882094', 'on', ['38 9 28 6 *', ['start_clean', '']]]
-	], 
-'id': 1}
+
+## Set Cleaning Timer
+
+### Command
+
+| Key    | Value                                            | Comment                                                                             |
+| ------ | ------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| method | `"set_timer"`                                    |                                                                                     |
+| params | `[[timer_id, [schedule, [command, parameter]]]]` | See above for the schedule settings. `timer_id` is used as sort of record id        |
+| id     | `id`                                             | Random integer which is returned in the response used to link request and response. |
+
+#### Example
+
+```json
+{
+    "method": "set_timer",
+    "params": [["1498595904821", ["30 12 * * 1,2,3,4,5", ["start_clean", ""]]]],
+    "id": 1
+}
 ```
 
-# Set Cleaning Timer Details
-## Command
-| Key  | Value  | Comment  |
-| ------- | ----------- | ------- |
-| method | `set_timer` |  | 
-| params | `  [[Time in miliseconds , [schedule, [command,parameter]]]] ` | See above for the schedule settings . Time in MS is used as sort of record id|   
-| id   | [Integer] | is returned in the response used to link the send message to the response. |
+## Enable/Disable Cleaning Timer
 
-### Example
-`{'id': 1, 'method': 'set_timer', 'params': [["1498595904821",["30 12 * * 1,2,3,4,5",["start_clean",""]]]] }`
+### Command
 
-# Enable/Disable Timer
-## Command
-| Key  | Value  | Comment  |
-| ------- | ----------- | ------- |
-| method | `upd_timer` |  | 
-| params | `[ "timer ID", "on/off"]` | |   
-| id   | [Integer] | is returned in the response used to link the send message to the response. |
+| Key    | Value                   | Comment                                                                             |
+| ------ | ----------------------- | ----------------------------------------------------------------------------------- |
+| method | `"upd_timer"`           |                                                                                     |
+| params | `[timer_id, de/active]` | `timer_id` see `get_timer`, `activate` = "on", `deactive` = "off"                   |
+| id     | `id`                    | Random integer which is returned in the response used to link request and response. |
 
-### Example
-`{'id': 1, 'method': 'upd_timer', 'params': ["1498595904821","off"] }`
+#### Example
+
+```json
+{
+    "method": "upd_timer",
+    "params": ["1498595904821", "off"],
+    "id": 1
+}
+```
 
 ### Response
-` { "result": 0, "id": 1 } `
+
+Standard response to succeeded command.
+
+#### Example
+
+```json
+{
+    "result": ["ok"],
+    "id": 1
+}
+```
