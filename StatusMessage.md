@@ -84,6 +84,38 @@
 }
 ```
 
+### Example Response for S5 Max (s5e)
+
+```
+{ 
+"result":[ 
+    { 
+        "msg_ver":2,
+        "msg_seq":1901,
+        "state":8,
+        "battery":100,
+        "clean_time":2761,
+        "clean_area":16527500,
+        "error_code":0,
+        "map_present":1,
+        "in_cleaning":0,
+        "in_returning":0,
+        "in_fresh_state":1,
+        "lab_status":1,
+        "water_box_status":1,
+        "fan_power":102,
+        "dnd_enabled":0,
+        "map_status":3,
+        "is_locating":0,
+        "lock_status":0,
+        "water_box_mode":203,
+        "water_box_carriage_status":1,
+        "mop_forbidden_enable":1
+    }
+],
+"id":126
+}
+```
 
 ### Status Codes
 | Code | Description |
@@ -140,4 +172,13 @@
 | 254 | Bin full |
 | 255 | Internal error |
 | -1 | Unknown Error |
+
+Waterbox mode
+| Code | Description |
+| --- | ------------ |
+| 200 | Off |
+| 201 | Low |
+| 202 | Medium |
+| 203 | High |
+| 204 | Customize (Auto) |
 
