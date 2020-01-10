@@ -12,7 +12,7 @@ Applications implementing this protocol
 
 ## Vacuum Commands
 
-| Type | Command | Description |
+| Type | Command | Description | 
 | ------ | --------- | -----------| 
 |    START_VACUUM | `app_start`| Start vacuuming | 
 |    STOP_VACUUM | `app_stop`| Stop vacuuming | 
@@ -56,6 +56,11 @@ Robo Vacuum v2 and v1 with firmware versions `3.3.9_003194` or newer
 | ------      | ---------         | -----------                                      |
 | START_ZONE  | `app_zoned_clean` | [Start zone vacuum](app_zoned_clean.md)          |
 | GOTO_TARGET | `app_goto_target` | [Send vacuum to coordinates](app_goto_target.md) |
+
+Rockrobo S5 Max (s5e)  and similar with water
+| Type        | Command           | Description                                      |
+| ------      | ---------         | -----------                                      |
+| SET_WATER   | `set_water_box_custom_mode` | Setting water level (parameter [200-204] |
 
 ## Generic MiIO Commands
 | Type | Command | Description |
