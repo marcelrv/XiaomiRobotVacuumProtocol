@@ -23,9 +23,9 @@ Fan level is also used to set the Mop mode of the Xiaomi Robot Vacuum 2.
 
 ### Response
 
-| Key | Example | Description    |
-| --- | ------- | -------------- |
-| `-` | _40_    | Fan level in % |
+| Key | Example | Description                                                                        |
+| --- | ------- | ---------------------------------------------------------------------------------- |
+| `-` | _40_    | Fan level, <100: value in %, >100: see values of [Extended Modes](#extended-modes) |
 
 #### Example
 
@@ -40,11 +40,11 @@ Fan level is also used to set the Mop mode of the Xiaomi Robot Vacuum 2.
 
 ### Command
 
-| Key    | Value               | Comment                                                                                               |
-| ------ | ------------------- | ----------------------------------------------------------------------------------------------------- |
-| method | `"set_custom_mode"` |                                                                                                       |
-| params | `[level]`           | Desired fan level, see [Regular Modes](#regular-modes) or [Extended Modes](#extended-modes) (for s5e) |
-| id     | `id`                | Random integer which is returned in the response used to link request and response.                   |
+| Key    | Value               | Comment                                                                                                 |
+| ------ | ------------------- | ------------------------------------------------------------------------------------------------------- |
+| method | `"set_custom_mode"` |                                                                                                         |
+| params | `[fan_level]`       | Desired `fan_level`, see [Regular Modes](#regular-modes) or [Extended Modes](#extended-modes) (for s5e) |
+| id     | `id`                | Random integer which is returned in the response used to link request and response.                     |
 
 #### Regular Modes
 
