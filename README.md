@@ -45,7 +45,7 @@ If there is no entry, the command is available for each device.
 | GET_LOCALE               | `app_get_locale`            | -                                            | s5e                |
 | GET_INIT_STATUS          | `app_get_init_status`       | -                                            | s5e                |
 | GET_STATUS               | `get_status`                | [Get status informations](status.md)         |                    |
-| GET_FW_FEATURES          | `get_fw_features`           | -                                            | s5e                |
+| GET_FW_FEATURES          | `get_fw_features`           | [Get features list](fw_features.md)          | s5e                |
 | GET_SERIAL_NUMBER        | `get_serial_number`         | [Get serial number](serial_number.md)        |                    |
 | SET_LAB_STATUS           | `set_lab_status`            | -                                            | s5e                |
 | REMOTE_START             | `app_rc_start`              | [Start remote control](rc.md)                |                    |
