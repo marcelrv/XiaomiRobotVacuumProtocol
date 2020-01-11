@@ -51,7 +51,7 @@ If there is no entry, the command is available for each device.
 | REMOTE_START             | `app_rc_start`              | [Remote Control](rc.md)                           |                    |
 | REMOTE_END               | `app_rc_end`                | [Remote Control](rc.md)                           |                    |
 | REMOTE_MOVE              | `app_rc_move`               | [Remote Control](rc.md)                           |                    |
-| FIND_ME                  | `find_me`                   | -                                                 |                    |
+| FIND_ME                  | `find_me`                   | [Find Robot](find_me.md)                          |                    |
 | CONSUMABLES_GET          | `get_consumable`            | [Consumable](consumable.md)                       |                    |
 | CONSUMABLES_RESET        | `reset_consumable`          | [Consumable](consumable.md)                       |                    |
 | CLEAN_SUMMARY_GET        | `get_clean_summary`         | [Clean Summary](clean_summary+record.md)          |                    |
