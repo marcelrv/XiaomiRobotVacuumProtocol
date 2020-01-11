@@ -22,29 +22,29 @@ Retrieves the status informations of the device.
 
 ### Response
 
-| Key                         | Example  | Description                                         | Only available for |
-| --------------------------- | -------- | --------------------------------------------------- | ------------------ |
-| `battery`                   | _100_    | Battery level (in %)                                |                    |
-| `clean_area`                | _140000_ | Total area (in cm²)                                 |                    |
-| `clean_time`                | _15_     | Total cleaning time (in s)                          |                    |
-| `dnd_enabled`               | _0_      | Is 'Do Not Disturb' enabled (0=disabled, 1=enabled) |                    |
-| `error_code`                | _0_      | Error code (see [list](#error-codes) below)         |                    |
-| `fan_power`                 | _102_    | Fan power                                           |                    |
-| `in_cleaning`               | _0_      | Is device cleaning                                  |                    |
-| `in_fresh_state`            | _1_      | ?                                                   | s5, s6, s5e        |
-| `in_returning`              | _0_      | Is returning to dock (0=no, 1=yes)                  | s5, s6, s5e        |
-| `is_locating`               | _0_      | ?                                                   | s5e                |
-| `lab_status`                | _1_      | ?                                                   | s5, s6, s5e        |
-| `lock_status`               | _0_      | ?                                                   | s5, s6, s5e        |
-| `map_present`               | _1_      | Is map present                                      |                    |
-| `map_status`                | _3_      | ?                                                   | s5, s6, s5e        |
-| `mop_forbidden_enable`      | _0_      | ?                                                   | s5e                |
-| `msg_seq`                   | _52_     | Message sequence increments with each request       |                    |
-| `msg_ver`                   | _2_      | Message version (seems always 4 and 2 for s6)       |                    |
-| `state`                     | _8_      | Status code (see [list](#status-codes) below)       |                    |
-| `water_box_carriage_status` | _0_      | ?                                                   | s5e                |
-| `water_box_mode`            | _204_    | ?                                                   | s5e                |
-| `water_box_status`          | _1_      | Is water tank mounted (0=no, 1=yes)                 | s5, s6, s5e        |
+| Key                         | Example  | Description                                                                                                                                         | Only available for |
+| --------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `battery`                   | _100_    | Battery level (in %)                                                                                                                                |                    |
+| `clean_area`                | _140000_ | Total area (in cm²)                                                                                                                                 |                    |
+| `clean_time`                | _15_     | Total cleaning time (in s)                                                                                                                          |                    |
+| `dnd_enabled`               | _0_      | Is 'Do Not Disturb' enabled (0=disabled, 1=enabled)                                                                                                 |                    |
+| `error_code`                | _0_      | Error code (see [list](#error-codes) below)                                                                                                         |                    |
+| `fan_power`                 | _102_    | Fan power, corresponds to the values in [Custom Mode](custom_mode.md) (see [list](custom_mode.md#regular-modes))                                    |                    |
+| `in_cleaning`               | _0_      | Is device cleaning                                                                                                                                  |                    |
+| `in_fresh_state`            | _1_      | ?                                                                                                                                                   | s5, s6, s5e        |
+| `in_returning`              | _0_      | Is returning to dock (0=no, 1=yes)                                                                                                                  | s5, s6, s5e        |
+| `is_locating`               | _0_      | ?                                                                                                                                                   | s5e                |
+| `lab_status`                | _1_      | ?                                                                                                                                                   | s5, s6, s5e        |
+| `lock_status`               | _0_      | ?                                                                                                                                                   | s5, s6, s5e        |
+| `map_present`               | _1_      | Is map present                                                                                                                                      |                    |
+| `map_status`                | _3_      | ?                                                                                                                                                   | s5, s6, s5e        |
+| `mop_forbidden_enable`      | _0_      | ?                                                                                                                                                   | s5e                |
+| `msg_seq`                   | _52_     | Message sequence increments with each request                                                                                                       |                    |
+| `msg_ver`                   | _2_      | Message version (seems always 4 and 2 for s6)                                                                                                       |                    |
+| `state`                     | _8_      | Status code (see [list](#status-codes) below)                                                                                                       |                    |
+| `water_box_carriage_status` | _0_      | Is carriage mounted (0=no, 1=yes)                                                                                                                   | s5e                |
+| `water_box_mode`            | _204_    | Water quantity control, corresponds to the values in [Water Box Custom Mode](water_box_custom_mode.md) (see [list](water_box_custom_mode.md#modes)) | s5e                |
+| `water_box_status`          | _1_      | Is water tank mounted (0=no, 1=yes)                                                                                                                 | s5, s6, s5e        |
 
 #### Example
 

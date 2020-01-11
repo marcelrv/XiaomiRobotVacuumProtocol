@@ -67,6 +67,8 @@ Fan level is also used to set the Mop mode of the Xiaomi Robot Vacuum 2.
 | Gentle           | 105   |
 | Customize (Auto) | 106   |
 
+The "Customize" switch in the Xiaomi app only shows `on` when both the [Custom Mode](custom_mode.md) is set to [Auto=106](custom_mode.md#extended-modes) and the [Water Box Custom Mode](water_box_custom_mode.md) is set to [Auto=204](water_box_custom_mode.md#modes).
+
 #### Example
 
 ```json
