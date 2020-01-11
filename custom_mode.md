@@ -40,13 +40,11 @@ Fan level is also used to set the Mop mode of the Xiaomi Robot Vacuum 2.
 
 ### Command
 
-| Key    | Value               | Comment                                                                             |
-| ------ | ------------------- | ----------------------------------------------------------------------------------- |
-| method | `"set_custom_mode"` |                                                                                     |
-| params | `[level]`           | Desired fan level                                                                   |
-| id     | `id`                | Random integer which is returned in the response used to link request and response. |
-
-To use mop mode, set the fan speed to 105
+| Key    | Value               | Comment                                                                                               |
+| ------ | ------------------- | ----------------------------------------------------------------------------------------------------- |
+| method | `"set_custom_mode"` |                                                                                                       |
+| params | `[level]`           | Desired fan level, see [Regular Modes](#regular-modes) or [Extended Modes](#extended-modes) (for s5e) |
+| id     | `id`                | Random integer which is returned in the response used to link request and response.                   |
 
 #### Regular Modes
 
@@ -56,7 +54,18 @@ To use mop mode, set the fan speed to 105
 | Balanced | 60    |
 | Turbo    | 75    |
 | Max      | 100   |
-| Mop      | 105   |
+| Mop Mode | 105   |
+
+#### Extended Modes
+
+| Mode             | Level |
+| ---------------- | ----- |
+| Silent           | 101   |
+| Balanced         | 102   |
+| Turbo            | 103   |
+| Max              | 104   |
+| Gentle           | 105   |
+| Customize (Auto) | 106   |
 
 #### Example
 
