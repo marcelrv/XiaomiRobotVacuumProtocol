@@ -22,12 +22,12 @@ These commands retreive the cleaning history from the vacuum.
 
 ### Response
 
-| Key | Example                                                                      | Description                          |
-| --- | ---------------------------------------------------------------------------- | ------------------------------------ |
-| `-` | _16414_                                                                      | Total cleaning time in sec           |
-| `-` | _252165000_                                                                  | total area (in cm2)                  |
-| `-` | _9_                                                                          | Total # cleanups                     |
-| `-` | _[ 1497139200, 1496966400, 1496620800, 1496534400, 1496448000, 1496361600 ]_ | Array clean of cleaning records ID's |
+| Key | Example                                                                    | Description                    |
+| --- | -------------------------------------------------------------------------- | ------------------------------ |
+| `-` | _16414_                                                                    | Total cleaning time in sec     |
+| `-` | _252165000_                                                                | Total area (in cm2)            |
+| `-` | _9_                                                                        | Total # cleanups               |
+| `-` | _[1497139200, 1496966400, 1496620800, 1496534400, 1496448000, 1496361600]_ | Array of cleaning records ID's |
 
 #### Example
 
@@ -54,7 +54,7 @@ These commands retreive the cleaning history from the vacuum.
 {
     "method": "get_clean_record",
     "params": [1497139200],
-    "id": 2,
+    "id": 263
 }
 ```
 
@@ -74,6 +74,6 @@ These commands retreive the cleaning history from the vacuum.
 ```json
 {
     "result": [[1497163727, 1497165195, 1468, 22902500, 0, 1]],
-    "id": 2
+    "id": 263
 }
 ```

@@ -16,7 +16,7 @@ Gets wifi details and statistics.
 ```json
 {
     "method": "miIO.wifi_assoc_state",
-    "id": 7840
+    "id": 37
 }
 ```
 

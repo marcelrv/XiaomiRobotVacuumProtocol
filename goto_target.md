@@ -18,6 +18,19 @@ Sends the robot to target coordinates.
 {
     "method": "app_goto_target",
     "params": [24200, 20200],
-    "id": 25736111
+    "id": 12150
+}
+```
+
+### Response
+
+Standard response to succeeded command.
+
+#### Example
+
+```json
+{
+    "result": ["ok"],
+    "id": 12150
 }
 ```

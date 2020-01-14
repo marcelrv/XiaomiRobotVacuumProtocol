@@ -29,17 +29,18 @@ If there is no entry, the command is available for each device.
 
 | Type                     | Command                     | Documentation                                     | Only available for |
 | ------------------------ | --------------------------- | ------------------------------------------------- | ------------------ |
-| START_VACUUM             | `app_start`                 | Start vacuuming                                   |                    |
-| STOP_VACUUM              | `app_stop`                  | Stop vacuuming                                    |                    |
-| START_SPOT               | `app_spot`                  | Start spot cleaning                               |                    |
-| PAUSE                    | `app_pause`                 | Pause cleaning                                    |                    |
-| CHARGE                   | `app_charge`                | Start charging                                    |                    |
+| START_VACUUM             | `app_start`                 | [Basic Operations](basic.md)                      |                    |
+| STOP_VACUUM              | `app_stop`                  | [Basic Operations](basic.md)                      |                    |
+| START_SPOT               | `app_spot`                  | [Basic Operations](basic.md)                      |                    |
+| PAUSE                    | `app_pause`                 | [Basic Operations](basic.md)                      |                    |
+| CHARGE                   | `app_charge`                | [Basic Operations](basic.md)                      |                    |
 | ZONED_CLEAN_START        | `app_zoned_clean`           | [Zone Cleaning](zoned_clean.md)                   | v1, s5, s6, s5e    |
-| ZONED_CLEAN_RESUME       | `resume_zoned_clean`        | -                                                 | s5e                |
-| ZONED_CLEAN_STOP         | `stop_zoned_clean`          | -                                                 | s5e                |
-| SEGMENT_CLEAN_START      | `app_segment_clean`         | -                                                 | s5e                |
-| SEGMENT_CLEAN_RESUME     | `resume_segment_clean`      | -                                                 | s5e                |
-| SEGMENT_CLEAN_STOP       | `stop_segment_clean`        | -                                                 | s5e                |
+| ZONED_CLEAN_STOP         | `stop_zoned_clean`          | [Zone Cleaning](zoned_clean.md)                   | s5e                |
+| ZONED_CLEAN_RESUME       | `resume_zoned_clean`        | [Zone Cleaning](zoned_clean.md)                   | s5e                |
+| SEGMENT_CLEAN_START      | `app_segment_clean`         | [Segment Cleaning](segment_clean.md)              | s5e                |
+| SEGMENT_CLEAN_STOP       | `stop_segment_clean`        | [Segment Cleaning](segment_clean.md)              | s5e                |
+| SEGMENT_CLEAN_RESUME     | `resume_segment_clean`      | [Segment Cleaning](segment_clean.md)              | s5e                |
+| ROOM_MAPPING_GET         | `get_room_mapping`          | [Room Mapping](room_mapping.md)                   | s5e                |
 | GOTO_TARGET              | `app_goto_target`           | [Goto Target](goto_target.md)                     | v1, s5, s6, s5e    |
 | WAKEUP_ROBOT             | `app_wakeup_robot`          | -                                                 | s5e                |
 | GET_LOCALE               | `app_get_locale`            | -                                                 | s5e                |
@@ -108,13 +109,13 @@ If there is no entry, the command is available for each device.
 
 :information_source: These commands appear to be shared amongs all(?) Xiaomi Mi Io devices.
 
-| Type       | Command                 | Description                                 |
-| ---------- | ----------------------- | ------------------------------------------- |
-| INFO       | `miIO.info`             | [Get device info](miIO-info.md)             |
-| ROUTER     | `miIO.config_router`    | Set Wifi settings of the device             |
-| OTA        | `miIO.ota`              | [Update firmware over air](miIO-ota.md)     |
-| OTA_PROG   | `miIO.get_ota_progress` | Update firmware over air Progress           |
-| OTA_STATE  | `miIO.get_ota_state`    | Update firmware over air Status             |
-| WIFI_STATE | `miIO.wifi_assoc_state` | [Get Wifi status](miIO-wifi_assoc_state.md) |
+| Type       | Command                 | Documentation                           |
+| ---------- | ----------------------- | --------------------------------------- |
+| INFO       | `miIO.info`             | [Info](miIO-info.md)                    |
+| ROUTER     | `miIO.config_router`    | -                                       |
+| OTA        | `miIO.ota`              | [Update Firmware Over Air](miIO-ota.md) |
+| OTA_PROG   | `miIO.get_ota_progress` | -                                       |
+| OTA_STATE  | `miIO.get_ota_state`    | -                                       |
+| WIFI_STATE | `miIO.wifi_assoc_state` | [Wifi Status](miIO-wifi_assoc_state.md) |
 
 :exclamation: Suggestions & improvements very welcome!

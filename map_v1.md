@@ -17,7 +17,7 @@ Unfortunately no examples yet to retrieve it independently of the Mi Home app
 ```json
 {
     "method": "get_map_v1",
-    "id": 1
+    "id": 2475
 }
 ```
 
@@ -32,6 +32,6 @@ Unfortunately no examples yet to retrieve it independently of the Mi Home app
 ```json
 {
     "result": ["roboroommap%2255512245%2F1"],
-    "id": 2
+    "id": 2475
 }
 ```

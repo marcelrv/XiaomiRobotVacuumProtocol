@@ -23,7 +23,7 @@ This command initiates the download and installation of voicefiles
         "url": "http://PATH TO SERVER/FILE.pkg",
         "sver": 2
     },
-    "id": 1
+    "id": 1794
 }
 ```
 
@@ -36,6 +36,6 @@ Standard response to succeeded command.
 ```json
 {
     "result": ["ok"],
-    "id": 17694
+    "id": 1794
 }
 ```

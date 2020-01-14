@@ -17,7 +17,7 @@ The actual DND status comes from the status message.
 ```json
 {
     "method": "get_dnd_timer",
-    "id": 2
+    "id": 67
 }
 ```
 
@@ -43,7 +43,7 @@ The actual DND status comes from the status message.
             "start_minute": 0
         }
     ],
-    "id": 2
+    "id": 67
 }
 ```
 
@@ -63,6 +63,19 @@ The actual DND status comes from the status message.
 {
     "method": "set_dnd_timer",
     "params": [22, 0, 8, 0],
-    "id": 2
+    "id": 2346
+}
+```
+
+### Response
+
+Standard response to succeeded command.
+
+#### Example
+
+```json
+{
+    "result": ["ok"],
+    "id": 2346
 }
 ```

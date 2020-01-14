@@ -17,7 +17,7 @@ It uses a cron-like notation of the cleaning schedule.
 ```json
 {
     "method": "get_timer",
-    "id": 1
+    "id": 173
 }
 ```
 
@@ -25,9 +25,9 @@ It uses a cron-like notation of the cleaning schedule.
 
 | Key | Example                                 | Description                                                                                                                                                    |
 | --- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `-` | _1498595924541_                         | timer_id corresponds to entry time of this schedule (Unix time)                                                                                                |
-| `-` | _on_                                    | Is this schedule active                                                                                                                                        |
-| `-` | _['38 9 28 6 *', ['start_clean', '']]]_ | Timing in [cron-like](https://en.wikipedia.org/wiki/Cron) notation. The time appears to be China timezone based (e.g. in Europe add + 6 hours to the CET time) |
+| `-` | _"1498595924541"_                       | `timer_id` corresponds to entry time of this schedule (Unix time)                                                                                              |
+| `-` | _"on"_                                  | Is this schedule active                                                                                                                                        |
+| `-` | _["38 9 28 6 *", ["start_clean", ""]]]_ | Timing in [cron-like](https://en.wikipedia.org/wiki/Cron) notation. The time appears to be China timezone based (e.g. in Europe add + 6 hours to the CET time) |
 
 ```txt
    ┌───────────── minute (0 - 59)
@@ -39,7 +39,7 @@ It uses a cron-like notation of the cleaning schedule.
    │ │ │ │ │
    │ │ │ │ │
    * * * * *      command to execute + parameter
- ['1 5 * * 0,6', ['start_clean', '']]]
+ ["1 5 * * 0,6", ["start_clean", ""]]]
  ```
 
 #### Example
@@ -51,7 +51,7 @@ It uses a cron-like notation of the cleaning schedule.
         ["1498595904821", "on", ["38 5 * * 1,2,3,4,5", ["start_clean", ""]]],
         ["1498595882094", "on", ["38 9 28 6 *", ["start_clean", ""]]]
     ],
-    "id": 1
+    "id": 173
 }
 ```
 
@@ -71,7 +71,20 @@ It uses a cron-like notation of the cleaning schedule.
 {
     "method": "set_timer",
     "params": [["1498595904821", ["30 12 * * 1,2,3,4,5", ["start_clean", ""]]]],
-    "id": 1
+    "id": 1734
+}
+```
+
+### Response
+
+Standard response to succeeded command.
+
+#### Example
+
+```json
+{
+    "result": ["ok"],
+    "id": 1734
 }
 ```
 
@@ -91,7 +104,7 @@ It uses a cron-like notation of the cleaning schedule.
 {
     "method": "upd_timer",
     "params": ["1498595904821", "off"],
-    "id": 1
+    "id": 634
 }
 ```
 
@@ -104,6 +117,6 @@ Standard response to succeeded command.
 ```json
 {
     "result": ["ok"],
-    "id": 1
+    "id": 634
 }
 ```

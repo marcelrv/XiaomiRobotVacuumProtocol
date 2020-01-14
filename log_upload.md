@@ -16,7 +16,7 @@ Retreives the log upload status.
 ```json
 {
     "method": "get_log_upload_status",
-    "id": 1
+    "id": 8357
 }
 ```
 
@@ -34,6 +34,6 @@ Retreives the log upload status.
             "log_upload_status": 3
         }
     ],
-    "id": 1
+    "id": 8357
 }
 ```

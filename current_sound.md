@@ -16,7 +16,7 @@ Retreives the current active voice and which is being installed.
 ```json
 {
     "method": "get_current_sound",
-    "id": 1
+    "id": 184
 }
 ```
 
@@ -36,6 +36,6 @@ Retreives the current active voice and which is being installed.
             "sid_in_progress": 0
         }
     ],
-    "id": 1
+    "id": 184
 }
 ```

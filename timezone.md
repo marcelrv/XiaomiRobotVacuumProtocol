@@ -51,6 +51,19 @@ Gets / resets the timezone.
 {
     "method": "set_timezone",
     "params": ["Europe/Amsterdam"],
-    "id": 31,
+    "id": 31
+}
+```
+
+### Response
+
+Standard response to succeeded command.
+
+#### Example
+
+```json
+{
+    "result": ["ok"],
+    "id": 31
 }
 ```

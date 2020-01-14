@@ -16,7 +16,7 @@ The vacuum cleaner emits a sound (e.g. "Hey, here I am!") so you can find it.
 ```json
 {
     "method": "find_me",
-    "id": 6343
+    "id": 12394
 }
 ```
 

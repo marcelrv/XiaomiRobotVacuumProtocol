@@ -16,7 +16,7 @@ Retrieves the status informations of the device.
 ```json
 {
     "method": "get_status",
-    "id": 2
+    "id": 96
 }
 ```
 

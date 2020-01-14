@@ -16,7 +16,7 @@ Retrieves a list of supported firmware features of the device.
 ```json
 {
     "method": "get_fw_features",
-    "id": 1
+    "id": 7177
 }
 ```
 

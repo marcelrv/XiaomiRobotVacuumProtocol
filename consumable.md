@@ -16,7 +16,7 @@ Gets / resets the status of the consumables.
 ```json
 {
     "method": "get_consumable",
-    "id": 2
+    "id": 3457
 }
 ```
 
@@ -42,7 +42,7 @@ Gets / resets the status of the consumables.
             "sensor_dirty_time": 34922
         }
     ],
-    "id": 12794
+    "id": 3457
 }
 ```
 
@@ -62,6 +62,19 @@ Gets / resets the status of the consumables.
 {
     "method": "reset_consumable",
     "params": ["filter_work_time"],
-    "id": 2
+    "id": 8756
+}
+```
+
+### Response
+
+Standard response to succeeded command.
+
+#### Example
+
+```json
+{
+    "result": ["ok"],
+    "id": 8756
 }
 ```

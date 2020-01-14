@@ -16,7 +16,20 @@ The remote controlling allows you to steer the Vacuum.
 ```json
 {
     "method": "app_rc_start",
-    "id": 1
+    "id": 1756
+}
+```
+
+### Response
+
+Standard response to succeeded command.
+
+#### Example
+
+```json
+{
+    "result": ["ok"],
+    "id": 1756
 }
 ```
 
@@ -34,7 +47,20 @@ The remote controlling allows you to steer the Vacuum.
 ```json
 {
     "method": "app_rc_end",
-    "id": 1
+    "id": 64346
+}
+```
+
+### Response
+
+Standard response to succeeded command.
+
+#### Example
+
+```json
+{
+    "result": ["ok"],
+    "id": 64346
 }
 ```
 
@@ -52,7 +78,7 @@ The remote controlling allows you to steer the Vacuum.
 
 ```json
 {
-    "id": 1,
+    "id": 353,
     "method": "app_rc_end",
     "params": [[{
                 "omega": 0.5712,
@@ -61,5 +87,18 @@ The remote controlling allows you to steer the Vacuum.
                 "duration": 1500
             }
         ]]
+}
+```
+
+### Response
+
+Standard response to succeeded command.
+
+#### Example
+
+```json
+{
+    "result": ["ok"],
+    "id": 353
 }
 ```
