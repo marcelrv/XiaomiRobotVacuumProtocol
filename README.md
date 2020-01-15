@@ -105,6 +105,11 @@ If there is no entry, the command is available for each device.
 | SEGMENT_MERGE            | `merge_segment`             | -                                                 | s5e                |
 | SEGMENT_SPLIT            | `split_segment`             | -                                                 | s5e                |
 
+Rockrobo S5 Max (s5e)  and similar with water
+| Type        | Command           | Description                                      |
+| ------      | ---------         | -----------                                      |
+| SET_WATER   | `set_water_box_custom_mode` | Setting water level (parameter [200-204] |
+
 ## Generic MiIO Commands
 
 :information_source: These commands appear to be shared amongs all(?) Xiaomi Mi Io devices.
