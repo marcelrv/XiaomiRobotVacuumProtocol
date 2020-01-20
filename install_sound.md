@@ -1,6 +1,6 @@
 # Voice Pack Installation
 
-This command initiates the download and installation of voicefiles
+These commands can be used to download language files and check the installation progress.
 
 ## Install Sound
 
@@ -37,5 +37,47 @@ Standard response to succeeded command.
 {
     "result": ["ok"],
     "id": 1794
+}
+```
+
+## Get Sound Installation Progress
+
+### Command
+
+| Key    | Value                  | Comment                                                                             |
+| ------ | ---------------------- | ----------------------------------------------------------------------------------- |
+| method | `"get_sound_progress"` |                                                                                     |
+| id     | `id`                   | Random integer which is returned in the response used to link request and response. |
+
+#### Example
+
+```json
+{
+    "method": "get_sound_progress",
+    "id": 5172
+}
+```
+
+### Response
+
+| Key               | Example | Description                                   |
+| ----------------- | ------- | --------------------------------------------- |
+| `sid_in_progress` | _0_     | Voice in progress of being installed (0=none) |
+| `progress`        | _0_     | Progress of installation                      |
+| `state`           | _0_     | ?                                             |
+| `error`           | _0_     | Error during installation                     |
+
+#### Example
+
+```json
+{
+    "result": [{
+            "sid_in_progress": 0,
+            "progress": 0,
+            "state": 0,
+            "error": 0
+        }
+    ],
+    "id": 5172
 }
 ```
