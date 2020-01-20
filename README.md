@@ -48,7 +48,7 @@ If there is no entry, the command is available for each device.
 | GET_STATUS               | `get_status`                | [Status Message](status.md)                       |                    |
 | GET_FW_FEATURES          | `get_fw_features`           | [Firmware Features](fw_features.md)               | s5e                |
 | GET_SERIAL_NUMBER        | `get_serial_number`         | [Serial Number](serial_number.md)                 |                    |
-| SET_LAB_STATUS           | `set_lab_status`            | -                                                 | s5e                |
+| SET_LAB_STATUS           | `set_lab_status`            | [Lab Status](lab_status.md)                       | s5, s6, s5e        |
 | REMOTE_START             | `app_rc_start`              | [Remote Control](rc.md)                           |                    |
 | REMOTE_END               | `app_rc_end`                | [Remote Control](rc.md)                           |                    |
 | REMOTE_MOVE              | `app_rc_move`               | [Remote Control](rc.md)                           |                    |
