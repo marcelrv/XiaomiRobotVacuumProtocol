@@ -25,7 +25,7 @@ Retrieves a list of segments.
 | Key | Example        | Description    |
 | --- | -------------- | -------------- |
 | `-` | 16             | Segment number |
-| `-` | "516001007152" | ???            |
+| `-` | "516001007152" | ?              |
 
 #### Example
 
