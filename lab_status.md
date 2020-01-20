@@ -2,7 +2,7 @@
 
 Enable persistent maps and software barriers.
 
-This is required to use `start_edit_map`, `end_edit_map`, and `save_map` commands.
+This is required to use `start_edit_map`, `end_edit_map`, `save_map`, etc. commands.
 
 ## Set Lab Status
 
@@ -11,7 +11,7 @@ This is required to use `start_edit_map`, `end_edit_map`, and `save_map` command
 | Key    | Value              | Comment                                                                             |
 | ------ | ------------------ | ----------------------------------------------------------------------------------- |
 | method | `"set_lab_status"` |                                                                                     |
-| params | `state`            | State to be set (0=disabled, 1=enabled).                                            |
+| params | `[state]`          | State to be set (0=disabled, 1=enabled).                                            |
 | id     | `id`               | Random integer which is returned in the response used to link request and response. |
 
 #### Example
@@ -19,7 +19,7 @@ This is required to use `start_edit_map`, `end_edit_map`, and `save_map` command
 ```json
 {
     "method": "set_lab_status",
-    "params": 1,
+    "params": [1],
     "id": 3563
 }
 ```
