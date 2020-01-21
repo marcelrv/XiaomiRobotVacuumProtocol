@@ -27,6 +27,8 @@ Unfortunately no examples yet to retrieve it independently of the Mi Home app
 | --- | ------------------------------ | ------------------- |
 | `-` | `"roboroommap%2255512245%2F1"` | Pointer to map data |
 
+Returns ["retry"] without internet.
+
 #### Example
 
 ```json

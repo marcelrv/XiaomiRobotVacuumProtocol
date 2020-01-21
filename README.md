@@ -43,12 +43,12 @@ If there is no entry, the command is available for each device.
 | ROOM_MAPPING_GET         | `get_room_mapping`          | [Room Mapping](room_mapping.md)                   | s5e                |
 | GOTO_TARGET              | `app_goto_target`           | [Goto Target](goto_target.md)                     | v1, s5, s6, s5e    |
 | WAKEUP_ROBOT             | `app_wakeup_robot`          | -                                                 | s5e                |
-| GET_LOCALE               | `app_get_locale`            | -                                                 | s5e                |
-| GET_INIT_STATUS          | `app_get_init_status`       | -                                                 | s5e                |
+| GET_LOCALE               | `app_get_locale`            | [Locale Information](locale.md)                   | s5e                |
+| GET_INIT_STATUS          | `app_get_init_status`       | [Initial Status](init_status.md)                  | s5e                |
 | GET_STATUS               | `get_status`                | [Status Message](status.md)                       |                    |
 | GET_FW_FEATURES          | `get_fw_features`           | [Firmware Features](fw_features.md)               | s5e                |
 | GET_SERIAL_NUMBER        | `get_serial_number`         | [Serial Number](serial_number.md)                 |                    |
-| SET_LAB_STATUS           | `set_lab_status`            | -                                                 | s5e                |
+| SET_LAB_STATUS           | `set_lab_status`            | [Lab Status](lab_status.md)                       | s5, s6, s5e        |
 | REMOTE_START             | `app_rc_start`              | [Remote Control](rc.md)                           |                    |
 | REMOTE_END               | `app_rc_end`                | [Remote Control](rc.md)                           |                    |
 | REMOTE_MOVE              | `app_rc_move`               | [Remote Control](rc.md)                           |                    |
@@ -64,7 +64,7 @@ If there is no entry, the command is available for each device.
 | MAP_V1_PERSIST_GET       | `get_persist_map_v1`        | -                                                 | s5e                |
 | MAP_RECOVER              | `recover_map`               | -                                                 | s5e                |
 | MAP_RESET                | `reset_map`                 | -                                                 | s5e                |
-| MAP_SAVE                 | `save_map`                  | -                                                 | s5e                |
+| MAP_SAVE                 | `save_map`                  | [Map](map.md)                                     | s5, s6, s5e        |
 | MAP_EDIT_START           | `start_edit_map`            | -                                                 | s5e                |
 | MAP_EDIT_END             | `end_edit_map`              | -                                                 | s5e                |
 | MAP_USE_NEW              | `use_new_map`               | -                                                 | s5e                |
@@ -86,11 +86,11 @@ If there is no entry, the command is available for each device.
 | TIMEZONE_GET             | `get_timezone`              | [Timezone](timezone.md)                           |                    |
 | TIMEZONE_SET             | `set_timezone`              | [Timezone](timezone.md)                           |                    |
 | SOUND_INSTALL            | `dnld_install_sound`        | [Voice Pack Installation](install_sound.md)       |                    |
+| SOUND_PROGRESS_GET       | `get_sound_progress`        | [Voice Pack Installation](install_sound.md)       | s5e                |
 | SOUND_CURRENT_GET        | `get_current_sound`         | [Current Sound](current_sound.md)                 |                    |
-| SOUND_PROGRESS_GET       | `get_sound_progress`        | -                                                 | s5e                |
-| SOUND_VOLUME_GET         | `get_sound_volume`          | -                                                 |                    |
-| SOUND_VOLUME_CHANGE      | `change_sound_volume`       | -                                                 | s5e                |
-| SOUND_VOLUME_TEST        | `test_sound_volume`         | -                                                 | s5e                |
+| SOUND_VOLUME_GET         | `get_sound_volume`          | [Sound Volume](sound_volume.md)                   |                    |
+| SOUND_VOLUME_CHANGE      | `change_sound_volume`       | [Sound Volume](sound_volume.md)                   | s5e                |
+| SOUND_VOLUME_TEST        | `test_sound_volume`         | [Sound Volume](sound_volume.md)                   | s5e                |
 | LOG_UPLOAD_GET           | `get_log_upload_status`     | [Log Upload](log_upload.md)                       |                    |
 | LOG_UPLOAD_ENABLE        | `enable_log_upload`         | -                                                 |                    |
 | LOG_UPLOAD_USER          | `user_upload_log`           | -                                                 | s5e                |
