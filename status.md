@@ -133,6 +133,7 @@ Retrieves the status informations of the device.
 | 21   | Laser pressure sensor problem |
 | 22   | Charge sensor problem         |
 | 23   | Dock problem                  |
+| 24   | No-go zone or invisible wall detected |                  |
 | 254  | Bin full                      |
 | 255  | Internal error                |
 | -1   | Unknown Error                 |
