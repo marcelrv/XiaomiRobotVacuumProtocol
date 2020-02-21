@@ -1,4 +1,4 @@
-package rockmap1;
+package RRMap;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -60,6 +60,7 @@ public class RRDraw extends JFrame {
                 int option = chooser.showOpenDialog(parent);
                 if (option == JFileChooser.APPROVE_OPTION) {
                     File file = chooser.getSelectedFile();
+                    // File file = "c:\\temp\\map01.gz";
                     BufferedImage loadImage = loadImage(file);
                     statusbar.setText(file.getName() + " size " + loadImage.getWidth() + "x" + loadImage.getHeight());
                     // setSize(loadImage.getWidth(), loadImage.getHeight());
@@ -210,10 +211,34 @@ class RRFileDecoder {
     private long imagesize;
 
     public RRFileDecoder(byte[] raw) {
-        this.setImgHeight((getUInt32(getBytes(raw, 0x38, 4))));
-        this.setImgWidth((getUInt32(getBytes(raw, 0x34, 4))));
-        this.setImagesize(getUInt32(getBytes(raw, 0x28, 4)));
-        this.image = java.util.Arrays.copyOfRange(raw, 0x3A, (int) imagesize);
+        nextBlock(raw);
+        // this.setImgHeight((getUInt32(getBytes(raw, 0x38, 4))));
+        // this.setImgWidth((getUInt32(getBytes(raw, 0x34, 4))));
+        // this.setImagesize(getUInt32(getBytes(raw, 0x28, 4)));
+        // this.image = java.util.Arrays.copyOfRange(raw, 0x3A, (int) imagesize);
+    }
+
+    private void nextBlock(byte[] raw) {
+        long nextpos = 0x14;
+        while (nextpos < raw.length) {
+            byte[] header = getBytes(raw, (int) nextpos, 0x20);
+            int blocktype = header[0] & 0xFF + 256 * (header[1] & 0xFF);
+            System.out.print("Block: ");
+            System.out.print(blocktype);
+            System.out.print(" loc ");
+            System.out.print(nextpos);
+            System.out.print(" len: ");
+            long l = getUInt32(getBytes(header, 0x04, 4));
+            System.out.println(l);
+
+            if (blocktype == 2) { // block 2 = image
+                this.setImgHeight((getUInt32(getBytes(header, 0x14, 4))));
+                this.setImgWidth((getUInt32(getBytes(header, 0x10, 4))));
+                this.setImagesize(getUInt32(getBytes(header, 0x04, 4)));
+                this.image = java.util.Arrays.copyOfRange(raw, (int) (nextpos + 0x18), (int) imagesize);
+            }
+            nextpos = nextpos + l + (header[2] & 0xFF);
+        }
     }
 
     public byte[] getImage() {
