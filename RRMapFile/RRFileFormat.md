@@ -26,7 +26,7 @@ Data block type 1 (Charger)
 Position(hex)   Length  Information
 ===================================================
 0x00      2       block type ( 01 00)
-0x02			2		unknown
+0x02			2		    Lenght of the header
 0x04      4       Length of datablock 08 00 ( 8 bytes of header not counted)
 0x08			4		Charger X pos
 0x0C			4		Charger Y pos
@@ -36,7 +36,7 @@ Data block type 2 (Image)
 Position(hex)   Length  Information
 ===================================================
 0x00      2       block type
-0x02			2		unknown
+0x02			2		    Lenght of the header
 0x04      4       Length of datablock ( 8 bytes of header not counted) = image size
 0x08			4		Top Pos
 0x0C			4		Left Pos
@@ -48,7 +48,7 @@ Data block type 3 (vacuum path)
 Position(hex)   Length  Information
 ===================================================
 0x00            2       block type
-0x02			      2		unknown
+0x02			      2		    Lenght of the header
 0x04            4       Length of datablock ( 8 bytes of header not counted) 
 0x08		      	4		setPointLength
 0x0C			      4		setPointSize
@@ -65,10 +65,10 @@ Data block type 8 (Robot Position)
 Position(hex)   Length  Information
 ===================================================
 0x00            2       block type
-0x02			      2		unknown
+0x02			      2		    Lenght of the header
 0x04            4       Length of datablock ( 8 bytes of header not counted) 
-0x08            4   x UInt32LE
-0x0c            4   y UInt32LE
+0x08            4       x UInt32LE
+0x0c            4       y UInt32LE
 
 
 
