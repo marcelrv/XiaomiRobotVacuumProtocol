@@ -5,10 +5,13 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.Transparency;
 import java.awt.color.ColorSpace;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
 import java.awt.image.ComponentColorModel;
@@ -60,7 +63,6 @@ public class RRDraw extends JFrame {
                 int option = chooser.showOpenDialog(parent);
                 if (option == JFileChooser.APPROVE_OPTION) {
                     File file = chooser.getSelectedFile();
-                    // File file = "c:\\temp\\map01.gz";
                     BufferedImage loadImage = loadImage(file);
                     statusbar.setText(file.getName() + " size " + loadImage.getWidth() + "x" + loadImage.getHeight());
                     // setSize(loadImage.getWidth(), loadImage.getHeight());
@@ -83,9 +85,38 @@ public class RRDraw extends JFrame {
     }
 
     /**
+     * Resizes an image using a Graphics2D object backed by a BufferedImage.
+     *
+     * @param srcImg - source image to scale
+     * @param w - desired width
+     * @param h - desired height
+     * @return - the new resized image
+     */
+    private BufferedImage getScaledImage(BufferedImage src, int w, int h) {
+        int finalw = w;
+        int finalh = h;
+        double factor = 1.0d;
+        if (src.getWidth() > src.getHeight()) {
+            factor = ((double) src.getHeight() / (double) src.getWidth());
+            finalh = (int) (finalw * factor);
+        } else {
+            factor = ((double) src.getWidth() / (double) src.getHeight());
+            finalw = (int) (finalh * factor);
+        }
+
+        BufferedImage resizedImg = new BufferedImage(finalw, finalh, Transparency.TRANSLUCENT);
+        Graphics2D g2 = resizedImg.createGraphics();
+        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+        g2.drawImage(src, 0, 0, finalw, finalh, null);
+        g2.dispose();
+        return resizedImg;
+    }
+
+    /**
      * load Gzipped RR file
      */
     private BufferedImage loadImage(File file) {
+        int scale = 4;
         BufferedImage image = null;
         try {
 
@@ -98,7 +129,9 @@ public class RRDraw extends JFrame {
             setSize(w, l);
             // BufferedImage bufferedImage = new BufferedImage(l, w, BufferedImage.TYPE_BYTE_GRAY);
             image = flipHoriz(getGrayscale(l, buffer));
-
+            // image = scaleImg(image, scale);
+            // image = (BufferedImage) image.getScaledInstance(l * scale, w * scale, Image.SCALE_AREA_AVERAGING);
+            image = getScaledImage(image, l * scale, w * scale);
             // image = ImageIO.read(file);
         } catch (IOException e) {
             System.out.println("read error: " + e.getMessage());
@@ -121,6 +154,19 @@ public class RRDraw extends JFrame {
         gg.drawImage(image, image.getHeight(), 0, -image.getWidth(), image.getHeight(), null);
         gg.dispose();
         return newImage;
+    }
+
+    private static BufferedImage scaleImg(BufferedImage image, double scale) {
+
+        BufferedImage before = image;// getBufferedImage(encoded);
+        int w = before.getWidth();
+        int h = before.getHeight();
+        BufferedImage after = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+        AffineTransform at = new AffineTransform();
+        at.scale(scale, scale);
+        AffineTransformOp scaleOp = new AffineTransformOp(at, AffineTransformOp.TYPE_BILINEAR);
+        after = scaleOp.filter(before, after);
+        return after;
     }
 
     /**
@@ -210,19 +256,22 @@ class RRFileDecoder {
     private long imgWidth;
     private long imagesize;
 
-    public RRFileDecoder(byte[] raw) {
-        nextBlock(raw);
-        // this.setImgHeight((getUInt32(getBytes(raw, 0x38, 4))));
-        // this.setImgWidth((getUInt32(getBytes(raw, 0x34, 4))));
-        // this.setImagesize(getUInt32(getBytes(raw, 0x28, 4)));
-        // this.image = java.util.Arrays.copyOfRange(raw, 0x3A, (int) imagesize);
-    }
+    private long chargerX;
+    private long chargerY;
+    private long roboX;
+    private long roboY;
+    private long top;
+    private long left;
+    private long setPointLength;
+    private long setPointSize;
+    private long setAngle;
 
-    private void nextBlock(byte[] raw) {
-        long nextpos = 0x14;
+    public RRFileDecoder(byte[] raw) {
+
+        long nextpos = 0x14; // startpos first block after the main header
         while (nextpos < raw.length) {
             byte[] header = getBytes(raw, (int) nextpos, 0x20);
-            int blocktype = header[0] & 0xFF + 256 * (header[1] & 0xFF);
+            int blocktype = getUInt16(getBytes(header, 0x00, 2));
             System.out.print("Block: ");
             System.out.print(blocktype);
             System.out.print(" loc ");
@@ -231,11 +280,48 @@ class RRFileDecoder {
             long l = getUInt32(getBytes(header, 0x04, 4));
             System.out.println(l);
 
-            if (blocktype == 2) { // block 2 = image
-                this.setImgHeight((getUInt32(getBytes(header, 0x14, 4))));
-                this.setImgWidth((getUInt32(getBytes(header, 0x10, 4))));
-                this.setImagesize(getUInt32(getBytes(header, 0x04, 4)));
-                this.image = java.util.Arrays.copyOfRange(raw, (int) (nextpos + 0x18), (int) imagesize);
+            switch (blocktype) {
+                case 1:
+                    this.chargerX = getUInt32(getBytes(header, 0x08, 4));
+                    this.chargerX = getUInt32(getBytes(header, 0x0C, 4));
+                    break;
+                case 2:// block 2 = image
+                    this.setImgHeight((getUInt32(getBytes(header, 0x14, 4))));
+                    this.top = getUInt32(getBytes(header, 0x08, 4));
+                    this.left = getUInt32(getBytes(header, 0x0C, 4));
+
+                    this.setImgWidth((getUInt32(getBytes(header, 0x10, 4))));
+                    this.setImagesize(getUInt32(getBytes(header, 0x04, 4)));
+                    this.image = java.util.Arrays.copyOfRange(raw, (int) (nextpos + 0x18), (int) imagesize);
+                    break;
+                case 3:
+                    long pairs = getUInt32(getBytes(header, 0x04, 4)) / 4;
+
+                    this.setPointLength = getUInt32(getBytes(header, 0x08, 4));
+                    this.setPointSize = getUInt32(getBytes(header, 0x0C, 4));
+                    this.setAngle = getUInt32(getBytes(header, 0x10, 4));
+                    System.out.println("Block3 - Path pairs:        " + Long.toString(pairs));
+                    System.out.println("Block3 - setPointLength:    " + Long.toString(setPointLength));
+                    System.out.println("Block3 - path setPointSize: " + Long.toString(setPointSize));
+                    System.out.println("Block3 - path setAngle:     " + Long.toString(setAngle));
+                    long startpos = 0x14 + nextpos;
+                    for (long pathpair = 0; pathpair < pairs; pathpair++) {
+                        int x = getUInt16(getBytes(raw, (int) (startpos + pathpair * 4), 2));
+                        int y = getUInt16(getBytes(raw, (int) (startpos + pathpair * 4 + 2), 2));
+                        System.out.print("X: " + Long.toString(x) + " Y: " + Long.toString(y) + " | ");
+                    }
+                    System.out.println("");
+                    break;
+                case 8:
+                    this.roboX = getUInt32(getBytes(header, 0x08, 4));
+                    this.roboX = getUInt32(getBytes(header, 0x0C, 4));
+                    break;
+
+                default: {
+                    System.out.print("Unknown blocktype: ");
+                    System.out.println(blocktype);
+
+                }
             }
             nextpos = nextpos + l + (header[2] & 0xFF);
         }
@@ -258,6 +344,12 @@ class RRFileDecoder {
         value |= (bytes[1] << 8) & 0xFFFF;
         value |= (bytes[2] << 16) & 0xFFFFFF;
         value |= (bytes[3] << 24) & 0xFFFFFFFF;
+        return value;
+    }
+
+    public int getUInt16(byte[] bytes) {
+        int value = bytes[0] & 0xFF;
+        value |= (bytes[1] << 8) & 0xFFFF;
         return value;
     }
 
@@ -286,8 +378,10 @@ class RRFileDecoder {
     }
 
     public String toSting() {
-        String s = "Image Size: " + Long.toString(imagesize) + " height: " + Long.toString(imgHeight) + " width: "
-                + Long.toString(imgWidth);
+        String s = "Image Size: " + Long.toString(imagesize) + " top: " + Long.toString(top) + " left: "
+                + Long.toString(left) + " height: " + Long.toString(imgHeight) + " width: " + Long.toString(imgWidth)
+                + "\r\nCharger X:" + Long.toString(chargerX) + " Charger Y:" + Long.toString(chargerY) + "\r\nRobo X:"
+                + Long.toString(roboX) + " Robo Y:" + Long.toString(roboY);
         return s;
     }
 }
