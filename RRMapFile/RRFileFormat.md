@@ -45,15 +45,15 @@ Position(hex)   Length  Information
 0x18             ..       grayscale image data (each pixel 1 byte) 
 
 Data block type 3 (vacuum path)
-Position(hex)   Length  Information
-===================================================
-0x00            2       block type
-0x02			      2		    Lenght of the header
-0x04            4       Length of datablock ( 8 bytes of header not counted) 
-0x08		      	4		setPointLength
-0x0C			      4		setPointSize
-0x10            4       setAngle
-0x14             ..     Pairs of 2 Byte UInt16LE x/y coordinates in mm
+| Position(hex) | Length  | Information          |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | block type |
+| 0x02			    |  2		 | Lenght of the header |
+| 0x04          |  4     | Length of datablock ( 8 bytes of header not counted)  |
+| 0x08		      |  4		 | setPointLength (amount of position pairs) |
+| 0x0C			    |  4  	 | setPointSize |
+| 0x10          |  4     | setAngle |
+| 0x14          |  ..    | Pairs of 2 Byte UInt16LE x/y coordinates in mm |
 
 Data block type 4 (digest)
 Position(hex)   Length  Information
