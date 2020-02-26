@@ -5,6 +5,11 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Stroke;
+import java.awt.BasicStroke;
+
+import java.awt.geom.Line2D;
+import java.awt.geom.Ellipse2D;
 import java.awt.RenderingHints;
 import java.awt.Transparency;
 import java.awt.color.ColorSpace;
@@ -25,6 +30,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.zip.GZIPInputStream;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -43,7 +49,7 @@ public class RRDraw extends JFrame {
     RRDrawPanel rrDrawPanel;
 
     public RRDraw() {
-        super("File View Test Frame");
+        super("RR Map Viewer");
         setSize(350, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         parent = this;
@@ -55,6 +61,11 @@ public class RRDraw extends JFrame {
         JButton openButton = new JButton("Open");
         final JLabel statusbar = new JLabel("Output of your selection will go here");
 
+      //  File file = new File("C:\\temp\\map\\roboroommap7.gz");
+      //  RRFileParser loadImage = loadImage(file);
+      //  statusbar.setText(file.getName() + " size " + loadImage.getImgWidth() + "x" + loadImage.getImgHeight());
+      //  rrDrawPanel.setSize(loadImage.getImgWidth(), loadImage.getImgHeight());
+
         openButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -63,10 +74,10 @@ public class RRDraw extends JFrame {
                 int option = chooser.showOpenDialog(parent);
                 if (option == JFileChooser.APPROVE_OPTION) {
                     File file = chooser.getSelectedFile();
-                    BufferedImage loadImage = loadImage(file);
-                    statusbar.setText(file.getName() + " size " + loadImage.getWidth() + "x" + loadImage.getHeight());
-                    // setSize(loadImage.getWidth(), loadImage.getHeight());
-                    rrDrawPanel.setSize(loadImage.getHeight(), loadImage.getWidth());
+                    RRFileParser loadImage = loadImage(file);
+                    statusbar.setText(file.getName() + " size " + loadImage.getImgWidth() + "x" + loadImage.getImgHeight());
+                    rrDrawPanel.setSize(loadImage.getImgWidth(), loadImage.getImgHeight());
+            
                 } else {
                     statusbar.setText("You cancelled.");
                 }
@@ -80,112 +91,37 @@ public class RRDraw extends JFrame {
         north.setBackground(Color.GRAY);
         north.setForeground(Color.BLUE);
         c.add(north, "First");
+
         c.add(new JScrollPane(rrDrawPanel), "Center");
 
     }
 
     /**
-     * Resizes an image using a Graphics2D object backed by a BufferedImage.
-     *
-     * @param srcImg - source image to scale
-     * @param w - desired width
-     * @param h - desired height
-     * @return - the new resized image
-     */
-    private BufferedImage getScaledImage(BufferedImage src, int w, int h) {
-        int finalw = w;
-        int finalh = h;
-        double factor = 1.0d;
-        if (src.getWidth() > src.getHeight()) {
-            factor = ((double) src.getHeight() / (double) src.getWidth());
-            finalh = (int) (finalw * factor);
-        } else {
-            factor = ((double) src.getWidth() / (double) src.getHeight());
-            finalw = (int) (finalh * factor);
-        }
-
-        BufferedImage resizedImg = new BufferedImage(finalw, finalh, Transparency.TRANSLUCENT);
-        Graphics2D g2 = resizedImg.createGraphics();
-        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-        g2.drawImage(src, 0, 0, finalw, finalh, null);
-        g2.dispose();
-        return resizedImg;
-    }
-
-    /**
      * load Gzipped RR file
      */
-    private BufferedImage loadImage(File file) {
-        int scale = 4;
-        BufferedImage image = null;
-        try {
+    private RRFileParser loadImage(File file) {
 
+        try {
             byte[] inputdata = readGZFile(file);
-            RRFileDecoder rf = new RRFileDecoder(inputdata);
+            RRFileParser rf = new RRFileParser(inputdata);
             System.out.println(rf.toSting());
             int l = (int) rf.getImgHeight();
             int w = (int) rf.getImgWidth();
             byte[] buffer = rf.getImage();
+            rrDrawPanel.setRRFileDecoder(rf);
+
             setSize(w, l);
-            // BufferedImage bufferedImage = new BufferedImage(l, w, BufferedImage.TYPE_BYTE_GRAY);
-            image = flipHoriz(getGrayscale(l, buffer));
-            // image = scaleImg(image, scale);
-            // image = (BufferedImage) image.getScaledInstance(l * scale, w * scale, Image.SCALE_AREA_AVERAGING);
-            image = getScaledImage(image, l * scale, w * scale);
-            // image = ImageIO.read(file);
+            return rf;
         } catch (IOException e) {
             System.out.println("read error: " + e.getMessage());
         }
-        if (image != null) {
-            rrDrawPanel.setImage(image);
-        }
-        return image;
+        return null;
     }
 
     public static void main(String args[]) {
         System.setProperty("swing.defaultlaf", "javax.swing.plaf.metal.MetalLookAndFeel");
         RRDraw vc = new RRDraw();
         vc.setVisible(true);
-    }
-
-    public static BufferedImage flipHoriz(BufferedImage image) {
-        BufferedImage newImage = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
-        Graphics2D gg = newImage.createGraphics();
-        gg.drawImage(image, image.getHeight(), 0, -image.getWidth(), image.getHeight(), null);
-        gg.dispose();
-        return newImage;
-    }
-
-    private static BufferedImage scaleImg(BufferedImage image, double scale) {
-
-        BufferedImage before = image;// getBufferedImage(encoded);
-        int w = before.getWidth();
-        int h = before.getHeight();
-        BufferedImage after = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-        AffineTransform at = new AffineTransform();
-        at.scale(scale, scale);
-        AffineTransformOp scaleOp = new AffineTransformOp(at, AffineTransformOp.TYPE_BILINEAR);
-        after = scaleOp.filter(before, after);
-        return after;
-    }
-
-    /**
-     *
-     * @param width The image width (height derived from buffer length)
-     * @param buffer The buffer containing raw grayscale pixel data
-     *
-     * @return THe grayscale image
-     */
-    public static BufferedImage getGrayscale(int width, byte[] buffer) {
-        int height = buffer.length / width;
-        ColorSpace cs = ColorSpace.getInstance(ColorSpace.CS_GRAY);
-        int[] nBits = { 8 };
-        ColorModel cm = new ComponentColorModel(cs, nBits, false, true, Transparency.OPAQUE, DataBuffer.TYPE_BYTE);
-        SampleModel sm = cm.createCompatibleSampleModel(width, height);
-        DataBufferByte db = new DataBufferByte(buffer, width * height);
-        WritableRaster raster = Raster.createWritableRaster(sm, db, null);
-        BufferedImage result = new BufferedImage(cm, raster, false, null);
-        return result;
     }
 
     public byte[] readGZFile(File file) throws IOException {
@@ -206,6 +142,7 @@ public class RRDraw extends JFrame {
             throw e;
         }
     }
+
 }
 
 class RRDrawPanel extends JPanel {
@@ -215,19 +152,85 @@ class RRDrawPanel extends JPanel {
     private static final long serialVersionUID = 8791558011928073284L;
     BufferedImage image;
     Dimension size = new Dimension();
+    private RRFileParser rf;
 
     public RRDrawPanel() {
     }
 
-    public RRDrawPanel(BufferedImage image) {
-        this.image = image;
-        setComponentSize();
+    public void setRRFileDecoder(RRFileParser rf) {
+        this.rf = rf;
+    }
+
+    void drawMap(Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+        if (rf != null) {
+
+            int z = 0;
+            for (int y = 0; y < rf.getImgHeight() - 1; y++) {
+                for (int x = 0; x < rf.getImgWidth() - 1; x++) {
+
+                    // int type = rf.getImage()[x] ;
+                    switch (rf.getImage()[x + rf.getImgWidth() * y]) {
+                    case 0x00:
+                        g2d.setColor(new Color(19, 87, 148));
+                        break;
+                    case 0x01:
+                        g2d.setColor(new Color(100, 196, 254));
+                        break;
+                    default:
+                        g2d.setColor(new Color(32, 115, 185));
+
+                        break;
+                    }
+                    float Xpos = (float) 1024 - (x + rf.getLeft()) - rf.getLeft();
+                    float ypos = (float) y;
+                    g2d.draw(new Line2D.Float(Xpos, ypos, Xpos, ypos));
+                    z++;
+                }
+            }
+
+        }
+    }
+
+    void drawPath(Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+        float prvX = 0;
+        float prvY = 0;
+        g2d.setColor(Color.YELLOW);
+        g2d.setColor(new Color(147, 194, 238));
+
+        for (Float[] point : rf.getRoboPath()) {
+            if (prvX > 1) {
+                g2d.draw(new Line2D.Float(prvX, prvY, point[0], point[1]));
+            }
+            prvX = point[0];
+            prvY = point[1];
+        }
+    }
+
+    void drawRobo(Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+        int radius = 3;
+        Stroke stroke = new BasicStroke(3f);
+        g2d.setStroke(stroke);
+        g2d.setColor(new Color(75, 235, 149));
+        g2d.draw(new Ellipse2D.Double(rf.getRoboX() - radius, rf.getRoboY() - radius, 2.0 * radius, 2.0 * radius));
+        radius = 6;
+        g2d.setColor(Color.YELLOW);
+        g2d.draw(
+                new Ellipse2D.Double(rf.getChargerX() - radius, rf.getChargerY() - radius, 2.0 * radius, 2.0 * radius));
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(image, 0, 0, this);
+        // g.drawImage(image, 0, 0, this);
+        if (rf != null) {
+            drawMap(g);
+            drawPath(g);
+            drawRobo(g);
+        }
+
     }
 
     @Override
@@ -248,80 +251,104 @@ class RRDrawPanel extends JPanel {
             revalidate(); // signal parent/scrollpane
         }
     }
+
 }
 
-class RRFileDecoder {
+class RRFileParser {
+    final static int CHARGER = 1;
+    final static int IMAGE = 2;
+    final static int PATH = 3;
+    final static int GOTO_PATH = 4;
+    final static int GOTO_PREDICTED_PATH = 5;
+    final static int CURRENTLY_CLEANED_ZONES = 6;
+    final static int GOTO_TARGET = 7;
+    final static int ROBOT_POSITION = 8;
+    final static int NO_GO_AREAS = 9;
+    final static int VIRTUAL_WALLS = 10;
+    final static int DIGEST = 1024;
+
     private byte[] image;
-    private long imgHeight;
-    private long imgWidth;
-    private long imagesize;
+    private int majorVersion;
+    private int minorVersion;
+    private int mapIndex;
+    private int mapSequence;
 
-    private long chargerX;
-    private long chargerY;
-    private long roboX;
-    private long roboY;
-    private long top;
-    private long left;
-    private long setPointLength;
-    private long setPointSize;
-    private long setAngle;
+    private int imgHeight;
+    private int imgWidth;
+    private int imagesize;
 
-    public RRFileDecoder(byte[] raw) {
+    private int chargerX;
+    private int chargerY;
+    private int roboX;
+    private int roboY;
+    private int top;
+    private int left;
+    private int setPointLength;
+    private int setPointSize;
+    private int setAngle;
+    private ArrayList<Float[]> roboPath = new ArrayList<Float[]>();
+    final static float MM = 50.0f;
+    final static int SIZE = 1024;
+
+    public RRFileParser(byte[] raw) {
+
+        this.majorVersion = getUInt16(raw, 0x08);
+        this.minorVersion = getUInt16(raw, 0x0A);
+        this.mapIndex = getUInt32LE(raw, 0x0C);
+        this.mapSequence = getUInt32LE(raw, 0x10);
 
         long nextpos = 0x14; // startpos first block after the main header
         while (nextpos < raw.length) {
             byte[] header = getBytes(raw, (int) nextpos, 0x20);
             int blocktype = getUInt16(getBytes(header, 0x00, 2));
-            System.out.print("Block: ");
-            System.out.print(blocktype);
-            System.out.print(" loc ");
-            System.out.print(nextpos);
-            System.out.print(" len: ");
-            long l = getUInt32(getBytes(header, 0x04, 4));
-            System.out.println(l);
+            long l = getUInt32LE(header, 0x04);
 
             switch (blocktype) {
-                case 1:
-                    this.chargerX = getUInt32(getBytes(header, 0x08, 4));
-                    this.chargerX = getUInt32(getBytes(header, 0x0C, 4));
-                    break;
-                case 2:// block 2 = image
-                    this.setImgHeight((getUInt32(getBytes(header, 0x14, 4))));
-                    this.top = getUInt32(getBytes(header, 0x08, 4));
-                    this.left = getUInt32(getBytes(header, 0x0C, 4));
-
-                    this.setImgWidth((getUInt32(getBytes(header, 0x10, 4))));
-                    this.setImagesize(getUInt32(getBytes(header, 0x04, 4)));
-                    this.image = java.util.Arrays.copyOfRange(raw, (int) (nextpos + 0x18), (int) imagesize);
-                    break;
-                case 3:
-                    long pairs = getUInt32(getBytes(header, 0x04, 4)) / 4;
-
-                    this.setPointLength = getUInt32(getBytes(header, 0x08, 4));
-                    this.setPointSize = getUInt32(getBytes(header, 0x0C, 4));
-                    this.setAngle = getUInt32(getBytes(header, 0x10, 4));
-                    System.out.println("Block3 - Path pairs:        " + Long.toString(pairs));
-                    System.out.println("Block3 - setPointLength:    " + Long.toString(setPointLength));
-                    System.out.println("Block3 - path setPointSize: " + Long.toString(setPointSize));
-                    System.out.println("Block3 - path setAngle:     " + Long.toString(setAngle));
-                    long startpos = 0x14 + nextpos;
-                    for (long pathpair = 0; pathpair < pairs; pathpair++) {
-                        int x = getUInt16(getBytes(raw, (int) (startpos + pathpair * 4), 2));
-                        int y = getUInt16(getBytes(raw, (int) (startpos + pathpair * 4 + 2), 2));
-                        System.out.print("X: " + Long.toString(x) + " Y: " + Long.toString(y) + " | ");
-                    }
-                    System.out.println("");
-                    break;
-                case 8:
-                    this.roboX = getUInt32(getBytes(header, 0x08, 4));
-                    this.roboX = getUInt32(getBytes(header, 0x0C, 4));
-                    break;
-
-                default: {
-                    System.out.print("Unknown blocktype: ");
-                    System.out.println(blocktype);
-
+            case CHARGER:
+                this.chargerX = getUInt32LE(header, 0x08);
+                this.chargerY = getUInt32LE(header, 0x0C);
+                break;
+            case IMAGE:
+                this.setImgHeight((getUInt32LE(header, 0x10)));
+                this.top = getUInt32LE(header, 0x08);
+                this.left = getUInt32LE(header, 0x0C);
+                this.setImgWidth((getUInt32LE(header, 0x14)));
+                this.setImagesize(getUInt32LE(header, 0x04));
+                this.image = java.util.Arrays.copyOfRange(raw, (int) (nextpos + 0x18), (int) imagesize);
+                break;
+            case PATH:
+                int pairs = getUInt32LE(header, 0x04) / 4;
+                this.setPointLength = getUInt32LE(header, 0x08);
+                this.setPointSize = getUInt32LE(header, 0x0C);
+                this.setAngle = getUInt32LE(header, 0x10);
+                long startpos = 0x14 + nextpos;
+                for (int pathpair = 0; pathpair < pairs; pathpair++) {
+                    Float x = (float) SIZE - (getUInt16(getBytes(raw, (int) (startpos + pathpair * 4), 2))) / MM - left;
+                    Float y = getUInt16(getBytes(raw, (int) (startpos + pathpair * 4 + 2), 2)) / MM - top;
+                    roboPath.add(new Float[] { x, y });
                 }
+                break;
+            case ROBOT_POSITION:
+                this.roboX = getUInt32LE(header, 0x08);
+                this.roboY = getUInt32LE(header, 0x0C);
+                break;
+
+            case GOTO_PATH:
+            case GOTO_PREDICTED_PATH:
+            case CURRENTLY_CLEANED_ZONES:
+            case GOTO_TARGET:
+            case NO_GO_AREAS:
+            case VIRTUAL_WALLS:
+            case DIGEST:
+                System.out.print("Unimplemented blocktype: ");
+                System.out.println(blocktype);
+                break;
+
+            default: {
+                System.out.print("Unknown blocktype: ");
+                System.out.println(blocktype);
+
+            }
             }
             nextpos = nextpos + l + (header[2] & 0xFF);
         }
@@ -339,49 +366,93 @@ class RRFileDecoder {
         return java.util.Arrays.copyOfRange(raw, pos, pos + len);
     }
 
-    public long getUInt32(byte[] bytes) {
-        long value = bytes[0] & 0xFF;
-        value |= (bytes[1] << 8) & 0xFFFF;
-        value |= (bytes[2] << 16) & 0xFFFFFF;
-        value |= (bytes[3] << 24) & 0xFFFFFFFF;
+    public int getUInt32LE(byte[] bytes) {
+        return getUInt32LE(bytes, 0);
+    }
+
+    public int getUInt32LE(byte[] bytes, int pos) {
+        int value = bytes[0 + pos] & 0xFF;
+        value |= (bytes[1 + pos] << 8) & 0xFFFF;
+        value |= (bytes[2 + pos] << 16) & 0xFFFFFF;
+        value |= (bytes[3 + pos] << 24) & 0xFFFFFFFF;
         return value;
     }
 
     public int getUInt16(byte[] bytes) {
-        int value = bytes[0] & 0xFF;
-        value |= (bytes[1] << 8) & 0xFFFF;
+        return getUInt16(bytes, 0);
+    }
+
+    public int getUInt16(byte[] bytes, int pos) {
+        int value = bytes[0 + pos] & 0xFF;
+        value |= (bytes[1 + pos] << 8) & 0xFFFF;
         return value;
     }
 
-    public long getImagesize() {
+    public int getImagesize() {
         return imagesize;
     }
 
-    public void setImagesize(long imagesize) {
+    public void setImagesize(int imagesize) {
         this.imagesize = imagesize;
     }
 
-    public long getImgHeight() {
+    public int getImgHeight() {
         return imgHeight;
     }
 
-    public void setImgHeight(long imgHight) {
+    public void setImgHeight(int imgHight) {
         this.imgHeight = imgHight;
     }
 
-    public long getImgWidth() {
+    public int getImgWidth() {
         return imgWidth;
     }
 
-    public void setImgWidth(long imgWidth) {
+    public void setImgWidth(int imgWidth) {
         this.imgWidth = imgWidth;
     }
 
+    public int getTop() {
+        return top;
+    }
+
+    public int getLeft() {
+        return left;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public ArrayList<Float[]> getRoboPath() {
+        return roboPath;
+    }
+
+    public float getRoboX() {
+        return (float) SIZE - (roboX / MM) - left;
+    }
+
+    public float getRoboY() {
+        return (float) roboY / MM - top;
+    }
+
+    public float getChargerX() {
+        return (float) SIZE - (chargerX / MM) - left;
+    }
+
+    public float getChargerY() {
+        return (float) chargerY / MM - top;
+    }
+
     public String toSting() {
-        String s = "Image Size: " + Long.toString(imagesize) + " top: " + Long.toString(top) + " left: "
-                + Long.toString(left) + " height: " + Long.toString(imgHeight) + " width: " + Long.toString(imgWidth)
-                + "\r\nCharger X:" + Long.toString(chargerX) + " Charger Y:" + Long.toString(chargerY) + "\r\nRobo X:"
-                + Long.toString(roboX) + " Robo Y:" + Long.toString(roboY);
+        String s = "ImageData: Major Version: " + majorVersion + " Minor version: " + minorVersion + " map Index: "
+                + mapIndex + " Map Sequence: " + mapSequence + " \r\n" + "Image Size: " + Long.toString(imagesize)
+                + " top: " + Long.toString(top) + " left: " + Long.toString(left) + " height: "
+                + Long.toString(imgHeight) + " width: " + Long.toString(imgWidth) + "\r\n" + "Charger X:"
+                + Long.toString(chargerX) + " Charger Y:" + Long.toString(chargerY) + "\r\n" + "Robo X:"
+                + Long.toString(roboX) + " Robo Y:" + Long.toString(roboY) + "\r\n" + "Path: Pairs:"
+                + Integer.toString(roboPath.size()) + " PointLenght: " + Integer.toString(setPointLength)
+                + " PointSize: " + Integer.toString(setPointSize) + " Angle: " + Integer.toString(setAngle);
         return s;
     }
 }
