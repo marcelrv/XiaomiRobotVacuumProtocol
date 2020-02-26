@@ -1,26 +1,38 @@
 RR Files send to the device and found in the robot.db file
 
-These files consist of a header, grayscale image and robot movement data.
-The file is gzipped, hence needs to be unzipped before reading
+These files consist of a header and several blocks.
+The file is gzipped, hence needs to be unzipped before reading.
+
+
+| Datablock        |  Id  | Remark                         |
+| -----------------| ---- | ------------------------------ |
+| Charger location | 	1   |                                | 
+| Image 				   |  2   |                                |
+| Vacuum Path			 |  3   |                                |
+| Go-To Path       |  4   | Only exist with newer firmware | 
+| Predicted Path   |  5   | Only exist with newer firmware | 
+| Cleaned Zones    |  6   | Only exist with newer firmware | 
+| Goto Target      |  7   | Only exist with newer firmware | 
+| Robot Position   |  8   |                                | 
+| No go areas      |  9   | Only exist with newer firmware | 
+| Virtual Walls    | 10   | Only exist with newer firmware | 
+| Digest    			 | 1024 |                                |
+
+### File Header
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | "RR"                                                    |
+| 0x02			    |  2		 | Lenght of the header                                    |
+| 0x04          |  4     | Data length (points to location of the footer           |
+| 0x08		      |  2		 | Major Version                                           |
+| 0x0A			    |  2  	 | Minor Version                                           |
+| 0x0C          |  4     | Map Index                                               |
+| 0x10          |  4    | Map Sequence                                             | 
+| 0x14          |  ..    | Start first datablock                                   |
+
 
 
 ```
-0x02			2		header length
-0x04      4       Data length (points to location of the footer (checksum data?)
-0x08			2		Major Version
-0x0A			2		Minor Version
-0x0C			4		Map Index
-0x10			4		Map Sequence
-
-0x14			Start First datablock
-
-
-Datablock type
-Charger location  	1
-Image 				      2
-Vacuum path			    3
-Digest				     1024
-
 
 Data block type 1 (Charger)
 Position(hex)   Length  Information
@@ -43,18 +55,21 @@ Position(hex)   Length  Information
 0x10            4       Image height
 0x14            4       Image width
 0x18             ..       grayscale image data (each pixel 1 byte) 
+```
 
 Data block type 3 (vacuum path)
-| Position(hex) | Length  | Information          |
+| Position(hex) | Length | Information                                             |
 | ------------- | ------ | --------------------------------------------------------|
-| 0x00          |  2     | block type |
-| 0x02			    |  2		 | Lenght of the header |
-| 0x04          |  4     | Length of datablock ( 8 bytes of header not counted)  |
-| 0x08		      |  4		 | setPointLength (amount of position pairs) |
-| 0x0C			    |  4  	 | setPointSize |
-| 0x10          |  4     | setAngle |
-| 0x14          |  ..    | Pairs of 2 Byte UInt16LE x/y coordinates in mm |
+| 0x00          |  2     | block type                                              |
+| 0x02			    |  2		 | Lenght of the header                                    |
+| 0x04          |  4     | Length of datablock ( 8 bytes of header not counted)    |
+| 0x08		      |  4		 | setPointLength (amount of position pairs)               |
+| 0x0C			    |  4  	 | setPointSize                                            |
+| 0x10          |  4     | setAngle                                                |
+| 0x14          |  ..    | Pairs of 2 Byte UInt16LE x/y coordinates in mm          |
 
+
+```
 Data block type 4 (digest)
 Position(hex)   Length  Information
 ===================================================
