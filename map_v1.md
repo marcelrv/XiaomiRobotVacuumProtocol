@@ -4,6 +4,8 @@ Gets part of the URL to fetch the map from the Xiaomi cloud.
 With the proper cloud decoding it can be retreived from the cloud independently of the Mi Home app
 File can be retreived from the Xiaomi cloud  https://[country server].api.io.mi.com/app/home/getmapfileurl while passing  the response from below get_map_v1 as parameter. The response from this is a URL which the RR enconded map can be downloaded.
 
+For decoding of the mapfile see [RR Map File](RRMapFile)
+
 ## Get Map V1
 
 ### Command
