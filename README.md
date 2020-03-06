@@ -2,7 +2,7 @@
 
 Attempt to describe the Xiaomi Robot Vacuum Protocol.
 
-These commands are send using the Xiaomi [mi-home protocol](Protocol.md).
+These commands are send using the Xiaomi [mi-home protocol](Protocol.md). (For decoding of the vacuum map see [RR Map File](RRMapFile))
 
 Applications implementing this protocol:
 
