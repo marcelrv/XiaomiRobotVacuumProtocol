@@ -3,6 +3,7 @@ RR Files send to the device and found in the robot.db file
 These files consist of a header and several blocks.
 The file is gzipped, hence needs to be unzipped before reading.
 
+Coordinates to be divided by 50 to match map pixels
 
 | Datablock        |  Id  | Remark                         |
 | -----------------| ---- | ------------------------------ |
@@ -22,71 +23,84 @@ The file is gzipped, hence needs to be unzipped before reading.
 | Position(hex) | Length | Information                                             |
 | ------------- | ------ | --------------------------------------------------------|
 | 0x00          |  2     | "RR"                                                    |
-| 0x02			    |  2		 | Lenght of the header                                    |
+| 0x02			    |  2		 | Length of the header                                    |
 | 0x04          |  4     | Data length (points to location of the footer           |
 | 0x08		      |  2		 | Major Version                                           |
 | 0x0A			    |  2  	 | Minor Version                                           |
 | 0x0C          |  4     | Map Index                                               |
-| 0x10          |  4    | Map Sequence                                             | 
+| 0x10          |  4     | Map Sequence                                            | 
 | 0x14          |  ..    | Start first datablock                                   |
 
-
-
-```
-
-Data block type 1 (Charger)
-Position(hex)   Length  Information
-===================================================
-0x00      2       block type ( 01 00)
-0x02			2		    Lenght of the header
-0x04      4       Length of datablock 08 00 ( 8 bytes of header not counted)
-0x08			4		Charger X pos
-0x0C			4		Charger Y pos
-
-
-Data block type 2 (Image)
-Position(hex)   Length  Information
-===================================================
-0x00      2       block type
-0x02			2		    Lenght of the header
-0x04      4       Length of datablock ( 8 bytes of header not counted) = image size
-0x08			4		Top Pos
-0x0C			4		Left Pos
-0x10            4       Image height
-0x14            4       Image width
-0x18             ..       grayscale image data (each pixel 1 byte) 
-```
-
-Data block type 3 (vacuum path)
+Data block type  1 (Charger)
 | Position(hex) | Length | Information                                             |
 | ------------- | ------ | --------------------------------------------------------|
-| 0x00          |  2     | block type                                              |
-| 0x02			    |  2		 | Lenght of the header                                    |
-| 0x04          |  4     | Length of datablock ( 8 bytes of header not counted)    |
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08		      |  4		 | Charger X pos                                           |
+| 0x0C			    |  4  	 | Charger Y pos                                           |
+
+Data block type  2 (Image)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08		      |  4		 | Top Pos                                                 |
+| 0x0C			    |  4  	 | Left Pos                                                |
+| 0x10		      |  4		 | Image height                                            |
+| 0x14			    |  4  	 | Image width                                             |
+| 0x18		      |  4		 | Image Data      00=outside, 01=wall FF=inside area      |
+
+Data block type 3 (vacuum path)
+Data block type 4 (goto path)
+Data block type 5 (predicted goto path)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
 | 0x08		      |  4		 | setPointLength (amount of position pairs)               |
 | 0x0C			    |  4  	 | setPointSize                                            |
 | 0x10          |  4     | setAngle                                                |
 | 0x14          |  ..    | Pairs of 2 Byte UInt16LE x/y coordinates in mm          |
 
-
-```
-Data block type 4 (digest)
-Position(hex)   Length  Information
-===================================================
-0x00            2       block type
-0x02		      	4		CRC32 code?
-
-Data block type 8 (Robot Position)
-Position(hex)   Length  Information
-===================================================
-0x00            2       block type
-0x02			      2		    Lenght of the header
-0x04            4       Length of datablock ( 8 bytes of header not counted) 
-0x08            4       x UInt32LE
-0x0c            4       y UInt32LE
+Data block type 6 (zones)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08		      |  2		 | # of zones   uInt32LE                                   |
+| 0x0C          |  ..    | Pairs of 2 Byte UInt16LE x1/y1 x2/y2 coordinates in mm  |
+X1 and Y2 are the left top point, X2 and Y2 are the right bottom point of the rectangle
 
 
+Data block type  7 (Target Position)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08		      |  2		 | Robot X pos UInt16LE                                    |
+| 0x0A			    |  2  	 | Robot Y pos UInt16LE                                    |
 
-```
 
+Data block type  8 (Robot Position)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08		      |  4		 | Robot X pos UInt32LE                                    |
+| 0x0C			    |  4  	 | Robot Y pos UInt32LE                                    |
+
+
+Data block type  0x0400 (1024) (digest)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08          |  12    | SHA1 hash of file until this block                      |
 
