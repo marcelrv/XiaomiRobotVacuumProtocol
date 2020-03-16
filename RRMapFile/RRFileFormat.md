@@ -17,6 +17,7 @@ Coordinates to be divided by 50 to match map pixels
 | Robot Position   |  8   |                                | 
 | No go areas      |  9   | Only exist with newer firmware | 
 | Virtual Walls    | 10   | Only exist with newer firmware | 
+| Unknown          | 11   | Only exist with latest S5 firmware 3.5.7 | 
 | Digest    			 | 1024 |                                |
 
 ### File Header
@@ -46,11 +47,18 @@ Data block type  2 (Image)
 | 0x00          |  2     | Block type                                              |
 | 0x02			    |  2		 | Length of the block header                              |
 | 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08          |  4     | S5 has extra block here... all other blocks re shifted in that case |
 | 0x08		      |  4		 | Top Pos                                                 |
 | 0x0C			    |  4  	 | Left Pos                                                |
 | 0x10		      |  4		 | Image height                                            |
 | 0x14			    |  4  	 | Image width                                             |
-| 0x18		      |  4		 | Image Data      00=outside, 01=wall FF=inside area      |
+| 0x1C		      |  4		 | Image Data      00=outside, 01=wall FF=inside area      |
+note model S5 firmware 3.5.7  has lenght of 0x1C, img height & width are mo
+This version has many more values for the image data
+
+bit   76543210
+LSB 0 = outside 
+bit 1 : 1=wall
 
 Data block type 3 (vacuum path)
 Data block type 4 (goto path)
@@ -94,6 +102,14 @@ Data block type  8 (Robot Position)
 | 0x04          |  4     | Length of block data  (header not included)             |
 | 0x08		      |  4		 | Robot X pos UInt32LE                                    |
 | 0x0C			    |  4  	 | Robot Y pos UInt32LE                                    |
+
+Data block type  11 (??)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08		      |  2		 | # of datapoints                                         |
 
 
 Data block type  0x0400 (1024) (digest)
