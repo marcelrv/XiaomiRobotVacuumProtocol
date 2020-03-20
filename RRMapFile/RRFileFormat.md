@@ -17,8 +17,13 @@ Coordinates to be divided by 50 to match map pixels
 | Robot Position   |  8   |                                | 
 | No go areas      |  9   | Only exist with newer firmware | 
 | Virtual Walls    | 10   | Only exist with newer firmware | 
-| Unknown          | 11   | Only exist with latest S5 firmware 3.5.7 | 
+| Blocks           | 11   | Only exist with map v1.1       | 
+| mfbzs            | 12   | Only exist with map v1.1       | 
+| Obstacles        | 13   | Only exist with map v1.1       | 
 | Digest    			 | 1024 |                                |
+
+NB, older models use map version 1.0
+Newer models e.g 5 firmware 3.5.7 use maptype 1.1, this map has additional information (blocks 9,10,11,12)
 
 ### File Header
 | Position(hex) | Length | Information                                             |
@@ -47,13 +52,13 @@ Data block type  2 (Image)
 | 0x00          |  2     | Block type                                              |
 | 0x02			    |  2		 | Length of the block header                              |
 | 0x04          |  4     | Length of block data  (header not included)             |
-| 0x08          |  4     | S5 has extra block here... all other blocks re shifted in that case |
+| 0x08          |  4     | map v1.1 has extra block here... all other blocks re shifted in that case  |
 | 0x08		      |  4		 | Top Pos                                                 |
 | 0x0C			    |  4  	 | Left Pos                                                |
 | 0x10		      |  4		 | Image height                                            |
 | 0x14			    |  4  	 | Image width                                             |
 | 0x1C		      |  4		 | Image Data      00=outside, 01=wall FF=inside area      |
-note model S5 firmware 3.5.7  has lenght of 0x1C, img height & width are mo
+note map v1.1 model S5 firmware 3.5.7  has lenght of 0x1C, img height & width are mo
 This version has many more values for the image data
 
 bit   76543210
@@ -102,14 +107,49 @@ Data block type  8 (Robot Position)
 | 0x04          |  4     | Length of block data  (header not included)             |
 | 0x08		      |  4		 | Robot X pos UInt32LE                                    |
 | 0x0C			    |  4  	 | Robot Y pos UInt32LE                                    |
+| 0x10			    |  4  	 | Robot angle UInt32LE  (Only newer models, maptype 1.1   |
 
-Data block type  11 (??)
+Data block type  9  (nogo zones / fbzs)
 | Position(hex) | Length | Information                                             |
 | ------------- | ------ | --------------------------------------------------------|
 | 0x00          |  2     | Block type                                              |
 | 0x02			    |  2		 | Length of the block header                              |
 | 0x04          |  4     | Length of block data  (header not included)             |
-| 0x08		      |  2		 | # of datapoints                                         |
+| 0x08		      |  ..		 | blocks of 8x UInt16LE, coordinates of corners           |
+
+Data block type  10  (walls)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08		      |  ..		 | blocks of 4x UInt16LE (coordines of corners)            |
+
+
+Data block type  11 (blocks)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08		      |  ..		 | 1 byte blocks                                           |
+
+
+Data block type  12  (mfbzs)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08		      |  ..		 | blocks of 8x UInt16LE                                   |
+
+Data block type  13  (obstacles)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08		      |  ..		 | blocks of 2x UInt16LE + 1x byte                         |
 
 
 Data block type  0x0400 (1024) (digest)
