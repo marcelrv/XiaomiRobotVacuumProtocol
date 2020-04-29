@@ -40,7 +40,7 @@ Retrieves the status informations of the device.
 | `map_status`                | _3_      | ?                                                                                                                                                   | s5, s6, s5e        |
 | `mop_forbidden_enable`      | _0_      | ?                                                                                                                                                   | s5e                |
 | `msg_seq`                   | _52_     | Message sequence increments with each request                                                                                                       |                    |
-| `msg_ver`                   | _2_      | Message version (seems always 4 and 2 for s6)                                                                                                       |                    |
+| `msg_ver`                   | _2_      | Message version (seems always 4 and 2 for s6) see below for other examples                                                                                                        |                    |
 | `state`                     | _8_      | Status code (see [list](#status-codes) below)                                                                                                       |                    |
 | `water_box_carriage_status` | _0_      | Is carriage mounted (0=no, 1=yes)                                                                                                                   | s5e                |
 | `water_box_mode`            | _204_    | Water quantity control, corresponds to the values in [Water Box Custom Mode](water_box_custom_mode.md) (see [list](water_box_custom_mode.md#modes)) | s5e                |
@@ -76,6 +76,31 @@ Retrieves the status informations of the device.
     ],
     "id": 96
 }
+
+Other message examples
+
+msg_ver 1:
+{"result":[{"msg_ver":1,"msg_seq":3032,"state":8,"battery":100,"clean_time":30,"clean_area":0,"error_code":0,"map_present":1,"in_cleaning":0,"in_returning":0,"in_fresh_state":1,"lab_status":1,"fan_power":102,"dnd_enabled":0,"map_status":3}],"id":3111}
+
+msg_ver 2:
+{"result":[{"msg_ver":2,"msg_seq":2569,"state":8,"battery":72,"clean_time":72,"clean_area":1977500,"error_code":0,"map_present":1,"in_cleaning":0,"in_returning":0,"in_fresh_state":1,"lab_status":1,"fan_power":60,"dnd_enabled":0}],"id":8745}
+
+msg_ver 3:
+{"clean_time": 9, "msg_ver": 3, "fan_power": 104, "msg_seq": 387, "lock_status": 0, "dnd_enabled": 0, "clean_area": 0, "map_present": 1, "error_code": 0, "map_status": 3, "battery": 100, "water_box_status": 0, "state": 8, "in_returning": 0, "lab_status": 1, "in_cleaning": 0, "in_fresh_state": 1}
+
+msg_ver 4:
+{ "result": [ { "msg_ver": 4, "msg_seq": 238, "state": 6, "battery": 100, "clean_time": 21, "clean_area": 240000, "error_code": 0, "map_present": 1, "in_cleaning": 0, "fan_power": 60, "dnd_enabled": 1 } ], "id": 10026 }
+
+msg_ver 5:
+{'result': [{'error_code': 0, 'battery': 100, 'dnd_enabled': 1, 'map_present': 0, 'state': 8, 'clean_time': 0, 'msg_seq': 594, 'fan_power': 77, 'msg_ver': 5, 'in_cleaning': 0, 'clean_area': 502500}], 'id': 9455}
+
+msg_ver 6:
+{"result":[{"msg_ver":6,"msg_seq":2004,"state":8,"battery":100,"clean_time":2839,"clean_area":48287500,"error_code":0,"map_present":0,"in_cleaning":0,"fan_power":77,"dnd_enabled":0}],"id":21}
+
+
+msg_ver 7:
+[{"msg_ver":8,"msg_seq":3,"state":2,"battery":93,"clean_mode":0,"fan_power":68,"error_code":0,"map_present":1,"in_cleaning":0,"dnd_enabled":0,"begin_time":0,"clean_time":8305,"clean_area":116122500,"clean_trigger":0,"back_trigger":0,"completed":0,"clean_strategy":0}],"id":993}
+
 ```
 
 ## Codes
