@@ -49,5 +49,9 @@ Retrieves a list of supported firmware features of the device.
 | 116  | ?           |
 | 117  | ?           |
 | 118  | ?           |
+| 119  | ?           |
+| 120  | ?           |
 | 122  | ?           |
+| 123  | ?           |
+| 124  | ?           |
 | 125  | ?           |
