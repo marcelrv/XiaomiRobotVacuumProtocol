@@ -60,20 +60,31 @@ These commands retreive the cleaning history from the vacuum.
 
 ### Response
 
-| Key | Example      | Description                 |
-| --- | ------------ | --------------------------- |
-| `-` | _1497163727_ | Start time (unix timestamp) |
-| `-` | _1497165195_ | End time (unix timestamp)   |
-| `-` | _1468_       | Cleaning duration (in s)    |
-| `-` | _22902500_   | Area (in cm²)               |
-| `-` | _0_          | Errors??                    |
-| `-` | _1_          | Completed  (0=no, 1=yes)    |
+| Key | Example      | Description                  | Restrictions |
+| --- | ------------ | ---------------------------  | ------------ |
+| `-` | _1497163727_ | Start time (unix timestamp)  |              |
+| `-` | _1497165195_ | End time (unix timestamp)    |              |
+| `-` | _1468_       | Cleaning duration (in s)     |              |
+| `-` | _22902500_   | Area (in cm²)                |              |
+| `-` | _0_          | Errors??                     |              |
+| `-` | _1_          | Completed  (0=no, 1=yes)     |              |
+| `-` | _2_          | Unknown                      | s5e          |
+| `-` | _3_          | Mode (1=full, 2=zone, 3=room)| s5e          |
+| `-` | _60_         | Unknown                      | s5e          |
 
-#### Example
+#### Example (generic)
 
 ```json
 {
     "result": [[1497163727, 1497165195, 1468, 22902500, 0, 1]],
+    "id": 263
+}
+```
+
+#### Example (s5e)
+```json
+{
+    "result": [[1497163727, 1497165195, 1468, 22902500, 0, 1, 2, 2, 60]],
     "id": 263
 }
 ```
