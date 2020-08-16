@@ -2,7 +2,8 @@ RR Map file format and proof of concept file reader
 
 File format description here [RRFileFormat.md](RRFileFormat.md)
 
-Basic decorder (work in progress) [RRDraw.java](RRDraw.java)
+Offline viewer  [roboMapViewer2.5.7.zip](roboMapViewer2.5.7.zip)
+Source of offline viewer (included in openHAB miio binding): https://github.com/openhab/openhab-addons/blob/2.5.x/bundles/org.openhab.binding.miio/src/test/java/org/openhab/binding/miio/internal/RoboMapViewer.java 
 
 ![example picture](DecodedSample.png "Decoded with concept reader with goto")
 ![example picture](decodedRegion.png "Decoded with concept reader with regions")
