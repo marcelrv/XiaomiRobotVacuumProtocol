@@ -9,4 +9,5 @@ Source of offline viewer (included in openHAB miio binding): https://github.com/
 ![example picture](decodedRegion.png "Decoded with concept reader with regions")
 
 Decoded with concept reader for map v1.1
+
 ![example picture](rrmap-v11.jpg "Decoded with concept reader for map v1.1")
