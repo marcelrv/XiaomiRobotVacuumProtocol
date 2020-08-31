@@ -79,7 +79,7 @@ Standard response to succeeded command.
 ```json
 {
     "id": 353,
-    "method": "app_rc_end",
+    "method": "app_rc_move",
     "params": [[{
                 "omega": 0.5712,
                 "velocity": 0,
