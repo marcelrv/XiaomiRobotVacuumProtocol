@@ -149,6 +149,32 @@ Data block type  13  (obstacles)
 | 0x00          |  2     | Block type                                              |
 | 0x02			    |  2		 | Length of the block header                              |
 | 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08		      |  ..		 | blocks of 2x UInt16LE + 1x byte  (Position X,Y, ?       |
+
+
+Data block type  14  (obstacles)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08		      |  ..		 | blocks of 3x UInt16LE (Position X,Y, object Type)       |
+
+Data block type  15  (obstacles)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
+| 0x08		      |  ..		 | blocks of 3x UInt16LE (Position X,Y, object Type)  + In case of photo objects confidence level (Uint32LE) and reference strning      |
+
+
+Data block type  15  (obstacles)
+| Position(hex) | Length | Information                                             |
+| ------------- | ------ | --------------------------------------------------------|
+| 0x00          |  2     | Block type                                              |
+| 0x02			    |  2		 | Length of the block header                              |
+| 0x04          |  4     | Length of block data  (header not included)             |
 | 0x08		      |  ..		 | blocks of 2x UInt16LE + 1x byte                         |
 
 
