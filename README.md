@@ -20,6 +20,8 @@ Supported vacuum devices:
 | s5   | Mi Robot Vacuum v2 / Roborock Vacuum S5 / Roborock Vacuum S50 |
 | s6   | Roborock Vacuum S6                                            |
 | s5e  | Roborock Vacuum S5 Max                                        |
+| m1s  | Mi Robot Vacuum 1S                                            |
+
 
 ## Vacuum Commands
 
@@ -37,10 +39,10 @@ If there is no entry, the command is available for each device.
 | ZONED_CLEAN_START        | `app_zoned_clean`           | [Zone Cleaning](zoned_clean.md)                   | v1, s5, s6, s5e    |
 | ZONED_CLEAN_STOP         | `stop_zoned_clean`          | [Zone Cleaning](zoned_clean.md)                   | s5e                |
 | ZONED_CLEAN_RESUME       | `resume_zoned_clean`        | [Zone Cleaning](zoned_clean.md)                   | s5e                |
-| SEGMENT_CLEAN_START      | `app_segment_clean`         | [Segment Cleaning](segment_clean.md)              | s5e                |
+| SEGMENT_CLEAN_START      | `app_segment_clean`         | [Segment Cleaning](segment_clean.md)              | s5e, m1s           |
 | SEGMENT_CLEAN_STOP       | `stop_segment_clean`        | [Segment Cleaning](segment_clean.md)              | s5e                |
 | SEGMENT_CLEAN_RESUME     | `resume_segment_clean`      | [Segment Cleaning](segment_clean.md)              | s5e                |
-| ROOM_MAPPING_GET         | `get_room_mapping`          | [Room Mapping](room_mapping.md)                   | s5e                |
+| ROOM_MAPPING_GET         | `get_room_mapping`          | [Room Mapping](room_mapping.md)                   | s5e, m1s           |
 | GOTO_TARGET              | `app_goto_target`           | [Goto Target](goto_target.md)                     | v1, s5, s6, s5e    |
 | WAKEUP_ROBOT             | `app_wakeup_robot`          | -                                                 | s5e                |
 | GET_LOCALE               | `app_get_locale`            | [Locale Information](locale.md)                   | s5e                |
