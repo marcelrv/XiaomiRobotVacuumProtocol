@@ -60,7 +60,7 @@ If there is no entry, the command is available for each device.
 | CLEAN_SUMMARY_GET        | `get_clean_summary`         | [Clean Summary](clean_summary+record.md)          |                    |
 | CLEAN_RECORD_GET         | `get_clean_record`          | [Clean Summary](clean_summary+record.md)          |                    |
 | CLEAN_RECORD_DEL         | `del_clean_record`          | -                                                 | s5e                |
-| CLEAN_RECORD_MAP_GET     | `get_clean_record_map`      | -                                                 |                    |
+| CLEAN_RECORD_MAP_GET     | `get_clean_record_map`      | [Clean Summary](clean_summary+record.md)          |                    |
 | MAP_V1_GET               | `get_map_v1`                | [Map V1](map_v1.md)                               |                    |
 | MAP_V1_FRESH_GET         | `get_fresh_map_v1`          | -                                                 | s5e                |
 | MAP_V1_PERSIST_GET       | `get_persist_map_v1`        | -                                                 | s5e                |
