@@ -2,6 +2,9 @@ RR Map file format and proof of concept file reader
 
 File format description here [RRFileFormat.md](RRFileFormat.md)
 
+[roborock_map_file.ksy](roborock_map_file.ksy) contains a [Kaitai](https://kaitai.io) struct for the map format,
+which can be used to autogenerate parsing code in the programming language of your choice or evaluate a file using [the web IDE](https://ide.kaitai.io/)
+
 Offline viewer  [roboMapViewer2.5.7.zip](roboMapViewer2.5.7.zip) To run the viewer `java -jar RoboMapviewer2.5.7.jar` (assuming java is in your path, and the viewer is in the current dir, otherwise add the paths appropriately)
 Robo
 
