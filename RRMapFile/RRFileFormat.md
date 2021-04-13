@@ -20,6 +20,8 @@ Coordinates to be divided by 50 to match map pixels
 | Blocks           | 11   | Only exist with map v1.1       | 
 | mfbzs            | 12   | Only exist with map v1.1       | 
 | Obstacles        | 13   | Only exist with map v1.1       | 
+| Obstacles II     | 14   | Only exist with map v1.1       | 
+| Obstacles III    | 15   | Only exist with map v1.1       | 
 | Digest    			 | 1024 |                                |
 
 NB, older models use map version 1.0
