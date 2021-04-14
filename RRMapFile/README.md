@@ -20,4 +20,4 @@ Source of offline viewer (included in openHAB miio binding): https://github.com/
 Decoded with concept reader for map v1.1
 
 ![example picture](rrmap-v11.jpg "Decoded with concept reader for map v1.1")
-![example picture](robomapobjects.jpg "Decoded map with objects")
+![example picture](robomapobjects.png "Decoded map with objects")
