@@ -18,7 +18,7 @@ Coordinates to be divided by 50 to match map pixels
 | No go areas      |  9   | Only exist with newer firmware | 
 | Virtual Walls    | 10   | Only exist with newer firmware | 
 | Blocks           | 11   | Only exist with map v1.1       | 
-| mfbzs            | 12   | Only exist with map v1.1       | 
+| No mob zonem-fbzs| 12   | Only exist with map v1.1       | 
 | Obstacles        | 13   | Only exist with map v1.1       | 
 | Obstacles II     | 14   | Only exist with map v1.1       | 
 | Obstacles III    | 15   | Only exist with map v1.1       | 
@@ -137,7 +137,7 @@ Data block type  11 (blocks)
 | 0x08		      |  ..		 | 1 byte blocks                                           |
 
 
-Data block type  12  (mfbzs)
+Data block type  12  (mfbzs/No mob zones)
 | Position(hex) | Length | Information                                             |
 | ------------- | ------ | --------------------------------------------------------|
 | 0x00          |  2     | Block type                                              |
