@@ -9,6 +9,8 @@ Offline viewer  [roboMapViewer2.5.7.zip](roboMapViewer2.5.7.zip) To run the view
 Robo
 
 [roboMapViewer2.5.9-1.zip](roboMapViewer2.5.9-1.zip) updated version that also decodes the identified obstacles
+Latest viewer can be dound at [Openhab forum](https://community.openhab.org/t/xiaomi-vacuum-map-viewer-to-find-coordinates-for-zone-cleaning/103500)
+
 
 Source of offline viewer (included in openHAB miio binding): https://github.com/openhab/openhab-addons/blob/2.5.x/bundles/org.openhab.binding.miio/src/test/java/org/openhab/binding/miio/internal/RoboMapViewer.java 
 
@@ -18,3 +20,4 @@ Source of offline viewer (included in openHAB miio binding): https://github.com/
 Decoded with concept reader for map v1.1
 
 ![example picture](rrmap-v11.jpg "Decoded with concept reader for map v1.1")
+![example picture](robomapobjects.jpg "Decoded map with objects")
