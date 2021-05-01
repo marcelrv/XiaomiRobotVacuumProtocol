@@ -78,6 +78,8 @@ If there is no entry, the command is available for each device.
 | MAP_STATUS_GET           | `get_map_status`            | -                                                 | s5e                |
 | MAP_RECOVER_GET          | `get_recover_map`           | -                                                 | s5e                |
 | MAPS_RECOVER_GET         | `get_recover_maps`          | -                                                 | s5e                |
+| MAPS_GET_MULTI_MAPS      | `get_multi_maps_list`       | [Multimap](multimap.md)                           | s5e, s7, s6        |
+| MAPS_LOAD_MULTI_MAP      | `load_multi_map`            | [Multimap](multimap.md)                           | s5e, s7, s6        |
 | DND_GET                  | `get_dnd_timer`             | [Do Not Disturb](dnd_timer.md)                    |                    |
 | DND_SET                  | `set_dnd_timer`             | [Do Not Disturb](dnd_timer.md)                    |                    |
 | DND_CLOSE                | `close_dnd_timer`           | [Do Not Disturb](dnd_timer.md)                    |                    |
