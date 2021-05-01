@@ -1,54 +1,123 @@
 # Xiaomi Robot Vacuum Protocol
-Attempt to describe the Xiaomi Robot Vacuum Protocol
 
-These commands are send using the Xiaomi [mi-home protocol](Protocol.md)
+Attempt to describe the Xiaomi Robot Vacuum Protocol.
 
-Applications implementing this protocol
+These commands are send using the Xiaomi [mi-home protocol](Protocol.md). (For decoding of the vacuum map see [RR Map File](RRMapFile))
 
-* [Openhab](https://github.com/marcelrv/openhab2/tree/xiaomi-vacuum) (Java)
-* [mirobo](https://github.com/rytilahti/python-mirobo)  (Python) 
-* [iobroker](https://github.com/ioBroker/ioBroker.mihome-vacuum/blob/master/README.md]) 
+Applications implementing this protocol:
+
+* [Openhab](https://github.com/openhab/openhab-addons/tree/2.5.x/bundles/org.openhab.binding.miio) (Java)
+* [mirobo](https://github.com/rytilahti/python-miio)  (Python)
+* [iobroker](https://github.com/iobroker-community-adapters/ioBroker.mihome-vacuum)
+
+Supported vacuum devices:
+
+| Abb. | Names / aliases                                               |
+| ---- | ------------------------------------------------------------- |
+| c1   | Mi Xiaowa Vacuum c1                                           |
+| m1s  | Mi Robot Vacuum 1S                                            |
+| v1   | Mi Robot Vacuum                                               |
+| s5   | Mi Robot Vacuum v2 / Roborock Vacuum S5 / Roborock Vacuum S50 |
+| s6   | Roborock Vacuum S6                                            |
+| s5e  | Roborock Vacuum S5 Max                                        |
+| m1s  | Mi Robot Vacuum 1S                                            |
 
 
-## Vaccum Commands
+## Vacuum Commands
 
-| Type | Command | Description |
-| ------ | --------- | -----------| 
-|    START_VACUUM | `app_start`| Start vacuuming | 
-|    STOP_VACUUM | `app_stop`| Stop vacuuming | 
-|    START_SPOT | `app_spot`| Start spot cleaning | 
-|    PAUSE | `app_pause`| Pause cleaning | 
-|    CHARGE | `app_charge`| Start charging | 
-|    FIND_ME | `find_me`| Send findme | 
-|    CONSUMABLES_GET | `get_consumable`| Get consumables status | 
-|    CONSUMABLES_RESET | `reset_consumable`| Reset consumables | 
-|    CLEAN_SUMMARY_GET | `get_clean_summary`| [Cleaning details](cleanSummary+detail.md) | 
-|    CLEAN_RECORD_GET | `get_clean_record`| [Cleaning details](cleanSummary+detail.md) | 
-|    CLEAN_RECORD_MAP_GET | `get_clean_record_map`| Get the map reference of a historical cleaning | 
-|    GET_MAP | `get_map_v1`| [Get Map](getMap.md) | 
-|    GET_STATUS | `get_status`| [Get Status information](StatusMessage.md) | 
-|    GET_SERIAL_NUMBER | `get_serial_number`| [Get Serial #](getSerial.md) | 
-|    DND_GET | `get_dnd_timer`| [Do Not Disturb Settings](dnd_timer.md) | 
-|    DND_SET | `set_dnd_timer`| [Set the do not disturb timings](dnd_timer.md) | 
-|    DND_CLOSE | `close_dnd_timer`| [Disable the do not disturb function](dnd_timer.md)  | 
-|    TIMER_SET | `set_timer`| [Add a timer](Timer.md) | 
-|    TIMER_UPDATE | `upd_timer`| [Activate/deactivate a timer](Timer.md) | 
-|    TIMER_GET | `get_timer`| [Get Timers](Timer.md) | 
-|    TIMER_DEL | `del_timer`| [Remove a timer](Timer.md) | 
-|    SOUND_INSTALL | `dnld_install_sound`| - | 
-|    SOUND_GET_CURRENT | `get_current_sound`| [Current voice](CurrentVoice.md) | 
-|    LOG_UPLOAD_GET | `get_log_upload_status`| - | 
-|    LOG_UPLOAD_ENABLE | `enable_log_upload`| - | 
-|    SET_MODE | `set_custom_mode`| [Set the vacuum level](FanPower.md) | 
-|    GET_MODE | `get_custom_mode`| [Get the vacuum level](FanPower.md) | 
-|    REMOTE_START | `app_rc_start`| [Start remote control](remote_control.md)| 
-|    REMOTE_END | `app_rc_end`| [End remote control](remote_control.md) | 
-|    REMOTE_MOVE | `app_rc_move`| [Remote control move command](remote_control.md) | 
+:warning: Depending on the model and firmware version, not all commands might be available.
+The last columns show for which models the commands are available (assumed the latest firmware is installed).
+If there is no entry, the command is available for each device.
+
+| Type                     | Command                     | Documentation                                     | Only available for |
+| ------------------------ | --------------------------- | ------------------------------------------------- | ------------------ |
+| START_VACUUM             | `app_start`                 | [Basic Operations](basic.md)                      |                    |
+| STOP_VACUUM              | `app_stop`                  | [Basic Operations](basic.md)                      |                    |
+| START_SPOT               | `app_spot`                  | [Basic Operations](basic.md)                      |                    |
+| PAUSE                    | `app_pause`                 | [Basic Operations](basic.md)                      |                    |
+| CHARGE                   | `app_charge`                | [Basic Operations](basic.md)                      |                    |
+| ZONED_CLEAN_START        | `app_zoned_clean`           | [Zone Cleaning](zoned_clean.md)                   | v1, s5, s6, s5e    |
+| ZONED_CLEAN_STOP         | `stop_zoned_clean`          | [Zone Cleaning](zoned_clean.md)                   | s5e                |
+| ZONED_CLEAN_RESUME       | `resume_zoned_clean`        | [Zone Cleaning](zoned_clean.md)                   | s5e                |
+| SEGMENT_CLEAN_START      | `app_segment_clean`         | [Segment Cleaning](segment_clean.md)              | s5e, m1s           |
+| SEGMENT_CLEAN_STOP       | `stop_segment_clean`        | [Segment Cleaning](segment_clean.md)              | s5e                |
+| SEGMENT_CLEAN_RESUME     | `resume_segment_clean`      | [Segment Cleaning](segment_clean.md)              | s5e                |
+| ROOM_MAPPING_GET         | `get_room_mapping`          | [Room Mapping](room_mapping.md)                   | s5e, m1s           |
+| GOTO_TARGET              | `app_goto_target`           | [Goto Target](goto_target.md)                     | v1, s5, s6, s5e    |
+| WAKEUP_ROBOT             | `app_wakeup_robot`          | -                                                 | s5e                |
+| GET_LOCALE               | `app_get_locale`            | [Locale Information](locale.md)                   | s5e                |
+| GET_INIT_STATUS          | `app_get_init_status`       | [Initial Status](init_status.md)                  | s5e                |
+| GET_STATUS               | `get_status`                | [Status Message](status.md)                       |                    |
+| GET_FW_FEATURES          | `get_fw_features`           | [Firmware Features](fw_features.md)               | s5e                |
+| GET_SERIAL_NUMBER        | `get_serial_number`         | [Serial Number](serial_number.md)                 |                    |
+| SET_LAB_STATUS           | `set_lab_status`            | [Lab Status](lab_status.md)                       | s5, s6, s5e        |
+| REMOTE_START             | `app_rc_start`              | [Remote Control](rc.md)                           |                    |
+| REMOTE_END               | `app_rc_end`                | [Remote Control](rc.md)                           |                    |
+| REMOTE_MOVE              | `app_rc_move`               | [Remote Control](rc.md)                           |                    |
+| FIND_ME                  | `find_me`                   | [Find Robot](find_me.md)                          |                    |
+| CONSUMABLES_GET          | `get_consumable`            | [Consumable](consumable.md)                       |                    |
+| CONSUMABLES_RESET        | `reset_consumable`          | [Consumable](consumable.md)                       |                    |
+| CLEAN_SUMMARY_GET        | `get_clean_summary`         | [Clean Summary](clean_summary+record.md)          |                    |
+| CLEAN_RECORD_GET         | `get_clean_record`          | [Clean Summary](clean_summary+record.md)          |                    |
+| CLEAN_RECORD_DEL         | `del_clean_record`          | -                                                 | s5e                |
+| CLEAN_RECORD_MAP_GET     | `get_clean_record_map`      | [Clean Summary](clean_summary+record.md)          |                    |
+| MAP_V1_GET               | `get_map_v1`                | [Map V1](map_v1.md)                               |                    |
+| MAP_V1_FRESH_GET         | `get_fresh_map_v1`          | -                                                 | s5e                |
+| MAP_V1_PERSIST_GET       | `get_persist_map_v1`        | -                                                 | s5e                |
+| MAP_RECOVER              | `recover_map`               | -                                                 | s5e                |
+| MAP_RESET                | `reset_map`                 | -                                                 | s5e                |
+| MAP_SAVE                 | `save_map`                  | [Map](map.md)                                     | s5, s6, s5e        |
+| MAP_EDIT_START           | `start_edit_map`            | -                                                 | s5e                |
+| MAP_EDIT_END             | `end_edit_map`              | -                                                 | s5e                |
+| MAP_USE_NEW              | `use_new_map`               | -                                                 | s5e                |
+| MAP_USE_OLD              | `use_old_map`               | -                                                 | s5e                |
+| MAP_STATUS_GET           | `get_map_status`            | -                                                 | s5e                |
+| MAP_RECOVER_GET          | `get_recover_map`           | -                                                 | s5e                |
+| MAPS_RECOVER_GET         | `get_recover_maps`          | -                                                 | s5e                |
+| DND_GET                  | `get_dnd_timer`             | [Do Not Disturb](dnd_timer.md)                    |                    |
+| DND_SET                  | `set_dnd_timer`             | [Do Not Disturb](dnd_timer.md)                    |                    |
+| DND_CLOSE                | `close_dnd_timer`           | [Do Not Disturb](dnd_timer.md)                    |                    |
+| TIMER_GET                | `get_timer`                 | [Cleaning Timer](timer.md)                        |                    |
+| TIMER_SET                | `set_timer`                 | [Cleaning Timer](timer.md)                        |                    |
+| TIMER_UPDATE             | `upd_timer`                 | [Cleaning Timer](timer.md)                        |                    |
+| TIMER_DEL                | `del_timer`                 | [Cleaning Timer](timer.md)                        |                    |
+| TIMER_SERVER_GET         | `get_server_timer`          | [Cleaning Timer](timer.md)                        | s5e                |
+| TIMER_SERVER_SET         | `set_server_timer`          | [Cleaning Timer](timer.md)                        | s5e                |
+| TIMER_SERVER_UPDATE      | `upd_server_timer`          | [Cleaning Timer](timer.md)                        | s5e                |
+| TIMER_SERVER_DEL         | `del_server_timer`          | [Cleaning Timer](timer.md)                        | s5e                |
+| TIMEZONE_GET             | `get_timezone`              | [Timezone](timezone.md)                           |                    |
+| TIMEZONE_SET             | `set_timezone`              | [Timezone](timezone.md)                           |                    |
+| SOUND_INSTALL            | `dnld_install_sound`        | [Voice Pack Installation](install_sound.md)       |                    |
+| SOUND_PROGRESS_GET       | `get_sound_progress`        | [Voice Pack Installation](install_sound.md)       | s5e                |
+| SOUND_CURRENT_GET        | `get_current_sound`         | [Current Sound](current_sound.md)                 |                    |
+| SOUND_VOLUME_GET         | `get_sound_volume`          | [Sound Volume](sound_volume.md)                   |                    |
+| SOUND_VOLUME_CHANGE      | `change_sound_volume`       | [Sound Volume](sound_volume.md)                   | s5e                |
+| SOUND_VOLUME_TEST        | `test_sound_volume`         | [Sound Volume](sound_volume.md)                   | s5e                |
+| LOG_UPLOAD_GET           | `get_log_upload_status`     | [Log Upload](log_upload.md)                       |                    |
+| LOG_UPLOAD_ENABLE        | `enable_log_upload`         | -                                                 |                    |
+| LOG_UPLOAD_USER          | `user_upload_log`           | -                                                 | s5e                |
+| CUSTOM_MODE_GET          | `get_custom_mode`           | [Custom Mode](custom_mode.md)                     |                    |
+| CUSTOM_MODE_SET          | `set_custom_mode`           | [Custom Mode](custom_mode.md)                     |                    |
+| CUSTOM_MODE_WATERBOX_GET | `get_water_box_custom_mode` | [Water Box Custom Mode](water_box_custom_mode.md) | s5e                |
+| CUSTOM_MODE_WATERBOX_SET | `set_water_box_custom_mode` | [Water Box Custom Mode](water_box_custom_mode.md) | s5e                |
+| CARPET_MODE_GET          | `get_carpet_mode`           | -                                                 | s5e                |
+| CARPET_MODE_SET          | `set_carpet_mode`           | -                                                 | s5e                |
+| SEGMENT_STATUS_GET       | `get_segment_status`        | -                                                 | s5e                |
+| SEGMENT_NAME             | `name_segment`              | -                                                 | s5e                |
+| SEGMENT_MERGE            | `merge_segment`             | -                                                 | s5e                |
+| SEGMENT_SPLIT            | `split_segment`             | -                                                 | s5e                |
 
 ## Generic MiIO Commands
-| Type | Command | Description |
-| ------ | --------- | -----------| 
-|    INFO | `miIO.info`| [Get device info](miIOinfo.md) | 
-|    INFO | `miIO.config_router`| Set Wifi settings of the device | 
 
-Suggestions & improvements very welcome!
+:information_source: These commands appear to be shared amongs all(?) Xiaomi Mi Io devices.
+
+| Type       | Command                 | Documentation                           |
+| ---------- | ----------------------- | --------------------------------------- |
+| INFO       | `miIO.info`             | [Info](miIO-info.md)                    |
+| ROUTER     | `miIO.config_router`    | -                                       |
+| OTA        | `miIO.ota`              | [Update Firmware Over Air](miIO-ota.md) |
+| OTA_PROG   | `miIO.get_ota_progress` | -                                       |
+| OTA_STATE  | `miIO.get_ota_state`    | -                                       |
+| WIFI_STATE | `miIO.wifi_assoc_state` | [Wifi Status](miIO-wifi_assoc_state.md) |
+
+:exclamation: Suggestions & improvements very welcome!
