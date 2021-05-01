@@ -21,6 +21,9 @@ Supported vacuum devices:
 | s6   | Roborock Vacuum S6                                            |
 | s5e  | Roborock Vacuum S5 Max                                        |
 | m1s  | Mi Robot Vacuum 1S                                            |
+| a15  | Roborock Vacuum S7                                            |
+| s4   | Roborock Vacuum S4                                            |
+
 
 
 ## Vacuum Commands
@@ -49,6 +52,7 @@ If there is no entry, the command is available for each device.
 | GET_INIT_STATUS          | `app_get_init_status`       | [Initial Status](init_status.md)                  | s5e                |
 | GET_STATUS               | `get_status`                | [Status Message](status.md)                       |                    |
 | GET_FW_FEATURES          | `get_fw_features`           | [Firmware Features](fw_features.md)               | s5e                |
+| GET_NETWORK_INFO         | `get_network_info`          | [Netwotk info](network_info.md)                   | s5e, s5, s7, s6    |
 | GET_SERIAL_NUMBER        | `get_serial_number`         | [Serial Number](serial_number.md)                 |                    |
 | SET_LAB_STATUS           | `set_lab_status`            | [Lab Status](lab_status.md)                       | s5, s6, s5e        |
 | REMOTE_START             | `app_rc_start`              | [Remote Control](rc.md)                           |                    |
