@@ -62,6 +62,7 @@ types:
             "block_type::ignored_obstacles_1": obstacles_1_block_data
             "block_type::obstacles_2": obstacles_2_block_data
             "block_type::ignored_obstacles_2": ignored_obstacles_2_block_data
+            "block_type::carpet_map": image_block_data
             "block_type::digest": digest_block_data
 
   image_block_data:
@@ -260,6 +261,8 @@ enums:
     15: "obstacles_2"
     16: "ignored_obstacles_2"
     17: "carpet_map"
+    18: "mop_path"
+    19: "carpet_forbidden_area"
     1024: "digest"
   pixel_type:
     0: "none"
