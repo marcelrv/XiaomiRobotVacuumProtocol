@@ -37,7 +37,7 @@ Supported vacuum devices:
 | roborock.vacuum.t7    | Roborock Vacuum T7                                           | 
 
 
-See [supported robots and capability matrix here](features.md) (based on get_fw_features command)
+See [supported robots and capability matrix here](fw_features.md) (based on get_fw_features command)
 
 ## Vacuum Commands
 
