@@ -12,25 +12,38 @@ Applications implementing this protocol:
 
 Supported vacuum devices:
 
-| Abb. | Names / aliases                                               |
-| ---- | ------------------------------------------------------------- |
-| c1   | Mi Xiaowa Vacuum c1                                           |
-| m1s  | Mi Robot Vacuum 1S                                            |
-| v1   | Mi Robot Vacuum                                               |
-| s5   | Mi Robot Vacuum v2 / Roborock Vacuum S5 / Roborock Vacuum S50 |
-| s6   | Roborock Vacuum S6                                            |
-| s5e  | Roborock Vacuum S5 Max                                        |
-| m1s  | Mi Robot Vacuum 1S                                            |
-| a15  | Roborock Vacuum S7                                            |
-| s4   | Roborock Vacuum S4                                            |
+| Model                 | Name / aliases                                               | 
+| --------------------- | ------------------------------------------------------------ | 
+| rockrobo.vacuum.v1    | Mi Robot Vacuum                                              | 
+| roborock.vacuum.a01   | Roborock E Series                                            | 
+| roborock.vacuum.a08   | Roborock S6 Pure                                             | 
+| roborock.vacuum.a09   | Roborock T7 Pro                                              | 
+| roborock.vacuum.a10   | Roborock S6 MaxV                                             | 
+| roborock.vacuum.a11   | Roborock T7                                                  | 
+| roborock.vacuum.a14   | Roborock T7S                                                 | 
+| roborock.vacuum.a15   | Roborock S7                                                  | 
+| roborock.vacuum.a19   | Roborock S4 Max                                              | 
+| roborock.vacuum.a23   | Roborock T7S Plus                                            | 
+| roborock.vacuum.c1    | Xiaowa C1                                                    | 
+| roborock.vacuum.e2    | Roborock Xiaowa E Series                                     |
+| roborock.vacuum.m1s   | Mi Robot Vacuum 1S                                           | 
+| roborock.vacuum.p5    | Roborock P5                                                  | 
+| roborock.vacuum.s4    | Roborock S4                                                  | 
+| roborock.vacuum.s5    | Mi Robot Vacuum v2 / Roborock Vacuum S5 / Roborock Vacuum S50 | 
+| roborock.vacuum.s5e   | Roborock S5 Max                                              | 
+| roborock.vacuum.s6    | Roborock S6                                                  | 
+| roborock.vacuum.t4    | Roborock T4                                                  | 
+| roborock.vacuum.t6    | Roborock T6                                                  | 
+| roborock.vacuum.t7    | Roborock Vacuum T7                                           | 
 
-See |supported robots and capability matrix here|(features.md) (based on get_fw_features command)
+
+See [supported robots and capability matrix here](features.md) (based on get_fw_features command)
 
 ## Vacuum Commands
 
-:warning: Depending on the model and firmware version, not all commands might be available.
-The last columns show for which models the commands are available (assumed the latest firmware is installed).
-If there is no entry, the command is available for each device.
+:warning: Depending on the model and firmware version, not all commands might be available.  
+The last columns show for which models the commands are available (assumed the latest firmware is installed).  
+If there is no entry, the command is available for each device.  
 
 | Type                     | Command                     | Documentation                                     | Only available for |
 | ------------------------ | --------------------------- | ------------------------------------------------- | ------------------ |
