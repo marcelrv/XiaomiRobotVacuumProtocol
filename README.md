@@ -24,7 +24,7 @@ Supported vacuum devices:
 | a15  | Roborock Vacuum S7                                            |
 | s4   | Roborock Vacuum S4                                            |
 
-
+See |supported robots and capability matrix here|(features.md) (based on get_fw_features command)
 
 ## Vacuum Commands
 
