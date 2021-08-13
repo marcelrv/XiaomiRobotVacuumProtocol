@@ -16,14 +16,14 @@ Expect a response like `{"result":[101,102,104,105],"id":9416}`
 | roborock.vacuum.a01   | Roborock E Series     |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.a08   | Roborock S6 Pure      |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.a09   | Roborock T7 Pro       |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
-| roborock.vacuum.a10   | Roborock S6 MaxV      |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
+| roborock.vacuum.a10   | Roborock S6 MaxV      | 3.5.8_5850    |   |   |   |   |   |   |   |   |   |   | X | X | X | X | X | X | X | X | X | X | X | X | X | X | X |   |   |   |   |   |         |
 | roborock.vacuum.a11   | Roborock T7           |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.a14   | Roborock T7S          |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.a15   | Roborock S7           | 4.1.2_1140    |   |   |   |   |   |   |   |   |   | X | X | X | X | X | X | X | X | X | X | X |   | X | X | X | X |   |   |   |   |   |         |
 | roborock.vacuum.a19   | Roborock S4 Max       |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.a23   | Roborock T7S Plus     |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.c1    | Xiaowa C1             |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
-| roborock.vacuum.e2    | Roborock Xiaowa E Series Vacuum v2 |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
+| roborock.vacuum.e2    | Roborock Xiaowa E Series Vacuum v2 |  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.m1s   | Mi Robot Vacuum 1S    | ?             |   |   |   |   | X |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.p5    | Roborock P5           |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.s4    | Roborock S4           |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
@@ -42,7 +42,7 @@ Expect a response like `{"result":[101,102,104,105],"id":9416}`
 | ------- | --------------------------------------------------------------------------------- |
 | 101     |                                                                                   |
 | 102     |                                                                                   |
-| 103     |                                                                                   |
+| 103     | Clean Time Supported                                                                                  |
 | 104     |                                                                                   |
 | 105     |                                                                                   |
 | 106     |                                                                                   |
@@ -54,15 +54,15 @@ Expect a response like `{"result":[101,102,104,105],"id":9416}`
 | 112     | Supports AutoSplitSegments                                                        |
 | 113     | Supportrs Delete Map feature                                                      |
 | 114     | Supports OrderSegmentClean                                                        |
-| 115     |                                                                                   |
+| 115     | Spot Clean                                                                        |
 | 116     | Map Segment Supported                                                             |
 | 117     |                                                                                   |
 | 118     |                                                                                   |
 | 119     | Supports Led Status Switch                                                        |
-| 120     | Orders Clean Supported                                                            |
+| 120     | Multi Floor Supported                                                             |
 | 121     |                                                                                   |
 | 122     | Supports FetchTimer Summary                                                       |
-| 123     |                                                                                   |
+| 123     | Orders Clean Supported                                                            |
 | 124     | Analysis Supported                                                                |
 | 125     | Remote Supported                                                                  |
 | 126     |                                                                                   |
