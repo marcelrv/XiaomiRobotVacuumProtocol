@@ -2,22 +2,22 @@
 
 Retrieves the initial status of the device.
 
-The `init_status` simply consists of [Locale Information](locale.md), [Firmware Features](fw_features.md) and the [Status Message](status.md).
+The `app_get_init_status` simply consists of [Locale Information](locale.md), [Firmware Features](fw_features.md) and the [Status Message](status.md).
 
 ## Get Initial Status
 
 ### Command
 
-| Key    | Value              | Comment                                                                             |
-| ------ | ------------------ | ----------------------------------------------------------------------------------- |
-| method | `"app_get_locale"` |                                                                                     |
-| id     | `id`               | Random integer which is returned in the response used to link request and response. |
+| Key    | Value                   | Comment                                                                             |
+| ------ | ----------------------- | ----------------------------------------------------------------------------------- |
+| method | `"app_get_init_status"` |                                                                                     |
+| id     | `id`                    | Random integer which is returned in the response used to link request and response. |
 
 #### Example
 
 ```json
 {
-    "method": "app_get_locale",
+    "method": "app_get_init_status",
     "id": 5879
 }
 ```
