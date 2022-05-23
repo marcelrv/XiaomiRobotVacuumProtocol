@@ -25,7 +25,7 @@ Retrieves the status informations of the device.
 | Key                         | Example  | Description                                                                                                                                         | Only available for |
 | --------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
 | `battery`                   | _100_    | Battery level (in %)                                                                                                                                |                    |
-| `clean_area`                | _140000_ | Total area (in cm²)                                                                                                                                 |                    |
+| `clean_area`                | _140000_ | Total area (in mm²)                                                                                                                                 |                    |
 | `clean_time`                | _15_     | Total cleaning time (in s)                                                                                                                          |                    |
 | `dnd_enabled`               | _0_      | Is 'Do Not Disturb' enabled (0=disabled, 1=enabled)                                                                                                 |                    |
 | `error_code`                | _0_      | Error code (see [list](#error-codes) below)                                                                                                         |                    |
