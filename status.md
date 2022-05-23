@@ -31,7 +31,7 @@ Retrieves the status informations of the device.
 | `error_code`                | _0_      | Error code (see [list](#error-codes) below)                                                                                                         |                    |
 | `fan_power`                 | _102_    | Fan power, corresponds to the values in [Custom Mode](custom_mode.md) (see [list](custom_mode.md#regular-modes))                                    |                    |
 | `in_cleaning`               | _0_      | Is device cleaning (0=no, 1=full, 2=zone, 3=room)                                                                                                  |                    |
-| `in_fresh_state`            | _1_      |                                                                                                                                                    | s5, s6, s5e        |
+| `in_fresh_state`            | _1_      | ?                                                                                                                                                  | s5, s6, s5e        |
 | `in_returning`              | _0_      | Is returning to dock (0=no, 1=yes)                                                                                                                  | s5, s6, s5e        |
 | `is_locating`               | _0_      | ?                                                                                                                                                   | s5e                |
 | `lab_status`                | _1_      | ?                                                                                                                                                   | s5, s6, s5e        |
