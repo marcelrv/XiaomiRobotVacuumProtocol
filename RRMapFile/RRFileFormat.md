@@ -23,6 +23,17 @@ Coordinates to be divided by 50 to match map pixels
 | Ignored Obstacles| 14   | Only exist with map v1.1       | 
 | Obstacles III    | 15   | Only exist with map v1.1       | 
 | Ignored Obstacles| 16   | Only exist with map v1.1       | 
+| Carpet Map       | 17   | Only exist with map v1.1       |                              | 
+| Mop Path         |  18  | Only exist with map v1.1       |
+| Carpet Forbidden area |  19  | Only exist with map v1.1       |
+| Smart zones path type |  20  | Reports itself as v1.0, but newer models (mid 2022) only |
+| Smart Zones |  21  | Reports itself as v1.0, but newer models (mid 2022) only |
+| Custom Carpet |  22  | Reports itself as v1.0, but newer models (mid 2022) only |
+| CL forbiden zones |  23  | Reports itself as v1.0, but newer models (mid 2022) only |
+| Floor Map |  24  | Reports itself as v1.0, but newer models (mid 2022) only |
+| Furnitures |  25  | Reports itself as v1.0, but newer models (mid 2022) only |
+| Dock Type |  26  | Reports itself as v1.0, but newer models (mid 2022) only |
+| Enemies |  27  | Reports itself as v1.0, but newer models (mid 2022) only |
 | Digest    			 | 1024 |                                |
 
 NB, older models use map version 1.0
