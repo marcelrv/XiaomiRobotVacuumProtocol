@@ -118,7 +118,7 @@ If there is no entry, the command is available for each device.
 | CUSTOM_MODE_GET          | `get_custom_mode`           | [Custom Mode](custom_mode.md)                     |                    |
 | CUSTOM_MODE_SET          | `set_custom_mode`           | [Custom Mode](custom_mode.md)                     |                    |
 | CUSTOM_MODE_WATERBOX_GET | `get_water_box_custom_mode` | [Water Box Custom Mode](water_box_custom_mode.md) | s5e                |
-| CUSTOM_MODE_WATERBOX_SET | `set_water_box_custom_mode` | [Water Box Custom Mode](water_box_custom_mode.md) | s5e                |
+| CUSTOM_MODE_WATERBOX_SET | `set_water_box_custom_mode` | [Water Box Custom Mode](water_box_custom_mode.md) | s5e, s6            |
 | CARPET_MODE_GET          | `get_carpet_mode`           | -                                                 | s5e                |
 | CARPET_MODE_SET          | `set_carpet_mode`           | -                                                 | s5e                |
 | SEGMENT_STATUS_GET       | `get_segment_status`        | -                                                 | s5e                |
