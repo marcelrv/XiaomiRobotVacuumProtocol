@@ -55,7 +55,7 @@ If there is no entry, the command is available for each device.
 | ZONED_CLEAN_START        | `app_zoned_clean`           | [Zone Cleaning](zoned_clean.md)                   | v1, s5, s6, s5e    |
 | ZONED_CLEAN_STOP         | `stop_zoned_clean`          | [Zone Cleaning](zoned_clean.md)                   | s5e                |
 | ZONED_CLEAN_RESUME       | `resume_zoned_clean`        | [Zone Cleaning](zoned_clean.md)                   | s5e                |
-| SEGMENT_CLEAN_START      | `app_segment_clean`         | [Segment Cleaning](segment_clean.md)              | s5e, m1s           |
+| SEGMENT_CLEAN_START      | `app_segment_clean`         | [Segment Cleaning](segment_clean.md)              | s5, s5e, m1s       |
 | SEGMENT_CLEAN_STOP       | `stop_segment_clean`        | [Segment Cleaning](segment_clean.md)              | s5e                |
 | SEGMENT_CLEAN_RESUME     | `resume_segment_clean`      | [Segment Cleaning](segment_clean.md)              | s5e                |
 | ROOM_MAPPING_GET         | `get_room_mapping`          | [Room Mapping](room_mapping.md)                   | s5e, m1s           |
