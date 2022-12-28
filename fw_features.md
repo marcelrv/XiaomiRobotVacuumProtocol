@@ -22,6 +22,7 @@ Expect a response like `{"result":[101,102,104,105],"id":9416}`
 | roborock.vacuum.a15   | Roborock S7           | 4.1.2_1140    |   |   |   |   |   |   |   |   |   | X | X | X | X | X | X | X | X | X | X | X |   | X | X | X | X |   |   |   |   |   |         |
 | roborock.vacuum.a19   | Roborock S4 Max       |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.a23   | Roborock T7S Plus     |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
+| roborock.vacuum.a27   | Roborock S7 MaxV      | 4.3.5_5602    |   |   |   |   |   |   |   |   |   |   | X | X | X | X | X | X | X | X | X | X | X | X | X | X | X |   |   |   |   |   |         |
 | roborock.vacuum.c1    | Xiaowa C1             |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.e2    | Roborock Xiaowa E Series Vacuum v2 |  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.m1s   | Mi Robot Vacuum 1S    | ?             |   |   |   |   | X |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
