@@ -9,7 +9,7 @@ Starts, stops and resumes the segment cleaning (= room cleaning).
 | Key    | Value                 | Comment                                                                                                               |
 | ------ | --------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | method | `"app_segment_clean"` |                                                                                                                       |
-| params | `[array of segments]` | List of `segments` (rooms) to clean, to get `segments` the command [`get_room_mapping`](room_mapping.md) can be used. |
+| params | `[array of segments]` or<br> `[{"segments": [array of segments], "repeat": <count of iterations>}]` | List of `segments` (rooms) to clean, to get `segments` the command [`get_room_mapping`](room_mapping.md) can be used. <br> You can also provide further information for each segemnts array like `repeat` for count of iterations |
 | id     | `id`                  | Random integer which is returned in the response used to link request and response.                                   |
 
 #### Example
@@ -18,6 +18,12 @@ Starts, stops and resumes the segment cleaning (= room cleaning).
 {
     "method": "app_segment_clean",
     "params": [16, 17, 18],
+    "id": 6764
+}
+or
+{
+    "method": "app_segment_clean",
+    "params": [{"segments": [16, 17, 18],"repeat": 2}],
     "id": 6764
 }
 ```
