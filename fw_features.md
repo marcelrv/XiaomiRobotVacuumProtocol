@@ -7,6 +7,8 @@ Please contribute the response from your robot. As the response may be related t
 The features of a device can be queried using the `get_fw_features` command.  
 Expect a response like `{"result":[101,102,104,105],"id":9416}`
 
+You can list the features using `miiocli device raw_command get_fw_features` with [python-miio](https://github.com/rytilahti/python-miio) installed.
+
 ## Model - Features matrix
 
 
