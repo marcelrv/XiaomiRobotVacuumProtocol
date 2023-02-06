@@ -27,6 +27,7 @@ You can list the features using `miiocli device raw_command get_fw_features` wit
 | roborock.vacuum.a27   | Roborock S7 MaxV      | 4.3.5_5602    |   |   |   |   |   |   |   |   |   |   | X | X | X | X | X | X | X | X | X | X | X | X | X | X | X |   |   |   |   |   |         |
 | roborock.vacuum.a30   | Roborock G10          | 4.3.5_1258    |   |   |   |   |   |   |   |   |   |   | X | X | X | X | X | X | X | X | X | X |   | X | X | X | X |   |   |   |   |   |         |
 | roborock.vacuum.a38   | Roborock Q7 Max+      | 4.3.5_0866    |   |   |   |   |   |   |   |   |   |   | X | X | X | X | X | X | X | X | X | X |   | X | X | X | X |   |   |   |   |   |         |
+| roborock.vacuum.a40   | Roborock Q7+          | 4.1.5_0680    |   |   |   |   |   |   |   |   |   |   | X | X | X | X | X | X | X | X | X | X |   | X | X | X | X |   |   |   |   |   |         |
 | roborock.vacuum.c1    | Xiaowa C1             |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.e2    | Roborock Xiaowa E Series Vacuum v2 |  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.m1s   | Mi Robot Vacuum 1S    | ?             |   |   |   |   | X |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
