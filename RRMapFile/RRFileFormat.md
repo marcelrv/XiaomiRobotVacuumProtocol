@@ -5,36 +5,43 @@ The file is gzipped, hence needs to be unzipped before reading.
 
 Coordinates to be divided by 50 to match map pixels
 
-| Datablock        |  Id  | Remark                         |
-| -----------------| ---- | ------------------------------ |
-| Charger location | 	1   |                                | 
-| Image 				   |  2   |                                |
-| Vacuum Path			 |  3   |                                |
-| Go-To Path       |  4   | Only exist with newer firmware | 
-| Predicted Path   |  5   | Only exist with newer firmware | 
-| Cleaned Zones    |  6   | Only exist with newer firmware | 
-| Goto Target      |  7   | Only exist with newer firmware | 
-| Robot Position   |  8   |                                | 
-| No go areas      |  9   | Only exist with newer firmware | 
-| Virtual Walls    | 10   | Only exist with newer firmware | 
-| Blocks           | 11   | Only exist with map v1.1       | 
-| No mob zonem-fbzs| 12   | Only exist with map v1.1       | 
-| Obstacles        | 13   | Only exist with map v1.1       | 
-| Ignored Obstacles| 14   | Only exist with map v1.1       | 
-| Obstacles III    | 15   | Only exist with map v1.1       | 
-| Ignored Obstacles| 16   | Only exist with map v1.1       | 
-| Carpet Map       | 17   | Only exist with map v1.1       |                              | 
-| Mop Path         |  18  | Only exist with map v1.1       |
-| Carpet Forbidden area |  19  | Only exist with map v1.1       |
-| Smart zones path type |  20  | Reports itself as v1.0, but newer models (mid 2022) only |
-| Smart Zones |  21  | Reports itself as v1.0, but newer models (mid 2022) only |
-| Custom Carpet |  22  | Reports itself as v1.0, but newer models (mid 2022) only |
-| CL forbiden zones |  23  | Reports itself as v1.0, but newer models (mid 2022) only |
-| Floor Map |  24  | Reports itself as v1.0, but newer models (mid 2022) only |
-| Furnitures |  25  | Reports itself as v1.0, but newer models (mid 2022) only |
-| Dock Type |  26  | Reports itself as v1.0, but newer models (mid 2022) only |
-| Enemies |  27  | Reports itself as v1.0, but newer models (mid 2022) only |
-| Digest    			 | 1024 |                                |
+| Datablock              |  Id  | Code Id       | Remark                              | 
+| -----------------------| ---- | ------------- | ----------------------------------- | 
+| Charger location       | 	1   | charger       |                                     | 
+| Image 			      	   |  2   | map           |                                     | 
+| Vacuum Path			       |  3   | path          |                                     | 
+| Go-To Path             |  4   | pathGoto      | Only exist with newer firmware      | 
+| Predicted Path         |  5   | pathGotoPlan  | Only exist with newer firmware      | 
+| Cleaned Zones          |  6   | zones         | Only exist with newer firmware      | 
+| Goto Target            |  7   | target        | Only exist with newer firmware      | 
+| Robot Position         |  8   | robot         |                                     | 
+| No go areas            |  9   | fbzs          | Only exist with newer firmware      | 
+| Virtual Walls          | 10   | walls         | Only exist with newer firmware      | 
+| Blocks                 | 11   | blocks        | Only exist with map v1.1            | 
+| No mob zonem-fbzs      | 12   | mfbzs         | Only exist with map v1.1            | 
+| Obstacles              | 13   | obstaclesOld  | Only exist with map v1.1            | 
+| Ignored Obstacles      | 14   | ignoredObstaclesOld | Only exist with map v1.1      | 
+| Obstacles III          | 15   | obstacles     | Only exist with map v1.1            | 
+| Ignored Obstacles      | 16   | ignoredObstacles |  Only exist with map v1.1        | 
+| Carpet Map             | 17   |  carpetMap    | Only exist with map v1.1            | 
+| Mop Path               | 18   | mopPath       | Only exist with map v1.1            |
+| Carpet Forbidden area  | 19   | cfbzs         | Only exist with map v1.1            |
+| Smart zones path type  | 20   | pathType      | Reports itself as v1.0, but newer models (mid 2022) only |
+| Smart Zones            | 21   | smartZones    | Reports itself as v1.0, but newer models (mid 2022) only |
+| Custom Carpet          | 22   | customCarpet  | Reports itself as v1.0, but newer models (mid 2022) only |
+| CL forbiden zones      | 23   | clfbzs        | Reports itself as v1.0, but newer models (mid 2022) only |
+| Floor Map              | 24   | floorMap      | Reports itself as v1.0, but newer models (mid 2022) only |
+| Furnitures             | 25   | furnitures    | Reports itself as v1.0, but newer models (mid 2022) only |
+| Dock Type              | 26   | dockType      | Reports itself as v1.0, but newer models (mid 2022) only |
+| Enemies                | 27   | enemies       | Reports itself as v1.0, but newer models (mid 2022) only |
+| door zones ?           | 28   | dsfbz         | function uncertain. First seen with S8 Ultra    |
+| stuck points           | 29   | stuckpts      | First seen with S8 Ultra                        |
+| cliff zones            | 30   | clffbz        | First seen with S8 Ultra                        |
+| Smart ds               | 31   | smartds       | Function unknown first seen with S8 Ultra       |
+| flDirec      ??        | 32   | flDirec       | Function unknown first seen with S8 Ultra       |
+| Date                   | 33   | date          | First seen with S8 Ultra                        |
+| Nonce Data             | 34   | nonceData     | Function unknown first seen with S8 Ultra       |
+| Digest    			       | 1024 | digest        |                                                 | 
 
 NB, older models use map version 1.0
 Newer models e.g 5 firmware 3.5.7 use maptype 1.1, this map has additional information (blocks 9,10,11,12)
