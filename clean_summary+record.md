@@ -2,7 +2,7 @@
 
 These commands retreive the cleaning history from the vacuum.
 
-## Get Clean Summary
+## Get Clean Summary (older devices)
 
 ### Command
 
@@ -37,6 +37,54 @@ These commands retreive the cleaning history from the vacuum.
     "id": 2
 }
 ```
+
+## Get Clean Summary (newer devices)
+
+### Command
+
+| Key    | Value                 | Comment                                                                             |
+| ------ | --------------------- | ----------------------------------------------------------------------------------- |
+| method | `"get_clean_summary"` |                                                                                     |
+| id     | `id`                  | Random integer which is returned in the response used to link request and response. |
+
+#### Example
+
+```json
+{
+    "method": "get_clean_summary",
+    "id": 2
+}
+```
+
+### Response
+
+| Key | Example                                                                          | Description                    |
+| --- | -------------------------------------------------------------------------------- | ------------------------------ |
+| `clean_time` | _38629_                                                                 | Total cleaning time in sec     |
+| `clean_area` | _650425000_                                                             | Total area (in cm2)            |
+| `clean_count` | _68_                                                                   | Total # cleanups               |
+| `dust_collection_count` | _0_                                                          | Total # cleanups               |
+| `records` | _[1497139200, 1496966400, 1496620800, 1496534400, 1496448000, 1496361600]_ | Array of cleaning records ID's |
+
+#### Example
+
+```json
+{ "id":5018,
+   "result":{"clean_time":38629,"clean_area":650425000,"clean_count":68,"dust_collection_count":0,"records": 
+              [1626292843,1626260657,1626255012,1626206412,1626174164,1626168621,1626036597,1626036415,1626035701,1626035555,1626033643,1626028227,1626021936,1626021732,1626021575,1626020891,1626020332,1626019286,1626019207,1626019147]
+            },
+   "exe_time":100
+}
+
+```
+
+
+
+
+
+
+
+
 
 ## Get Clean Record
 
