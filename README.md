@@ -8,7 +8,7 @@ Applications implementing this protocol:
 
 * [Openhab](https://github.com/openhab/openhab-addons/tree/2.5.x/bundles/org.openhab.binding.miio) (Java)
 * [mirobo](https://github.com/rytilahti/python-miio)  (Python)
-* [iobroker](https://github.com/iobroker-community-adapters/ioBroker.mihome-vacuum)
+* [iobroker](https://github.com/iobroker-community-adapters/ioBroker.mihome-vacuum) /  [iobroker roborock](https://github.com/copystring/ioBroker.roborock/) (javascript)
 
 Supported vacuum devices:
 
