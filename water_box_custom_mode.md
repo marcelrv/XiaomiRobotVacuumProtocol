@@ -110,3 +110,11 @@ Standard response to succeeded command.
     "id": 17694
 }
 ```
+## Note
+
+For the S5max you can't set the level with
+method": "set_water_box_custom_mode", "params": {"water_box_mode": 207, "distance_off": 60},
+the mode will set, but the level (distance_off) not.
+
+I checked the network traffix and found out, that is done by
+ 'method': 'set_water_box_distance_off', 'params': {'distance_off': 105}}
