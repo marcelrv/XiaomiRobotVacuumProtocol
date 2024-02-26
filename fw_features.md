@@ -34,7 +34,7 @@ You can list the features using `miiocli device raw_command get_fw_features` wit
 | roborock.vacuum.p5    | Roborock P5           |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.s4    | Roborock S4           |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.s5    | Roborock S5           | 3.5.8_002034  |   | X | X | X | X |   |   |   |   |   | X | X | X | X | X | X | X | X | X |   |   | X | X |   | X |   |   |   |   |   |         |
-| roborock.vacuum.s5e   | Roborock S5 Max       |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
+| roborock.vacuum.s5e   | Roborock S5 Max       | 4.1.2_1668    |   |   |   |   |   |   |   |   |   |   | X | X | X | X | X | X | X | X | X | X |   | X | X | X | X |   |   |   |   |   |         |
 | roborock.vacuum.s6    | Roborock S6           |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.t4    | Roborock T4           |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
 | roborock.vacuum.t6    | Roborock T6           |               |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |         |
