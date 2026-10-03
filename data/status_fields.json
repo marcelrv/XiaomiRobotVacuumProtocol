@@ -1,0 +1,3221 @@
+{
+ "meta": {
+  "generator": "tools/build_status.py",
+  "models": 42
+ },
+ "fields": {
+  "adbumper_status": {
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "uses": [
+    {
+     "use": "if status.adbumper_status",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "_status$adbumper_stat <- (0, _slicedToArray2.default)(status",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "v <- (0,s.default)(t.adbumper_status,3)",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "u <- (0,s.default)(t.adbumper_status,3)",
+     "models": [
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a76"
+     ]
+    }
+   ]
+  },
+  "auto_dust_collection": {
+   "models": [
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.isAutoDustCollectionOff <- status.auto_dust_collection ",
+     "models": [
+      "roborock.vacuum.a14",
+      "roborock.vacuum.a15",
+      "roborock.vacuum.a23",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isAutoDustCollectionOff <- 0==t.auto_dust_collection",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "avoid_count": {
+   "models": [
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.avoidCount <- status.avoid_count",
+     "models": [
+      "roborock.vacuum.a14",
+      "roborock.vacuum.a15",
+      "roborock.vacuum.a23",
+      "…"
+     ]
+    },
+    {
+     "use": "this.avoidCount <- t.avoid_count",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "back_type": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.back_type <- t.back_type",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "if status.state == 6 && status.back_type == 1",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    },
+    {
+     "use": "this.back_type <- status.back_type",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "battery": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "if status.state == 8 && status.battery == 100",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.battery <- parseInt(status.battery)",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.battery <- parseInt(t.battery)",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "if status.battery == 100",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "camera_status": {
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "uses": []
+  },
+  "charge_status": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.isWaitValleyCharge <- T.default.isSupportedValleyElectr",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isWaitValleyCharge <- f.default.isSupportedValleyElectr",
+     "models": [
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a76"
+     ]
+    },
+    {
+     "use": "this.isWaitValleyCharge <- _FeatureManager.default.isSupport",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "clean_area": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "this.cleanArea <- fromSqmmToSqm(parseInt(status.clean_area))",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.cleanArea <- I(parseInt(t.clean_area))",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.cleanArea <- y(parseInt(t.clean_area))",
+     "models": [
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a76"
+     ]
+    }
+   ]
+  },
+  "clean_fluid": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75"
+   ],
+   "uses": [
+    {
+     "use": "this.hasCleanFulidModule <- 1==t.clean_fluid||!!(t.switch_st",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.hasCleanFulidModule <- status.clean_fluid == 1 || !!(st",
+     "models": [
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a72",
+      "…"
+     ]
+    }
+   ]
+  },
+  "clean_mop_status": {
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "uses": [
+    {
+     "use": "this.clean_mop_status <- status.clean_mop_status",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "this.clean_mop_status <- t.clean_mop_status",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "clean_percent": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.cleanProgress <- t.clean_percent",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.cleanProgress <- status.clean_percent",
+     "models": [
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a72",
+      "…"
+     ]
+    }
+   ]
+  },
+  "clean_time": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "this.cleanTime <- fromSecToMin(parseInt(status.clean_time))",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.cleanTime <- O(parseInt(t.clean_time))",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "corner_clean_mode": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75"
+   ],
+   "uses": [
+    {
+     "use": "this.cornerCleanOn <- !!t.corner_clean_mode",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.cornerCleanOn <- !!status.corner_clean_mode",
+     "models": [
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a72",
+      "…"
+     ]
+    }
+   ]
+  },
+  "debug_mode": {
+   "models": [
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.wifiDebug <- status.debug_mode == 1",
+     "models": [
+      "roborock.vacuum.a14",
+      "roborock.vacuum.a15",
+      "roborock.vacuum.a23",
+      "…"
+     ]
+    },
+    {
+     "use": "this.wifiDebug <- 1==t.debug_mode",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "distance_off": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.waterBoxDistance <- t.distance_off||0",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.waterBoxDistance <- status.distance_off || 0",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "dnd_enabled": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "this.notDisturbEnabled <- status.dnd_enabled == 1",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.notDisturbEnabled <- 1==t.dnd_enabled",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "dock_error_status": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.errorCode <- A.error||parseInt(t.error_code||t.dock_err",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.dockErrorStatus <- t.error_code?0:t.dock_error_status",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.errorCode <- parseInt(t.error_code||t.dock_error_status",
+     "models": [
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a76"
+     ]
+    },
+    {
+     "use": "this.dockErrorStatus <- t.dock_error_status",
+     "models": [
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a76"
+     ]
+    }
+   ]
+  },
+  "dock_type": {
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "uses": [
+    {
+     "use": "this.isCollectDustDock <- !!status.dock_type",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "this.originDockType <- t.dock_type",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.dockType <- t.dock_type",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isCollectDustDock <- 1==t.dock_type||3==t.dock_type",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "dry_status": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.isDrying <- 1==t.dry_status",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isDrying <- status.dry_status == 1",
+     "models": [
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "…"
+     ]
+    }
+   ]
+  },
+  "dss": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75"
+   ],
+   "uses": [
+    {
+     "use": "this.isUpdownWaterReady <- 2==(3&t.dss)",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.clearWaterBoxStatus <- t.dss>>2&3",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.dirtyWaterBoxStatus <- t.dss>>4&3",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.dustBagStatus <- t.dss>>6&3",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    }
+   ]
+  },
+  "error_code": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "this.errorCode <- parseInt(status.error_code)",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a11",
+      "roborock.vacuum.c1",
+      "…"
+     ]
+    },
+    {
+     "use": "this.errorCode <- this.handleErrorCode(parseInt(status.error",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "this.errorCode <- A.error||parseInt(t.error_code||t.dock_err",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.dockErrorStatus <- t.error_code?0:t.dock_error_status",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    }
+   ]
+  },
+  "events": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "if status.events",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.c1",
+      "roborock.vacuum.e2"
+     ]
+    }
+   ]
+  },
+  "fan_motor_work_status": {
+   "models": [
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a62"
+   ],
+   "uses": [
+    {
+     "use": "this.isAirDrying <- this.isChargingOnDock() && status.fan_mo",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "fan_motor_work_time": {
+   "models": [
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a62"
+   ],
+   "uses": [
+    {
+     "use": "if !(this.isAirDrying && status.fan_motor_work_time && statu",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    },
+    {
+     "use": "this.specialInfo <- { text: localizationStrings.home_sepcial",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "fan_power": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "this.fanPower <- parseInt(status.fan_power)",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.c1",
+      "roborock.vacuum.e2",
+      "…"
+     ]
+    },
+    {
+     "use": "this.fanPower <- Protocol.Is_Support_Mode(parseInt(status.fa",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "this.fanPower <- (0, _CustomMode.fixCleanMode)(parseInt(stat",
+     "models": [
+      "roborock.vacuum.a14",
+      "roborock.vacuum.a15",
+      "roborock.vacuum.a23",
+      "…"
+     ]
+    },
+    {
+     "use": "this.fanPower <- (0,l.fixCleanMode)(parseInt(t.fan_power))||",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "home_sec_client_id": {
+   "models": [
+    "roborock.vacuum.a11"
+   ],
+   "uses": [
+    {
+     "use": "this.homeSecClientID <- status.home_sec_client_id",
+     "models": [
+      "roborock.vacuum.a11"
+     ]
+    }
+   ]
+  },
+  "home_sec_enable_password": {
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "uses": [
+    {
+     "use": "this.secPasswordEnabled <- status.home_sec_enable_password =",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "this.secPasswordEnabled <- 1==t.home_sec_enable_password",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "home_sec_status": {
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "uses": [
+    {
+     "use": "this.homeSecStatus <- status.home_sec_status",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "this.homeSecStatus <- t.home_sec_status",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isHomeSecRunning <- status.home_sec_status == 1",
+     "models": [
+      "roborock.vacuum.p5"
+     ]
+    }
+   ]
+  },
+  "in_cleaning": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "this.cleanResumeFlag <- CleanResumeFlagCodeMap[parseInt(stat",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.cleanResumeFlag <- b[parseInt(t.in_cleaning)]",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.cleanResumeFlag <- P[parseInt(t.in_cleaning)]",
+     "models": [
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a76"
+     ]
+    },
+    {
+     "use": "this.inCleaning <- parseInt(status.in_cleaning)",
+     "models": [
+      "roborock.vacuum.s5",
+      "rockrobo.vacuum.v1"
+     ]
+    }
+   ]
+  },
+  "in_fresh_state": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "this.isRunning <- status.in_fresh_state != 1",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isRunning <- 1!=t.in_fresh_state",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.inFreshState <- status.in_fresh_state || 0",
+     "models": [
+      "roborock.vacuum.s5",
+      "rockrobo.vacuum.v1"
+     ]
+    }
+   ]
+  },
+  "in_returning": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "this.chargeResumeFlag <- parseInt(status.in_returning) == 1 ",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a11",
+      "roborock.vacuum.c1",
+      "…"
+     ]
+    },
+    {
+     "use": "this.backDockResumeFlag <- parseInt(status.in_returning) == ",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "this.backDockResumeFlag <- 1==parseInt(t.in_returning)?w.Has",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.backDockResumeFlag <- 1==parseInt(t.in_returning)?b.Has",
+     "models": [
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a76"
+     ]
+    }
+   ]
+  },
+  "in_warmup": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.isWarmUp <- 1==t.in_warmup",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isWarmUp <- status.in_warmup == 1",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "is_exploring": {
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "uses": [
+    {
+     "use": "this.isExploring <- status.is_exploring == 1",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isExploring <- 1==t.is_exploring",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "is_locating": {
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "uses": [
+    {
+     "use": "this.isLocating <- !!status.is_locating",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isLocating <- !!t.is_locating",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "kct": {
+   "models": [
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75"
+   ],
+   "uses": [
+    {
+     "use": "this.keepCleanTime <- status.kct || 0",
+     "models": [
+      "roborock.vacuum.a74",
+      "roborock.vacuum.a75"
+     ]
+    }
+   ]
+  },
+  "lab_status": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "this.mapSaveEnabled <- status.lab_status == 1 || status.lab_",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.multiFloorEnabled <- status.lab_status == 3",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.mapSaveEnabled <- 1==t.lab_status||3==t.lab_status",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.multiFloorEnabled <- 3==t.lab_status",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "last_clean_t": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75"
+   ],
+   "uses": [
+    {
+     "use": "this.lastCleanTimeDistanceToNow <- ((new Date).getTime()/1e3",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.lastCleanTimeDistanceToNow <- (new Date().getTime() / 1",
+     "models": [
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a72",
+      "…"
+     ]
+    }
+   ]
+  },
+  "lock_status": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": []
+  },
+  "map_status": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "this.mapStatus <- MapStatusCodeMap[parseInt(status.map_statu",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.c1",
+      "roborock.vacuum.e2",
+      "…"
+     ]
+    },
+    {
+     "use": "mscode <- parseInt(status.map_status)",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "T <- parseInt(t.map_status)",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.mscode <- parseInt(t.map_status)",
+     "models": [
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a76"
+     ]
+    }
+   ]
+  },
+  "mop_forbidden_enable": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6"
+   ],
+   "uses": [
+    {
+     "use": "this.isMopForbiddenEnabled <- parseInt(status.mop_forbidden_",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isMopForbiddenEnabled <- 1==parseInt(t.mop_forbidden_en",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "mop_mode": {
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "uses": [
+    {
+     "use": "this.mopMode <- parseInt(status.mop_mode)",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "this.mopMode <- parseInt(t.mop_mode)",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "mop_template_id": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.mopModeId <- t.mop_template_id",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.mopModeId <- status.mop_template_id",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "rdt": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.dryRemainTime <- t.rdt||0",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.dryRemainTime <- status.rdt || 0",
+     "models": [
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "…"
+     ]
+    }
+   ]
+  },
+  "replenish_mode": {
+   "models": [
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73"
+   ],
+   "uses": [
+    {
+     "use": "this.supplementCleanStatus <- status.replenish_mode",
+     "models": [
+      "roborock.vacuum.a72",
+      "roborock.vacuum.a73"
+     ]
+    }
+   ]
+  },
+  "return_roller_status": {
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "uses": [
+    {
+     "use": "if status.state == 6 && status.return_roller_status == 1",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "this.return_roller_status <- status.return_roller_status",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    }
+   ]
+  },
+  "sfzs": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.isCleanFBZEnabled <- 1==parseInt(t.sfzs)",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isCleanFBZEnabled <- parseInt(status.sfzs) == 1",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "state": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "if status.state == 8 && status.battery == 100",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.state <- RobotStateCodeMap[parseInt(status.state)].valu",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.stateName <- RobotStateCodeMap[parseInt(status.state)].",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.stateCode <- parseInt(status.state)",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.c1",
+      "roborock.vacuum.e2"
+     ]
+    }
+   ]
+  },
+  "stop_fan_motor_work_status": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "n <- 1==t.stop_fan_motor_work_status?202:6",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "t.state <- 1==t.stop_fan_motor_work_status?202:6",
+     "models": [
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a76"
+     ]
+    },
+    {
+     "use": "status.state <- status.stop_fan_motor_work_status == 1 ? 202",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    },
+    {
+     "use": "state <- status.stop_fan_motor_work_status == 1 ? 202 : 6",
+     "models": [
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a72",
+      "…"
+     ]
+    }
+   ]
+  },
+  "switch_map_mode": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.switchMapMode <- t.switch_map_mode",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.switchMapMode <- status.switch_map_mode",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "switch_status": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.offlineMapEnabled <- !!(t.switch_status&&1&t.switch_sta",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.hasCleanFulidModule <- 1==t.clean_fluid||!!(t.switch_st",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isSettingCarpetFirstOn <- !!(t.switch_status&&8&t.switc",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.offlineMapEnabled <- !!(status.switch_status && status.",
+     "models": [
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a72",
+      "…"
+     ]
+    }
+   ]
+  },
+  "unsave_map_flag": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.unsaveMapFlag <- t.unsave_map_flag",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.unsaveMapFlag <- status.unsave_map_flag",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "unsave_map_reason": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.unsaveMapReason <- t.unsave_map_reason",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.unsaveMapReason <- status.unsave_map_reason",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "voice_chat_status": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.voiceChat <- 1==t.voice_chat_status",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.voiceChat <- status.voice_chat_status == 1",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "wash_ready": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "uses": [
+    {
+     "use": "this.isWashReady <- 1==t.wash_ready",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isWashReady <- status.wash_ready == 1",
+     "models": [
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "…"
+     ]
+    }
+   ]
+  },
+  "wash_status": {
+   "models": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75"
+   ],
+   "uses": [
+    {
+     "use": "this.washingTaskStatus <- 255&t.wash_status",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "this.washingMode <- t.wash_status>>8",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a46",
+      "…"
+     ]
+    },
+    {
+     "use": "if status.wash_status",
+     "models": [
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a72",
+      "…"
+     ]
+    },
+    {
+     "use": "this.washingTaskStatus <- status.wash_status & 255",
+     "models": [
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a72",
+      "…"
+     ]
+    }
+   ]
+  },
+  "water_box_carriage_status": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6"
+   ],
+   "uses": [
+    {
+     "use": "this.isWaterBoxCarriageIn <- parseInt(status.water_box_carri",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isWaterBoxCarriageIn <- 1==parseInt(t.water_box_carriag",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "water_box_mode": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6"
+   ],
+   "uses": [
+    {
+     "use": "this.waterBoxMode <- parseInt(status.water_box_mode)",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.waterBoxMode <- parseInt(t.water_box_mode)",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  },
+  "water_box_status": {
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "uses": [
+    {
+     "use": "this.isWaterBoxIn <- parseInt(status.water_box_status) == 1",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "…"
+     ]
+    },
+    {
+     "use": "this.isWaterBoxIn <- 1==parseInt(t.water_box_status)",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    },
+    {
+     "use": "this.waterBoxIn <- parseInt(status.water_box_status) == 1",
+     "models": [
+      "rockrobo.vacuum.v1"
+     ]
+    }
+   ]
+  },
+  "water_shortage_status": {
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "uses": [
+    {
+     "use": "this.waterShortageStatus <- parseInt(status.water_shortage_s",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "…"
+     ]
+    },
+    {
+     "use": "this.waterShortageStatus <- parseInt(t.water_shortage_status",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "…"
+     ]
+    }
+   ]
+  }
+ }
+}

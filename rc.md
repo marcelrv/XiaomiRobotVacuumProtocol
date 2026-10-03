@@ -1,104 +1,15 @@
 # Remote Control
 
-The remote controlling allows you to steer the Vacuum.
+> **Moved.** This page is now [docs/commands/remote-control.md](docs/commands/remote-control.md). The old description was merged into the bundle-verified reference; the old request and reply examples are kept in [legacy captures](docs/appendix/legacy-captures.md). This file only keeps the old link and section anchors working.
 
 ## Start Remote Control
 
-### Command
-
-| Key    | Value            | Comment                                                                             |
-| ------ | ---------------- | ----------------------------------------------------------------------------------- |
-| method | `"app_rc_start"` |                                                                                     |
-| id     | `id`             | Random integer which is returned in the response used to link request and response. |
-
-#### Example
-
-```json
-{
-    "method": "app_rc_start",
-    "id": 1756
-}
-```
-
-### Response
-
-Standard response to succeeded command.
-
-#### Example
-
-```json
-{
-    "result": ["ok"],
-    "id": 1756
-}
-```
+See [docs/commands/remote-control.md#app_rc_start](docs/commands/remote-control.md#app_rc_start).
 
 ## End Remote Control
 
-### Command
-
-| Key    | Value          | Comment                                                                             |
-| ------ | -------------- | ----------------------------------------------------------------------------------- |
-| method | `"app_rc_end"` |                                                                                     |
-| id     | `id`           | Random integer which is returned in the response used to link request and response. |
-
-#### Example
-
-```json
-{
-    "method": "app_rc_end",
-    "id": 64346
-}
-```
-
-### Response
-
-Standard response to succeeded command.
-
-#### Example
-
-```json
-{
-    "result": ["ok"],
-    "id": 64346
-}
-```
+See [docs/commands/remote-control.md#app_rc_end](docs/commands/remote-control.md#app_rc_end).
 
 ## Movement Remote Control
 
-### Command
-
-| Key    | Value                                                                       | Comment                                                                                                                                  |
-| ------ | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| method | `"app_rc_move"`                                                             |                                                                                                                                          |
-| params | `[[{"omega":angle, "velocity":speed, "seqnum":sequence, "duration":time}]]` | `angle` range from -3.1 to 3.1), `speed` range from -0.3 to 0.3, `sequence` needs to increment with each command (0-1000?), `time` in ms |
-| id     | `id`                                                                        | Random integer which is returned in the response used to link request and response.                                                      |
-
-#### Example
-
-```json
-{
-    "id": 353,
-    "method": "app_rc_move",
-    "params": [[{
-                "omega": 0.5712,
-                "velocity": 0,
-                "seqnum": 19,
-                "duration": 1500
-            }
-        ]]
-}
-```
-
-### Response
-
-Standard response to succeeded command.
-
-#### Example
-
-```json
-{
-    "result": ["ok"],
-    "id": 353
-}
-```
+See [docs/commands/remote-control.md#app_rc_move](docs/commands/remote-control.md#app_rc_move).

@@ -1,0 +1,164 @@
+source: fw_features.md at be636c7 (user-contributed captures, unverified)
+captures:
+- model: rockrobo.vacuum.v1
+  name: Mi Robot Vacuum
+  firmware: 3.5.8_004018
+  codes:
+  - 101
+  - 102
+  - 104
+  - 105
+- model: roborock.vacuum.a10
+  name: Roborock S6 MaxV
+  firmware: 3.5.8_5850
+  codes:
+  - 111
+  - 112
+  - 113
+  - 114
+  - 115
+  - 116
+  - 117
+  - 118
+  - 119
+  - 120
+  - 121
+  - 122
+  - 123
+  - 124
+  - 125
+- model: roborock.vacuum.a15
+  name: Roborock S7
+  firmware: 4.1.2_1140
+  codes:
+  - 110
+  - 111
+  - 112
+  - 113
+  - 114
+  - 115
+  - 116
+  - 117
+  - 118
+  - 119
+  - 120
+  - 122
+  - 123
+  - 124
+  - 125
+- model: roborock.vacuum.a27
+  name: Roborock S7 MaxV
+  firmware: 4.3.5_5602
+  codes:
+  - 111
+  - 112
+  - 113
+  - 114
+  - 115
+  - 116
+  - 117
+  - 118
+  - 119
+  - 120
+  - 121
+  - 122
+  - 123
+  - 124
+  - 125
+- model: roborock.vacuum.a30
+  name: Roborock G10
+  firmware: 4.3.5_1258
+  codes:
+  - 111
+  - 112
+  - 113
+  - 114
+  - 115
+  - 116
+  - 117
+  - 118
+  - 119
+  - 120
+  - 122
+  - 123
+  - 124
+  - 125
+- model: roborock.vacuum.a38
+  name: Roborock Q7 Max+
+  firmware: 4.3.5_0866
+  codes:
+  - 111
+  - 112
+  - 113
+  - 114
+  - 115
+  - 116
+  - 117
+  - 118
+  - 119
+  - 120
+  - 122
+  - 123
+  - 124
+  - 125
+- model: roborock.vacuum.a40
+  name: Roborock Q7+
+  firmware: 4.1.5_0680
+  codes:
+  - 111
+  - 112
+  - 113
+  - 114
+  - 115
+  - 116
+  - 117
+  - 118
+  - 119
+  - 120
+  - 122
+  - 123
+  - 124
+  - 125
+- model: roborock.vacuum.m1s
+  name: Mi Robot Vacuum 1S
+  firmware: '?'
+  codes:
+  - 105
+- model: roborock.vacuum.s5
+  name: Roborock S5
+  firmware: 3.5.8_002034
+  codes:
+  - 102
+  - 103
+  - 104
+  - 105
+  - 111
+  - 112
+  - 113
+  - 114
+  - 115
+  - 116
+  - 117
+  - 118
+  - 119
+  - 122
+  - 123
+  - 125
+- model: roborock.vacuum.s5e
+  name: Roborock S5 Max
+  firmware: 4.1.2_1668
+  codes:
+  - 111
+  - 112
+  - 113
+  - 114
+  - 115
+  - 116
+  - 117
+  - 118
+  - 119
+  - 120
+  - 122
+  - 123
+  - 124
+  - 125

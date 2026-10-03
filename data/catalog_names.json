@@ -1,0 +1,1032 @@
+{
+ "source": "Mi Home cloud device catalog (per region)",
+ "catalogs": {
+  "CN": {
+   "last_modify": 1790776981,
+   "entries": 11884
+  },
+  "DE": {
+   "last_modify": 1790766561,
+   "entries": 565
+  },
+  "IN": {
+   "last_modify": 1790768241,
+   "entries": 739
+  },
+  "RU": {
+   "last_modify": 1790766561,
+   "entries": 514
+  },
+  "SG": {
+   "last_modify": 1790768241,
+   "entries": 739
+  },
+  "US": {
+   "last_modify": 1790766561,
+   "entries": 466
+  }
+ },
+ "models": {
+  "roborock.vacuum.a01": {
+   "CN": {
+    "model": "roborock.vacuum.a01",
+    "name": "Roborock E Series",
+    "status": 3,
+    "pd_id": 67932,
+    "min_app_version": 60160
+   },
+   "DE": {
+    "model": "roborock.vacuum.a01",
+    "name": "Roborock E Series",
+    "status": 3,
+    "pd_id": 67932,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a01",
+    "name": "Roborock E Series",
+    "status": 3,
+    "pd_id": 67932,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a01",
+    "name": "Roborock E Series",
+    "status": 3,
+    "pd_id": 67932,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a01",
+    "name": "Roborock E Series",
+    "status": 3,
+    "pd_id": 67932,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a01",
+    "name": "Roborock E Series",
+    "status": 3,
+    "pd_id": 67932,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a08": {
+   "DE": {
+    "model": "roborock.vacuum.a08",
+    "name": "Roborock S6 Pure",
+    "status": 3,
+    "pd_id": 67712,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a08",
+    "name": "Roborock S6 Pure",
+    "status": 3,
+    "pd_id": 67712,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a08",
+    "name": "Roborock S6 Pure",
+    "status": 3,
+    "pd_id": 67712,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a08",
+    "name": "Roborock S6 Pure",
+    "status": 3,
+    "pd_id": 67712,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a08",
+    "name": "Roborock S6 Pure",
+    "status": 3,
+    "pd_id": 67712,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a09": {
+   "CN": {
+    "model": "roborock.vacuum.a09",
+    "name": "Roborock T7 Pro",
+    "status": 3,
+    "pd_id": 68382,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a10": {
+   "DE": {
+    "model": "roborock.vacuum.a10",
+    "name": "Roborock S6 MaxV",
+    "status": 3,
+    "pd_id": 68383,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a10",
+    "name": "Roborock S6 MaxV",
+    "status": 3,
+    "pd_id": 68383,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a10",
+    "name": "Roborock S6 MaxV",
+    "status": 3,
+    "pd_id": 68383,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a10",
+    "name": "Roborock S6 MaxV",
+    "status": 3,
+    "pd_id": 68383,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a10",
+    "name": "Roborock S6 MaxV",
+    "status": 3,
+    "pd_id": 68383,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a11": {
+   "CN": {
+    "model": "roborock.vacuum.a11",
+    "name": "Roborock T7",
+    "status": 3,
+    "pd_id": 68379,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a14": {
+   "CN": {
+    "model": "roborock.vacuum.a14",
+    "name": "Roborock T7S",
+    "status": 3,
+    "pd_id": 69606,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a15": {
+   "DE": {
+    "model": "roborock.vacuum.a15",
+    "name": "Roborock S7",
+    "status": 3,
+    "pd_id": 70146,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a15",
+    "name": "Roborock S7",
+    "status": 3,
+    "pd_id": 70146,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a15",
+    "name": "Roborock S7",
+    "status": 3,
+    "pd_id": 70146,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a15",
+    "name": "Roborock S7",
+    "status": 3,
+    "pd_id": 70146,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a15",
+    "name": "Roborock S7",
+    "status": 3,
+    "pd_id": 70146,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a19": {
+   "DE": {
+    "model": "roborock.vacuum.a19",
+    "name": "Roborock S4 Max",
+    "status": 3,
+    "pd_id": 70155,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a19",
+    "name": "Roborock S4 Max",
+    "status": 3,
+    "pd_id": 70155,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a23": {
+   "CN": {
+    "model": "roborock.vacuum.a23",
+    "name": "Roborock T7S Plus",
+    "status": 3,
+    "pd_id": 71464,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a26": {
+   "CN": {
+    "model": "roborock.vacuum.a26",
+    "name": "Roborock G10S Pro",
+    "status": 3,
+    "pd_id": 72139,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a27": {
+   "DE": {
+    "model": "roborock.vacuum.a27",
+    "name": "Roborock S7 MaxV",
+    "status": 3,
+    "pd_id": 72166,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a27",
+    "name": "Roborock S7 MaxV",
+    "status": 3,
+    "pd_id": 72166,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a27",
+    "name": "Roborock S7 MaxV",
+    "status": 3,
+    "pd_id": 72166,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a27",
+    "name": "Roborock S7 MaxV",
+    "status": 3,
+    "pd_id": 72166,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a27",
+    "name": "Roborock S7 MaxV",
+    "status": 3,
+    "pd_id": 72166,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a29": {
+   "CN": {
+    "model": "roborock.vacuum.a29",
+    "name": "Roborock G10",
+    "status": 3,
+    "pd_id": 72761,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a30": {
+   "IN": {
+    "model": "roborock.vacuum.a30",
+    "name": "Roborock G10",
+    "status": 3,
+    "pd_id": 75787,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a30",
+    "name": "Roborock G10",
+    "status": 3,
+    "pd_id": 75787,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a34": {
+   "IN": {
+    "model": "roborock.vacuum.a34",
+    "name": "Roborock Q5",
+    "status": 3,
+    "pd_id": 72714,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a34",
+    "name": "Roborock Q5",
+    "status": 3,
+    "pd_id": 72714,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a34",
+    "name": "Roborock Q5",
+    "status": 3,
+    "pd_id": 72714,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a37": {
+   "CN": {
+    "model": "roborock.vacuum.a37",
+    "name": "Roborock T8",
+    "status": 3,
+    "pd_id": 72717,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a38": {
+   "DE": {
+    "model": "roborock.vacuum.a38",
+    "name": "Roborock Q7 Max",
+    "status": 3,
+    "pd_id": 72720,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a38",
+    "name": "Roborock Q7 Max",
+    "status": 3,
+    "pd_id": 72720,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a38",
+    "name": "Roborock Q7 Max",
+    "status": 3,
+    "pd_id": 72720,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a38",
+    "name": "Roborock Q7 Max",
+    "status": 3,
+    "pd_id": 72720,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a38",
+    "name": "Roborock Q7 Max",
+    "status": 3,
+    "pd_id": 72720,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a40": {
+   "DE": {
+    "model": "roborock.vacuum.a40",
+    "name": "Roborock Q7",
+    "status": 3,
+    "pd_id": 72723,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a40",
+    "name": "Roborock Q7",
+    "status": 3,
+    "pd_id": 72723,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a40",
+    "name": "Roborock Q7",
+    "status": 3,
+    "pd_id": 72723,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a40",
+    "name": "Roborock Q7",
+    "status": 3,
+    "pd_id": 72723,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a40",
+    "name": "Roborock Q7",
+    "status": 3,
+    "pd_id": 72723,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a46": {
+   "CN": {
+    "model": "roborock.vacuum.a46",
+    "name": "Roborock G10S",
+    "status": 3,
+    "pd_id": 73760,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a51": {
+   "DE": {
+    "model": "roborock.vacuum.a51",
+    "name": "Roborock S8",
+    "status": 3,
+    "pd_id": 77306,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a51",
+    "name": "Roborock S8",
+    "status": 3,
+    "pd_id": 77306,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a51",
+    "name": "Roborock S8",
+    "status": 3,
+    "pd_id": 77306,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a51",
+    "name": "Roborock S8",
+    "status": 3,
+    "pd_id": 77306,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a51",
+    "name": "Roborock S8",
+    "status": 3,
+    "pd_id": 77306,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a52": {
+   "CN": {
+    "model": "roborock.vacuum.a52",
+    "name": "Roborock T8 Plus",
+    "status": 3,
+    "pd_id": 74192,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a62": {
+   "DE": {
+    "model": "roborock.vacuum.a62",
+    "name": "Roborock S7 Pro Ultra",
+    "status": 3,
+    "pd_id": 75827,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a62",
+    "name": "Roborock S7 Pro Ultra",
+    "status": 3,
+    "pd_id": 75827,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a62",
+    "name": "Roborock S7 Pro Ultra",
+    "status": 3,
+    "pd_id": 75827,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a62",
+    "name": "Roborock S7 Pro Ultra",
+    "status": 3,
+    "pd_id": 75827,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a62",
+    "name": "Roborock S7 Pro Ultra",
+    "status": 3,
+    "pd_id": 75827,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a64": {
+   "CN": {
+    "model": "roborock.vacuum.a64",
+    "name": "Roborock G10S Pure",
+    "status": 3,
+    "pd_id": 76497,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a65": {
+   "DE": {
+    "model": "roborock.vacuum.a65",
+    "name": "Roborock S7 Max Ultra",
+    "status": 3,
+    "pd_id": 77387,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a65",
+    "name": "Roborock S7 Max Ultra",
+    "status": 3,
+    "pd_id": 77387,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a65",
+    "name": "Roborock S7 Max Ultra",
+    "status": 3,
+    "pd_id": 77387,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a65",
+    "name": "Roborock S7 Max Ultra",
+    "status": 3,
+    "pd_id": 77387,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a65",
+    "name": "Roborock S7 Max Ultra",
+    "status": 3,
+    "pd_id": 77387,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a66": {
+   "CN": {
+    "model": "roborock.vacuum.a66",
+    "name": "Roborock G10 Plus",
+    "status": 3,
+    "pd_id": 75871,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a69": {
+   "CN": {
+    "model": "roborock.vacuum.a69",
+    "name": "Roborock G20",
+    "status": 3,
+    "pd_id": 76548,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a70": {
+   "DE": {
+    "model": "roborock.vacuum.a70",
+    "name": "Roborock S8 Pro Ultra",
+    "status": 3,
+    "pd_id": 77435,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a70",
+    "name": "Roborock S8 Pro Ultra",
+    "status": 3,
+    "pd_id": 77435,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a70",
+    "name": "Roborock S8 Pro Ultra",
+    "status": 3,
+    "pd_id": 77435,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a70",
+    "name": "Roborock S8 Pro Ultra",
+    "status": 3,
+    "pd_id": 77435,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a70",
+    "name": "Roborock S8 Pro Ultra",
+    "status": 3,
+    "pd_id": 77435,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a72": {
+   "DE": {
+    "model": "roborock.vacuum.a72",
+    "name": "Roborock Q5 Pro",
+    "status": 3,
+    "pd_id": 77019,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a72",
+    "name": "Roborock Q5 Pro",
+    "status": 3,
+    "pd_id": 77019,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a72",
+    "name": "Roborock Q5 Pro",
+    "status": 3,
+    "pd_id": 77019,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a72",
+    "name": "Roborock Q5 Pro",
+    "status": 3,
+    "pd_id": 77019,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a72",
+    "name": "Roborock Q5 Pro",
+    "status": 3,
+    "pd_id": 77019,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a73": {
+   "DE": {
+    "model": "roborock.vacuum.a73",
+    "name": "Roborock Q8 Max",
+    "status": 3,
+    "pd_id": 77015,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a73",
+    "name": "Roborock Q8 Max",
+    "status": 3,
+    "pd_id": 77015,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a73",
+    "name": "Roborock Q8 Max",
+    "status": 3,
+    "pd_id": 77015,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a73",
+    "name": "Roborock Q8 Max",
+    "status": 3,
+    "pd_id": 77015,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a73",
+    "name": "Roborock Q8 Max",
+    "status": 3,
+    "pd_id": 77015,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a74": {
+   "CN": {
+    "model": "roborock.vacuum.a74",
+    "name": "Roborock P10",
+    "status": 3,
+    "pd_id": 76600,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a75": {
+   "DE": {
+    "model": "roborock.vacuum.a75",
+    "name": "Roborock Qrevo",
+    "status": 3,
+    "pd_id": 76603,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.a75",
+    "name": "Roborock Qrevo",
+    "status": 3,
+    "pd_id": 76603,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.a75",
+    "name": "Roborock Qrevo",
+    "status": 3,
+    "pd_id": 76603,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.a75",
+    "name": "Roborock Qrevo",
+    "status": 3,
+    "pd_id": 76603,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.a75",
+    "name": "Roborock Qrevo",
+    "status": 3,
+    "pd_id": 76603,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.a76": {
+   "CN": {
+    "model": "roborock.vacuum.a76",
+    "name": "Roborock G10S Auto",
+    "status": 3,
+    "pd_id": 76733,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.c1": {
+   "CN": {
+    "model": "roborock.vacuum.c1",
+    "name": "Xiaowa C1",
+    "status": 3,
+    "pd_id": 600,
+    "min_app_version": 60160
+   },
+   "DE": {
+    "model": "roborock.vacuum.c1",
+    "name": "Xiaowa C1",
+    "status": 3,
+    "pd_id": 600,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.c1",
+    "name": "Xiaowa C1",
+    "status": 3,
+    "pd_id": 600,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.c1",
+    "name": "Xiaowa C1",
+    "status": 3,
+    "pd_id": 600,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.c1",
+    "name": "Xiaowa C1",
+    "status": 3,
+    "pd_id": 600,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.c1",
+    "name": "Xiaowa C1",
+    "status": 3,
+    "pd_id": 600,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.e2": {
+   "CN": {
+    "model": "roborock.vacuum.e2",
+    "name": "Xiaowa E Series",
+    "status": 3,
+    "pd_id": 599,
+    "min_app_version": 60160
+   },
+   "DE": {
+    "model": "roborock.vacuum.e2",
+    "name": "Xiaowa E Series",
+    "status": 3,
+    "pd_id": 599,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.e2",
+    "name": "Xiaowa E Series",
+    "status": 3,
+    "pd_id": 599,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.e2",
+    "name": "Xiaowa E Series",
+    "status": 3,
+    "pd_id": 599,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.e2",
+    "name": "Xiaowa E Series",
+    "status": 3,
+    "pd_id": 599,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.e2",
+    "name": "Xiaowa E Series",
+    "status": 3,
+    "pd_id": 599,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.m1s": {
+   "CN": {
+    "model": "roborock.vacuum.m1s",
+    "name": "Mi Robot Vacuum 1S",
+    "status": 3,
+    "pd_id": 66080,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.p5": {
+   "CN": {
+    "model": "roborock.vacuum.p5",
+    "name": "Roborock P5",
+    "status": 3,
+    "pd_id": 67089,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.s4": {
+   "DE": {
+    "model": "roborock.vacuum.s4",
+    "name": "Roborock S4",
+    "status": 3,
+    "pd_id": 67145,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.s4",
+    "name": "Roborock S4",
+    "status": 3,
+    "pd_id": 67145,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.s5": {
+   "CN": {
+    "model": "roborock.vacuum.s5",
+    "name": "Roborock S5",
+    "status": 3,
+    "pd_id": 577,
+    "min_app_version": 60160
+   },
+   "DE": {
+    "model": "roborock.vacuum.s5",
+    "name": "Roborock S5",
+    "status": 3,
+    "pd_id": 577,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.s5",
+    "name": "Roborock S5",
+    "status": 3,
+    "pd_id": 577,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.s5",
+    "name": "Roborock S5",
+    "status": 3,
+    "pd_id": 577,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.s5",
+    "name": "Roborock S5",
+    "status": 3,
+    "pd_id": 577,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.s5",
+    "name": "Roborock S5",
+    "status": 3,
+    "pd_id": 577,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.s5e": {
+   "DE": {
+    "model": "roborock.vacuum.s5e",
+    "name": "Roborock S5 Max",
+    "status": 3,
+    "pd_id": 66943,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.s5e",
+    "name": "Roborock S5 Max",
+    "status": 3,
+    "pd_id": 66943,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.s5e",
+    "name": "Roborock S5 Max",
+    "status": 3,
+    "pd_id": 66943,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.s5e",
+    "name": "Roborock S5 Max",
+    "status": 3,
+    "pd_id": 66943,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.s5e",
+    "name": "Roborock S5 Max",
+    "status": 3,
+    "pd_id": 66943,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.s6": {
+   "DE": {
+    "model": "roborock.vacuum.s6",
+    "name": "Roborock S6",
+    "status": 3,
+    "pd_id": 65600,
+    "min_app_version": 60160
+   },
+   "IN": {
+    "model": "roborock.vacuum.s6",
+    "name": "Roborock S6",
+    "status": 3,
+    "pd_id": 65600,
+    "min_app_version": 60160
+   },
+   "RU": {
+    "model": "roborock.vacuum.s6",
+    "name": "Roborock S6",
+    "status": 3,
+    "pd_id": 65600,
+    "min_app_version": 60160
+   },
+   "SG": {
+    "model": "roborock.vacuum.s6",
+    "name": "Roborock S6",
+    "status": 3,
+    "pd_id": 65600,
+    "min_app_version": 60160
+   },
+   "US": {
+    "model": "roborock.vacuum.s6",
+    "name": "Roborock S6",
+    "status": 3,
+    "pd_id": 65600,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.t4": {
+   "CN": {
+    "model": "roborock.vacuum.t4",
+    "name": "Roborock T4",
+    "status": 3,
+    "pd_id": 66863,
+    "min_app_version": 60160
+   }
+  },
+  "roborock.vacuum.t6": {
+   "CN": {
+    "model": "roborock.vacuum.t6",
+    "name": "Roborock T6",
+    "status": 3,
+    "pd_id": 66064,
+    "min_app_version": 60160
+   }
+  },
+  "rockrobo.vacuum.v1": {
+   "CN": {
+    "model": "rockrobo.vacuum.v1",
+    "name": "Mi Robot Vacuum",
+    "status": 3,
+    "pd_id": 85,
+    "min_app_version": 60131
+   },
+   "DE": {
+    "model": "rockrobo.vacuum.v1",
+    "name": "Mi Robot Vacuum",
+    "status": 3,
+    "pd_id": 85,
+    "min_app_version": 60131
+   },
+   "IN": {
+    "model": "rockrobo.vacuum.v1",
+    "name": "Mi Robot Vacuum",
+    "status": 3,
+    "pd_id": 85,
+    "min_app_version": 60131
+   },
+   "RU": {
+    "model": "rockrobo.vacuum.v1",
+    "name": "Mi Robot Vacuum",
+    "status": 3,
+    "pd_id": 85,
+    "min_app_version": 60131
+   },
+   "SG": {
+    "model": "rockrobo.vacuum.v1",
+    "name": "Mi Robot Vacuum",
+    "status": 3,
+    "pd_id": 85,
+    "min_app_version": 60131
+   }
+  }
+ }
+}

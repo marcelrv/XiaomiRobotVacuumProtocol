@@ -1,0 +1,91 @@
+overview: |
+  These calls belong to debug pages, experiments, promotional features and the transport itself. They are included because
+  they are method strings the plugins can send. Where a call is hidden behind a developer/debug page, the entry says so.
+
+commands:
+  - method: retry_request
+    title: Poll a deferred request (transport mechanism)
+    summary: Used by the plugin's retry protocol to ask whether a deferred call has completed.
+    evidence_note: sent by the retry loop inside `asyncCallMethod` of the generation-B bundles; the extraction counts it as wrapper-only because no UI code calls it
+    request: '`params`: `{"retry_id": <id>, "method": "<original method>", "retry_count": <int>}` (✅ Bundle · a65 m10115 `retry`).'
+    behaviour: 'See [transports](../concepts/transports.md#retry-protocol). Sent by the wrapper itself every 2 s, at most 8 times.'
+    related: []
+
+  - method: resolve_error
+    title: Acknowledge an error
+    summary: Tells the robot that the user has resolved an error condition (mostly dock errors).
+    request: '`params`: `{"error_code": <int>}` — the dock error status, or the code shown in the error dialog.'
+    behaviour: 'On the `Garnet` product line a resume-mopping alert follows.'
+    related: [app_get_init_status]
+
+  - method: set_ces_action
+    title: Trade-show demo action
+    summary: Sends a demo `type` / `action` pair (name refers to CES 2022).
+    request: '`params`: `{"type": <int>, "action": <int>}`.'
+    related: []
+
+  - method: app_start_easter_egg
+    title: '"Cupid mode" start (easter egg)'
+    summary: Starts the "egg attack" feature (state 30, text "scanning").
+    request: '`params`: `{}`.'
+    behaviour: 'The a65 strings call the feature "Cupid Mode"; while it runs the app sends [`app_keep_easter_egg`](#app_keep_easter_egg) periodically.'
+    related: [app_keep_easter_egg]
+
+  - method: app_keep_easter_egg
+    title: '"Cupid mode" keep-alive'
+    summary: Periodic keep-alive of the easter-egg mode.
+    request: '`params`: `{}`.'
+    related: [app_start_easter_egg]
+
+  - method: app_set_dynamic_config
+    title: Download a test configuration
+    summary: "Debug page: points the robot to a configuration file for testing."
+    request: '`params`: `{"version": <v>, "url": "<url>", "signature_url": "<url>"}`.'
+    behaviour: 'Only reachable from a debug page.'
+    related: []
+
+  - method: test_do_speak
+    title: 'Voice-control test: speak'
+    summary: Triggers a speech test (a72, a73 only).
+    request: '`params`: `{}`.'
+    related: [test_set_enable_wakeup]
+
+  - method: test_get_enable_wakeup
+    title: 'Voice-control test: wake-up (read)'
+    summary: Reads the wake-word switch.
+    request: '`params`: none (`[]`).'
+    response: '`result.enable_wakeup`.'
+    related: [test_set_enable_wakeup]
+
+  - method: test_set_enable_wakeup
+    title: 'Voice-control test: wake-up (write)'
+    summary: Switches the wake-word.
+    request: '`params`: `{"enable_wakeup": 0|1}`.'
+    behaviour: 'Debug entry gated by fw feature code 130 (`isSupportVoiceCtrolDebug`).'
+    related: [test_get_enable_wakeup]
+
+  - method: test_get_move_in_place
+    title: 'Voice-control test: move in place (read)'
+    summary: Reads the switch.
+    request: '`params`: none (`[]`).'
+    response: '`result.move_in_place`.'
+    related: [test_set_move_in_place]
+
+  - method: test_set_move_in_place
+    title: 'Voice-control test: move in place (write)'
+    summary: Switches turning in place on voice commands.
+    request: '`params`: `{"move_in_place": 0|1}`.'
+    related: [test_get_move_in_place]
+
+  - method: test_get_voice_keep_seconds
+    title: 'Voice-control test: keep-awake time (read)'
+    summary: Reads the duration the robot stays awake after the wake word.
+    request: '`params`: none (`[]`).'
+    response: '`result.keep_seconds`.'
+    related: [test_set_voice_keep_seconds]
+
+  - method: test_set_voice_keep_seconds
+    title: 'Voice-control test: keep-awake time (write)'
+    summary: Sets the duration.
+    request: '`params`: `{"keep_seconds": <int>}`.'
+    related: [test_get_voice_keep_seconds]

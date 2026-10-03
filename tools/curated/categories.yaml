@@ -1,0 +1,118 @@
+# Command categories: id -> title, intro and the ordered list of RPC method strings that belong to it.
+# Every method string found in the bundles (data/commands.json) must appear in exactly one category;
+# tools/gen_docs.py fails otherwise.
+# `gates` (optional): FeatureManager predicates that the app's pages for this category test (evaluated per model on the device pages). `user.*` methods are listed on their own page (alternate-table).
+categories:
+  - id: cleaning-control
+    title: Cleaning control
+    intro: >-
+      Start, stop, pause and resume cleaning jobs, send the robot to a point or back to the dock, wake it up and make it
+      announce itself.
+    methods: [app_start, app_stop, app_pause, app_charge, app_spot, app_wakeup_robot, app_zoned_clean, stop_zoned_clean,
+              resume_zoned_clean, app_segment_clean, stop_segment_clean, resume_segment_clean, app_goto_target,
+              stop_goto_target, find_me, start_clean, start_wash_then_charge, app_start_build_map, app_resume_build_map,
+              app_skip_current_cleaning_area, app_start_replenish_clean_area]
+  - id: remote-control
+    title: Remote control
+    intro: Manual driving of the robot.
+    methods: [app_rc_start, app_rc_move, app_rc_end, app_rc_stop]
+  - id: status
+    title: Status, properties and capabilities
+    intro: >-
+      Reading the robot state, the capability lists reported by the firmware and basic identity information.
+    methods: [get_prop, get_status, app_get_status, app_get_init_status, get_fw_features, get_serial_number, app_get_locale,
+              get_testid, app_stat, get_dock_info]
+  - id: cleaning-modes
+    title: Fan power, water flow and mop modes
+    intro: >-
+      Suction power, water box flow, mop route and the user-defined "customize clean mode" / mop-template features.
+    methods: [get_custom_mode, set_custom_mode, get_water_box_custom_mode, set_water_box_custom_mode, get_clean_motor_mode,
+              set_clean_motor_mode, set_mop_mode, get_customize_clean_mode, set_customize_clean_mode, get_custom_clean_time,
+              set_custom_clean_time, set_clean_sequence, get_clean_sequence, add_mop_template_params, update_mop_template_params,
+              del_mop_template_params, sort_mop_template_params, get_mop_template_params_by_id, get_mop_template_params_summary,
+              set_mop_template_id, set_water_box_distance_off, set_corner_clean_mode, get_mop_motor_status, set_mop_motor_status,
+              get_mop_reverse_pwm_values, set_mop_reverse_pwm_values, set_fan_motor_work_timeout, get_fan_motor_work_timeout,
+              stop_fan_motor_work, set_clean_follow_ground_material_status, get_clean_follow_ground_material_status]
+  - id: maps
+    title: Maps and multi-floor maps
+    intro: >-
+      Map download, map editing sessions, multi-floor map management and map backups.
+    methods: [get_map, get_map_v1, get_map_v2, app_get_map, get_fresh_map, get_fresh_map_v1, get_persist_map, get_persist_map_v1,
+              get_photo, get_random_pkey, get_multi_map, get_multi_maps_list, load_multi_map, name_multi_map, recover_multi_map,
+              save_map, reset_map, start_edit_map, end_edit_map, use_new_map, use_old_map, get_recover_map, get_recover_maps,
+              recover_map, del_map, get_map_status, set_switch_map_mode, manual_bak_map, app_update_unsave_map,
+              get_dynamic_map_diff, get_dynamic_data, get_offline_map_status, set_offline_map_status, set_lab_status,
+              set_map_beautification_status, get_map_beautification_status]
+  - id: rooms-and-areas
+    title: Rooms, zones and map objects
+    intro: >-
+      Room (segment) tables and editing, furniture and floor-material recognition, carpet areas, door sills and smart scenes.
+    methods: [get_room_mapping, merge_segment, split_segment, name_segment, manual_segment_map, get_segment_status,
+              set_scenes_segments, set_scenes_zones, get_scenes_valid_tids, reunion_scenes, save_furnitures,
+              set_identify_furniture_status, get_identify_furniture_status, set_segment_ground_material,
+              set_identify_ground_material_status, get_identify_ground_material_status, set_ignore_identify_area,
+              set_carpet_area, set_ignore_carpet_zone, app_set_door_sill_blocks, app_set_smart_door_sill,
+              app_set_ignore_stuck_point, app_set_smart_cliff_forbidden]
+  - id: carpet
+    title: Carpet handling
+    gates: [isCarpetSupported, isSupportCustomCarpet, isAvoidCarpetSupported, isCarpetDeepCleanSupported]
+    intro: Carpet detection and the behaviour on carpets.
+    methods: [get_carpet_mode, set_carpet_mode, get_carpet_clean_mode, set_carpet_clean_mode, app_get_carpet_deep_clean_status,
+              app_set_carpet_deep_clean_status, app_set_priority_carpet_cleaning_status]
+  - id: timers
+    title: Timers and Do-Not-Disturb
+    intro: Cleaning schedules (robot-side and server-side), Do-Not-Disturb and valley-electricity timers.
+    methods: [get_timer, set_timer, del_timer, upd_timer, get_server_timer, set_server_timer, del_server_timer, upd_server_timer,
+              get_timer_summary, get_timer_detail, get_dnd_timer, set_dnd_timer, close_dnd_timer, set_dnd_timer_actions,
+              get_valley_electricity_timer, set_valley_electricity_timer, close_valley_electricity_timer]
+  - id: consumables
+    title: Consumables
+    intro: Wear counters of brushes, filters and sensors.
+    methods: [get_consumable, reset_consumable]
+  - id: clean-history
+    title: Cleaning history
+    intro: Cleaning summary, per-run records and the map of a past run.
+    methods: [get_clean_summary, get_clean_record, get_clean_record_map, get_clean_record_map_v2, del_clean_record,
+              clear_clean_records, app_get_clean_estimate_info]
+  - id: sound
+    title: Sound, voice packs and voice features
+    gates: [isSupportSetVolumeInCall, isVoiceControlSupported]
+    intro: Volume, voice packs, audio playback and the voice-chat feature.
+    methods: [get_sound_volume, change_sound_volume, test_sound_volume, get_current_sound, dnld_install_sound, get_sound_progress,
+              play_audio, set_voice_chat_volume, start_voice_chat, stop_voice_chat, enable_homesec_voice]
+  - id: dock
+    title: Dock (auto-empty, mop washing and drying)
+    gates: [isSupportedDrying, isBackChargeAutoWashSupported, isDustCollectionSettingSupported, isSupportedSmartChangeWater]
+    intro: Commands for multifunction docks.
+    methods: [app_start_wash, app_stop_wash, app_start_collect_dust, app_stop_collect_dust, get_dust_collection_mode,
+              set_dust_collection_mode, get_dust_collection_switch_status, set_dust_collection_switch_status,
+              get_wash_towel_mode, set_wash_towel_mode, get_wash_towel_params, set_wash_towel_params, get_smart_wash_params,
+              set_smart_wash_params, app_get_dryer_setting, app_set_dryer_setting, app_set_dryer_status, set_airdry_hours,
+              stop_airdry_mop, app_amethyst_self_check, app_amethyst_drain_all_water, app_empty_inbuilt_water_tank,
+              app_get_amethyst_status, app_set_amethyst_status, update_dock, get_wash_debug_params, set_wash_debug_params,
+              get_auto_delivery_cleaning_fluid, set_auto_delivery_cleaning_fluid, clean_roller]
+  - id: device-settings
+    title: Device settings
+    intro: LED, child lock and sensor behaviour switches.
+    methods: [get_led_status, set_led_status, get_flow_led_status, set_flow_led_status, get_child_lock_status,
+              set_child_lock_status, get_collision_avoid_status, set_collision_avoid_status]
+  - id: camera
+    title: Camera, live view and home security
+    gates: [isCameraSupported, isStructuredLightSupported, isVideoMonitorSupported, isObstaclesSupport]
+    intro: Camera switch, live-view negotiation (WebRTC-style signalling) and the home-security password.
+    methods: [get_camera_status, set_camera_status, start_camera_preview, stop_camera_preview, get_turn_server,
+              send_sdp_to_robot, send_ice_to_robot, get_device_sdp, get_device_ice, switch_video_quality, switch_water_mark,
+              set_homesec_password, reset_homesec_password, check_homesec_password, get_homesec_connect_status, upload_photo]
+  - id: system
+    title: Network, time, firmware and logs
+    intro: Wi-Fi information, time zone, OTA and log upload.
+    methods: [get_network_info, app_get_wifi_list, app_delete_wifi, get_timezone, set_timezone, set_app_timezone, miIO.ota,
+              enable_log_upload, get_log_upload_status, user_upload_log, upload_data_for_debug_mode, set_fds_endpoint]
+  - id: diagnostic
+    title: Diagnostic, test and internal commands
+    intro: >-
+      Calls that are part of the plugin but are internal, experimental or test features. They are listed for completeness;
+      do not assume that a robot answers them.
+    methods: [retry_request, resolve_error, set_ces_action, app_keep_easter_egg, app_start_easter_egg, app_set_dynamic_config,
+              test_do_speak, test_get_enable_wakeup, test_set_enable_wakeup, test_get_move_in_place, test_set_move_in_place,
+              test_get_voice_keep_seconds, test_set_voice_keep_seconds]

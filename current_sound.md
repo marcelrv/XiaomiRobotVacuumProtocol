@@ -1,41 +1,7 @@
 # Current Sound
 
-Retreives the current active voice and which is being installed.
+> **Moved.** This page is now [docs/commands/sound.md#get_current_sound](docs/commands/sound.md#get_current_sound). The old description was merged into the bundle-verified reference; the old request and reply examples are kept in [legacy captures](docs/appendix/legacy-captures.md). This file only keeps the old link and section anchors working.
 
 ## Get Current Sound
 
-### Command
-
-| Key    | Value                 | Comment                                                                             |
-| ------ | --------------------- | ----------------------------------------------------------------------------------- |
-| method | `"get_current_sound"` |                                                                                     |
-| id     | `id`                  | Random integer which is returned in the response used to link request and response. |
-
-#### Example
-
-```json
-{
-    "method": "get_current_sound",
-    "id": 184
-}
-```
-
-### Response
-
-| Key               | Example | Description                                   |
-| ----------------- | ------- | --------------------------------------------- |
-| `sid_in_use`      | _3_     | Active voice (English = 3)                    |
-| `sid_in_progress` | _0_     | Voice in progress of being installed (0=none) |
-
-#### Example
-
-```json
-{
-    "result": [{
-            "sid_in_use": 3,
-            "sid_in_progress": 0
-        }
-    ],
-    "id": 184
-}
-```
+See [docs/commands/sound.md#get_current_sound](docs/commands/sound.md#get_current_sound).

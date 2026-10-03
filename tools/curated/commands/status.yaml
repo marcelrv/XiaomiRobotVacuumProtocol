@@ -1,0 +1,129 @@
+overview: |
+  The plugin polls **one** call for the robot state: [`get_prop`](#get_prop) with the parameter `"get_status"`. Capabilities
+  come from [`app_get_init_status`](#app_get_init_status) (and, in the bundles of a01, c1, e2, s5 and v1, from
+  [`get_fw_features`](#get_fw_features)). The status fields are described in
+  [status fields](../reference/status-fields.md); state and error codes in [states](../reference/states.md) and
+  [errors](../reference/errors.md).
+
+commands:
+  - method: get_prop
+    title: Read properties (used for the status poll)
+    summary: The plugin calls it only as `get_prop ["get_status"]`; the reply's first array element is the status object.
+    request: |
+      `params`: `["get_status"]` (the string is the Methods-table value of key `GetStatus`).
+      Seen in every bundle: `RobotApi.getStatus` / direct `callMethod(Methods.GetProp, [Methods.GetStatus])`.
+      One older bundle (a01 family map manager) also calls `get_prop` with the object `{"params": "app_get_map"}` through its
+      map-download helper (✅ Bundle · a01 m10010).
+    response: |
+      `result` is an array whose first element is the status object (`res.result[0]`), see
+      [status fields](../reference/status-fields.md). Other property names are not requested by any bundle
+      (❓ Unknown whether the firmware supports other `get_prop` arguments).
+    examples:
+      - label: constructed from app code
+        json: |
+          {"id": 1, "method": "get_prop", "params": ["get_status"]}
+    behaviour: |
+      - Poll interval `LoopDelay` = 2000 ms (a65 m10010). The loop starts when the main page opens.
+      - On failure with error code `-10002` (access denied) the app marks the connection as invalid and shows the
+        "error 10002" dialog once; other failures only log.
+      - The app derives *computed states* from the reply (e.g. 6301–6310, 202, 103, 100); see [states](../reference/states.md).
+    legacy: |
+      ⚪ Legacy [status.md](../../status.md) documents `get_status` as a method. **Correction:** no bundle sends
+      `get_status` as the *method*; the string only appears as the parameter of `get_prop`. (The reply shape is the same.)
+    related: [get_status, app_get_init_status]
+
+  - method: get_status
+    title: Status (parameter value of get_prop)
+    summary: Listed in the Methods tables; in the plugin it is the *argument* of `get_prop`, never a method.
+    request: 'See [`get_prop`](#get_prop).'
+    legacy: |
+      ⚪ Legacy documents `get_status` as a direct method (python-miio and openHAB also use `get_status`). The bundles do not
+      show a direct call, so whether firmware answers `get_status` as a method is ❓ Unknown from the bundles.
+    related: [get_prop]
+
+  - method: app_get_status
+    title: Status (alternate-table name)
+    summary: The `GetStatus` entry of the alternate (`saphire`) table; not active for any shipped bundle.
+    request: ❓ Unknown — never called.
+    related: [get_status]
+
+  - method: app_get_init_status
+    title: "Initial status: location, firmware feature lists"
+    summary: Called once when the plugin starts; delivers the robot location and the capability lists.
+    request: '`params`: none (`[]`).'
+    response: |
+      `result[0]` fields read by the plugin (✅ Bundle · a65 m10007 `fetchDeviceLocation`):
+
+      | Field | Type | Use |
+      |---|---|---|
+      | `local_info.location` | string | robot location (`prc` is rewritten to `cn`); drives region gating (`cn`, `us`, `de`, …) |
+      | `local_info.featureset` | int | bit 0 = "FCC state" (`& 0x01`) |
+      | `feature_info` | int array | firmware feature codes (101…130), see [feature flags](../concepts/feature-flags.md) |
+      | `new_feature_info` | int (up to 64 bit) | firmware feature bit mask |
+      | `new_feature_info_str` | string (hex digits, length a multiple of 8) | second, wider feature word read by the newer `FeatureManager`: the last 8 hex digits and the three digits before them are tested bit by bit (see [feature flags](../concepts/feature-flags.md#feature-word-new_feature_info_str)) |
+    examples:
+      - label: constructed from field names read by the app
+        json: |
+          {"result": [{"local_info": {"location": "de", "featureset": 1}, "feature_info": [111, 112, 114, 116],
+                       "new_feature_info": 1073741825, "new_feature_info_str": "…"}], "id": 2}
+    behaviour: 'On failure the app retries after 1 s. After success it also fetches the serial number and syncs the time zone.'
+    legacy: |
+      ⚪ Legacy [init_status.md](../../init_status.md) lists the reply keys `local_info`, `feature_info` and `status_info` (a status object); the plugin reads the first two and
+      the two `new_feature_*` keys, and does not read `status_info` from this reply (no bundle contains the key). README lists it as "s5e only". The bundles of 38 models call it; a01, c1, e2 and v1 only wrap it.
+    related: [get_fw_features, app_get_locale, get_serial_number]
+
+  - method: get_fw_features
+    title: Firmware feature list
+    summary: Returns the array of firmware feature codes; called only by the a01, c1, e2, s5 and v1 bundles.
+    request: '`params`: none (`[]`).'
+    response: |
+      `result` is the plain array of codes (a01: `robotFeatures = resFeature.result`). Newer bundles take the same list from
+      `feature_info` of [`app_get_init_status`](#app_get_init_status) and never call this method (the wrapper exists).
+    behaviour: 'Called by the bundles of a01, c1, e2, s5 and v1 (a01: unless the model is `isSapphireCC`; v1: as part of start-up).'
+    legacy: |
+      ⚪ Legacy [fw_features.md](../../fw_features.md). The code meanings listed there are cross-checked in
+      [feature flags](../concepts/feature-flags.md).
+    related: [app_get_init_status]
+
+  - method: get_serial_number
+    title: Serial number
+    summary: Returns the robot serial number.
+    request: '`params`: none (`[]`).'
+    response: '`result[0].serial_number` (string) is read (a65 m13964 `getSn`); the number is then used to look up a privacy code.'
+    legacy: '⚪ Legacy [serial_number.md](../../serial_number.md).'
+    related: [app_get_init_status]
+
+  - method: app_get_locale
+    title: Locale information
+    summary: Returns the location, language, time zone and related profile fields.
+    request: '`params`: none (`[]`).'
+    response: |
+      Fields displayed on the "robot information" page (✅ Bundle · a65 m14156): `location`, `language`, `wifiplan`,
+      `logserver`, `timezone`, `bom`, `name` (profile) and `featureset`.
+    legacy: |
+      ⚪ Legacy [locale.md](../../locale.md) lists the same field names — confirmed; `wifiplan`, `name` and `featureset`
+      meanings remain unexplained by the bundles (the app only shows the strings).
+    related: [app_get_init_status, get_timezone]
+
+  - method: get_testid
+    title: Anonymous test id
+    summary: Debug-page query returning `testid` and `vnid`.
+    request: '`params`: none (`[]`).'
+    response: '`result[0].testid`, `result[0].vnid` (strings); the debug page shows the list item only when `testid` is non-empty.'
+    related: [get_dock_info]
+
+  - method: app_stat
+    title: Usage statistics upload
+    summary: Sends batches of UI-usage counters to the robot.
+    request: |
+      `params`: `[{"ver": <int>, "data": [ {…item…}, … ]}]`; the app packs items into batches limited by a byte budget
+      (a65 m10031 `Stat`). The item layout is internal to the statistics module and not documented here (❓ Unknown).
+    related: []
+
+  - method: get_dock_info
+    title: Dock information
+    summary: Reads dock details; used on debug and settings pages for dock type O4.
+    request: '`params`: none (`{}` in the wrapper).'
+    response: ❓ Unknown — the fields are shown on debug pages and were not decoded.
+    behaviour: 'Called only when `RSM.isO4Dock()` is true (a65 m14375, m14516).'
+    related: [update_dock]

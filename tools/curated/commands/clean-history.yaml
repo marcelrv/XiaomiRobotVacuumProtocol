@@ -1,0 +1,70 @@
+overview: |
+  History is a two-level query: [`get_clean_summary`](#get_clean_summary) returns totals and the list of record ids, then
+  [`get_clean_record`](#get_clean_record) is called **once per id**. A record id is the **start time** of the run as a Unix
+  timestamp; the plugin ignores ids ≤ 1451577600 (1 Jan 2016) as invalid (✅ Bundle · a65 m14012). Two data layouts exist:
+  an array layout (older firmware) and an object layout (new-feature bits `isNewDataForCleanHistory` / `…Detail`,
+  low word bits 22 and 23). See also [clean record fields](../reference/clean-record.md).
+
+commands:
+  - method: get_clean_summary
+    title: Totals and record ids
+    summary: Returns the lifetime totals and the ids of the stored records.
+    request: '`params`: none (`[]`).'
+    response: |
+      Array layout: `result` = `[total_time, total_area, total_count, [record id, …]]`.
+      Object layout: `result` = `{"clean_time", "clean_area", "clean_count", "records": [id, …], "dust_collection_count", "mop_count", "wash_count"}`
+      (the last three only on dock models).
+    examples:
+      - label: constructed from app code (element order; values invented)
+        json: |
+          {"result": [174145, 2410215000, 82, [1488240000, 1488153600]], "id": 1}
+    legacy: |
+      ⚪ Legacy [clean_summary+record.md](../../clean_summary+record.md) documents both layouts — confirmed (array and object with `clean_time`, `clean_area`,
+      `clean_count`, `dust_collection_count`, `records`). **Correction:** the legacy text gives the area in cm²; the app divides it by 1 000 000 to show
+      square metres, so the unit is mm² ([units](../reference/units.md)). A legacy capture of the object layout also shows a top-level `exe_time` next to `result`;
+      the plugin does not read it.
+    related: [get_clean_record]
+
+  - method: get_clean_record
+    title: One cleaning record
+    summary: Returns the details of the run that started at the given time.
+    request: '`params`: `[<record id>]` (the start timestamp).'
+    response: |
+      `result[0]`, array layout (9 elements): `[start, end, duration, area, error, complete, start_type, clean_type, finish_reason]`.
+      Object layout: `{"begin", "end", "duration", "area", "error", "complete", "start_type", "clean_type", "finish_reason",
+      "dust_collection_status", "avoid_count", "clean_mop", "wash_count", "wash_time", "map_flag"}`; `map_flag` is `-2` when absent.
+      Units and enumerations: [clean record fields](../reference/clean-record.md).
+    related: [get_clean_summary, get_clean_record_map, del_clean_record]
+
+  - method: get_clean_record_map
+    title: Map of a past run
+    summary: Downloads the map and path of a record (same file mechanism as the live map).
+    response: '`result[0]` is the **object name** of the map file (the plugin replaces `%2F` by `/`), or the string `retry` (ask again after 1 s, at most 8 times) or `locating` (the robot is relocating; the attempt ends without a callback). The app then asks the cloud for a download address of that object, downloads it, un-gzips it and validates it ([maps overview](../concepts/maps-overview.md#how-a-map-reaches-the-app)). ✅ Bundle · a65 m10109 `downloadMap`. The downloaded file is a map file with a `PATH` block of the cleaning run ([map file format](../../RRMapFile/RRFileFormat.md)).'
+    request: 'Mi Home: `[<start>]`; Roborock app: `{"start_time": <start>}` (✅ Bundle · a65 m14042 `fetchRemoteMap`), through `getMapData`.'
+    legacy: '⚪ Legacy [clean_summary+record.md](../../clean_summary+record.md).'
+    related: [get_clean_record_map_v2, get_clean_record]
+
+  - method: get_clean_record_map_v2
+    title: Record map v2 (declared only)
+    summary: Declared in every Methods table; never called.
+    request: ❓ Unknown — no call site.
+    related: [get_clean_record_map]
+
+  - method: del_clean_record
+    title: Delete one record
+    summary: Deletes the record with the given start time.
+    request: '`params`: `[<start>]` (the plugin passes `rowData.start`).'
+    related: [get_clean_record, clear_clean_records]
+
+  - method: clear_clean_records
+    title: Delete all records
+    summary: Deletes the whole history; only the a01-family bundles (a01, c1, e2) call it.
+    request: '`params`: none (`[]`).'
+    related: [del_clean_record]
+
+  - method: app_get_clean_estimate_info
+    title: Clean estimate (debug page)
+    summary: Polled every 5 s by the "clean estimate" page.
+    request: '`params`: `{}`.'
+    response: ❓ Unknown — shown on a debug/preview page with Chinese-language title; fields not decoded.
+    related: [get_clean_summary]

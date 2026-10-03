@@ -1,221 +1,121 @@
-# Xiaomi Robot Vacuum Protocol
+<a id="xiaomi-robot-vacuum-protocol"></a>
+# Xiaomi / Roborock Robot Vacuum Protocol
 
-Attempt to describe the Xiaomi Robot Vacuum Protocol.
+The command reference for Xiaomi and Roborock robot vacuums that speak the **miIO** protocol: which methods exist, what parameters they take, what they return, which robot models the official app offers them for, and how maps are encoded. Every statement carries its evidence level: **Mi Home plugin bundles** (the programs the official app runs for each model) are the evidence; where a fact comes from elsewhere or cannot be determined, the page says so.
 
-These commands are send using the Xiaomi [mi-home protocol](Protocol.md). (For decoding of the vacuum map see [RR Map File](RRMapFile))
+**For:** integrators (openHAB, Home Assistant, ioBroker, python-miio), tinkerers, and anyone asking "what does command X do, with which parameters, on which robot?".
 
-Applications implementing this protocol:
+## Quick start
 
-* [Openhab](https://github.com/openhab/openhab-addons/tree/2.5.x/bundles/org.openhab.binding.miio) (Java)
-* [mirobo](https://github.com/rytilahti/python-miio)  (Python)
-* [iobroker](https://github.com/iobroker-community-adapters/ioBroker.mihome-vacuum) /  [iobroker roborock](https://github.com/copystring/ioBroker.roborock/) (javascript)
+1. [Get the token and the IP address](docs/getting-started/get-token-and-ip.md) of your robot.
+2. [Send a first command](docs/getting-started/first-command.md), for example `{"id": 1, "method": "get_prop", "params": ["get_status"]}`.
+3. Look up what you want to do in the [command index](docs/commands/index.md) and what your model offers on its [device page](docs/devices/index.md).
 
-Supported vacuum devices:
+Implementations of the protocol: [openHAB](https://github.com/openhab/openhab-addons/tree/main/bundles/org.openhab.binding.miio) (Java), [python-miio](https://github.com/rytilahti/python-miio) (Python), [ioBroker mihome-vacuum](https://github.com/iobroker-community-adapters/ioBroker.mihome-vacuum) and [ioBroker roborock](https://github.com/copystring/ioBroker.roborock/) (JavaScript).
 
-| Model                 | Name / aliases                                               | 
-| --------------------- | ------------------------------------------------------------ | 
-| rockrobo.vacuum.v1    | Mi Robot Vacuum                                              | 
-| roborock.vacuum.a01   | Roborock E Series                                            | 
-| roborock.vacuum.a08   | Roborock S6 Pure                                             | 
-| roborock.vacuum.a09   | Roborock T7 Pro                                              | 
-| roborock.vacuum.a10   | Roborock S6 MaxV                                             | 
-| roborock.vacuum.a11   | Roborock T7                                                  | 
-| roborock.vacuum.a14   | Roborock T7S                                                 | 
-| roborock.vacuum.a15   | Roborock S7                                                  | 
-| roborock.vacuum.a19   | Roborock S4 Max                                              | 
-| roborock.vacuum.a23   | Roborock T7S Plus                                            | 
-| roborock.vacuum.c1    | Xiaowa C1                                                    | 
-| roborock.vacuum.e2    | Roborock Xiaowa E Series                                     |
-| roborock.vacuum.m1s   | Mi Robot Vacuum 1S                                           | 
-| roborock.vacuum.p5    | Roborock P5                                                  | 
-| roborock.vacuum.s4    | Roborock S4                                                  | 
-| roborock.vacuum.s5    | Mi Robot Vacuum v2 / Roborock Vacuum S5 / Roborock Vacuum S50 | 
-| roborock.vacuum.s5e   | Roborock S5 Max                                              | 
-| roborock.vacuum.s6    | Roborock S6                                                  | 
-| roborock.vacuum.t4    | Roborock T4                                                  | 
-| roborock.vacuum.t6    | Roborock T6                                                  | 
-| roborock.vacuum.t7    | Roborock Vacuum T7                                           | 
+<a id="evidence-legend"></a>
+## Evidence legend
 
+Every page marks where a fact comes from:
 
-See [supported robots and capability matrix here](fw_features.md) (based on get_fw_features command)
+| Badge | Meaning |
+|---|---|
+| ✅ **Bundle** | Verified in at least one Mi Home plugin bundle. The page names the models and, for non-trivial facts, a source anchor in the form `model@plugin version · m<module id> · "string anchor"` (module ids are numeric and local to one bundle). |
+| 🔶 **openHAB** | Only in the openHAB miio binding; not seen in any bundle. Cross-check only. |
+| ⚪ **Legacy** | Only in the earlier content of this repository (device captures, community knowledge); not confirmed by a bundle. |
+| ❓ **Unknown** | Not determinable; the page says what was checked. |
+
+Important distinction: **"the bundle calls it" is not "this robot's firmware answers it".** A call site proves that the official app can send the call and how it builds the parameters; it does not prove that a particular firmware responds. Details and limits: [methodology](docs/methodology.md#what-a-bundle-does-and-does-not-prove). Example payloads are labelled **constructed from app code** (values invented) or **legacy capture (unverified)**.
+
+## Contents
+
+| Section | What is in it |
+|---|---|
+| [Getting started](docs/getting-started/index.md) | token and IP, first command, troubleshooting |
+| [Concepts](docs/concepts/index.md) | [miIO protocol](docs/concepts/miio-protocol.md), [JSON-RPC envelope](docs/concepts/json-rpc-envelope.md), [transports and dispatch](docs/concepts/transports.md), [feature flags](docs/concepts/feature-flags.md), [model generations](docs/concepts/model-generations.md), [maps overview](docs/concepts/maps-overview.md) |
+| [Commands](docs/commands/index.md) | all 295 method strings found in the bundles, in 16 categories, with the [`user.*` alternate table](docs/commands/alternate-table.md) |
+| [Reference](docs/reference/index.md) | [states](docs/reference/states.md), [errors](docs/reference/errors.md), [fan, water and mop values](docs/reference/fan-water-mop.md), [status fields](docs/reference/status-fields.md), [consumables](docs/reference/consumables.md), [dock](docs/reference/dock.md), [clean record](docs/reference/clean-record.md), [voice packs](docs/reference/voice-packs.md), [units](docs/reference/units.md), [other enumerations](docs/reference/other-enums.md) |
+| [Devices](docs/devices/index.md) | one page per model, [command matrix](docs/devices/matrix-commands.md), [feature matrix](docs/devices/matrix-features.md) |
+| [Maps](docs/maps/index.md) | [RR map file format](RRMapFile/RRFileFormat.md), sample files and viewers in [`RRMapFile/`](RRMapFile/README.md) |
+| [Methodology](docs/methodology.md) | how the facts were derived, bundle inventory, limits, regeneration |
+| [Appendix](docs/appendix/index.md) | [corrections](docs/appendix/corrections.md), [legacy captures](docs/appendix/legacy-captures.md), [unverified models](docs/appendix/unverified-models.md), [open questions](docs/appendix/open-questions.md), [glossary](docs/appendix/glossary.md) |
+| [Tools and data](tools/README.md) | scripts that regenerate everything, and the machine-readable datasets in [`data/`](data/) |
+
+## Analysed models
+
+42 models were analysed from their own plugin bundle; pages are generated from [`data/models.json`](data/models.json). Names are tagged with their source on the device pages (Mi Home cloud device catalog, openHAB binding, legacy text). Models known only from other sources are in the [unverified models](docs/appendix/unverified-models.md) appendix.
+
+| Model | Name (Mi Home cloud device catalog) | Plugin | Generation |
+|---|---|---|---|
+| [`roborock.vacuum.a01`](docs/devices/a01.md) | Roborock E Series | 1.0.51 | A |
+| [`roborock.vacuum.a08`](docs/devices/a08.md) | Roborock S6 Pure | 1.0.47 | A |
+| [`roborock.vacuum.a09`](docs/devices/a09.md) | Roborock T7 Pro | 1.0.48 | A |
+| [`roborock.vacuum.a10`](docs/devices/a10.md) | Roborock S6 MaxV | 1.0.50 | A |
+| [`roborock.vacuum.a11`](docs/devices/a11.md) | Roborock T7 | 1.0.34 | A |
+| [`roborock.vacuum.a14`](docs/devices/a14.md) | Roborock T7S | 1.0.53 | B |
+| [`roborock.vacuum.a15`](docs/devices/a15.md) | Roborock S7 | 1.0.53 | B |
+| [`roborock.vacuum.a19`](docs/devices/a19.md) | Roborock S4 Max | 1.0.52 | A |
+| [`roborock.vacuum.a23`](docs/devices/a23.md) | Roborock T7S Plus | 1.0.53 | B |
+| [`roborock.vacuum.a26`](docs/devices/a26.md) | Roborock G10S Pro | 1.0.84 | B |
+| [`roborock.vacuum.a27`](docs/devices/a27.md) | Roborock S7 MaxV | 1.0.84 | B |
+| [`roborock.vacuum.a29`](docs/devices/a29.md) | Roborock G10 | 1.0.75 | B |
+| [`roborock.vacuum.a30`](docs/devices/a30.md) | Roborock G10 | 1.0.75 | B |
+| [`roborock.vacuum.a34`](docs/devices/a34.md) | Roborock Q5 | 1.0.70 | B |
+| [`roborock.vacuum.a37`](docs/devices/a37.md) | Roborock T8 | 1.0.70 | B |
+| [`roborock.vacuum.a38`](docs/devices/a38.md) | Roborock Q7 Max | 1.0.70 | B |
+| [`roborock.vacuum.a40`](docs/devices/a40.md) | Roborock Q7 | 1.0.70 | B |
+| [`roborock.vacuum.a46`](docs/devices/a46.md) | Roborock G10S | 1.0.84 | B |
+| [`roborock.vacuum.a51`](docs/devices/a51.md) | Roborock S8 | 1.0.83 | B |
+| [`roborock.vacuum.a52`](docs/devices/a52.md) | Roborock T8 Plus | 1.0.70 | B |
+| [`roborock.vacuum.a62`](docs/devices/a62.md) | Roborock S7 Pro Ultra | 1.0.69 | B |
+| [`roborock.vacuum.a64`](docs/devices/a64.md) | Roborock G10S Pure | 1.0.95 | B |
+| [`roborock.vacuum.a65`](docs/devices/a65.md) | Roborock S7 Max Ultra | 1.0.95 | B |
+| [`roborock.vacuum.a66`](docs/devices/a66.md) | Roborock G10 Plus | 1.0.84 | B |
+| [`roborock.vacuum.a69`](docs/devices/a69.md) | Roborock G20 | 1.0.86 | B |
+| [`roborock.vacuum.a70`](docs/devices/a70.md) | Roborock S8 Pro Ultra | 1.0.83 | B |
+| [`roborock.vacuum.a72`](docs/devices/a72.md) | Roborock Q5 Pro | 1.0.92 | B |
+| [`roborock.vacuum.a73`](docs/devices/a73.md) | Roborock Q8 Max | 1.0.92 | B |
+| [`roborock.vacuum.a74`](docs/devices/a74.md) | Roborock P10 | 1.0.96 | B |
+| [`roborock.vacuum.a75`](docs/devices/a75.md) | Roborock Qrevo | 1.0.89 | B |
+| [`roborock.vacuum.a76`](docs/devices/a76.md) | Roborock G10S Auto | 1.0.77 | B |
+| [`roborock.vacuum.c1`](docs/devices/c1.md) | Xiaowa C1 | 1.0.48 | A |
+| [`roborock.vacuum.e2`](docs/devices/e2.md) | Xiaowa E Series | 1.0.48 | A |
+| [`roborock.vacuum.m1s`](docs/devices/m1s.md) | Mi Robot Vacuum 1S | 1.0.34 | A |
+| [`roborock.vacuum.p5`](docs/devices/p5.md) | Roborock P5 | 1.0.34 | A |
+| [`roborock.vacuum.s4`](docs/devices/s4.md) | Roborock S4 | 1.0.47 | A |
+| [`roborock.vacuum.s5`](docs/devices/s5.md) | Roborock S5 | 1.0.47 | A |
+| [`roborock.vacuum.s5e`](docs/devices/s5e.md) | Roborock S5 Max | 1.0.49 | A |
+| [`roborock.vacuum.s6`](docs/devices/s6.md) | Roborock S6 | 1.0.47 | A |
+| [`roborock.vacuum.t4`](docs/devices/t4.md) | Roborock T4 | 1.0.32 | A |
+| [`roborock.vacuum.t6`](docs/devices/t6.md) | Roborock T6 | 1.0.32 | A |
+| [`rockrobo.vacuum.v1`](docs/devices/v1.md) | Mi Robot Vacuum | 1.0.46 | A |
+
+Generation A = older plugin, B = newer plugin ([model generations](docs/concepts/model-generations.md)).
+
+## Numbers
+
+295 method strings found in the bundles: 248 base strings and 47 with the `user.` prefix. 229 of the 248 base strings have a call site in at least one plugin. Per-bundle counts are in the [methodology](docs/methodology.md#bundle-inventory).
 
 ## Vacuum Commands
 
-:warning: Depending on the model and firmware version, not all commands might be available.  
-The last columns show for which models the commands are available (assumed the latest firmware is installed).  
-If there is no entry, the command is available for each device.  
-
-| Type                     | Command                   | Documentation                                                                                                       | Only available for |
-| ------------------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| APPSTAT                  | app_stat                  |                                                                                                                     |                    |
-| CARPET_MODE_GET          | get_carpet_mode           | \-                                                                                                                  | s5e                |
-| CARPET_MODE_SET          | set_carpet_mode           | \-                                                                                                                  | s5e                |
-| CHARGE                   | app_charge                | [Basic Operations](basic.md)                                                                                        |                    |
-| CLEAN_RECORD_DEL         | del_clean_record          | \-                                                                                                                  | s5e                |
-| CLEAN_RECORD_GET         | get_clean_record          | [Clean Summary](clean_summary+record.md)                                                                            |                    |
-| CLEAN_RECORD_MAP_GET     | get_clean_record_map      | [Clean Summary](clean_summary+record.md)                                                                            |                    |
-| CLEAN_SUMMARY_GET        | get_clean_summary         | [Clean Summary](clean_summary+record.md)                                                                            |                    |
-| CONSUMABLES_GET          | get_consumable            | [Consumable](consumable.md)                                                                                         |                    |
-| CONSUMABLES_RESET        | reset_consumable          | [Consumable](consumable.md)                                                                                         |                    |
-| CUSTOM_MODE_GET          | get_custom_mode           | [Custom Mode](custom_mode.md)                                                                                       |                    |
-| CUSTOM_MODE_SET          | set_custom_mode           | [Custom Mode](custom_mode.md)                                                                                       |                    |
-| CUSTOM_MODE_WATERBOX_GET | get_water_box_custom_mode | [Water Box Custom Mode](water_box_custom_mode.md)                                                                   | s5e                |
-| CUSTOM_MODE_WATERBOX_SET | set_water_box_custom_mode | [Water Box Custom Mode](water_box_custom_mode.md)                                                                   | s5e, s6            |
-| DELETESELECTMAP          | del_map                   |                                                                                                                     |                    |
-| DND_CLOSE                | close_dnd_timer           | [Do Not Disturb](dnd_timer.md)                                                                                      |                    |
-| DND_GET                  | get_dnd_timer             | [Do Not Disturb](dnd_timer.md)                                                                                      |                    |
-| DND_SET                  | set_dnd_timer             | [Do Not Disturb](dnd_timer.md)                                                                                      |                    |
-| FIND_ME                  | find_me                   | [Find Robot](find_me.md)                                                                                            |                    |
-| GETCLEANRECORDMAPV2      | get_clean_record_map_v2   |                                                                                                                     |                    |
-| GETCUSTOMCLEANMODE       | get_customize_clean_mode  |                                                                                                                     |                    |
-| GETFRESHMAP              | get_fresh_map             |                                                                                                                     |                    |
-| GETLEDSTATUS             | get_led_status            |                                                                                                                     |                    |
-| GETMAP                   | get_map                   |                                                                                                                     |                    |
-| GETMAPV2                 | get_map_v2                |                                                                                                                     |                    |
-| GETMULTIMAP              | get_multi_map             |                                                                                                                     |                    |
-| GETPERSISTMAP            | get_persist_map           |                                                                                                                     |                    |
-| GETPROP                  | get_prop                  |                                                                                                                     |                    |
-| GETSERVERTIMER           | get_server_timer          |                                                                                                                     |                    |
-| GETSTATUS                | app_get_status            |                                                                                                                     |                    |
-| GET_FW_FEATURES          | get_fw_features           | [Firmware Features](fw_features.md)                                                                                 | s5e                |
-| GET_INIT_STATUS          | app_get_init_status       | [Initial Status](init_status.md)                                                                                    | s5e                |
-| GET_LOCALE               | app_get_locale            | [Locale Information](locale.md)                                                                                     | s5e                |
-| GET_NETWORK_INFO         | get_network_info          | [Netwotk info](network_info.md)                                                                                     | s5e, s5, s7, s6    |
-| GET_SERIAL_NUMBER        | get_serial_number         | [Serial Number](serial_number.md)                                                                                   |                    |
-| GET_STATUS               | get_status                | [Status Message](status.md)                                                                                         |                    |
-| GOTOTARGETSTOP           | stop_goto_target          |                                                                                                                     |                    |
-| GOTO_TARGET              | app_goto_target           | [Goto Target](goto_target.md)                                                                                       | v1, s5, s6, s5e    |
-| LOADMULTIMAP             | load_multi_map}           |                                                                                                                     |                    |
-| LOG_UPLOAD_ENABLE        | enable_log_upload         | \-                                                                                                                  |                    |
-| LOG_UPLOAD_GET           | get_log_upload_status     | [Log Upload](log_upload.md)                                                                                         |                    |
-| LOG_UPLOAD_USER          | user_upload_log           | \-                                                                                                                  | s5e                |
-| MANUALSEGMENTMAP         | manual_segment_map        |                                                                                                                     |                    |
-| MAPS_GET_MULTI_MAPS      | get_multi_maps_list       | [Multimap](multimap.md)                                                                                             | s5e, s7, s6        |
-| MAPS_LOAD_MULTI_MAP      | load_multi_map            | [Multimap](multimap.md)                                                                                             | s5e, s7, s6        |
-| MAPS_RECOVER_GET         | get_recover_maps          | \-                                                                                                                  | s5e                |
-| MAP_EDIT_END             | end_edit_map              | \-                                                                                                                  | s5e                |
-| MAP_EDIT_START           | start_edit_map            | \-                                                                                                                  | s5e                |
-| MAP_RECOVER              | recover_map               | \-                                                                                                                  | s5e                |
-| MAP_RECOVER_GET          | get_recover_map           | \-                                                                                                                  | s5e                |
-| MAP_RESET                | reset_map                 | \-                                                                                                                  | s5e                |
-| MAP_SAVE                 | save_map                  | [Map](map.md)                                                                                                       | s5, s6, s5e        |
-| MAP_STATUS_GET           | get_map_status            | \-                                                                                                                  | s5e                |
-| MAP_USE_NEW              | use_new_map               | \-                                                                                                                  | s5e                |
-| MAP_USE_OLD              | use_old_map               | \-                                                                                                                  | s5e                |
-| MAP_V1_FRESH_GET         | get_fresh_map_v1          | \-                                                                                                                  | s5e                |
-| MAP_V1_GET               | get_map_v1                | [Map V1](map_v1.md)                                                                                                 |                    |
-| MAP_V1_PERSIST_GET       | get_persist_map_v1        | \-                                                                                                                  | s5e                |
-| NAMEMULTIMAP             | name_multi_map            |                                                                                                                     |                    |
-| PAUSE                    | app_pause                 | [Basic Operations](basic.md)                                                                                        |                    |
-| RECOVERMULTIMAP          | recover_multi_map         |                                                                                                                     |                    |
-| REMOTE_END               | app_rc_end                | [Remote Control](rc.md)                                                                                             |                    |
-| REMOTE_MOVE              | app_rc_move               | [Remote Control](rc.md)                                                                                             |                    |
-| REMOTE_START             | app_rc_start              | [Remote Control](rc.md)                                                                                             |                    |
-| ROOM_MAPPING_GET         | get_room_mapping          | [Room Mapping](room_mapping.md)                                                                                     | s5e, m1s           |
-| SEGMENT_CLEAN_RESUME     | resume_segment_clean      | [Segment Cleaning](segment_clean.md)                                                                                | s5e                |
-| SEGMENT_CLEAN_START      | app_segment_clean         | [Segment Cleaning](segment_clean.md)                                                                                | s5, s5e, m1s       |
-| SEGMENT_CLEAN_STOP       | stop_segment_clean        | [Segment Cleaning](segment_clean.md)                                                                                | s5e                |
-| SEGMENT_MERGE            | merge_segment             | \-                                                                                                                  | s5e                |
-| SEGMENT_NAME             | name_segment              | \-                                                                                                                  | s5e                |
-| SEGMENT_SPLIT            | split_segment             | \-                                                                                                                  | s5e                |
-| SEGMENT_STATUS_GET       | get_segment_status        | \-                                                                                                                  | s5e                |
-| SETAPPTIMEZONE           | set_app_timezone          |                                                                                                                     |                    |
-| SETCUSTOMCLEANMODE       | set_customize_clean_mode  |                                                                                                                     |                    |
-| SETFDSENDPOINT           | set_fds_endpoint          |                                                                                                                     |                    |
-| SETLEDSTATUS             | set_led_status            |                                                                                                                     |                    |
-| SETSWITCHMAPMODE         | set_switch_map_mode       |                                                                                                                     |                    |
-| SET_LAB_STATUS           | set_lab_status            | [Lab Status](lab_status.md)                                                                                         | s5, s6, s5e        |
-| SOUND_CURRENT_GET        | get_current_sound         | [Current Sound](current_sound.md)                                                                                   |                    |
-| SOUND_INSTALL            | dnld_install_sound        | [Voice Pack Installation](install_sound.md)                                                                         |                    |
-| SOUND_PROGRESS_GET       | get_sound_progress        | [Voice Pack Installation](install_sound.md)                                                                         | s5e                |
-| SOUND_VOLUME_CHANGE      | change_sound_volume       | [Sound Volume](sound_volume.md)                                                                                     | s5e                |
-| SOUND_VOLUME_GET         | get_sound_volume          | [Sound Volume](sound_volume.md)                                                                                     |                    |
-| SOUND_VOLUME_TEST        | test_sound_volume         | [Sound Volume](sound_volume.md)                                                                                     | s5e                |
-| START_SPOT               | app_spot                  | [Basic Operations](basic.md)                                                                                        |                    |
-| START_VACUUM             | app_start                 | [Basic Operations](basic.md)                                                                                        |                    |
-| STOP_VACUUM              | app_stop                  | [Basic Operations](basic.md)                                                                                        |                    |
-| TIMERSTART               | start_clean               |                                                                                                                     |                    |
-| TIMER_DEL                | del_timer                 | [Cleaning Timer](timer.md)                                                                                          |                    |
-| TIMER_GET                | get_timer                 | [Cleaning Timer](timer.md)                                                                                          |                    |
-| TIMER_SERVER_DEL         | del_server_timer          | [Cleaning Timer](timer.md)                                                                                          | s5e                |
-| TIMER_SERVER_GET         | get_server_timer          | [Cleaning Timer](timer.md)                                                                                          | s5e                |
-| TIMER_SERVER_SET         | set_server_timer          | [Cleaning Timer](timer.md)                                                                                          | s5e                |
-| TIMER_SERVER_UPDATE      | upd_server_timer          | [Cleaning Timer](timer.md)                                                                                          | s5e                |
-| TIMER_SET                | set_timer                 | [Cleaning Timer](timer.md)                                                                                          |                    |
-| TIMER_UPDATE             | upd_timer                 | [Cleaning Timer](timer.md)                                                                                          |                    |
-| TIMEZONE_GET             | get_timezone              | [Timezone](timezone.md)                                                                                             |                    |
-| TIMEZONE_SET             | set_timezone              | [Timezone](timezone.md)                                                                                             |                    |
-| WAKEUP_ROBOT             | app_wakeup_robot          |                                                                                                                     | s5e                |
-| ZONED_CLEAN_RESUME       | resume_zoned_clean        | [Zone Cleaning](zoned_clean.md)                                                                                     | s5e                |
-| ZONED_CLEAN_START        | app_zoned_clean           | [Zone Cleaning](zoned_clean.md)                                                                                     | v1, s5, s6, s5e    |
-| ZONED_CLEAN_STOP         | stop_zoned_clean          | [Zone Cleaning](zoned_clean.md)                                                                                     | s5e                |
+The old command table of this page is replaced by the [command index](docs/commands/index.md).
 
 ## Generic MiIO Commands
 
-:information_source: These commands appear to be shared amongs all(?) Xiaomi Mi Io devices.
-
-| Type       | Command                 | Documentation                           |
-| ---------- | ----------------------- | --------------------------------------- |
-| INFO       | `miIO.info`             | [Info](miIO-info.md)                    |
-| ROUTER     | `miIO.config_router`    | -                                       |
-| OTA        | `miIO.ota`              | [Update Firmware Over Air](miIO-ota.md) |
-| OTA_PROG   | `miIO.get_ota_progress` | -                                       |
-| OTA_STATE  | `miIO.get_ota_state`    | -                                       |
-| WIFI_STATE | `miIO.wifi_assoc_state` | [Wifi Status](miIO-wifi_assoc_state.md) |
+See [generic miIO methods](docs/concepts/miio-protocol.md#generic-methods).
 
 ## Ruby variant commands
 
-There are few models that take the same commands but preponed with `user.`  
-Below are the known ones:
+See the [`user.*` alternate table](docs/commands/alternate-table.md).
 
-| Type                    | Command                      |
-| ----------------------- | ---------------------------- |
-| GETMAP                  | user.app_get_map             |
-| APPCHARGE               | user.app_home                |
-| APPPAUSE                | user.app_pause               |
-| APPREMOTECONTROLEND     | user.app_rc_end              |
-| APPREMOTECONTROLMOVE    | user.app_rc_move             |
-| APPREMOTECONTROLSTART   | user.app_rc_start            |
-| APPSPOT                 | user.app_spot                |
-| APPSTART                | user.app_start               |
-| APPWAKEUPROBOT          | user.app_wakeup_robot        |
-| CLOSEDNDTIMER           | user.close_dnd_timer         |
-| DELTIMER                | user.del_timer               |
-| ENABLELOGUPLOAD         | user.enable_log_upload       |
-| FINDME                  | user.find_me                 |
-| GETCARPETMODE           | user.get_carpet_mode         |
-| GETCLEANRECORD          | user.get_clean_record        |
-| GETCLEANRECORDMAP       | user.get_clean_record_map    |
-| GETCLEANRECORDMAPV2     | user.get_clean_record_map_v2 |
-| GETCLEANSUMMARY         | user.get_clean_summary       |
-| GETCURRENTSOUNDPACKAGE  | user.get_current_sound       |
-| GETCUSTOMMODE           | user.get_custom_mode         |
-| GETDNDTIMER             | user.get_dnd_timer           |
-| GETLOGUPLOADSTATUS      | user.get_log_upload_status   |
-| GETMAPANDROID           | user.get_map_v1              |
-| GETMAPV2                | user.get_map_v2              |
-| GETSERIALNUMBER         | user.get_serial_number       |
-| GETSOUNDPACKAGEPROGRESS | user.get_sound_progress      |
-| GETSOUNDVOLUME          | user.get_sound_volume        |
-| GETSUPPLIES             | user.get_consumable          |
-| GETTIMER                | user.get_timer               |
-| GETTIMEZONE             | user.get_timezone            |
-| GOTOTARGET              | user.app_goto_target         |
-| GOTOTARGETSTOP          | user.stop_goto_target        |
-| RESETSUPPLIES           | user.reset_consumable        |
-| RESUMEZONEDCLEAN        | user.app_resume_zoned_clean  |
-| SETCARPETMODE           | user.set_carpet_mode         |
-| SETCUSTOMMODE           | user.set_custom_mode         |
-| SETDNDTIMER             | user.set_dnd_timer           |
-| SETSOUNDPACKAGE         | user.dnld_install_sound      |
-| SETSOUNDVOLUME          | user.change_sound_volume     |
-| SETTIMER                | user.set_timer               |
-| SETTIMEZONE             | user.set_timezone            |
-| STARTZONEDCLEAN         | user.app_zoned_clean         |
-| STOPZONEDCLEAN          | user.stop_zoned_clean        |
-| TESTSOUNDVOLUME         | user.test_sound_volume       |
-| TIMERSTART              | user.start_clean             |
-| UPDTIMER                | user.upd_timer               |
+## Stable links
 
+Pages that earlier lived at the repository root (`status.md`, `custom_mode.md`, `fw_features.md`, `Protocol.md`, ...) remain as short pointers to their new place; the files in `RRMapFile/` did not move.
 
-:exclamation: Suggestions & improvements very welcome!
+## Contributing
+
+Corrections, captures from real robots and plugin bundles for missing models are welcome; see [methodology](docs/methodology.md#contributing). The documentation is generated from data and curated text: edit the curated files in [`tools/curated/`](tools/curated/) rather than the generated pages, and regenerate with the scripts described in [`tools/README.md`](tools/README.md).
+
+## License
+
+See [LICENSE](LICENSE).

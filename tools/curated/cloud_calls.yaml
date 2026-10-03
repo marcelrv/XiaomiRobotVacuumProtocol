@@ -1,0 +1,20 @@
+# Descriptions of the cloud / smart-home calls found by js/extract_cloud_calls.mjs (data/cloud_calls.json).
+# Each entry was read at its call site (a65 unless noted). Calls are NOT miIO RPCs: they go to the Mi Home plugin SDK / Xiaomi cloud.
+service:
+  "Service.smarthome.getMapfileUrl": "Asks the Mi Home cloud for a download address of a map object: argument `{model, obj_name}`, answer has `url`. Used by the map download after the robot returned a file name ([maps overview](../concepts/maps-overview.md#how-a-map-reaches-the-app)). a65 m10109."
+  "Service.smarthome.getRobomapUrl": "Older name of the same map-address request (arguments `{model, obj_name}`), used by the a01-family map download."
+  "Service.smarthome.batchGetDeviceDatas": "Reads the cloud device property `prop.s_mixxx`, a JSON string in which the plugin keeps its own per-device settings by key (`getValue`). a65 m10046."
+  "Service.smarthome.batchSetDeviceDatas": "Writes that property back after changing one key (`setValue`). a65 m10046."
+  "Service.smarthome.checkDeviceVersion": "Asks the cloud for firmware update information of the device (`did`, `pid`); used for the firmware-upgrade hint. a65 m10046 `getFirmwareUpgradingInfo`."
+  "Service.scene.loadTimerScenes": "Loads the Mi Home timer scenes of the device (account-side timers, `deviceId`). a65 m10046."
+  "Service.scene.createTimerScene": "Creates a Mi Home timer scene for the device (`deviceId`, options); used when a timer is added through Mi Home (`miAddTimer`). a65 m10046."
+  "Service.room.loadAllRoom": "Lists the rooms of the Mi Home account (the plugin ignores the default room `mijia.roomid.default`). a65 m10046 `getRoomList`."
+  "Service.room.createRoom": "Creates a Mi Home room by name. a65 m10046."
+  "Service.storage.getThirdUserConfigsForOneKey": "Reads a per-user configuration value stored in the Xiaomi cloud by model and key. a65 m10046."
+  "Service.storage.setThirdUserConfigsForOneKey": "Writes such a value. a65 m10046."
+  "Service.spec.doAction": "MIoT action call; the plugin uses it as the transport tunnel for RPCs on a14, a15 and a19 ([transports](../concepts/transports.md#miot-tunnel-mispec)). Not a separate cloud API."
+helper:
+  "MHApi.getCountryInfo": "Reads the country information of the Mi Home account (callback with `countryInfo`); used for region logic."
+  "getVoicePackageList": "Lists the special voice packs the account is entitled to for a serial number ([voice packs](../reference/voice-packs.md))."
+  "callSmartHomeAPI(<computed path>)": "The generic helper itself (`callSmartHomeAPI(method, params, callback)` of the plugin's SDK shim)."
+note: "`callSmartHomeAPI` is a no-op in every analysed bundle: its body only calls the callback with an empty object (`callback && callback({})`; a65 m10046). The paths `/scene/list`, `/scene/edit` and `/scene/delete` that the plugin passes to it, and the other smart-home paths in its constants table (`/home/getmapfileurl`, `/home/checkversion`, `/home/device_list`, `/user/del_user_map`), therefore never produce a request from these plugins; they are documented as the endpoints the code names."

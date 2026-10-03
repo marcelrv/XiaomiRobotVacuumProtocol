@@ -1,0 +1,11 @@
+{
+  "name": "rr-bundle-tools",
+  "private": true,
+  "type": "module",
+  "description": "AST helpers for analysing unpacked Mi Home Roborock plugin bundles",
+  "dependencies": {
+    "acorn": "^8.11.0",
+    "acorn-walk": "^8.3.0",
+    "prettier": "^3.0.0"
+  }
+}

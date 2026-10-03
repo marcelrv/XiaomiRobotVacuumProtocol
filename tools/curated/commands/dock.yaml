@@ -1,0 +1,205 @@
+overview: |
+  These commands exist in plugins for robots with a multifunction dock: auto-empty ("dust collection"), mop washing
+  ("wash towel", `app_start_wash`) and mop drying. The plugin identifies dock types through the status field `dock_type`
+  (app names O1, O2, O3, O3+, O4, O5, "Pearl", "OCD"; see [dock reference](../reference/dock.md)). Product gating is on
+  the [device pages](../devices/index.md). Commands whose names contain `amethyst` belong to the self-cleaning/water-change
+  dock family; the code name is the plugin's, the marketing meaning is not stated in the bundles.
+
+commands:
+  - method: app_start_wash
+    title: Wash the mop
+    summary: Starts the mop-washing routine at the dock.
+    request: '`params`: `{}`.'
+    behaviour: |
+      After the call the app expects state 23/25 (`WASHING_DUSTER`) if the dock is ready (`wash_ready`), otherwise the robot
+      first goes to the dock (26, "going to wash the mop"). For the `TopazS` product the app first shows an explanation alert
+      when a clean is in progress (a65 m12959).
+    related: [app_stop_wash, start_wash_then_charge, set_wash_towel_mode]
+
+  - method: app_stop_wash
+    title: Stop mop washing
+    summary: Stops a running wash.
+    request: '`params`: `{}`.'
+    related: [app_start_wash]
+
+  - method: clean_roller
+    title: Clean the roller (older dock generation)
+    summary: Starts or stops the mop-roller cleaning (the older name of the wash action).
+    request: '`params`: `{"action": 0}` starts, `{"action": 1}` stops (`startCleanRoller` / `stopCleanRoller`, a14 wrapper).'
+    related: [app_start_wash]
+
+  - method: app_start_collect_dust
+    title: Empty the dust bin into the dock
+    summary: Starts auto-empty.
+    request: '`params`: none (`[]`).'
+    behaviour: 'Offered in the dock menu; expected state while running: 22 (`COLLECTING_DUST`).'
+    related: [app_stop_collect_dust, set_dust_collection_mode]
+
+  - method: app_stop_collect_dust
+    title: Stop emptying
+    summary: Stops auto-empty.
+    request: '`params`: none (`[]`).'
+    related: [app_start_collect_dust]
+
+  - method: get_dust_collection_mode
+    title: Auto-empty mode (read)
+    summary: Returns the auto-empty mode.
+    request: '`params`: none (`[]`).'
+    response: '`result.mode` (object, not array): 0 Smart, 1 Quick, 2 Daily, 3 Strong, 4 Max ([enums](../reference/other-enums.md#dustcollectionmode)).'
+    behaviour: 'Gated by new-feature bit `isDustCollectionSettingSupported` (low word bit 25).'
+    related: [set_dust_collection_mode]
+
+  - method: set_dust_collection_mode
+    title: Auto-empty mode (write)
+    summary: Sets the auto-empty mode.
+    request: '`params`: `{"mode": <0–4>}`.'
+    related: [get_dust_collection_mode]
+
+  - method: get_dust_collection_switch_status
+    title: Auto-empty switch (read)
+    summary: Returns whether automatic emptying is on.
+    request: '`params`: none (`[]`).'
+    response: '`result` object with `status`; the status field `auto_dust_collection == 0` also means "off".'
+    related: [set_dust_collection_switch_status]
+
+  - method: set_dust_collection_switch_status
+    title: Auto-empty switch (write)
+    summary: Turns automatic emptying on or off.
+    request: '`params`: `{"status": 0|1}`.'
+    related: [get_dust_collection_switch_status]
+
+  - method: get_wash_towel_mode
+    title: Mop wash mode (read)
+    summary: Returns the dock mop-wash mode.
+    request: '`params`: `{}`.'
+    response: '`result.wash_mode`: 0 Quick, 1 Daily, 2 Deep, 8 SuperDeep ([enums](../reference/other-enums.md#washtowelmode)).'
+    related: [set_wash_towel_mode]
+
+  - method: set_wash_towel_mode
+    title: Mop wash mode (write)
+    summary: Sets the mop-wash mode.
+    request: '`params`: `{"wash_mode": <0|1|2|8>}`.'
+    related: [get_wash_towel_mode]
+
+  - method: get_wash_towel_params
+    title: Mop wash parameters (older bundles)
+    summary: Older variant of the mop-wash settings page (`getWashTowel`).
+    request: '`params`: none (`[]`).'
+    response: '`result.mode`.'
+    related: [set_wash_towel_params]
+
+  - method: set_wash_towel_params
+    title: Mop wash parameters (older bundles, write)
+    summary: Sets the mode, status or interval of the older wash page.
+    request: '`params`: `{"mode": <int>}`, `{"status": <int>}` or `{"interval": <int>}` (separate wrapper calls).'
+    related: [get_wash_towel_params]
+
+  - method: get_smart_wash_params
+    title: Back-wash settings (read)
+    summary: Returns the smart mid-clean wash setting.
+    request: '`params`: `{}`.'
+    response: '`{"smart_wash": 0|1, "wash_interval": <seconds>}` (the page shows the interval in minutes = seconds ÷ 60).'
+    related: [set_smart_wash_params]
+
+  - method: set_smart_wash_params
+    title: Back-wash settings (write)
+    summary: Turns "smart" mid-clean mop washing on/off and sets the interval.
+    request: '`params`: `{"smart_wash": 0|1, "wash_interval": <seconds>}`; the app sends `minutes × 60` (a65 m14396). Mode names: `BackWashMode` Smart 0, Custom 1, Level 2.'
+    related: [get_smart_wash_params]
+
+  - method: app_get_dryer_setting
+    title: Mop drying settings (read)
+    summary: Returns the dryer configuration.
+    response: '`result.status` (truthy = drying switch on) and `result.on.dry_time` (drying time in seconds; the UI offers 7200, 10800 and 14400) — ✅ Bundle · a65 m14513 `getDryerSetting`.'
+    request: '`params`: none (`[]`).'
+    related: [app_set_dryer_setting]
+
+  - method: app_set_dryer_setting
+    title: Mop drying settings (write)
+    summary: Sets the drying time and status.
+    request: '`params`: `{"on": {"dry_time": <seconds>}, "status": <0|1>}`; the UI offers 7200, 10800 and 14400 (`DryerTimeMap`, a65 m14513).'
+    behaviour: 'Needs new-feature bit `isSupportedDrying` (high word bit 15).'
+    related: [app_set_dryer_status]
+
+  - method: app_set_dryer_status
+    title: Start / stop drying
+    summary: Starts or stops mop drying immediately.
+    request: '`params`: `{"status": 0|1}`; the dock button sends `0` when `RSM.isDrying`, otherwise `1`.'
+    related: [app_set_dryer_setting, stop_airdry_mop]
+
+  - method: set_airdry_hours
+    title: Air-dry hours (wrapped)
+    summary: Wrapper `setAirdryDuration`; no call site found.
+    request: '`params`: `{"hours": <minutes>}` (the wrapper names the value `minutes`).'
+    related: [set_fan_motor_work_timeout]
+
+  - method: stop_airdry_mop
+    title: Stop air-dry (wrapped)
+    summary: Wrapped as `stopAirdryMop` in 10 bundles (a08 a09 a10 a14 a15 a19 a23 s4 s5e s6); newer bundles name the same wrapper after `stop_fan_motor_work`; no call site for this spelling.
+    request: '`params`: none (`[]`).'
+    related: [stop_fan_motor_work]
+
+  - method: app_amethyst_self_check
+    title: Dock self-check
+    summary: Runs the dock self-diagnosis.
+    request: '`params`: `{}`.'
+    related: [app_amethyst_drain_all_water]
+
+  - method: app_amethyst_drain_all_water
+    title: Drain all water
+    summary: Drains the dock water tanks.
+    request: '`params`: `{}`.'
+    related: [app_empty_inbuilt_water_tank]
+
+  - method: app_empty_inbuilt_water_tank
+    title: Empty the built-in water tank
+    summary: Drains the robot-side tank at the dock (wrapper `appAmethystDrainLeftWater`).
+    request: '`params`: `{}`.'
+    behaviour: 'Only offered while the robot is charging on the dock.'
+    related: [app_amethyst_drain_all_water]
+
+  - method: app_get_amethyst_status
+    title: Smart water change (read)
+    summary: Reads the "smart change water" switch.
+    request: '`params`: none (`[]`).'
+    response: '`result.status` (0/1).'
+    related: [app_set_amethyst_status]
+
+  - method: app_set_amethyst_status
+    title: Smart water change (write)
+    summary: Sets the switch.
+    request: '`params`: `{"status": 0|1}`.'
+    behaviour: 'New-feature bit `isSupportedSmartChangeWater` (high word bit 16).'
+    related: [app_get_amethyst_status]
+
+  - method: update_dock
+    title: Update dock firmware
+    summary: Orders a dock firmware update.
+    request: '`params`: `{}`.'
+    behaviour: 'Debug/settings page; the toasts of the debug variant are Chinese.'
+    related: [get_dock_info]
+
+  - method: get_wash_debug_params
+    title: Wash debug parameters (read)
+    summary: Wrapper only; no call site.
+    request: '`params`: none (`[]`).'
+    related: [set_wash_debug_params]
+
+  - method: set_wash_debug_params
+    title: Wash debug parameters (write)
+    summary: Wrapper only; four separate wrappers set one key each.
+    request: '`params`: `{"washinterval": <v>}`, `{"dryingtime": <v>}`, `{"rollerspeed": <v>}` or `{"moppingspeed": <v>}`.'
+    related: [get_wash_debug_params]
+
+  - method: get_auto_delivery_cleaning_fluid
+    title: Automatic cleaning-fluid dosing (read)
+    summary: Reads the switch.
+    request: '`params`: `{}`.'
+    response: '`result.status == 1` means on.'
+    related: [set_auto_delivery_cleaning_fluid]
+
+  - method: set_auto_delivery_cleaning_fluid
+    title: Automatic cleaning-fluid dosing (write)
+    summary: Turns automatic dosing on or off.
+    request: '`params`: `{"status": 0|1}`.'
+    related: [get_auto_delivery_cleaning_fluid]

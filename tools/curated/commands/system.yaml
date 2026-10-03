@@ -1,0 +1,94 @@
+overview: |
+  Wi-Fi information, time zone, firmware update and log upload. The generic `miIO.*` methods that every Xiaomi device
+  understands (`miIO.info`, `miIO.config_router`, `miIO.get_ota_state`, …) are **not** called by these plugins, except for
+  `miIO.ota`; see [generic miIO methods](../concepts/miio-protocol.md#generic-methods).
+
+commands:
+  - method: get_network_info
+    title: Wi-Fi information
+    summary: Returns SSID, signal strength, IP and MAC address.
+    request: '`params`: none (`[]`).'
+    response: '`result` (object): `ssid`, `rssi`, `ip`, `mac` (✅ Bundle · a65 m14105 and m14093); missing values are shown as "Unknown".'
+    legacy: '⚪ Legacy [network_info.md](../../network_info.md) — the README lists it as "s5e, s5, s7, s6"; the bundles call it in all of them.'
+    related: [app_get_wifi_list]
+
+  - method: app_get_wifi_list
+    title: Saved Wi-Fi networks
+    summary: Returns the networks stored on the robot.
+    request: '`params`: `{}`.'
+    response: '`result` is an array of objects with `ssid` and `id`; the app hides the currently connected SSID.'
+    related: [app_delete_wifi]
+
+  - method: app_delete_wifi
+    title: Forget a Wi-Fi network
+    summary: Deletes a stored network.
+    request: '`params`: `{"id": <int>}`.'
+    related: [app_get_wifi_list]
+
+  - method: get_timezone
+    title: Robot time zone (read)
+    summary: Returns the robot's time zone name.
+    request: '`params`: none (`[]`).'
+    response: '`result[0]` is a tz database name (e.g. `Europe/Amsterdam`); the app compares it with the phone zone and shows a red dot if they differ.'
+    legacy: '⚪ Legacy [timezone.md](../../timezone.md) — confirmed.'
+    related: [set_timezone, set_app_timezone]
+
+  - method: set_timezone
+    title: Robot time zone (write)
+    summary: Sets the robot's time zone.
+    request: |
+      `params`: `["<tz name>"]` in most bundles; the a01 family sends the object `{"olson": "<tz name>", "posix": "<POSIX tz string>"}`
+      (✅ Bundle · a01 wrapper `setTimezone(timeZone, posix)`; a65 m14135 `setTimezone(timeZone)`).
+    related: [get_timezone]
+
+  - method: set_app_timezone
+    title: Tell the robot the app's zone and country
+    summary: Sent at start-up so that the robot knows the phone's time zone and mobile country code.
+    request: '`params`: `[<tz name>, <mcc>]` (the phone zone and the MCC, `0` when unknown; a65 m10007).'
+    behaviour: 'After the call the plugin re-reads the location (`app_get_init_status`).'
+    related: [app_get_init_status, get_timezone]
+
+  - method: miIO.ota
+    title: Firmware update (test page)
+    summary: Starts an OTA with an explicit URL; only used by a debug page.
+    request: '`params`: `{"app_url": "<url>", "file_md5": "<md5>", "proc": <v>, "mode": <v>, "install": <v>}` (a14 wrapper `otaMiIot`).'
+    response: 'The debug page shows the raw reply as text.'
+    legacy: '⚪ Legacy [miIO-ota.md](../../miIO-ota.md): `{"mode": "normal", "install": "1", "app_url": …, "file_md5": …, "proc": "dnld install"}` — same keys.'
+    related: []
+
+  - method: enable_log_upload
+    title: Log-upload consent level
+    summary: Tells the robot how much logging it may upload; sent when the privacy agreement is accepted.
+    request: |
+      `params`: `[<level>, <privacy name>]`, or `[<level>]` in older bundles. `level` is `0` when the user disagrees and
+      the product's *agree level* otherwise (3 for the `Rubys` product, 9 for all others; a65 m10139 `agreeProtocolLevel`).
+      The named levels of the plugin are `LogLevel` None 0, BlackBox 1, Pickup 2, Full 4; `privacyName` codes: `PN_NONE` 0,
+      `PN_CN` 1, `PN_GENERAL` 2, `PN_EU` 3 ([enums](../reference/other-enums.md)). The app retries up to 4 times.
+    legacy: '⚪ Legacy [log_upload.md](../../log_upload.md).'
+    related: [get_log_upload_status, set_fds_endpoint]
+
+  - method: get_log_upload_status
+    title: Log-upload status (declared only)
+    summary: In every Methods table; no call site.
+    request: ❓ Unknown.
+    related: [enable_log_upload]
+
+  - method: user_upload_log
+    title: Upload logs now
+    summary: Asks the robot to upload its logs (the "report a problem" button).
+    request: '`params`: none (`[]`).'
+    related: [enable_log_upload]
+
+  - method: upload_data_for_debug_mode
+    title: Debug-data upload
+    summary: Starts a debug data upload from the debug page.
+    request: '`params`: none (`[]`).'
+    related: [user_upload_log]
+
+  - method: set_fds_endpoint
+    title: Set the file-service endpoint
+    summary: Tells the robot which file-storage host to use for uploads (maps, logs).
+    request: '`params`: `[<host>]` — chosen from the account region; sent at plugin start together with the log level.'
+    behaviour: 'Supported when fw feature code 111 (`isSupportFDSEndPoint`) is present.'
+    legacy: '⚪ Legacy fw_features.md: "Supports FSEndPoint" for code 111 — consistent.'
+    related: [enable_log_upload]

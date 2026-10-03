@@ -1,0 +1,253 @@
+overview: |
+  Three numeric families describe how the robot cleans: **fan power** (suction), **water box mode** (water flow) and **mop
+  mode** (route). The values the app knows are listed in
+  [fan, water and mop values](../reference/fan-water-mop.md). The status object reports the current values in
+  `fan_power`, `water_box_mode` and `mop_mode`; per-room overrides are the "customize clean mode" entries below.
+
+  Newer plugins combine the three into one call, [`set_clean_motor_mode`](#set_clean_motor_mode).
+
+commands:
+  - method: get_custom_mode
+    title: Get the fan power
+    summary: Returns the current fan power value.
+    request: '`params`: none (`[]`).'
+    response: '`result[0]` is the fan power code (integer); the app tests for `105` ("mop" mode) to show a toast (a14 m12944).'
+    legacy: |
+      ⚪ Legacy [custom_mode.md](../../custom_mode.md): "<100 = percent, >100 = extended modes". The bundles list the
+      extended codes 101–106 and 108 in newer builds and the percentage-style codes in
+      [fan values](../reference/fan-water-mop.md#fan-power); the same call is used for both.
+    related: [set_custom_mode, get_water_box_custom_mode]
+
+  - method: set_custom_mode
+    title: Set the fan power
+    summary: Sets the fan power code.
+    request: |
+      `params`: `[<code>]` — one integer. Codes used by the app: `101` Silent, `102` Balanced, `103` Turbo, `104` Max, `105`
+      Gentle/"mop only" (`NoClean`), `106` customize, `108` Max+ (newer builds); older sapphire-family bundles use the
+      percentage-style codes of [fan values](../reference/fan-water-mop.md#fan-power). (⚪ Legacy [custom_mode.md](../../custom_mode.md) names the parameter `fan_level`.)
+    examples:
+      - label: constructed from app code
+        json: |
+          {"id": 106, "method": "set_custom_mode", "params": [102]}
+    behaviour: |
+      The mode picker sends this call and then, on products with an electronic water box, also
+      [`set_water_box_custom_mode`](#set_water_box_custom_mode) / [`set_clean_motor_mode`](#set_clean_motor_mode)
+      (a65 m10016).
+    legacy: '⚪ Legacy: values 38 / 60 / 75 / 100 / 105 — present in the bundles as the "old" map of the Max/Turbo labels.'
+    related: [get_custom_mode, set_clean_motor_mode]
+
+  - method: get_water_box_custom_mode
+    title: Get the water flow
+    summary: Returns the water box mode.
+    request: '`params`: none (`[]`).'
+    response: '`result[0]` is the water mode code; the a62 mop-mode page maps anything other than 201/202/203 to 201.'
+    legacy: |
+      ⚪ Legacy [water_box_custom_mode.md](../../water_box_custom_mode.md) also lists a response object
+      `{"water_box_mode", "distance_off"}`; no bundle reads that shape (the app reads `distance_off` from the status object).
+    related: [set_water_box_custom_mode, set_water_box_distance_off]
+
+  - method: set_water_box_custom_mode
+    title: Set the water flow
+    summary: Sets the water box mode.
+    request: |
+      `params`: `[<code>]`. Codes: `200` off, `201` low, `202` medium, `203` high, `204` customize, `207` custom levels
+      ([water values](../reference/fan-water-mop.md#water-box-mode)). The fine-grained level is set with
+      [`set_water_box_distance_off`](#set_water_box_distance_off).
+    legacy: |
+      ⚪ Legacy names the first parameter `water_flow_mode` and documents a second parameter form `{"water_box_mode": …, "distance_off": …}`. No bundle sends it; the bundles
+      use the separate `set_water_box_distance_off` call.
+    related: [get_water_box_custom_mode, set_water_box_distance_off]
+
+  - method: set_water_box_distance_off
+    title: Fine water level
+    summary: Sets the custom water level used with water mode 207.
+    request: |
+      `params`: `{"distance_off": <int>}`. The slider code sends `sliderWaterTotal − slider position`
+      (a65 m10016: `setWaterBoxDistance(sliderWaterTotal - value)`); one bundle uses `265 − value` (a30). The value range is
+      therefore device-dependent and ❓ Unknown as a firmware range.
+    behaviour: 'Offered only when the firmware reports the new-feature bit `isCustomWaterBoxDistanceSupported` (low word bit 31).'
+    related: [set_water_box_custom_mode]
+
+  - method: get_clean_motor_mode
+    title: Get combined clean motor mode
+    summary: Wrapped in 32 bundles (a08 a09 a10 a14 … a76, s4 s5e s6); no call site found.
+    request: '`params`: `[]` (a72) / `[mode]` (a08).'
+    related: [set_clean_motor_mode]
+
+  - method: set_clean_motor_mode
+    title: Set fan, water and mop mode at once
+    summary: Sets fan power and water mode (and mop mode) in one call.
+    request: |
+      `params`: `[{"fan_power": <int>, "water_box_mode": <int>}]`, or with a third key
+      `[{"fan_power": …, "water_box_mode": …, "mop_mode": <int>}]` (✅ Bundle · a08 wrapper `setCleanMotorMode` /
+      `setCleanMopMode`; a65 m10016: `setCleanMopMode(fanPower, newWater, 300)`).
+    examples:
+      - label: constructed from app code
+        json: |
+          {"id": 107, "method": "set_clean_motor_mode", "params": [{"fan_power": 102, "water_box_mode": 202, "mop_mode": 300}]}
+    related: [set_custom_mode, set_water_box_custom_mode, set_mop_mode]
+
+  - method: set_mop_mode
+    title: Set the mop route mode
+    summary: Sets the mop mode code (`300`, `301`, `303`, `304`).
+    request: '`params`: `[<code>]`; codes in [mop values](../reference/fan-water-mop.md#mop-mode).'
+    behaviour: 'After the call the app stores the value as `RSM.mopMode`; for 301/303/304 it additionally adjusts the water mode.'
+    related: [set_clean_motor_mode]
+
+  - method: get_customize_clean_mode
+    title: Get the per-room clean modes
+    summary: Returns the list of per-room ("customize clean mode") settings.
+    request: '`params`: none (`[]`).'
+    response: '`result` is an array (one element per customised room); the app keeps it as `customCleanModes` and passes it back unchanged.'
+    related: [set_customize_clean_mode]
+
+  - method: set_customize_clean_mode
+    title: Set the per-room clean modes
+    summary: Writes the whole per-room list in one call.
+    request: |
+      `params` is the **array of room objects** (not wrapped again), each of the form
+      `{"segment": <room id>, "fan_power": <int>, "water_box_mode": <int>, "mop_mode": <int>, "mop_template_id": <int>}`
+      (✅ Bundle · a65 m14324: the "smart" preset fills `fan_power` 101 or 102, `water_box_mode` 202, `mop_mode` 300).
+      An empty array `[]` resets the customisation (m14321/`resetCleanMode`).
+    behaviour: 'In the retry list: the plugin adds `need_retry` ([transports](../concepts/transports.md#retry-protocol)).'
+    related: [get_customize_clean_mode, get_room_mapping]
+
+  - method: get_custom_clean_time
+    title: Custom clean time (legacy feature)
+    summary: Reads the maximum clean time setting; only in the oldest plugin generation.
+    request: '`params`: none (`[]`).'
+    response: '`result[0]` is a duration in seconds from the list 0, 600, 1200, … 3600 (`0` = automatic). Gated by a firmware feature id (103).'
+    related: [set_custom_clean_time]
+
+  - method: set_custom_clean_time
+    title: Set the custom clean time
+    summary: Sets the maximum clean time in seconds.
+    request: '`params`: `[<seconds>]`; choices offered: 0 (auto), 600, 1200, 1800, 2400, 3000, 3600.'
+    related: [get_custom_clean_time]
+
+  - method: set_clean_sequence
+    title: Set the room cleaning order
+    summary: Stores a custom order of room ids.
+    request: '`params`: the array of selected room ids in order; `[]` resets the order.'
+    behaviour: 'Listed in the retry-capable methods ([transports](../concepts/transports.md#retry-protocol)).'
+    related: [get_clean_sequence, app_segment_clean]
+
+  - method: get_clean_sequence
+    title: Get the room cleaning order
+    summary: Returns the stored room order.
+    request: '`params`: none (`[]`).'
+    response: '`result` is the array of room ids (`cleanSequence`).'
+    related: [set_clean_sequence]
+
+  - method: add_mop_template_params
+    title: Create a custom mop mode
+    summary: Adds a user-defined mop template (dock mop-washing parameters).
+    request: |
+      `params`: one object `config` assembled by the editor; the readable fields of a template (see
+      [`get_mop_template_params_by_id`](#get_mop_template_params_by_id)) are `name`, `dry_time`, `roller_speed`,
+      `wash_count`, `wash_interval_time`, `wash_time`, `move_speed`, `sys_type`.
+    related: [update_mop_template_params, del_mop_template_params, set_mop_template_id]
+
+  - method: update_mop_template_params
+    title: Update a custom mop mode
+    summary: Replaces the parameters of an existing template.
+    request: '`params`: the template object (same keys as above plus `id`).'
+    related: [add_mop_template_params]
+
+  - method: del_mop_template_params
+    title: Delete a custom mop mode
+    summary: Deletes a template by id.
+    request: '`params`: `{"id": <int>}`.'
+    behaviour: 'The app refuses (toast) when the template is currently in use.'
+    related: [add_mop_template_params]
+
+  - method: sort_mop_template_params
+    title: Reorder custom mop modes
+    summary: Sets the display order of templates.
+    request: '`params`: `{"ids": [<id>, …], "show_index": <int>}` — `show_index` is the number of templates in the first group (a65 m14426).'
+    related: [get_mop_template_params_summary]
+
+  - method: get_mop_template_params_by_id
+    title: Read a custom mop mode
+    summary: Returns the full parameters of one template.
+    request: '`params`: `{"id": <int>}`.'
+    response: '`result` object with `dry_time`, `name`, `roller_speed`, `sys_type`, `wash_count`, `wash_interval_time`, `wash_time`, `move_speed` (✅ Bundle · a65 m12989).'
+    related: [get_mop_template_params_summary]
+
+  - method: get_mop_template_params_summary
+    title: List custom mop modes
+    summary: Returns the template list.
+    request: '`params`: none (`{}`).'
+    response: '`result` is the list shown on the mop-mode page (`customMopModeListData`); element fields were not decoded here (❓ Unknown).'
+    related: [get_mop_template_params_by_id]
+
+  - method: set_mop_template_id
+    title: Select a custom mop mode
+    summary: Makes a template the active one.
+    request: '`params`: `{"mop_template_id": <int>}`; the status field `mop_template_id` reports it back.'
+    related: [get_mop_template_params_summary]
+
+  - method: set_corner_clean_mode
+    title: Corner clean on/off
+    summary: Switches the corner-cleaning option.
+    request: '`params`: `{"status": 0|1}`.'
+    behaviour: 'Offered when `isCornerCleanModeSupported`; the status field `corner_clean_mode` reports it.'
+    related: [set_clean_motor_mode]
+
+  - method: get_mop_motor_status
+    title: Mop lifting mode (read)
+    summary: Reads the "layer mode" of the mop motor.
+    request: '`params`: none (`[]`).'
+    response: '`result.status` (object, not array): 0 or 1 (other values are treated as 0).'
+    related: [set_mop_motor_status]
+
+  - method: set_mop_motor_status
+    title: Mop lifting mode (write)
+    summary: Sets the mop motor "layer mode".
+    request: '`params`: `{"status": 0|1}`.'
+    related: [get_mop_motor_status]
+
+  - method: get_mop_reverse_pwm_values
+    title: Mop back-PWM (debug)
+    summary: Reads a debug parameter page value.
+    request: '`params`: none (`{}`).'
+    behaviour: 'Debug page only (a65 m14387; the page has Chinese debug texts).'
+    related: [set_mop_reverse_pwm_values]
+
+  - method: set_mop_reverse_pwm_values
+    title: Mop back-PWM (debug write)
+    summary: Writes the debug value.
+    request: '`params`: an object `param` built by the debug page from an integer entered by the user.'
+    related: [get_mop_reverse_pwm_values]
+
+  - method: set_fan_motor_work_timeout
+    title: Air-dry duration
+    summary: Sets the fan "air drying" timeout in minutes (0 disables).
+    request: '`params`: `{"timeout": <minutes>}`; the app sends 360 for "on" and 0 for "off" (a65 m14420).'
+    related: [get_fan_motor_work_timeout, stop_fan_motor_work]
+
+  - method: get_fan_motor_work_timeout
+    title: Air-dry duration (read)
+    summary: Reads the configured timeout.
+    request: '`params`: none (`[]`).'
+    response: '`result[0]` minutes (0 = off).'
+    related: [set_fan_motor_work_timeout]
+
+  - method: stop_fan_motor_work
+    title: Stop air drying
+    summary: Stops a running air-dry (also wrapped as `stopAirdryMop`).
+    request: '`params`: none (`[]`).'
+    related: [set_fan_motor_work_timeout, stop_airdry_mop]
+
+  - method: set_clean_follow_ground_material_status
+    title: Clean along the floor direction
+    summary: Switches "follow floor material direction" cleaning.
+    request: '`params`: `{"status": 0|1}`.'
+    related: [get_clean_follow_ground_material_status]
+
+  - method: get_clean_follow_ground_material_status
+    title: Clean along the floor direction (read)
+    summary: Reads the switch.
+    request: '`params`: none (`[]`).'
+    response: '`result.status == 1` means on.'
+    related: [set_clean_follow_ground_material_status]

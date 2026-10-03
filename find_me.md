@@ -1,34 +1,7 @@
 # Find Robot
 
-The vacuum cleaner emits a sound (e.g. "Hey, here I am!") so you can find it.
+> **Moved.** This page is now [docs/commands/cleaning-control.md#find_me](docs/commands/cleaning-control.md#find_me). The old description was merged into the bundle-verified reference; the old request and reply examples are kept in [legacy captures](docs/appendix/legacy-captures.md). This file only keeps the old link and section anchors working.
 
 ## Find Me
 
-### Command
-
-| Key    | Value       | Comment                                                                             |
-| ------ | ----------- | ----------------------------------------------------------------------------------- |
-| method | `"find_me"` |                                                                                     |
-| id     | `id`        | Random integer which is returned in the response used to link request and response. |
-
-#### Example
-
-```json
-{
-    "method": "find_me",
-    "id": 12394
-}
-```
-
-### Response
-
-Standard response to succeeded command.
-
-#### Example
-
-```json
-{
-    "result": ["ok"],
-    "id": 12394
-}
-```
+See [docs/commands/cleaning-control.md#find_me](docs/commands/cleaning-control.md#find_me).

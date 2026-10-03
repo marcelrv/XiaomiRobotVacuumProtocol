@@ -1,0 +1,127 @@
+overview: |
+  Robots with a camera or structured-light sensor expose a switch word ([`get_camera_status`](#get_camera_status)), a
+  live-view signalling exchange (WebRTC-style: the app sends an SDP offer and ICE candidates, polls the robot's answer, and
+  asks for TURN server information) and a home-security password. Everything on this page is only reachable for products
+  with `isCameraSupported` or `isStructuredLightSupported` (see the [device pages](../devices/index.md)). Session
+  secrets, keys and endpoints seen in the code are intentionally not recorded.
+
+commands:
+  - method: get_camera_status
+    title: Camera switch word (read)
+    summary: Returns a bit field with the camera-related switches.
+    request: '`params`: none (`[]`).'
+    response: |
+      `result[0]` is an integer bit field (✅ Bundle · a65 m12998 `parseCameraStatus`):
+
+      | Bits | Meaning (app name) |
+      |---|---|
+      | 0 | camera enabled |
+      | 1 | pet mode |
+      | 2 | real-time monitor |
+      | 3–4 | LED setting (2 bits) |
+      | 5 | monitor privacy policy agreed |
+      | 6 | exploration enabled |
+      | 7 | "pet mode alert shown" |
+      | 8–9 | video setting (2 bits; only with new-feature bit `isVideoSettingSupported`) |
+      | 10 | map-object photo enabled |
+      | 11 | map-object photo privacy policy agreed |
+
+      The same word is also present in the status object as `camera_status`.
+    related: [set_camera_status]
+
+  - method: set_camera_status
+    title: Camera switch word (write)
+    summary: Writes the whole bit field.
+    request: '`params`: `[<int>]` — the OR of the bits above (a65 m12998 `setCameraStatus`: `cameraVal | pet<<1 | realtime<<2 | led<<3 | privacy<<5 | exploration<<6 | alertShown<<7 | video<<8 | photo<<10 | photoPrivacy<<11`).'
+    behaviour: 'Because the whole word is written, a client must read the current word first and change only its bit.'
+    related: [get_camera_status]
+
+  - method: start_camera_preview
+    title: Start the live view
+    summary: Starts the camera stream on the robot.
+    request: '`params`: an object `para` assembled by the video module (client identification and quality; the layout is internal and not decoded).'
+    response: '`result[0] == "ok"` is success.'
+    behaviour: 'In the status the robot reports the live-view state in `camera_status` bit 2. The app refuses to start while the robot is charging or emptying (video error codes −101, −116; [errors](../reference/errors.md#app-side-codes)).'
+    related: [stop_camera_preview, get_turn_server, send_sdp_to_robot]
+
+  - method: stop_camera_preview
+    title: Stop the live view
+    summary: Stops the stream.
+    request: '`params`: `[]` or an object `param` echoing the client identification.'
+    related: [start_camera_preview]
+
+  - method: get_turn_server
+    title: TURN server information
+    summary: Returns relay information for the live view.
+    request: '`params`: none (`[]`).'
+    response: '`result.url`; the string `retry` makes the app ask again.'
+    related: [send_sdp_to_robot]
+
+  - method: send_sdp_to_robot
+    title: Send the SDP offer (cloud route)
+    summary: Sends the app side session description.
+    request: '`params`: `{"app_sdp": <string>}`; sent through `asyncCallMethodFromCloud` (✅ Bundle · a65 m10115).'
+    response: '`result[0] == "ok"` on success.'
+    related: [get_device_sdp, send_ice_to_robot]
+
+  - method: send_ice_to_robot
+    title: Send an ICE candidate
+    summary: Sends one candidate.
+    request: '`params`: `{"app_ice": <string>}`.'
+    related: [get_device_ice]
+
+  - method: get_device_sdp
+    title: Poll the robot SDP answer
+    summary: Polled every 500 ms (default) until the robot has answered.
+    request: '`params`: none (`[]`).'
+    related: [send_sdp_to_robot]
+
+  - method: get_device_ice
+    title: Poll the robot ICE candidates
+    summary: Polled every 500 ms (default).
+    request: '`params`: none (`[]`).'
+    related: [send_ice_to_robot]
+
+  - method: switch_video_quality
+    title: Live-view quality
+    summary: Chooses the stream definition.
+    request: '`params`: `{"quality": "<command string>"}` where the string is the `command` of the selected entry of the app''s definitions table (the string values are not decoded here).'
+    related: [start_camera_preview]
+
+  - method: switch_water_mark
+    title: Live-view watermark
+    summary: Turns the watermark on or off.
+    request: '`params`: `{"waterMark": "ON"|"OFF"}`.'
+    related: [start_camera_preview]
+
+  - method: set_homesec_password
+    title: Set / change the monitoring password
+    summary: Enables, changes or disables the gesture password protecting the live view.
+    request: '`params`: `{"enable_password": 0|1, "old_password": "<md5 hex or empty>", "new_password": "<md5 hex or empty>"}` — the app sends the **MD5** of the password, not the password.'
+    related: [check_homesec_password, reset_homesec_password]
+
+  - method: check_homesec_password
+    title: Verify the monitoring password
+    summary: Checks a password.
+    request: '`params`: `{"password": "<md5 hex>"}`.'
+    related: [set_homesec_password]
+
+  - method: reset_homesec_password
+    title: Reset the monitoring password
+    summary: Removes the password.
+    request: '`params`: none (`[]`).'
+    related: [set_homesec_password]
+
+  - method: get_homesec_connect_status
+    title: Monitoring connection status
+    summary: Returns the client id of the current monitoring session.
+    request: '`params`: none (`[]`).'
+    response: '`result.client_id` (kept as `homeSecClientID`); the status field `home_sec_status` carries the connection state (`RRHomeSecStatus`: 0 disconnected, 1 connected, 2 disconnecting).'
+    related: [start_camera_preview]
+
+  - method: upload_photo
+    title: Report an obstacle photo classification
+    summary: Sends the user's classification of a robot photo back to the robot/cloud.
+    request: '`params`: `{"photos": [{"id": <photo id>, "src_type": <int>, "actual_type": <int>}]}` (a65 m14309).'
+    behaviour: 'New-feature bit `isPhotoUploadSupported` (low word bit 16).'
+    related: [get_photo]

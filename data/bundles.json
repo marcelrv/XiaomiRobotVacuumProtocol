@@ -1,0 +1,3954 @@
+{
+ "meta": {
+  "generator": "tools/build_commands.py",
+  "bundles": 62,
+  "best_bundles": 42,
+  "methods": 295
+ },
+ "bundles": [
+  {
+   "id": "roborock.vacuum.a01",
+   "model": "roborock.vacuum.a01",
+   "kind": "best",
+   "file": "signed_10047_1000932_41_ANDROID_bundle_7f803c31216ebaa91e33176bf2828588.zip",
+   "hash": "7f803c31216ebaa91e33176bf2828588",
+   "regions": [
+    "IN",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10047",
+   "build_in_name": "41",
+   "version": "1.0.51",
+   "version_code": 128,
+   "sdk_api_level": 10051,
+   "min_sdk_api_level": 10047,
+   "build_date_utc": "2021-03-03",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1033,
+   "main_bundle_md5": "de785820aca710c6084bb4570fb3d6b2",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10022,
+     10109
+    ],
+    "featureManager": [
+     10145
+    ],
+    "protocol": [
+     10142
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a01v2",
+    "roborock.vacuum.a01v3",
+    "roborock.vacuum.a04",
+    "roborock.vacuum.a04v2",
+    "roborock.vacuum.a04v3"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "tanos",
+    "in_saphire_list": true,
+    "table_sizes": {
+     "tanos": 92,
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "default",
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a01@da4f2797",
+   "model": "roborock.vacuum.a01",
+   "kind": "variant",
+   "file": "signed_10047_1000932_35_ANDROID_bundle_da4f2797667ef1189beff650afcc177f.zip",
+   "hash": "da4f2797667ef1189beff650afcc177f",
+   "regions": [
+    "CN",
+    "RU"
+   ],
+   "sdk_in_name": "10047",
+   "build_in_name": "35",
+   "version": "1.0.47",
+   "version_code": 114,
+   "sdk_api_level": 10047,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-11-30",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 998,
+   "main_bundle_md5": "a5d53dcf595008cc505a4d2ad4b4dc84",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10022,
+     10106
+    ],
+    "featureManager": [
+     10142
+    ],
+    "protocol": [
+     10139
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a01v2",
+    "roborock.vacuum.a01v3",
+    "roborock.vacuum.a04",
+    "roborock.vacuum.a04v2",
+    "roborock.vacuum.a04v3"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "tanos",
+    "in_saphire_list": true,
+    "table_sizes": {
+     "tanos": 92,
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "default",
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a01@761267f4",
+   "model": "roborock.vacuum.a01",
+   "kind": "variant",
+   "file": "signed_10035_1000932_20_ANDROID_bundle_761267f465398797f4b796b3675597c0.zip",
+   "hash": "761267f465398797f4b796b3675597c0",
+   "regions": [
+    "DE"
+   ],
+   "sdk_in_name": "10035",
+   "build_in_name": "20",
+   "version": "1.0.35",
+   "version_code": 72,
+   "sdk_api_level": 10035,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-03-10",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 720,
+   "main_bundle_md5": "441229b8f8cff192c5284587c0cc382d",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10022,
+     10085
+    ],
+    "featureManager": [
+     10121
+    ],
+    "protocol": [
+     10118
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a01v2",
+    "roborock.vacuum.a01v3",
+    "roborock.vacuum.a04",
+    "roborock.vacuum.a04v2",
+    "roborock.vacuum.a04v3"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "tanos",
+    "in_saphire_list": true,
+    "table_sizes": {
+     "tanos": 92,
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "default",
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a08",
+   "model": "roborock.vacuum.a08",
+   "kind": "best",
+   "file": "signed_10047_1000587_123_ANDROID_bundle_a87b7356662e672b228304f1a74a288c.zip",
+   "hash": "a87b7356662e672b228304f1a74a288c",
+   "regions": [
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10047",
+   "build_in_name": "123",
+   "version": "1.0.47",
+   "version_code": 1012,
+   "sdk_api_level": 10047,
+   "min_sdk_api_level": 10042,
+   "build_date_utc": "2020-12-04",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1417,
+   "main_bundle_md5": "0a8460fcc5ce4b9c24bbd3b7bcdcd13c",
+   "module_ids": {
+    "rrmisdk": [
+     10022
+    ],
+    "rrmisdkModelGroups": [
+     10022,
+     11498
+    ],
+    "featureManager": [
+     10307
+    ],
+    "protocol": [
+     10337
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s6"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a08@33224506",
+   "model": "roborock.vacuum.a08",
+   "kind": "variant",
+   "file": "signed_10034_1000587_78_ANDROID_bundle_33224506df44b0562a54e12812d4c37a.zip",
+   "hash": "33224506df44b0562a54e12812d4c37a",
+   "regions": [
+    "CN"
+   ],
+   "sdk_in_name": "10034",
+   "build_in_name": "78",
+   "version": "1.0.34",
+   "version_code": 782,
+   "sdk_api_level": 10034,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-08-17",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1054,
+   "main_bundle_md5": "d9b449836d62159c53bbb132a1c1ff94",
+   "module_ids": {
+    "rrmisdk": [
+     10019
+    ],
+    "rrmisdkModelGroups": [
+     10019,
+     10304
+    ],
+    "featureManager": [
+     10298
+    ],
+    "protocol": [
+     10310
+    ],
+    "robotApi": [
+     10010
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a08@1e129e82",
+   "model": "roborock.vacuum.a08",
+   "kind": "variant",
+   "file": "signed_10034_1000587_47_ANDROID_bundle_1e129e82a6e68adcf10772aa68086f12.zip",
+   "hash": "1e129e82a6e68adcf10772aa68086f12",
+   "regions": [
+    "DE"
+   ],
+   "sdk_in_name": "10034",
+   "build_in_name": "47",
+   "version": "1.0.34",
+   "version_code": 358,
+   "sdk_api_level": 10034,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-03-17",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 819,
+   "main_bundle_md5": "d872e378f36920e788deff2d406ec988",
+   "module_ids": {
+    "rrmisdk": [
+     10019
+    ],
+    "rrmisdkModelGroups": [
+     10019,
+     10109
+    ],
+    "featureManager": [
+     10103
+    ],
+    "protocol": [
+     10115
+    ],
+    "robotApi": [
+     10010
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.p5"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a09",
+   "model": "roborock.vacuum.a09",
+   "kind": "best",
+   "file": "signed_10042_1002405_42_ANDROID_bundle_2656668408622b3078096bf2f985667f.zip",
+   "hash": "2656668408622b3078096bf2f985667f",
+   "regions": [
+    "CN"
+   ],
+   "sdk_in_name": "10042",
+   "build_in_name": "42",
+   "version": "1.0.48",
+   "version_code": 1008,
+   "sdk_api_level": 10048,
+   "min_sdk_api_level": 10042,
+   "build_date_utc": "2020-12-25",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1420,
+   "main_bundle_md5": "80ddd0f008c69911182cca04198f9e72",
+   "module_ids": {
+    "rrmisdk": [
+     10022
+    ],
+    "rrmisdkModelGroups": [
+     10022,
+     11498
+    ],
+    "featureManager": [
+     10307
+    ],
+    "protocol": [
+     10337
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.a10@faa8dbc2"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a10",
+   "model": "roborock.vacuum.a10",
+   "kind": "best",
+   "file": "signed_10042_1000931_112_ANDROID_bundle_35117b7de8e94f5759ebb057ab62db72.zip",
+   "hash": "35117b7de8e94f5759ebb057ab62db72",
+   "regions": [
+    "IN",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10042",
+   "build_in_name": "112",
+   "version": "1.0.50",
+   "version_code": 1012,
+   "sdk_api_level": 10050,
+   "min_sdk_api_level": 10042,
+   "build_date_utc": "2021-02-08",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1426,
+   "main_bundle_md5": "595f7001667eeebd5905f3a61d5142ce",
+   "module_ids": {
+    "rrmisdk": [
+     10022
+    ],
+    "rrmisdkModelGroups": [
+     10022,
+     11498
+    ],
+    "featureManager": [
+     10307
+    ],
+    "protocol": [
+     10337
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a10@1af87cdf",
+   "model": "roborock.vacuum.a10",
+   "kind": "variant",
+   "file": "signed_10034_1000931_48_ANDROID_bundle_1af87cdfc5e8852919cf2486acdfb63f.zip",
+   "hash": "1af87cdfc5e8852919cf2486acdfb63f",
+   "regions": [
+    "CN",
+    "DE"
+   ],
+   "sdk_in_name": "10034",
+   "build_in_name": "48",
+   "version": "1.0.34",
+   "version_code": 658,
+   "sdk_api_level": 10034,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-06-13",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 972,
+   "main_bundle_md5": "66df7b5d888ea69c4d032ee905b8dd17",
+   "module_ids": {
+    "rrmisdk": [
+     10019
+    ],
+    "rrmisdkModelGroups": [
+     10019,
+     10283
+    ],
+    "featureManager": [
+     10277
+    ],
+    "protocol": [
+     10289
+    ],
+    "robotApi": [
+     10010
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a10@faa8dbc2",
+   "model": "roborock.vacuum.a10",
+   "kind": "variant",
+   "file": "signed_10042_1000931_108_ANDROID_bundle_faa8dbc2d7f31881a9f9358f7fd7ec2b.zip",
+   "hash": "faa8dbc2d7f31881a9f9358f7fd7ec2b",
+   "regions": [
+    "RU"
+   ],
+   "sdk_in_name": "10042",
+   "build_in_name": "108",
+   "version": "1.0.48",
+   "version_code": 1008,
+   "sdk_api_level": 10048,
+   "min_sdk_api_level": 10042,
+   "build_date_utc": "2020-12-25",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1420,
+   "main_bundle_md5": "80ddd0f008c69911182cca04198f9e72",
+   "module_ids": {
+    "rrmisdk": [
+     10022
+    ],
+    "rrmisdkModelGroups": [
+     10022,
+     11498
+    ],
+    "featureManager": [
+     10307
+    ],
+    "protocol": [
+     10337
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.a09"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a11",
+   "model": "roborock.vacuum.a11",
+   "kind": "best",
+   "file": "signed_10034_1000930_20_ANDROID_bundle_7d6d95bf9e26628fbcc3f9efc1830b23.zip",
+   "hash": "7d6d95bf9e26628fbcc3f9efc1830b23",
+   "regions": [
+    "CN"
+   ],
+   "sdk_in_name": "10034",
+   "build_in_name": "20",
+   "version": "1.0.34",
+   "version_code": 478,
+   "sdk_api_level": 10034,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-04-09",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 883,
+   "main_bundle_md5": "9cbe2899843a37dbe910c983c8165c90",
+   "module_ids": {
+    "rrmisdk": [
+     10019
+    ],
+    "rrmisdkModelGroups": [
+     10019,
+     10250
+    ],
+    "featureManager": [
+     10244
+    ],
+    "protocol": [
+     10280
+    ],
+    "robotApi": [
+     10010
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a14",
+   "model": "roborock.vacuum.a14",
+   "kind": "best",
+   "file": "signed_10042_1004367_27_ANDROID_bundle_ccbb120c4963cd025fbd9768ef77b997.zip",
+   "hash": "ccbb120c4963cd025fbd9768ef77b997",
+   "regions": [
+    "CN"
+   ],
+   "sdk_in_name": "10042",
+   "build_in_name": "27",
+   "version": "1.0.53",
+   "version_code": 1071,
+   "sdk_api_level": 10053,
+   "min_sdk_api_level": 10042,
+   "build_date_utc": "2021-04-14",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1680,
+   "main_bundle_md5": "0b45f84a94675f40aa2324244b0b51f1",
+   "module_ids": {
+    "featureManager": [
+     10034
+    ],
+    "rrmisdk": [
+     10043
+    ],
+    "rrmisdkModelGroups": [
+     10043
+    ],
+    "robotApi": [
+     10142
+    ],
+    "deviceModelManager": [
+     10166
+    ],
+    "protocol": [
+     10031
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.a15"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a15",
+   "model": "roborock.vacuum.a15",
+   "kind": "best",
+   "file": "signed_10042_1004367_27_ANDROID_bundle_ccbb120c4963cd025fbd9768ef77b997.zip",
+   "hash": "ccbb120c4963cd025fbd9768ef77b997",
+   "regions": [
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10042",
+   "build_in_name": "27",
+   "version": "1.0.53",
+   "version_code": 1071,
+   "sdk_api_level": 10053,
+   "min_sdk_api_level": 10042,
+   "build_date_utc": "2021-04-14",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1680,
+   "main_bundle_md5": "0b45f84a94675f40aa2324244b0b51f1",
+   "module_ids": {
+    "featureManager": [
+     10034
+    ],
+    "rrmisdk": [
+     10043
+    ],
+    "rrmisdkModelGroups": [
+     10043
+    ],
+    "robotApi": [
+     10142
+    ],
+    "deviceModelManager": [
+     10166
+    ],
+    "protocol": [
+     10031
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.a14"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a15@a1df84d4",
+   "model": "roborock.vacuum.a15",
+   "kind": "variant",
+   "file": "signed_10042_1004367_22_ANDROID_bundle_a1df84d46b2be3512988c817eedf8101.zip",
+   "hash": "a1df84d46b2be3512988c817eedf8101",
+   "regions": [
+    "DE"
+   ],
+   "sdk_in_name": "10042",
+   "build_in_name": "22",
+   "version": "1.0.52",
+   "version_code": 1080,
+   "sdk_api_level": 10052,
+   "min_sdk_api_level": 10042,
+   "build_date_utc": "2021-03-12",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1568,
+   "main_bundle_md5": "7b80bcdb2c26756b93ba8f21187cbc69",
+   "module_ids": {
+    "rrmisdk": [
+     10022
+    ],
+    "rrmisdkModelGroups": [
+     10022
+    ],
+    "deviceModelManager": [
+     10127
+    ],
+    "featureManager": [
+     10337
+    ],
+    "protocol": [
+     10364
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a19",
+   "model": "roborock.vacuum.a19",
+   "kind": "best",
+   "file": "signed_10042_1003911_26_ANDROID_bundle_7307f790359a85dfb8a3ca78def33fe9.zip",
+   "hash": "7307f790359a85dfb8a3ca78def33fe9",
+   "regions": [
+    "DE",
+    "US"
+   ],
+   "sdk_in_name": "10042",
+   "build_in_name": "26",
+   "version": "1.0.52",
+   "version_code": 1014,
+   "sdk_api_level": 10052,
+   "min_sdk_api_level": 10042,
+   "build_date_utc": "2021-03-29",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1427,
+   "main_bundle_md5": "2cfad3c159f81ea4e6ce02317f658c3d",
+   "module_ids": {
+    "rrmisdk": [
+     10022
+    ],
+    "rrmisdkModelGroups": [
+     10022,
+     11504
+    ],
+    "featureManager": [
+     10307
+    ],
+    "protocol": [
+     10337
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a23",
+   "model": "roborock.vacuum.a23",
+   "kind": "best",
+   "file": "signed_10042_1003745_109_ANDROID_bundle_5ff2ea2cad074afd9111a88d0c2bc533.zip",
+   "hash": "5ff2ea2cad074afd9111a88d0c2bc533",
+   "regions": [
+    "CN"
+   ],
+   "sdk_in_name": "10042",
+   "build_in_name": "109",
+   "version": "1.0.53",
+   "version_code": 1069,
+   "sdk_api_level": 10053,
+   "min_sdk_api_level": 10042,
+   "build_date_utc": "2021-04-01",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1680,
+   "main_bundle_md5": "001595d23891d49a50f183b83626b60b",
+   "module_ids": {
+    "featureManager": [
+     10034
+    ],
+    "rrmisdk": [
+     10043
+    ],
+    "rrmisdkModelGroups": [
+     10043
+    ],
+    "robotApi": [
+     10142
+    ],
+    "deviceModelManager": [
+     10166
+    ],
+    "protocol": [
+     10031
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a26",
+   "model": "roborock.vacuum.a26",
+   "kind": "best",
+   "file": "signed_10084_1007884_95_ANDROID_bundle_842a376be47ff370d0a062ad71bd632b.zip",
+   "hash": "842a376be47ff370d0a062ad71bd632b",
+   "regions": [
+    "CN",
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10084",
+   "build_in_name": "95",
+   "version": "1.0.84",
+   "version_code": 1929,
+   "sdk_api_level": 10084,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2023-07-21",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1582,
+   "main_bundle_md5": "be3d7306a04035693963e12a62aa6ed1",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a66"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a27",
+   "model": "roborock.vacuum.a27",
+   "kind": "best",
+   "file": "signed_10077_1007883_122_ANDROID_bundle_30bb940dcd38887d9b630e600b4db469.zip",
+   "hash": "30bb940dcd38887d9b630e600b4db469",
+   "regions": [
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10077",
+   "build_in_name": "122",
+   "version": "1.0.84",
+   "version_code": 1929,
+   "sdk_api_level": 10084,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2023-07-21",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1582,
+   "main_bundle_md5": "be3d7306a04035693963e12a62aa6ed1",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a66"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a29",
+   "model": "roborock.vacuum.a29",
+   "kind": "best",
+   "file": "signed_10075_1007104_80_ANDROID_bundle_ebafd1e5b252bfb011f92cec94499650.zip",
+   "hash": "ebafd1e5b252bfb011f92cec94499650",
+   "regions": [
+    "CN",
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10075",
+   "build_in_name": "80",
+   "version": "1.0.75",
+   "version_code": 1743,
+   "sdk_api_level": 10075,
+   "min_sdk_api_level": 10065,
+   "build_date_utc": "2022-11-04",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1957,
+   "main_bundle_md5": "d793eefe12bd788bb4eab5c10e9eafd4",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10112
+    ],
+    "deviceModelManager": [
+     10136
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [
+    "roborock.vacuum.a30"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a30",
+   "model": "roborock.vacuum.a30",
+   "kind": "best",
+   "file": "signed_10075_1010129_33_ANDROID_bundle_91562698e7fb8f6dd22fbfd35cf25596.zip",
+   "hash": "91562698e7fb8f6dd22fbfd35cf25596",
+   "regions": [
+    "IN",
+    "SG"
+   ],
+   "sdk_in_name": "10075",
+   "build_in_name": "33",
+   "version": "1.0.75",
+   "version_code": 1743,
+   "sdk_api_level": 10075,
+   "min_sdk_api_level": 10065,
+   "build_date_utc": "2022-11-04",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1957,
+   "main_bundle_md5": "d793eefe12bd788bb4eab5c10e9eafd4",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10112
+    ],
+    "deviceModelManager": [
+     10136
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [
+    "roborock.vacuum.a29"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a34",
+   "model": "roborock.vacuum.a34",
+   "kind": "best",
+   "file": "signed_10070_1008192_23_ANDROID_bundle_32e69096f0450c9e735f877879ce708a.zip",
+   "hash": "32e69096f0450c9e735f877879ce708a",
+   "regions": [
+    "IN",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10070",
+   "build_in_name": "23",
+   "version": "1.0.70",
+   "version_code": 1603,
+   "sdk_api_level": 10070,
+   "min_sdk_api_level": 10065,
+   "build_date_utc": "2022-06-23",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": false,
+   "format": "indexed-ram",
+   "modules": 1902,
+   "main_bundle_md5": "55a959a802130b308fa1fd4db16f1494",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "rrmisdkModelGroups": [
+     10046
+    ],
+    "robotApi": [
+     10109
+    ],
+    "deviceModelManager": [
+     10133
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a40"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a37",
+   "model": "roborock.vacuum.a37",
+   "kind": "best",
+   "file": "signed_10070_1008428_27_ANDROID_bundle_1628ce0bb3702feca7b431262f464d05.zip",
+   "hash": "1628ce0bb3702feca7b431262f464d05",
+   "regions": [
+    "CN",
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10070",
+   "build_in_name": "27",
+   "version": "1.0.70",
+   "version_code": 1603,
+   "sdk_api_level": 10070,
+   "min_sdk_api_level": 10065,
+   "build_date_utc": "2022-06-23",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": false,
+   "format": "indexed-ram",
+   "modules": 1902,
+   "main_bundle_md5": "55a959a802130b308fa1fd4db16f1494",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "rrmisdkModelGroups": [
+     10046
+    ],
+    "robotApi": [
+     10109
+    ],
+    "deviceModelManager": [
+     10133
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a40"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a38",
+   "model": "roborock.vacuum.a38",
+   "kind": "best",
+   "file": "signed_10070_1008427_27_ANDROID_bundle_35c449b25534f124d1e2fd045453bff4.zip",
+   "hash": "35c449b25534f124d1e2fd045453bff4",
+   "regions": [
+    "DE"
+   ],
+   "sdk_in_name": "10070",
+   "build_in_name": "27",
+   "version": "1.0.70",
+   "version_code": 1605,
+   "sdk_api_level": 10070,
+   "min_sdk_api_level": 10065,
+   "build_date_utc": "2022-06-24",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": false,
+   "format": "indexed-ram",
+   "modules": 1902,
+   "main_bundle_md5": "d970e8ba3475c82db258e6acc21f0ae0",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "rrmisdkModelGroups": [
+     10046
+    ],
+    "robotApi": [
+     10109
+    ],
+    "deviceModelManager": [
+     10133
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a40",
+   "model": "roborock.vacuum.a40",
+   "kind": "best",
+   "file": "signed_10070_1008193_24_ANDROID_bundle_a69411261211d740aecb6ca4fd5b9fc6.zip",
+   "hash": "a69411261211d740aecb6ca4fd5b9fc6",
+   "regions": [
+    "DE"
+   ],
+   "sdk_in_name": "10070",
+   "build_in_name": "24",
+   "version": "1.0.70",
+   "version_code": 1603,
+   "sdk_api_level": 10070,
+   "min_sdk_api_level": 10065,
+   "build_date_utc": "2022-06-23",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": false,
+   "format": "indexed-ram",
+   "modules": 1902,
+   "main_bundle_md5": "55a959a802130b308fa1fd4db16f1494",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "rrmisdkModelGroups": [
+     10046
+    ],
+    "robotApi": [
+     10109
+    ],
+    "deviceModelManager": [
+     10133
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a46",
+   "model": "roborock.vacuum.a46",
+   "kind": "best",
+   "file": "signed_10084_1007619_55_ANDROID_bundle_5e5b8e0f7a1c87372c2915f5bf3a8a65.zip",
+   "hash": "5e5b8e0f7a1c87372c2915f5bf3a8a65",
+   "regions": [
+    "CN",
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10084",
+   "build_in_name": "55",
+   "version": "1.0.84",
+   "version_code": 1929,
+   "sdk_api_level": 10084,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2023-07-21",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1582,
+   "main_bundle_md5": "be3d7306a04035693963e12a62aa6ed1",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a66"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a51",
+   "model": "roborock.vacuum.a51",
+   "kind": "best",
+   "file": "signed_10077_1013405_28_ANDROID_bundle_8aa7de52f1a7a2f7ab56d146fd555df3.zip",
+   "hash": "8aa7de52f1a7a2f7ab56d146fd555df3",
+   "regions": [
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10077",
+   "build_in_name": "28",
+   "version": "1.0.83",
+   "version_code": 1903,
+   "sdk_api_level": 10083,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2023-07-07",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1563,
+   "main_bundle_md5": "757626bf304e5cc3a35978b500581c89",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a52",
+   "model": "roborock.vacuum.a52",
+   "kind": "best",
+   "file": "signed_10070_1008141_27_ANDROID_bundle_ffbb9479822ade895a4b729e3e487c7a.zip",
+   "hash": "ffbb9479822ade895a4b729e3e487c7a",
+   "regions": [
+    "CN",
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10070",
+   "build_in_name": "27",
+   "version": "1.0.70",
+   "version_code": 1629,
+   "sdk_api_level": 10070,
+   "min_sdk_api_level": 10065,
+   "build_date_utc": "2022-07-21",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": false,
+   "format": "indexed-ram",
+   "modules": 1922,
+   "main_bundle_md5": "4767e73fb14400b51d7c8cc028dc8f3c",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "rrmisdkModelGroups": [
+     10046
+    ],
+    "robotApi": [
+     10109
+    ],
+    "deviceModelManager": [
+     10133
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a62",
+   "model": "roborock.vacuum.a62",
+   "kind": "best",
+   "file": "signed_10069_1010230_11_ANDROID_bundle_6fdbaa08f0545fd64df289a27444642c.zip",
+   "hash": "6fdbaa08f0545fd64df289a27444642c",
+   "regions": [
+    "CN",
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10069",
+   "build_in_name": "11",
+   "version": "1.0.69",
+   "version_code": 1547,
+   "sdk_api_level": 10069,
+   "min_sdk_api_level": 10065,
+   "build_date_utc": "2022-05-10",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": false,
+   "format": "indexed-ram",
+   "modules": 1883,
+   "main_bundle_md5": "c4081fed30bce18a1c7ea3f85c1dac01",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "rrmisdkModelGroups": [
+     10046
+    ],
+    "robotApi": [
+     10109
+    ],
+    "deviceModelManager": [
+     10133
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a64",
+   "model": "roborock.vacuum.a64",
+   "kind": "best",
+   "file": "signed_10095_1011719_36_ANDROID_bundle_772b9968fad810b9353f9cc89d00bb3e.zip",
+   "hash": "772b9968fad810b9353f9cc89d00bb3e",
+   "regions": [
+    "CN",
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10095",
+   "build_in_name": "36",
+   "version": "1.0.95",
+   "version_code": 1939,
+   "sdk_api_level": 10095,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2024-06-27",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": false,
+   "format": "indexed-ram",
+   "modules": 1570,
+   "main_bundle_md5": "2eb483f061a75d6171d5a65dadb66a86",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "rrmisdkModelGroups": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [
+    "roborock.vacuum.a65"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a65",
+   "model": "roborock.vacuum.a65",
+   "kind": "best",
+   "file": "signed_10095_1013572_33_ANDROID_bundle_ca959e57baa19dc89495889ba202f412.zip",
+   "hash": "ca959e57baa19dc89495889ba202f412",
+   "regions": [
+    "RU",
+    "US"
+   ],
+   "sdk_in_name": "10095",
+   "build_in_name": "33",
+   "version": "1.0.95",
+   "version_code": 1939,
+   "sdk_api_level": 10095,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2024-06-27",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": false,
+   "format": "indexed-ram",
+   "modules": 1570,
+   "main_bundle_md5": "2eb483f061a75d6171d5a65dadb66a86",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "rrmisdkModelGroups": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [
+    "roborock.vacuum.a64"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a65@01cc8681",
+   "model": "roborock.vacuum.a65",
+   "kind": "variant",
+   "file": "signed_10077_1013572_26_ANDROID_bundle_01cc86819a3779514a9eb24947ad84f1.zip",
+   "hash": "01cc86819a3779514a9eb24947ad84f1",
+   "regions": [
+    "DE",
+    "IN",
+    "SG"
+   ],
+   "sdk_in_name": "10077",
+   "build_in_name": "26",
+   "version": "1.0.83",
+   "version_code": 1931,
+   "sdk_api_level": 10083,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2023-07-10",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1570,
+   "main_bundle_md5": "40fca79a0ce2f3ad0d272dc1a4fe6f44",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a66",
+   "model": "roborock.vacuum.a66",
+   "kind": "best",
+   "file": "signed_10084_1010630_18_ANDROID_bundle_4f7ec77a38a7a7a466ca4053fc58003c.zip",
+   "hash": "4f7ec77a38a7a7a466ca4053fc58003c",
+   "regions": [
+    "CN",
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10084",
+   "build_in_name": "18",
+   "version": "1.0.84",
+   "version_code": 1929,
+   "sdk_api_level": 10084,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2023-07-21",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1582,
+   "main_bundle_md5": "be3d7306a04035693963e12a62aa6ed1",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a46"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a69",
+   "model": "roborock.vacuum.a69",
+   "kind": "best",
+   "file": "signed_10086_1011782_48_ANDROID_bundle_c2c7596b13a6a923bd6b0f31abd5b664.zip",
+   "hash": "c2c7596b13a6a923bd6b0f31abd5b664",
+   "regions": [
+    "CN",
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10086",
+   "build_in_name": "48",
+   "version": "1.0.86",
+   "version_code": 1911,
+   "sdk_api_level": 10086,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2023-10-09",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1563,
+   "main_bundle_md5": "978bb17dce85a2e0ba84528c761aad1e",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a70",
+   "model": "roborock.vacuum.a70",
+   "kind": "best",
+   "file": "signed_10077_1013690_38_ANDROID_bundle_aa6df0364d1f9b9cce9f48fecbe6622a.zip",
+   "hash": "aa6df0364d1f9b9cce9f48fecbe6622a",
+   "regions": [
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10077",
+   "build_in_name": "38",
+   "version": "1.0.83",
+   "version_code": 1897,
+   "sdk_api_level": 10083,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2023-06-30",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1563,
+   "main_bundle_md5": "8261685b10f3a756806f30d7e0b079da",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a72",
+   "model": "roborock.vacuum.a72",
+   "kind": "best",
+   "file": "signed_10092_1012816_19_ANDROID_bundle_5ba3547d7b257ac5c7205624a548b6fd.zip",
+   "hash": "5ba3547d7b257ac5c7205624a548b6fd",
+   "regions": [
+    "IN",
+    "RU",
+    "US"
+   ],
+   "sdk_in_name": "10092",
+   "build_in_name": "19",
+   "version": "1.0.92",
+   "version_code": 1969,
+   "sdk_api_level": 10092,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2024-04-17",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": false,
+   "format": "indexed-ram",
+   "modules": 1585,
+   "main_bundle_md5": "695b75d665e325b9745e4f3d4d135e82",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "rrmisdkModelGroups": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [
+    "roborock.vacuum.a73"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a72@7907121f",
+   "model": "roborock.vacuum.a72",
+   "kind": "variant",
+   "file": "signed_10077_1012816_16_ANDROID_bundle_7907121f59338a6f52d6ce9659be6fdb.zip",
+   "hash": "7907121f59338a6f52d6ce9659be6fdb",
+   "regions": [
+    "DE",
+    "SG"
+   ],
+   "sdk_in_name": "10077",
+   "build_in_name": "16",
+   "version": "1.0.85",
+   "version_code": 1961,
+   "sdk_api_level": 10085,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2023-08-29",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1585,
+   "main_bundle_md5": "7e5d8edefba57127512ba5dc4be5128e",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a73",
+   "model": "roborock.vacuum.a73",
+   "kind": "best",
+   "file": "signed_10092_1012728_20_ANDROID_bundle_18ad0dc9e3421f945e7dab4405e70606.zip",
+   "hash": "18ad0dc9e3421f945e7dab4405e70606",
+   "regions": [
+    "RU",
+    "US"
+   ],
+   "sdk_in_name": "10092",
+   "build_in_name": "20",
+   "version": "1.0.92",
+   "version_code": 1969,
+   "sdk_api_level": 10092,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2024-04-17",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": false,
+   "format": "indexed-ram",
+   "modules": 1585,
+   "main_bundle_md5": "695b75d665e325b9745e4f3d4d135e82",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "rrmisdkModelGroups": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [
+    "roborock.vacuum.a72"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a73@1dd6af45",
+   "model": "roborock.vacuum.a73",
+   "kind": "variant",
+   "file": "signed_10077_1012728_11_ANDROID_bundle_1dd6af45f6ed7ea75cce87cf88f80b40.zip",
+   "hash": "1dd6af45f6ed7ea75cce87cf88f80b40",
+   "regions": [
+    "DE",
+    "IN",
+    "SG"
+   ],
+   "sdk_in_name": "10077",
+   "build_in_name": "11",
+   "version": "1.0.83",
+   "version_code": 1949,
+   "sdk_api_level": 10083,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2023-07-11",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1585,
+   "main_bundle_md5": "105b4fd5a71dd507553f2a1e863107ee",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a74",
+   "model": "roborock.vacuum.a74",
+   "kind": "best",
+   "file": "signed_10096_1012398_49_ANDROID_bundle_0da0d8ed11f52f55a0deafe1671af808.zip",
+   "hash": "0da0d8ed11f52f55a0deafe1671af808",
+   "regions": [
+    "CN",
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10096",
+   "build_in_name": "49",
+   "version": "1.0.96",
+   "version_code": 1947,
+   "sdk_api_level": 10096,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2024-08-01",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": false,
+   "format": "indexed-ram",
+   "modules": 1588,
+   "main_bundle_md5": "5be84c9f3924789a6488e106399ba67b",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "rrmisdkModelGroups": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a75",
+   "model": "roborock.vacuum.a75",
+   "kind": "best",
+   "file": "signed_10089_1011936_46_ANDROID_bundle_66becc3ab24182d15bb756c4fa00f256.zip",
+   "hash": "66becc3ab24182d15bb756c4fa00f256",
+   "regions": [
+    "DE"
+   ],
+   "sdk_in_name": "10089",
+   "build_in_name": "46",
+   "version": "1.0.89",
+   "version_code": 1959,
+   "sdk_api_level": 10089,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2023-12-12",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": false,
+   "format": "indexed-ram",
+   "modules": 1588,
+   "main_bundle_md5": "91c8fc7d82b70ef2646df5872c52109f",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "rrmisdkModelGroups": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a75@1f1f19e9",
+   "model": "roborock.vacuum.a75",
+   "kind": "variant",
+   "file": "signed_10077_1011936_36_ANDROID_bundle_1f1f19e9823ff73e9b0de1df80cc2fd0.zip",
+   "hash": "1f1f19e9823ff73e9b0de1df80cc2fd0",
+   "regions": [
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10077",
+   "build_in_name": "36",
+   "version": "1.0.82",
+   "version_code": 1927,
+   "sdk_api_level": 10082,
+   "min_sdk_api_level": 10077,
+   "build_date_utc": "2023-06-20",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1586,
+   "main_bundle_md5": "547674ed5b7f6cd500c998d29c2493ae",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10115
+    ],
+    "deviceModelManager": [
+     10139
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.a76",
+   "model": "roborock.vacuum.a76",
+   "kind": "best",
+   "file": "signed_10077_1012148_18_ANDROID_bundle_b49b68a2fe25514696ba9f9d9cf76d40.zip",
+   "hash": "b49b68a2fe25514696ba9f9d9cf76d40",
+   "regions": [
+    "CN",
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10077",
+   "build_in_name": "18",
+   "version": "1.0.77",
+   "version_code": 1763,
+   "sdk_api_level": 10077,
+   "min_sdk_api_level": 10065,
+   "build_date_utc": "2023-01-05",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "indexed-ram-bundle",
+   "minified": true,
+   "format": "indexed-ram",
+   "modules": 1959,
+   "main_bundle_md5": "95fddced5e2780b58de0372cd16bb330",
+   "module_ids": {
+    "featureManager": [
+     10037
+    ],
+    "rrmisdk": [
+     10046
+    ],
+    "robotApi": [
+     10112
+    ],
+    "deviceModelManager": [
+     10136
+    ],
+    "protocol": [
+     10034
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 97,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.c1",
+   "model": "roborock.vacuum.c1",
+   "kind": "best",
+   "file": "signed_10047_1000933_23_ANDROID_bundle_42c531ced6c55d10fc039d4401d89df9.zip",
+   "hash": "42c531ced6c55d10fc039d4401d89df9",
+   "regions": [
+    "DE",
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10047",
+   "build_in_name": "23",
+   "version": "1.0.48",
+   "version_code": 110,
+   "sdk_api_level": 10048,
+   "min_sdk_api_level": 10047,
+   "build_date_utc": "2020-12-30",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1023,
+   "main_bundle_md5": "a5c8b01c9d581ac3e734b306f00ca4c9",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10022,
+     10106
+    ],
+    "featureManager": [
+     10142
+    ],
+    "protocol": [
+     10139
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a01v2",
+    "roborock.vacuum.a01v3",
+    "roborock.vacuum.a04",
+    "roborock.vacuum.a04v2",
+    "roborock.vacuum.a04v3"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.e2"
+   ],
+   "methods_table": {
+    "active_role": "tanos",
+    "in_saphire_list": true,
+    "table_sizes": {
+     "tanos": 92,
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "default",
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.c1@ea1df7b1",
+   "model": "roborock.vacuum.c1",
+   "kind": "variant",
+   "file": "signed_10034_1000933_13_ANDROID_bundle_ea1df7b112f9b7ac9270dcef77a5b50d.zip",
+   "hash": "ea1df7b112f9b7ac9270dcef77a5b50d",
+   "regions": [
+    "CN"
+   ],
+   "sdk_in_name": "10034",
+   "build_in_name": "13",
+   "version": "1.0.34",
+   "version_code": 86,
+   "sdk_api_level": 10034,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-03-31",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 747,
+   "main_bundle_md5": "588f37632dc43c1b11aa640f1bff4c08",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10022,
+     10106
+    ],
+    "featureManager": [
+     10142
+    ],
+    "protocol": [
+     10139
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a01v2",
+    "roborock.vacuum.a01v3",
+    "roborock.vacuum.a04",
+    "roborock.vacuum.a04v2",
+    "roborock.vacuum.a04v3"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.e2@ea1df7b1"
+   ],
+   "methods_table": {
+    "active_role": "tanos",
+    "in_saphire_list": true,
+    "table_sizes": {
+     "tanos": 92,
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "default",
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.e2",
+   "model": "roborock.vacuum.e2",
+   "kind": "best",
+   "file": "signed_10047_1000933_23_ANDROID_bundle_42c531ced6c55d10fc039d4401d89df9.zip",
+   "hash": "42c531ced6c55d10fc039d4401d89df9",
+   "regions": [
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10047",
+   "build_in_name": "23",
+   "version": "1.0.48",
+   "version_code": 110,
+   "sdk_api_level": 10048,
+   "min_sdk_api_level": 10047,
+   "build_date_utc": "2020-12-30",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1023,
+   "main_bundle_md5": "a5c8b01c9d581ac3e734b306f00ca4c9",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10022,
+     10106
+    ],
+    "featureManager": [
+     10142
+    ],
+    "protocol": [
+     10139
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a01v2",
+    "roborock.vacuum.a01v3",
+    "roborock.vacuum.a04",
+    "roborock.vacuum.a04v2",
+    "roborock.vacuum.a04v3"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.c1"
+   ],
+   "methods_table": {
+    "active_role": "tanos",
+    "in_saphire_list": true,
+    "table_sizes": {
+     "tanos": 92,
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "default",
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.e2@ea1df7b1",
+   "model": "roborock.vacuum.e2",
+   "kind": "variant",
+   "file": "signed_10034_1000933_13_ANDROID_bundle_ea1df7b112f9b7ac9270dcef77a5b50d.zip",
+   "hash": "ea1df7b112f9b7ac9270dcef77a5b50d",
+   "regions": [
+    "CN"
+   ],
+   "sdk_in_name": "10034",
+   "build_in_name": "13",
+   "version": "1.0.34",
+   "version_code": 86,
+   "sdk_api_level": 10034,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-03-31",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 747,
+   "main_bundle_md5": "588f37632dc43c1b11aa640f1bff4c08",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10022,
+     10106
+    ],
+    "featureManager": [
+     10142
+    ],
+    "protocol": [
+     10139
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a01v2",
+    "roborock.vacuum.a01v3",
+    "roborock.vacuum.a04",
+    "roborock.vacuum.a04v2",
+    "roborock.vacuum.a04v3"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.c1@ea1df7b1"
+   ],
+   "methods_table": {
+    "active_role": "tanos",
+    "in_saphire_list": true,
+    "table_sizes": {
+     "tanos": 92,
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "default",
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.e2@26e9c09e",
+   "model": "roborock.vacuum.e2",
+   "kind": "variant",
+   "file": "signed_10034_1000933_15_ANDROID_bundle_26e9c09eeaac52c65d21ba8c0a90b7ab.zip",
+   "hash": "26e9c09eeaac52c65d21ba8c0a90b7ab",
+   "regions": [
+    "DE"
+   ],
+   "sdk_in_name": "10034",
+   "build_in_name": "15",
+   "version": "1.0.46",
+   "version_code": 90,
+   "sdk_api_level": 10046,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-11-18",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1019,
+   "main_bundle_md5": "cf0ec611ed45403ec19ec6d04abff29e",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10022,
+     10106
+    ],
+    "featureManager": [
+     10142
+    ],
+    "protocol": [
+     10139
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a01v2",
+    "roborock.vacuum.a01v3",
+    "roborock.vacuum.a04",
+    "roborock.vacuum.a04v2",
+    "roborock.vacuum.a04v3"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "tanos",
+    "in_saphire_list": true,
+    "table_sizes": {
+     "tanos": 92,
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "default",
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.m1s",
+   "model": "roborock.vacuum.m1s",
+   "kind": "best",
+   "file": "signed_10034_1001012_26_ANDROID_bundle_63599f008aa1f791dcf31176354d9bcc.zip",
+   "hash": "63599f008aa1f791dcf31176354d9bcc",
+   "regions": [
+    "CN"
+   ],
+   "sdk_in_name": "10034",
+   "build_in_name": "26",
+   "version": "1.0.34",
+   "version_code": 36,
+   "sdk_api_level": 10034,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-04-14",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 678,
+   "main_bundle_md5": "ce235e1845ae0a981298e1d4c706b43a",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10019,
+     10100
+    ],
+    "featureManager": [
+     10160
+    ],
+    "protocol": [
+     10157
+    ],
+    "robotApi": [
+     10010
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.p5",
+   "model": "roborock.vacuum.p5",
+   "kind": "best",
+   "file": "signed_10034_1000587_47_ANDROID_bundle_1e129e82a6e68adcf10772aa68086f12.zip",
+   "hash": "1e129e82a6e68adcf10772aa68086f12",
+   "regions": [
+    "CN"
+   ],
+   "sdk_in_name": "10034",
+   "build_in_name": "47",
+   "version": "1.0.34",
+   "version_code": 358,
+   "sdk_api_level": 10034,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-03-17",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 819,
+   "main_bundle_md5": "d872e378f36920e788deff2d406ec988",
+   "module_ids": {
+    "rrmisdk": [
+     10019
+    ],
+    "rrmisdkModelGroups": [
+     10019,
+     10109
+    ],
+    "featureManager": [
+     10103
+    ],
+    "protocol": [
+     10115
+    ],
+    "robotApi": [
+     10010
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.a08@1e129e82"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.s4",
+   "model": "roborock.vacuum.s4",
+   "kind": "best",
+   "file": "signed_10047_1000390_126_ANDROID_bundle_2cae915f40be11e04b6cc3838265223a.zip",
+   "hash": "2cae915f40be11e04b6cc3838265223a",
+   "regions": [
+    "US"
+   ],
+   "sdk_in_name": "10047",
+   "build_in_name": "126",
+   "version": "1.0.47",
+   "version_code": 1012,
+   "sdk_api_level": 10047,
+   "min_sdk_api_level": 10042,
+   "build_date_utc": "2020-12-04",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1417,
+   "main_bundle_md5": "0a8460fcc5ce4b9c24bbd3b7bcdcd13c",
+   "module_ids": {
+    "rrmisdk": [
+     10022
+    ],
+    "rrmisdkModelGroups": [
+     10022,
+     11498
+    ],
+    "featureManager": [
+     10307
+    ],
+    "protocol": [
+     10337
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.s6"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.s4@634b68fa",
+   "model": "roborock.vacuum.s4",
+   "kind": "variant",
+   "file": "signed_10032_1000390_65_ANDROID_bundle_634b68fac1005d6a7faf34715fbd6e68.zip",
+   "hash": "634b68fac1005d6a7faf34715fbd6e68",
+   "regions": [
+    "DE"
+   ],
+   "sdk_in_name": "10032",
+   "build_in_name": "65",
+   "version": "1.0.32",
+   "version_code": 186,
+   "sdk_api_level": 10032,
+   "min_sdk_api_level": 10025,
+   "build_date_utc": "2020-01-03",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 506,
+   "main_bundle_md5": "0a632b41ea6f44d3fb082d7862659bbf",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10019,
+     10103
+    ],
+    "featureManager": [
+     10100
+    ],
+    "protocol": [
+     10190
+    ],
+    "robotApi": [
+     10010
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.t4"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.s5",
+   "model": "roborock.vacuum.s5",
+   "kind": "best",
+   "file": "signed_10047_1000570_39_ANDROID_bundle_d3188909e9299d1f2edac66db048853a.zip",
+   "hash": "d3188909e9299d1f2edac66db048853a",
+   "regions": [
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10047",
+   "build_in_name": "39",
+   "version": "1.0.47",
+   "version_code": 52,
+   "sdk_api_level": 10047,
+   "min_sdk_api_level": 10045,
+   "build_date_utc": "2020-12-08",
+   "project_models_field": "roborock.vacuum.t4v2",
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1018,
+   "main_bundle_md5": "9022bfd247b8186ed74ed4dddfb8e990",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10019,
+     10109
+    ],
+    "featureManager": [
+     10106
+    ],
+    "protocol": [
+     10130
+    ],
+    "robotApi": [
+     10010,
+     11444
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.s5@f6d4be23",
+   "model": "roborock.vacuum.s5",
+   "kind": "variant",
+   "file": "signed_10035_1000570_34_ANDROID_bundle_f6d4be236fe2b22f2a5256d1bfd127a9.zip",
+   "hash": "f6d4be236fe2b22f2a5256d1bfd127a9",
+   "regions": [
+    "CN",
+    "DE"
+   ],
+   "sdk_in_name": "10035",
+   "build_in_name": "34",
+   "version": "1.0.35",
+   "version_code": 40,
+   "sdk_api_level": 10035,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-02-28",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 748,
+   "main_bundle_md5": "352e799f02b3a50b6957e557869b03da",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10019,
+     10109
+    ],
+    "featureManager": [
+     10106
+    ],
+    "protocol": [
+     10130
+    ],
+    "robotApi": [
+     10010,
+     11444
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.s5@330efc74",
+   "model": "roborock.vacuum.s5",
+   "kind": "variant",
+   "file": "signed_10034_1000570_36_ANDROID_bundle_330efc741aad2095d2cddd9dedb18cdb.zip",
+   "hash": "330efc741aad2095d2cddd9dedb18cdb",
+   "regions": [
+    "DE"
+   ],
+   "sdk_in_name": "10034",
+   "build_in_name": "36",
+   "version": "1.0.46",
+   "version_code": 46,
+   "sdk_api_level": 10046,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-11-18",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1018,
+   "main_bundle_md5": "35ab31a16192065e526e0cdc6328bc0f",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10019,
+     10109
+    ],
+    "featureManager": [
+     10106
+    ],
+    "protocol": [
+     10130
+    ],
+    "robotApi": [
+     10010,
+     11444
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.s5e",
+   "model": "roborock.vacuum.s5e",
+   "kind": "best",
+   "file": "signed_10042_1000775_122_ANDROID_bundle_80ef03cb1e98327abd12fd568368a812.zip",
+   "hash": "80ef03cb1e98327abd12fd568368a812",
+   "regions": [
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10042",
+   "build_in_name": "122",
+   "version": "1.0.49",
+   "version_code": 1060,
+   "sdk_api_level": 10049,
+   "min_sdk_api_level": 10042,
+   "build_date_utc": "2021-01-05",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1419,
+   "main_bundle_md5": "94f47320c4caf35f49f9396c6b06b462",
+   "module_ids": {
+    "rrmisdk": [
+     10022
+    ],
+    "rrmisdkModelGroups": [
+     10022,
+     11498
+    ],
+    "featureManager": [
+     10307
+    ],
+    "protocol": [
+     10337
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.s5e@c49a013c",
+   "model": "roborock.vacuum.s5e",
+   "kind": "variant",
+   "file": "signed_10034_1000775_44_ANDROID_bundle_c49a013c59b77da0a075594d7c3ee5ab.zip",
+   "hash": "c49a013c59b77da0a075594d7c3ee5ab",
+   "regions": [
+    "DE"
+   ],
+   "sdk_in_name": "10034",
+   "build_in_name": "44",
+   "version": "1.0.34",
+   "version_code": 436,
+   "sdk_api_level": 10034,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-03-27",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 954,
+   "main_bundle_md5": "8f178192b8c311fb61cf9291f37ad7d7",
+   "module_ids": {
+    "rrmisdk": [
+     10019
+    ],
+    "rrmisdkModelGroups": [
+     10019,
+     10109
+    ],
+    "featureManager": [
+     10103
+    ],
+    "protocol": [
+     10184
+    ],
+    "robotApi": [
+     10010
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.s6",
+   "model": "roborock.vacuum.s6",
+   "kind": "best",
+   "file": "signed_10047_1000571_108_ANDROID_bundle_2c23ad581b70496f45b01686ca298aab.zip",
+   "hash": "2c23ad581b70496f45b01686ca298aab",
+   "regions": [
+    "IN",
+    "RU",
+    "SG",
+    "US"
+   ],
+   "sdk_in_name": "10047",
+   "build_in_name": "108",
+   "version": "1.0.47",
+   "version_code": 1012,
+   "sdk_api_level": 10047,
+   "min_sdk_api_level": 10042,
+   "build_date_utc": "2020-12-04",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1417,
+   "main_bundle_md5": "0a8460fcc5ce4b9c24bbd3b7bcdcd13c",
+   "module_ids": {
+    "rrmisdk": [
+     10022
+    ],
+    "rrmisdkModelGroups": [
+     10022,
+     11498
+    ],
+    "featureManager": [
+     10307
+    ],
+    "protocol": [
+     10337
+    ],
+    "robotApi": [
+     10013
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.s4"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.s6@b43ac478",
+   "model": "roborock.vacuum.s6",
+   "kind": "variant",
+   "file": "signed_10032_1000571_34_ANDROID_bundle_b43ac4785af3fcad80b4556bb139211a.zip",
+   "hash": "b43ac4785af3fcad80b4556bb139211a",
+   "regions": [
+    "DE"
+   ],
+   "sdk_in_name": "10032",
+   "build_in_name": "34",
+   "version": "1.0.32",
+   "version_code": 184,
+   "sdk_api_level": 10032,
+   "min_sdk_api_level": 10025,
+   "build_date_utc": "2020-01-03",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 458,
+   "main_bundle_md5": "8ff9a3895db5d030123339bc1bb521fc",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10019,
+     10097
+    ],
+    "featureManager": [
+     10172
+    ],
+    "protocol": [
+     10169
+    ],
+    "robotApi": [
+     10010
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.t6"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.t4",
+   "model": "roborock.vacuum.t4",
+   "kind": "best",
+   "file": "signed_10032_1000390_65_ANDROID_bundle_634b68fac1005d6a7faf34715fbd6e68.zip",
+   "hash": "634b68fac1005d6a7faf34715fbd6e68",
+   "regions": [
+    "CN"
+   ],
+   "sdk_in_name": "10032",
+   "build_in_name": "65",
+   "version": "1.0.32",
+   "version_code": 186,
+   "sdk_api_level": 10032,
+   "min_sdk_api_level": 10025,
+   "build_date_utc": "2020-01-03",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 506,
+   "main_bundle_md5": "0a632b41ea6f44d3fb082d7862659bbf",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10019,
+     10103
+    ],
+    "featureManager": [
+     10100
+    ],
+    "protocol": [
+     10190
+    ],
+    "robotApi": [
+     10010
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.s4@634b68fa"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "roborock.vacuum.t6",
+   "model": "roborock.vacuum.t6",
+   "kind": "best",
+   "file": "signed_10032_1000571_34_ANDROID_bundle_b43ac4785af3fcad80b4556bb139211a.zip",
+   "hash": "b43ac4785af3fcad80b4556bb139211a",
+   "regions": [
+    "CN"
+   ],
+   "sdk_in_name": "10032",
+   "build_in_name": "34",
+   "version": "1.0.32",
+   "version_code": 184,
+   "sdk_api_level": 10032,
+   "min_sdk_api_level": 10025,
+   "build_date_utc": "2020-01-03",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 458,
+   "main_bundle_md5": "8ff9a3895db5d030123339bc1bb521fc",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10019,
+     10097
+    ],
+    "featureManager": [
+     10172
+    ],
+    "protocol": [
+     10169
+    ],
+    "robotApi": [
+     10010
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [
+    "roborock.vacuum.s6@b43ac478"
+   ],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 96,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "rockrobo.vacuum.v1",
+   "model": "rockrobo.vacuum.v1",
+   "kind": "best",
+   "file": "signed_10046_1000623_33_ANDROID_bundle_97f09a55544fc4890518fd9b4cb4d37b.zip",
+   "hash": "97f09a55544fc4890518fd9b4cb4d37b",
+   "regions": [
+    "IN",
+    "RU",
+    "SG"
+   ],
+   "sdk_in_name": "10046",
+   "build_in_name": "33",
+   "version": "1.0.46",
+   "version_code": 48,
+   "sdk_api_level": 10046,
+   "min_sdk_api_level": 10034,
+   "build_date_utc": "2020-11-18",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 1072,
+   "main_bundle_md5": "c8fb6454cdd4a2290307250a855588bd",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10019,
+     10124
+    ],
+    "featureManager": [
+     10166
+    ],
+    "protocol": [
+     10163
+    ],
+    "robotApi": [
+     10010
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 88,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  },
+  {
+   "id": "rockrobo.vacuum.v1@f1819b44",
+   "model": "rockrobo.vacuum.v1",
+   "kind": "variant",
+   "file": "signed_10032_1000623_25_ANDROID_bundle_f1819b44b5e21ae1e15fd9548bc32e50.zip",
+   "hash": "f1819b44b5e21ae1e15fd9548bc32e50",
+   "regions": [
+    "CN",
+    "DE"
+   ],
+   "sdk_in_name": "10032",
+   "build_in_name": "25",
+   "version": "1.0.32",
+   "version_code": 34,
+   "sdk_api_level": 10032,
+   "min_sdk_api_level": 10025,
+   "build_date_utc": "2020-01-03",
+   "project_models_field": null,
+   "package_path": "com.roborock.tanos",
+   "bundle_type": "plain",
+   "minified": null,
+   "format": "plain-js",
+   "modules": 577,
+   "main_bundle_md5": "db8245cdcf1c4a47b7d86d3cfe817324",
+   "module_ids": {
+    "rrmisdkModelGroups": [
+     10019,
+     10121
+    ],
+    "featureManager": [
+     10163
+    ],
+    "protocol": [
+     10160
+    ],
+    "robotApi": [
+     10010
+    ]
+   },
+   "has_robot_api": true,
+   "saphire_model_list": [
+    "roborock.sweeper.e2v3",
+    "roborock.sweeper.e2v2",
+    "roborock.vacuum.e2",
+    "roborock.sweeper.c1v3",
+    "roborock.sweeper.c1v2",
+    "roborock.vacuum.c1"
+   ],
+   "identical_code_as": [],
+   "methods_table": {
+    "active_role": "default",
+    "in_saphire_list": false,
+    "table_sizes": {
+     "default": 88,
+     "saphire": 55
+    },
+    "dead_tables": [
+     "saphire"
+    ]
+   }
+  }
+ ]
+}

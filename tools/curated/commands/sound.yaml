@@ -1,0 +1,90 @@
+overview: |
+  Voice packs are downloaded by the **robot itself** from a URL the app passes in. The app polls the progress once per
+  second ([`get_sound_progress`](#get_sound_progress)). The catalogue of packs (ids, languages, URLs, MD5) is a JSON file
+  shipped inside the generation-B bundles (`setting_soundpackage_info_info.json`; the plugin downloads the live list from a server, the shipped copy is a test fixture); its structure is described in
+  [voice packs](../reference/voice-packs.md).
+
+commands:
+  - method: get_sound_volume
+    title: Get the volume
+    summary: Returns the current speaker volume.
+    request: '`params`: none (`[]`).'
+    response: '`result[0]` volume as an integer (the plugin `parseInt`s it).'
+    legacy: '⚪ Legacy [sound_volume.md](../../sound_volume.md); the legacy README marks `change_sound_volume` / `test_sound_volume` "s5e only" — the bundles call both in all 42 bundles.'
+    related: [change_sound_volume, test_sound_volume]
+
+  - method: change_sound_volume
+    title: Set the volume
+    summary: Sets the speaker volume.
+    request: |
+      `params`: `[<int>]`. The slider rounds to an integer; the value range per product comes from the bundle's volume table
+      (`Volumes`: default 30–90, Type1 30–100, Type2 50–90, Type3 20–90, Type4 5–90; ✅ Bundle · a65 m10139). The product-to-range
+      assignment is on the [device pages](../devices/index.md).
+    behaviour: 'The slider calls `change_sound_volume` and then [`test_sound_volume`](#test_sound_volume) so that the robot plays a sample.'
+    related: [get_sound_volume, test_sound_volume]
+
+  - method: test_sound_volume
+    title: Play the volume test sound
+    summary: Makes the robot play a sound at the current volume.
+    request: '`params`: none (`[]`).'
+    related: [change_sound_volume]
+
+  - method: get_current_sound
+    title: Current voice pack
+    summary: Returns which voice pack is installed.
+    request: '`params`: none (`[]`).'
+    response: '`result[0]` = `{"sid_in_use": <pack id>, "sid_version": <int>, …}` (✅ Bundle · a65 m14117).'
+    legacy: '⚪ Legacy [current_sound.md](../../current_sound.md).'
+    related: [dnld_install_sound, get_sound_progress]
+
+  - method: dnld_install_sound
+    title: Download and install a voice pack
+    summary: Orders the robot to download and install a pack.
+    request: |
+      `params`: one object `{"sid": <pack id>, "url": "<https url of the .pkg>", "md5": "<md5 of the file>", "sver": <int version>}`
+      (✅ Bundle · a65 m14108; `url` is built from the host of the pack list and the path in the catalogue; pack id `9999`
+      uses the directory URL only). In the alternate (`saphire`) table the same call is spelled `user.dnld_install_sound`; the
+      `tanos` table, which is the active table of the a01/c1/e2 bundles, also uses that spelling.
+    legacy: '⚪ Legacy [install_sound.md](../../install_sound.md).'
+    related: [get_sound_progress, get_current_sound]
+
+  - method: get_sound_progress
+    title: Installation progress
+    summary: Polled every second during an installation.
+    request: '`params`: none (`[]`).'
+    response: |
+      `result[0]` = `{"progress": 0–100, "state": <int>, "error": <int>, "sid_in_progress": <pack id>}`.
+      The app treats `state == 4` as failure (`error` 13 or 2 → "download failed", otherwise "install failed"),
+      `progress == 100` or `state == 3` or `sid_in_progress <= 0` as the end of the task (✅ Bundle · a65 m14108).
+    related: [dnld_install_sound]
+
+  - method: play_audio
+    title: Play a recorded message
+    summary: Sends an audio clip to be played by the robot.
+    request: '`params`: `{"security": {"cipher_suite": 1}, "audio": <prepared encrypted data>}` (a65 m14657). The encryption steps use the key from [`get_random_pkey`](maps.md#get_random_pkey) and are not described here.'
+    related: [get_random_pkey]
+
+  - method: set_voice_chat_volume
+    title: Voice-chat volume
+    summary: Sets the volume used during a call.
+    request: '`params`: `{"volume": <int>}` (default 50 when nothing is stored).'
+    related: [start_voice_chat]
+
+  - method: start_voice_chat
+    title: Start a voice call
+    summary: Opens the robot audio channel for a call.
+    request: '`params`: `{"play": true, "record": <bool>}`; `record` is false while the robot moves when remote control during calls is supported (`isSupportRemoteControlInCall`, high bit 19).'
+    behaviour: 'While a call is active the robot state is 28 ("In call…").'
+    related: [stop_voice_chat, start_camera_preview]
+
+  - method: stop_voice_chat
+    title: End a voice call
+    summary: Closes the audio channel.
+    request: '`params`: none (`{}`).'
+    related: [start_voice_chat]
+
+  - method: enable_homesec_voice
+    title: Robot microphone switch
+    summary: Turns the robot microphone on or off for the monitoring feature.
+    request: '`params`: `{"enable": <bool>}`.'
+    related: [start_voice_chat]

@@ -1,0 +1,82 @@
+# Semantics of the fields of the status object (`get_prop ["get_status"]` -> result[0]).
+# Presence per model is generated from data/status_fields.json; this file holds the hand-read meaning.
+# evidence = where the interpretation was read (model@version module).
+groups:
+  - title: Core state
+    fields:
+      - {field: state, type: int, meaning: 'Robot state code. The app reads it in `getComputedState` / `parseRobotMotionStatus` (newer bundles) or `parseStatus` (older). Derived "computed states" are described in [states](states.md#computed-states).', evidence: 'a65 m10010'}
+      - {field: battery, type: int, meaning: 'Battery percent (`parseInt`). With `state == 8` and `battery == 100` the app shows state 100 "Fully charged".', evidence: 'a65 m10010'}
+      - {field: error_code, type: int, meaning: 'Error code ([errors](errors.md)). Newer bundles use `error_code` or, when it is absent, `dock_error_status`.', evidence: 'a65 m10010'}
+      - {field: dock_error_status, type: int, meaning: 'Dock error code (> 0 while a dock error is active); used as `errorCode` when `error_code` is absent and also kept separately.', evidence: 'a65 m10010'}
+      - {field: in_cleaning, type: int, meaning: 'Which job is unfinished: 0 none, 1 global, 2 zone, 3 room (segment), 4 quick map building (`CleanResumeFlagCodeMap`). Decides which resume command the app sends.', evidence: 'a65 m10010', anchor: in_cleaning}
+      - {field: in_returning, type: int, meaning: '`1` = a "return to dock" task is pending (resume flag `Has`).', evidence: 'a65 m10010'}
+      - {field: in_fresh_state, type: int, meaning: 'The app stores `isRunning = (in_fresh_state != 1)`.', evidence: 'a65 m10010'}
+      - {field: lock_status, type: int, meaning: '`1` makes the app show state 103 (locked / saving map) regardless of `state`.', evidence: 'a65 m10010 getComputedState'}
+      - {field: clean_mop_status, type: int, meaning: 'Mop phase of a clean: `1` vacuum only (or absent), `2` mop only, `7` vacuum+mop (vacuum phase), `6` vacuum+mop (mop phase); drives computed states 6301–6310.', evidence: 'a65 m10010 getComputedState'}
+      - {field: back_type, type: int, meaning: '`1` with `state == 6` means "going back to wash the mop" (computed state 6310).', evidence: 'a65 m10010'}
+      - {field: clean_area, type: int, meaning: 'Area of the current clean in mm² (the app converts with `fromSqmmToSqm`).', evidence: 'a65 m10010'}
+      - {field: clean_time, type: int, meaning: 'Duration of the current clean in seconds (converted to minutes).', evidence: 'a65 m10010'}
+      - {field: clean_percent, type: int, meaning: 'Progress percentage of the current clean (stored as `cleanProgress`).', evidence: 'a65 m10010'}
+      - {field: last_clean_t, type: int, meaning: 'Unix time of the last clean; the app computes hours since then (used for the 72-hour mop warning).', evidence: 'a65 m10010'}
+      - {field: msg_ver, type: int, meaning: 'Message version of the firmware. Read outside the status parser by the remote-control page, which refuses to start when the value is missing or below 1 (it shows the string `RemoteControlPage_54`), and by a settings page that compares it with the constant `FIRMWARE_VER_REQUIRE` (1) and disables its slider and buttons below it. Identifier scan: present in a01 a11 c1 e2 m1s p5 s5 t4 t6 v1.', evidence: 'v1 (remote-control page, settings page)', read_by: 'other pages (10 bundles)'}
+      - {field: common_status, type: int, meaning: 'Bit mask; bit 0 set (or the field absent) allows the "special logic" of the charging-resume reminders (`isSpecialLogicAllowed`).', evidence: 'a65 m10010', read_by: 'status parser (newer bundles)'}
+  - title: Fan, water and mop
+    fields:
+      - {field: fan_power, type: int, meaning: 'Fan power code ([fan values](fan-water-mop.md#fan-power)); the app falls back to 102 when the value is unknown.', evidence: 'a65 m10010'}
+      - {field: water_box_mode, type: int, meaning: 'Water mode code ([water values](fan-water-mop.md#water-box-mode)).', evidence: 'a65 m10010'}
+      - {field: mop_mode, type: int, meaning: 'Mop route code ([mop values](fan-water-mop.md#mop-mode)).', evidence: 'a65 m10010'}
+      - {field: mop_template_id, type: int, meaning: 'Id of the active custom mop template.', evidence: 'a65 m10010'}
+      - {field: distance_off, type: int, meaning: 'Fine water level (used with water mode 207); `0` when absent.', evidence: 'a65 m10010'}
+      - {field: water_box_status, type: int, meaning: '`1` = water tank attached.', evidence: 'a65 m10010'}
+      - {field: water_box_carriage_status, type: int, meaning: '`1` = mop carriage attached.', evidence: 'a65 m10010'}
+      - {field: mop_forbidden_enable, type: int, meaning: '`1` = no-mop zones enabled.', evidence: 'a65 m10010'}
+      - {field: water_shortage_status, type: int, meaning: 'Water shortage indicator (value kept as integer; the reminder "mop stopped" is derived from it).', evidence: 'a65 m10010'}
+      - {field: corner_clean_mode, type: int, meaning: 'Truthy = corner clean on.', evidence: 'a65 m10010'}
+  - title: Maps
+    fields:
+      - {field: map_status, type: int, meaning: 'Bit-packed: `code % 4` = map status (0 none, 1 map without rooms, 3 map with rooms); `code >> 2` = id of the loaded saved map (63 is mapped to -1). While `is_locating` the id is -1.', evidence: 'a65 m10010', anchor: map_status}
+      - {field: lab_status, type: int, meaning: '`1` map saving on; `3` map saving + multi-floor on.', evidence: 'a65 m10010'}
+      - {field: is_locating, type: int, meaning: 'Truthy while the robot is relocating.', evidence: 'a65 m10010'}
+      - {field: switch_map_mode, type: int, meaning: 'Automatic map switching mode (see [`set_switch_map_mode`](../commands/maps.md#set_switch_map_mode)).', evidence: 'a65 m10010'}
+      - {field: unsave_map_reason, type: int, meaning: 'Why the last map was not saved ([`UnsaveMapReason`](other-enums.md#unsavemapreason)).', evidence: 'a65 m10010'}
+      - {field: unsave_map_flag, type: int, meaning: 'Pending handling of an unsaved map ([`UnsaveMapHandle`](other-enums.md#unsavemaphandle)).', evidence: 'a65 m10010'}
+      - {field: sfzs, type: int, meaning: '`1` = the clean uses the extra "supplement" zones (`isCleanFBZEnabled`).', evidence: 'a65 m10010'}
+      - {field: replenish_mode, type: int, meaning: 'Supplementary clean status (`supplementCleanStatus`).', evidence: 'a65 m10010'}
+      - {field: is_exploring, type: int, meaning: '`1` = exploration run.', evidence: 'a65 m10010'}
+  - title: Switch words
+    fields:
+      - {field: switch_status, type: int, meaning: 'Bit mask: bit 0 offline map on; bit 1 cleaning-fluid module present (also `clean_fluid == 1`); bit 3 "carpet first" on.', evidence: 'a65 m10010'}
+      - {field: dss, type: int, meaning: 'Dock supply status, 2-bit groups: bits 0–1 water level up/down ready (`== 2`), bits 2–3 clean water box, 4–5 dirty water box, 6–7 dust bag, 8–9 water-box filter, 10–11 cleaning fluid. The meaning of the 2-bit values is not named in the code.', evidence: 'a65 m10010'}
+      - {field: wash_status, type: int, meaning: 'Low byte = washing task status; bits ≥ 8 = washing mode.', evidence: 'a65 m10010'}
+      - {field: wash_ready, type: int, meaning: '`1` = dock ready to wash.', evidence: 'a65 m10010'}
+      - {field: dock_type, type: int, meaning: 'Dock type code ([dock reference](dock.md)).', evidence: 'a65 m10010'}
+      - {field: auto_dust_collection, type: int, meaning: '`0` = automatic emptying off.', evidence: 'a65 m10010'}
+      - {field: dry_status, type: int, meaning: 'With `state == 8` (charging): `1` = mop drying in progress.', evidence: 'a65 getComputedState'}
+      - {field: charge_status, type: int, meaning: 'With valley-electricity support: `0` while charging is paused ("waiting for charge").', evidence: 'a65 getComputedState'}
+      - {field: stop_fan_motor_work_status, type: int, meaning: 'With `state == 15` (docking): `1` = stopping air-drying (computed state 202).', evidence: 'a65 getComputedState'}
+      - {field: fan_motor_work_status, type: int, meaning: '`1` while charging = air-drying running.', evidence: 'a65 m10010'}
+      - {field: fan_motor_work_time, type: int, meaning: 'Remaining air-dry time (shown in a special info banner).', evidence: 'a65 m10010'}
+      - {field: rdt, type: int, meaning: 'Remaining dry time (`dryRemainTime`).', evidence: 'a65 m10010'}
+      - {field: clean_fluid, type: int, meaning: '`1` = cleaning-fluid module present.', evidence: 'a65 m10010'}
+      - {field: dnd_enabled, type: int, meaning: '`1` = Do-Not-Disturb enabled.', evidence: 'a65 m10010'}
+      - {field: debug_mode, type: int, meaning: '`1` = Wi-Fi debug mode.', evidence: 'a65 m10010'}
+      - {field: in_warmup, type: int, meaning: '`1` = robot warming up.', evidence: 'a65 m10010'}
+      - {field: voice_chat_status, type: int, meaning: '`1` = voice chat active (state 28).', evidence: 'a65 m10010'}
+      - {field: avoid_count, type: int, meaning: 'Number of avoided obstacles (stored as `avoidCount`).', evidence: 'a65 m10010'}
+      - {field: kct, type: int, meaning: 'Keep-clean time (`keepCleanTime`), 0 when absent.', evidence: 'a65 m10010'}
+      - {field: adbumper_status, type: 'int[3]', meaning: 'Three bumper sensor bytes (left, middle, right): bit 7 = bumper pressed; bits 1, 3, 4, 6 = obstacle sensed.', evidence: 'a65 m10010'}
+      - {field: events, type: array, meaning: 'Event list processed by `parseEvents`; the event layout is not described here (❓ Unknown).', evidence: 'a65 m10010'}
+  - title: Monitoring
+    fields:
+      - {field: camera_status, type: int, meaning: 'Same bit field as [`get_camera_status`](../commands/camera.md#get_camera_status).', evidence: 'a65 m10010 + m12998'}
+      - {field: home_sec_status, type: int, meaning: 'Monitoring connection state (`RRHomeSecStatus`: 0 disconnected, 1 connected, 2 disconnecting).', evidence: 'a65 m10010'}
+      - {field: home_sec_enable_password, type: int, meaning: '`1` = monitoring password enabled.', evidence: 'a65 m10010'}
+      - {field: home_sec_client_id, type: string, meaning: 'Client id of the monitoring session (one bundle).', evidence: ''}
+legacy_only:
+  - {field: msg_seq, note: 'increments with each reply'}
+  - {field: clean_mode, note: 'legacy new-protocol example'}
+  - {field: begin_time, note: ''}
+  - {field: clean_trigger, note: ''}
+  - {field: back_trigger, note: ''}
+  - {field: clean_strategy, note: ''}
+  - {field: map_present, note: 'legacy doc: "is map present"'}

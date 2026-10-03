@@ -1,0 +1,57 @@
+overview: |
+  Manual driving works in four steps: [`app_rc_start`](#app_rc_start) enters remote-control mode (robot state `REMOTE`, 7),
+  [`app_rc_move`](#app_rc_move) is sent repeatedly while the user holds a direction, [`app_rc_stop`](#app_rc_stop) stops the
+  send loop in newer plugins, and [`app_rc_end`](#app_rc_end) leaves the mode.
+
+commands:
+  - method: app_rc_start
+    title: Enter remote-control mode
+    summary: Puts the robot into manual mode.
+    request: '`params`: none (`[]`).'
+    behaviour: |
+      Several bundles send this call through `callMethodForceWay` (local route only; see
+      [transports](../concepts/transports.md)). The app shows a safety note for 6 s after the call (a65 m14186).
+      The plugin only offers remote control when the firmware feature `isRemoteSupported` (fw feature code 125) is present.
+    related: [app_rc_move, app_rc_end]
+
+  - method: app_rc_move
+    title: Drive command
+    summary: Sets linear and angular velocity for a limited time; must be repeated to keep moving.
+    request: |
+      `params` is **one-level** `[ {…} ]` with one object:
+
+      | Field | Type | Meaning | Evidence |
+      |---|---|---|---|
+      | `velocity` | number | linear speed in m/s, never negative: the key pad sends `0.2` for forward and `0` otherwise (a65 m14204); the joystick sends `0` when pulled backwards or sideways and otherwise a value between `0` and `0.29` (a65 m14207) | ✅ Bundle |
+      | `omega` | number | turn rate in rad/s, positive = turn left (key pad: `+1.05` left, `-1.05` right; joystick: `-dx / radius × π/3`, so a stick pushed left gives a positive value); range ±π/3 (≈ 1.05) | ✅ Bundle |
+      | `seqnum` | int | the app starts at 0 and increments by 1 for every command it sends | ✅ Bundle |
+      | `duration` | int (ms) | how long the robot executes the command: 1000 (key view) or 1500 (joystick view) | ✅ Bundle |
+    examples:
+      - label: constructed from app code (a65 m14186 `motionParam`)
+        json: |
+          {"id": 105, "method": "app_rc_move", "params": [{"omega": 0, "velocity": 0.2, "seqnum": 1, "duration": 1000}]}
+    behaviour: |
+      The app re-sends the current `motionParam` periodically while the control is active and calls
+      [`app_rc_stop`](#app_rc_stop) when the loop ends (a65). Some bundles send the call through `callMethodForceWay`.
+    legacy: |
+      ⚪ Legacy [rc.md](../../rc.md) shows a **nested** array `[[{…}]]` and the ranges `omega` ±3.1 and `velocity` ±0.3.
+      **Correction:** every bundle that sends the call builds a single-level array `[{…}]` (a01: `callMethod(…, [paras])`;
+      a65 `RobotApi.remoteMove`: `[paras]`), and the app never sends a negative velocity or exceeds 0.29, and |omega| stays within 1.05. Whether the
+      firmware accepts larger values is not determinable from the bundles.
+    related: [app_rc_start, app_rc_end, app_rc_stop]
+
+  - method: app_rc_end
+    title: Leave remote-control mode
+    summary: Ends manual mode.
+    request: '`params`: none (`[]`).'
+    behaviour: |
+      Also used by the main page: if the robot state is `REMOTE` when the user presses a start/pause/charge control, the app
+      sends `app_rc_end` first (a65 m14147).
+    related: [app_rc_start]
+
+  - method: app_rc_stop
+    title: Stop the move loop
+    summary: Sent when the user releases the control.
+    request: '`params`: none (`[]`).'
+    behaviour: 'Evidence: `RobotApi.remoteStop` called from `_stopSendMove` (a65 m14186); see the availability row for the bundles that lack it.'
+    related: [app_rc_move]

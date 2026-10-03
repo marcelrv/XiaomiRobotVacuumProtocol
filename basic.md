@@ -1,158 +1,23 @@
 # Basic Operations
 
-The vacuum cleaner emits a sound (e.g. "Hey, here I am!") so you can find it.
+> **Moved.** This page is now [docs/commands/cleaning-control.md](docs/commands/cleaning-control.md). The old description was merged into the bundle-verified reference; the old request and reply examples are kept in [legacy captures](docs/appendix/legacy-captures.md). This file only keeps the old link and section anchors working.
 
 ## Start Cleaning
 
-### Command
-
-| Key    | Value         | Comment                                                                             |
-| ------ | ------------- | ----------------------------------------------------------------------------------- |
-| method | `"app_start"` |                                                                                     |
-| id     | `id`          | Random integer which is returned in the response used to link request and response. |
-
-#### Example
-
-```json
-{
-    "method": "app_start",
-    "id": 6340
-}
-```
-
-### Response
-
-Standard response to succeeded command.
-
-#### Example
-
-```json
-{
-    "result": ["ok"],
-    "id": 6340
-}
-```
+See [docs/commands/cleaning-control.md#app_start](docs/commands/cleaning-control.md#app_start).
 
 ## Stop Cleaning
 
-### Command
-
-| Key    | Value        | Comment                                                                             |
-| ------ | ------------ | ----------------------------------------------------------------------------------- |
-| method | `"app_stop"` |                                                                                     |
-| id     | `id`         | Random integer which is returned in the response used to link request and response. |
-
-#### Example
-
-```json
-{
-    "method": "app_stop",
-    "id": 12363
-}
-```
-
-### Response
-
-Standard response to succeeded command.
-
-#### Example
-
-```json
-{
-    "result": ["ok"],
-    "id": 12363
-}
-```
+See [docs/commands/cleaning-control.md#app_stop](docs/commands/cleaning-control.md#app_stop).
 
 ## Start Spot Cleaning
 
-### Command
-
-| Key    | Value        | Comment                                                                             |
-| ------ | ------------ | ----------------------------------------------------------------------------------- |
-| method | `"app_spot"` |                                                                                     |
-| id     | `id`         | Random integer which is returned in the response used to link request and response. |
-
-#### Example
-
-```json
-{
-    "method": "app_spot",
-    "id": 63362
-}
-```
-
-### Response
-
-Standard response to succeeded command.
-
-#### Example
-
-```json
-{
-    "result": ["ok"],
-    "id": 63362
-}
-```
+See [docs/commands/cleaning-control.md#app_spot](docs/commands/cleaning-control.md#app_spot).
 
 ## Pause Cleaning
 
-### Command
-
-| Key    | Value         | Comment                                                                             |
-| ------ | ------------- | ----------------------------------------------------------------------------------- |
-| method | `"app_pause"` |                                                                                     |
-| id     | `id`          | Random integer which is returned in the response used to link request and response. |
-
-#### Example
-
-```json
-{
-    "method": "app_pause",
-    "id": 633
-}
-```
-
-### Response
-
-Standard response to succeeded command.
-
-#### Example
-
-```json
-{
-    "result": ["ok"],
-    "id": 633
-}
-```
+See [docs/commands/cleaning-control.md#app_pause](docs/commands/cleaning-control.md#app_pause).
 
 ## Start Charging
 
-### Command
-
-| Key    | Value          | Comment                                                                             |
-| ------ | -------------- | ----------------------------------------------------------------------------------- |
-| method | `"app_charge"` |                                                                                     |
-| id     | `id`           | Random integer which is returned in the response used to link request and response. |
-
-#### Example
-
-```json
-{
-    "method": "app_charge",
-    "id": 45334
-}
-```
-
-### Response
-
-Standard response to succeeded command.
-
-#### Example
-
-```json
-{
-    "result": ["ok"],
-    "id": 45334
-}
-```
+See [docs/commands/cleaning-control.md#app_charge](docs/commands/cleaning-control.md#app_charge).

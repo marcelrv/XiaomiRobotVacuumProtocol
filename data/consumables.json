@@ -1,0 +1,558 @@
+{
+ "meta": {
+  "generator": "tools/build_consumables.py",
+  "note": "bundles whose plugin has a consumables page definition (generation B); older plugins use a different page that was not extracted"
+ },
+ "consumables": [
+  {
+   "key": "filter_work_time",
+   "variants": [
+    {
+     "total": 150,
+     "units_time": true,
+     "name": "Filter",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "roborock.vacuum.a11",
+      "roborock.vacuum.a14",
+      "roborock.vacuum.a15",
+      "roborock.vacuum.a19",
+      "roborock.vacuum.a23",
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "roborock.vacuum.a40",
+      "roborock.vacuum.a46",
+      "roborock.vacuum.a51",
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a62",
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a66",
+      "roborock.vacuum.a69",
+      "roborock.vacuum.a70",
+      "roborock.vacuum.a72",
+      "roborock.vacuum.a73",
+      "roborock.vacuum.a74",
+      "roborock.vacuum.a75",
+      "roborock.vacuum.a76",
+      "roborock.vacuum.c1",
+      "roborock.vacuum.e2",
+      "roborock.vacuum.m1s",
+      "roborock.vacuum.p5",
+      "roborock.vacuum.s4",
+      "roborock.vacuum.s5",
+      "roborock.vacuum.s5e",
+      "roborock.vacuum.s6",
+      "roborock.vacuum.t4",
+      "roborock.vacuum.t6",
+      "rockrobo.vacuum.v1"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "side_brush_work_time",
+   "variants": [
+    {
+     "total": 200,
+     "units_time": true,
+     "name": "Side brush",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a11",
+      "roborock.vacuum.c1",
+      "roborock.vacuum.e2",
+      "roborock.vacuum.m1s",
+      "roborock.vacuum.p5",
+      "roborock.vacuum.s5",
+      "roborock.vacuum.t4",
+      "roborock.vacuum.t6",
+      "rockrobo.vacuum.v1"
+     ]
+    },
+    {
+     "total": 200,
+     "units_time": true,
+     "name": "Side Brush",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "roborock.vacuum.a14",
+      "roborock.vacuum.a15",
+      "roborock.vacuum.a19",
+      "roborock.vacuum.a23",
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "roborock.vacuum.a40",
+      "roborock.vacuum.a46",
+      "roborock.vacuum.a51",
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a62",
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a66",
+      "roborock.vacuum.a69",
+      "roborock.vacuum.a70",
+      "roborock.vacuum.a72",
+      "roborock.vacuum.a73",
+      "roborock.vacuum.a74",
+      "roborock.vacuum.a75",
+      "roborock.vacuum.a76",
+      "roborock.vacuum.s4",
+      "roborock.vacuum.s5e",
+      "roborock.vacuum.s6"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "main_brush_work_time",
+   "variants": [
+    {
+     "total": 300,
+     "units_time": true,
+     "name": "Main brush",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a11",
+      "roborock.vacuum.c1",
+      "roborock.vacuum.e2",
+      "roborock.vacuum.m1s",
+      "roborock.vacuum.p5",
+      "roborock.vacuum.s5",
+      "roborock.vacuum.t4",
+      "roborock.vacuum.t6",
+      "rockrobo.vacuum.v1"
+     ]
+    },
+    {
+     "total": 300,
+     "units_time": true,
+     "name": "Main Brush",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "roborock.vacuum.a14",
+      "roborock.vacuum.a15",
+      "roborock.vacuum.a19",
+      "roborock.vacuum.a23",
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "roborock.vacuum.a40",
+      "roborock.vacuum.a46",
+      "roborock.vacuum.a51",
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a62",
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a66",
+      "roborock.vacuum.a69",
+      "roborock.vacuum.a70",
+      "roborock.vacuum.a72",
+      "roborock.vacuum.a73",
+      "roborock.vacuum.a74",
+      "roborock.vacuum.a75",
+      "roborock.vacuum.a76",
+      "roborock.vacuum.s4",
+      "roborock.vacuum.s5e",
+      "roborock.vacuum.s6"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "sensor_dirty_time",
+   "variants": [
+    {
+     "total": 30,
+     "units_time": true,
+     "name": "Sensors",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "roborock.vacuum.a11",
+      "roborock.vacuum.a14",
+      "roborock.vacuum.a15",
+      "roborock.vacuum.a19",
+      "roborock.vacuum.a23",
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "roborock.vacuum.a40",
+      "roborock.vacuum.a46",
+      "roborock.vacuum.a51",
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a62",
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a66",
+      "roborock.vacuum.a69",
+      "roborock.vacuum.a70",
+      "roborock.vacuum.a72",
+      "roborock.vacuum.a73",
+      "roborock.vacuum.a74",
+      "roborock.vacuum.a75",
+      "roborock.vacuum.a76",
+      "roborock.vacuum.c1",
+      "roborock.vacuum.e2",
+      "roborock.vacuum.m1s",
+      "roborock.vacuum.p5",
+      "roborock.vacuum.s4",
+      "roborock.vacuum.s5",
+      "roborock.vacuum.s5e",
+      "roborock.vacuum.s6",
+      "roborock.vacuum.t4",
+      "roborock.vacuum.t6",
+      "rockrobo.vacuum.v1"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "filter_element_work_time",
+   "variants": [
+    {
+     "total": 100,
+     "units_time": true,
+     "name": "Water tank filters",
+     "models": [
+      "roborock.vacuum.a01",
+      "roborock.vacuum.a11",
+      "roborock.vacuum.c1",
+      "roborock.vacuum.e2",
+      "roborock.vacuum.p5",
+      "roborock.vacuum.s5",
+      "roborock.vacuum.t4"
+     ]
+    },
+    {
+     "total": 100,
+     "units_time": true,
+     "name": "Water Tank Filter",
+     "models": [
+      "roborock.vacuum.a08",
+      "roborock.vacuum.a09",
+      "roborock.vacuum.a10",
+      "roborock.vacuum.a14",
+      "roborock.vacuum.a15",
+      "roborock.vacuum.a19",
+      "roborock.vacuum.a23",
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "roborock.vacuum.a40",
+      "roborock.vacuum.a46",
+      "roborock.vacuum.a51",
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a62",
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a66",
+      "roborock.vacuum.a69",
+      "roborock.vacuum.a70",
+      "roborock.vacuum.a72",
+      "roborock.vacuum.a73",
+      "roborock.vacuum.a74",
+      "roborock.vacuum.a75",
+      "roborock.vacuum.a76",
+      "roborock.vacuum.s4",
+      "roborock.vacuum.s5e",
+      "roborock.vacuum.s6"
+     ]
+    },
+    {
+     "total": 100,
+     "units_time": true,
+     "name": "Water tank filter",
+     "models": [
+      "roborock.vacuum.m1s",
+      "roborock.vacuum.t6",
+      "rockrobo.vacuum.v1"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "moproller_work_time",
+   "variants": [
+    {
+     "total": 300,
+     "units_time": true,
+     "name": "Wash Roller",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "roborock.vacuum.a40",
+      "roborock.vacuum.a46",
+      "roborock.vacuum.a51",
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a62",
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a66",
+      "roborock.vacuum.a69",
+      "roborock.vacuum.a70",
+      "roborock.vacuum.a72",
+      "roborock.vacuum.a73",
+      "roborock.vacuum.a74",
+      "roborock.vacuum.a75",
+      "roborock.vacuum.a76"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "mopSwabSupplies",
+   "variants": [
+    {
+     "total": null,
+     "units_time": null,
+     "name": "Mop",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "roborock.vacuum.a40",
+      "roborock.vacuum.a46",
+      "roborock.vacuum.a51",
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a62",
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a66",
+      "roborock.vacuum.a69",
+      "roborock.vacuum.a70",
+      "roborock.vacuum.a72",
+      "roborock.vacuum.a73",
+      "roborock.vacuum.a74",
+      "roborock.vacuum.a75",
+      "roborock.vacuum.a76"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "strainer_work_times",
+   "variants": [
+    {
+     "total": 150,
+     "units_time": false,
+     "name": "Water Filter",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "roborock.vacuum.a40",
+      "roborock.vacuum.a46",
+      "roborock.vacuum.a51",
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a62",
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a66",
+      "roborock.vacuum.a69",
+      "roborock.vacuum.a70",
+      "roborock.vacuum.a72",
+      "roborock.vacuum.a73",
+      "roborock.vacuum.a74",
+      "roborock.vacuum.a75",
+      "roborock.vacuum.a76"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "cleaning_brush_work_times",
+   "variants": [
+    {
+     "total": 300,
+     "units_time": false,
+     "name": "High-speed maintenance brush",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "roborock.vacuum.a40",
+      "roborock.vacuum.a46",
+      "roborock.vacuum.a51",
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a62",
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a66",
+      "roborock.vacuum.a69",
+      "roborock.vacuum.a70",
+      "roborock.vacuum.a72",
+      "roborock.vacuum.a73",
+      "roborock.vacuum.a74",
+      "roborock.vacuum.a75",
+      "roborock.vacuum.a76"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "dust_collection_work_times",
+   "variants": [
+    {
+     "total": 90,
+     "units_time": false,
+     "name": "Dustbin",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "roborock.vacuum.a40",
+      "roborock.vacuum.a46",
+      "roborock.vacuum.a51",
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a62",
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a66",
+      "roborock.vacuum.a69",
+      "roborock.vacuum.a70",
+      "roborock.vacuum.a72",
+      "roborock.vacuum.a73",
+      "roborock.vacuum.a74",
+      "roborock.vacuum.a75",
+      "roborock.vacuum.a76"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "dust_bag_work_times",
+   "variants": [
+    {
+     "total": null,
+     "units_time": null,
+     "name": "Dust bag",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "roborock.vacuum.a40",
+      "roborock.vacuum.a46",
+      "roborock.vacuum.a51",
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a66",
+      "roborock.vacuum.a69",
+      "roborock.vacuum.a70",
+      "roborock.vacuum.a72",
+      "roborock.vacuum.a73",
+      "roborock.vacuum.a74",
+      "roborock.vacuum.a75",
+      "roborock.vacuum.a76"
+     ]
+    },
+    {
+     "total": 90,
+     "units_time": false,
+     "name": "Dust bag",
+     "models": [
+      "roborock.vacuum.a62"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "floor_cleaning_fluid",
+   "variants": [
+    {
+     "total": 300,
+     "units_time": false,
+     "name": "Floor Cleaning Fluid",
+     "models": [
+      "roborock.vacuum.a26",
+      "roborock.vacuum.a27",
+      "roborock.vacuum.a29",
+      "roborock.vacuum.a30",
+      "roborock.vacuum.a34",
+      "roborock.vacuum.a37",
+      "roborock.vacuum.a38",
+      "roborock.vacuum.a40",
+      "roborock.vacuum.a46",
+      "roborock.vacuum.a51",
+      "roborock.vacuum.a52",
+      "roborock.vacuum.a62",
+      "roborock.vacuum.a66",
+      "roborock.vacuum.a69",
+      "roborock.vacuum.a70",
+      "roborock.vacuum.a72",
+      "roborock.vacuum.a73",
+      "roborock.vacuum.a75",
+      "roborock.vacuum.a76"
+     ]
+    },
+    {
+     "total": 300,
+     "units_time": false,
+     "name": "Floor Cleaning Solution",
+     "models": [
+      "roborock.vacuum.a64",
+      "roborock.vacuum.a65",
+      "roborock.vacuum.a74"
+     ]
+    }
+   ]
+  }
+ ]
+}

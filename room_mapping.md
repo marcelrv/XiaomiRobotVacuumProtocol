@@ -1,38 +1,7 @@
 # Room Mapping
 
-Retrieves a list of segments.
+> **Moved.** This page is now [docs/commands/rooms-and-areas.md#get_room_mapping](docs/commands/rooms-and-areas.md#get_room_mapping). The old description was merged into the bundle-verified reference; the old request and reply examples are kept in [legacy captures](docs/appendix/legacy-captures.md). This file only keeps the old link and section anchors working.
 
 ## Get Room Mapping
 
-### Command
-
-| Key    | Value                | Comment                                                                             |
-| ------ | -------------------- | ----------------------------------------------------------------------------------- |
-| method | `"get_room_mapping"` |                                                                                     |
-| id     | `id`                 | Random integer which is returned in the response used to link request and response. |
-
-#### Example
-
-```json
-{
-    "method": "get_room_mapping",
-    "id": 14837
-}
-```
-
-### Response
-
-| Key | Example        | Description    |
-| --- | -------------- | -------------- |
-| `-` | 16             | Segment number |
-| `-` | "516001007152" | ?              |
-
-#### Example
-
-```json
-{
-    "result": [[16, "516001007152"], [17, "516001007153"], [18, "516001007151"], [19, "516001007154"]],
-    "id": 14837
-}
-
-```
+See [docs/commands/rooms-and-areas.md#get_room_mapping](docs/commands/rooms-and-areas.md#get_room_mapping).

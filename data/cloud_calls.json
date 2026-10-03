@@ -1,0 +1,1523 @@
+{
+ "meta": {
+  "generator": "tools/build_cloud.py"
+ },
+ "calls": [
+  {
+   "kind": "endpoint",
+   "name": "/home/checkversion",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10142,
+     "enclosing": null
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10337,
+     "enclosing": null
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10337,
+     "enclosing": null
+    }
+   ]
+  },
+  {
+   "kind": "endpoint",
+   "name": "/home/device_list",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10142,
+     "enclosing": null
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10337,
+     "enclosing": null
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10337,
+     "enclosing": null
+    }
+   ]
+  },
+  {
+   "kind": "endpoint",
+   "name": "/home/getmapfileurl",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10142,
+     "enclosing": null
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10337,
+     "enclosing": null
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10337,
+     "enclosing": null
+    }
+   ]
+  },
+  {
+   "kind": "endpoint",
+   "name": "/scene/delete",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10019,
+     "enclosing": "deleteTimer"
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10019,
+     "enclosing": "deleteTimer"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10019,
+     "enclosing": "deleteTimer"
+    }
+   ]
+  },
+  {
+   "kind": "endpoint",
+   "name": "/scene/edit",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10019,
+     "enclosing": "setTimer"
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10019,
+     "enclosing": "setTimer"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10019,
+     "enclosing": "setTimer"
+    }
+   ]
+  },
+  {
+   "kind": "endpoint",
+   "name": "/scene/list",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10019,
+     "enclosing": "getTimerList"
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10019,
+     "enclosing": "getTimerList"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10019,
+     "enclosing": "getTimerList"
+    }
+   ]
+  },
+  {
+   "kind": "endpoint",
+   "name": "/user/del_user_map",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10142,
+     "enclosing": null
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10337,
+     "enclosing": null
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10337,
+     "enclosing": null
+    }
+   ]
+  },
+  {
+   "kind": "sdk-helper",
+   "name": "MHApi.getCountryInfo",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10556,
+     "enclosing": "upload"
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 12011,
+     "enclosing": "value"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 12011,
+     "enclosing": "value"
+    }
+   ]
+  },
+  {
+   "kind": "sdk-helper",
+   "name": "callSmartHomeAPI(/scene/delete)",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10019,
+     "enclosing": "deleteTimer"
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10019,
+     "enclosing": "deleteTimer"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10019,
+     "enclosing": "deleteTimer"
+    }
+   ]
+  },
+  {
+   "kind": "sdk-helper",
+   "name": "callSmartHomeAPI(/scene/edit)",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10019,
+     "enclosing": "setTimer"
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10019,
+     "enclosing": "setTimer"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10019,
+     "enclosing": "setTimer"
+    }
+   ]
+  },
+  {
+   "kind": "sdk-helper",
+   "name": "callSmartHomeAPI(/scene/list)",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10019,
+     "enclosing": "getTimerList"
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10019,
+     "enclosing": "getTimerList"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10019,
+     "enclosing": "getTimerList"
+    }
+   ]
+  },
+  {
+   "kind": "sdk-helper",
+   "name": "callSmartHomeAPI(<computed path>)",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10016,
+     "enclosing": "asyncSmartHomeAPI"
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10016,
+     "enclosing": "asyncSmartHomeAPI"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10016,
+     "enclosing": "asyncSmartHomeAPI"
+    }
+   ]
+  },
+  {
+   "kind": "sdk-helper",
+   "name": "getVoicePackageList",
+   "models": [
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a14",
+     "module": 10043,
+     "enclosing": "getVoicePackageList"
+    },
+    {
+     "model": "roborock.vacuum.a15",
+     "module": 10043,
+     "enclosing": "getVoicePackageList"
+    },
+    {
+     "model": "roborock.vacuum.a23",
+     "module": 10043,
+     "enclosing": "getVoicePackageList"
+    }
+   ]
+  },
+  {
+   "kind": "service",
+   "name": "Service.room.createRoom",
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10022,
+     "enclosing": "addNewRoomWithName"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10022,
+     "enclosing": "addNewRoomWithName"
+    },
+    {
+     "model": "roborock.vacuum.a10",
+     "module": 10022,
+     "enclosing": "addNewRoomWithName"
+    }
+   ]
+  },
+  {
+   "kind": "service",
+   "name": "Service.room.loadAllRoom",
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10022,
+     "enclosing": "getRoomList"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10022,
+     "enclosing": "getRoomList"
+    },
+    {
+     "model": "roborock.vacuum.a10",
+     "module": 10022,
+     "enclosing": "getRoomList"
+    }
+   ]
+  },
+  {
+   "kind": "service",
+   "name": "Service.scene.createTimerScene",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10022,
+     "enclosing": "miAddTimer"
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10022,
+     "enclosing": "miAddTimer"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10022,
+     "enclosing": "miAddTimer"
+    }
+   ]
+  },
+  {
+   "kind": "service",
+   "name": "Service.scene.loadTimerScenes",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10022,
+     "enclosing": "getServerTimers"
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10022,
+     "enclosing": "getServerTimers"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10022,
+     "enclosing": "getServerTimers"
+    }
+   ]
+  },
+  {
+   "kind": "service",
+   "name": "Service.smarthome.batchGetDeviceDatas",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10022,
+     "enclosing": "setValue"
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10022,
+     "enclosing": "setValue"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10022,
+     "enclosing": "setValue"
+    }
+   ]
+  },
+  {
+   "kind": "service",
+   "name": "Service.smarthome.batchSetDeviceDatas",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10022,
+     "enclosing": "setValue"
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10022,
+     "enclosing": "setValue"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10022,
+     "enclosing": "setValue"
+    }
+   ]
+  },
+  {
+   "kind": "service",
+   "name": "Service.smarthome.checkDeviceVersion",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10022,
+     "enclosing": "getFirmwareUpgradingInfo"
+    },
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10022,
+     "enclosing": "getFirmwareUpgradingInfo"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10022,
+     "enclosing": "getFirmwareUpgradingInfo"
+    }
+   ]
+  },
+  {
+   "kind": "service",
+   "name": "Service.smarthome.getMapfileUrl",
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a11",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.m1s",
+    "roborock.vacuum.p5",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6",
+    "roborock.vacuum.t4",
+    "roborock.vacuum.t6",
+    "rockrobo.vacuum.v1"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10115,
+     "enclosing": "downloadMap"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10115,
+     "enclosing": "downloadMap"
+    },
+    {
+     "model": "roborock.vacuum.a10",
+     "module": 10115,
+     "enclosing": "downloadMap"
+    }
+   ]
+  },
+  {
+   "kind": "service",
+   "name": "Service.smarthome.getRobomapUrl",
+   "models": [
+    "roborock.vacuum.a01",
+    "roborock.vacuum.c1",
+    "roborock.vacuum.e2"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a01",
+     "module": 10097,
+     "enclosing": "downloadMap"
+    },
+    {
+     "model": "roborock.vacuum.c1",
+     "module": 10094,
+     "enclosing": "downloadMap"
+    },
+    {
+     "model": "roborock.vacuum.e2",
+     "module": 10094,
+     "enclosing": "downloadMap"
+    }
+   ]
+  },
+  {
+   "kind": "service",
+   "name": "Service.spec.doAction",
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10013,
+     "enclosing": "miSpec"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10013,
+     "enclosing": "miSpec"
+    },
+    {
+     "model": "roborock.vacuum.a10",
+     "module": 10013,
+     "enclosing": "miSpec"
+    }
+   ]
+  },
+  {
+   "kind": "service",
+   "name": "Service.storage.getThirdUserConfigsForOneKey",
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10022,
+     "enclosing": "getPrivacyAgreementByKey"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10022,
+     "enclosing": "getPrivacyAgreementByKey"
+    },
+    {
+     "model": "roborock.vacuum.a10",
+     "module": 10022,
+     "enclosing": "getPrivacyAgreementByKey"
+    }
+   ]
+  },
+  {
+   "kind": "service",
+   "name": "Service.storage.setThirdUserConfigsForOneKey",
+   "models": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.a09",
+    "roborock.vacuum.a10",
+    "roborock.vacuum.a14",
+    "roborock.vacuum.a15",
+    "roborock.vacuum.a19",
+    "roborock.vacuum.a23",
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a30",
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a38",
+    "roborock.vacuum.a40",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a51",
+    "roborock.vacuum.a52",
+    "roborock.vacuum.a62",
+    "roborock.vacuum.a64",
+    "roborock.vacuum.a65",
+    "roborock.vacuum.a66",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a72",
+    "roborock.vacuum.a73",
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a76",
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s5e",
+    "roborock.vacuum.s6"
+   ],
+   "sites": [
+    {
+     "model": "roborock.vacuum.a08",
+     "module": 10022,
+     "enclosing": "postPrivacyAgreementStatus"
+    },
+    {
+     "model": "roborock.vacuum.a09",
+     "module": 10022,
+     "enclosing": "postPrivacyAgreementStatus"
+    },
+    {
+     "model": "roborock.vacuum.a10",
+     "module": 10022,
+     "enclosing": "postPrivacyAgreementStatus"
+    }
+   ]
+  }
+ ]
+}

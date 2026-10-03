@@ -1,0 +1,144 @@
+overview: |
+  Two timer stores exist: **robot timers** (`*_timer`) and **server timers** (`*_server_timer`). The plugin uses robot timers
+  when the status of the FCC flag is 0 (`local_info.featureset & 1`, see [`app_get_init_status`](status.md#app_get_init_status))
+  and server timers when it is 1 (✅ Bundle · a65 m13991 `setTimer`). In Mi Home on FCC robots the app also converts the
+  schedule to Beijing time before building the cron string. Timer identifiers are called `name` in the app and are
+  decimal strings created by the app (legacy `timer_id`).
+
+  A schedule is a cron string `"<min> <hour> <day> <month> <weekday>"`.
+
+commands:
+  - method: get_timer
+    title: List robot timers (full)
+    summary: Returns all robot timers with their schedule and command.
+    request: '`params`: none (`[]`).'
+    response: '`result` array, one entry per timer (`res.result.length` is the count). Newer plugins prefer [`get_timer_summary`](#get_timer_summary) + [`get_timer_detail`](#get_timer_detail) when fw feature 122 is present.'
+    legacy: '⚪ Legacy [timer.md](../../timer.md) — cron-like string; the legacy note that times are China-timezone based is consistent with the plugin converting to Beijing time for FCC robots.'
+    related: [set_timer, upd_timer, del_timer, get_timer_summary]
+
+  - method: set_timer
+    title: Create a robot timer
+    summary: Creates a timer that starts a clean.
+    request: |
+      `params`: `[ [<name>, [<cron>, <command>]] ]` — a one-element array whose element is the timer.
+      `<command>` is one of:
+
+      | Form | When | Content |
+      |---|---|---|
+      | `["start_clean", <mode>, [<segment ids>], <map id>?]` | firmware without fw feature 114 | old logic; the map id is added with `isMultiMapSegmentTimerSupported` |
+      | `["start_clean", {"segments": […], "repeat": 1, "fan_power": …, "clean_order_mode": …, "water_box_mode": …, "clean_mop": …, "map_index": …, "mop_mode": …, "mop_template_id": …}]` | firmware with fw feature 114 | `map_index` with multi-map timers (new-feature bit 12), `mop_mode` with `isShakeMopSetSupported` (bit 18), `mop_template_id` for the Garnet line |
+
+      ✅ Bundle · a65 m13991 `getOldLogicPara` / `getNewLogicPara`.
+    examples:
+      - label: constructed from app code (old logic)
+        json: |
+          {"id": 109, "method": "set_timer", "params": [["1700000000000", ["30 12 * * 1,2,3,4,5", ["start_clean", 102, [16, 17]]]]]}
+    behaviour: 'In the retry-capable list ([transports](../concepts/transports.md#retry-protocol)). The app stops a running clean first when the timer is for a different map.'
+    related: [upd_timer, del_timer, set_server_timer]
+
+  - method: upd_timer
+    title: Enable / disable a robot timer
+    summary: Switches a timer on or off.
+    request: '`params`: `[<name>, "on"|"off"]` (✅ Bundle · a01 wrapper `updateTimer([timer.name, cmd])`).'
+    legacy: '⚪ Legacy [timer.md](../../timer.md): `[timer_id, "on"|"off"]` (the legacy text calls the two values `activate` and `deactive`) — confirmed.'
+    related: [set_timer, upd_server_timer]
+
+  - method: del_timer
+    title: Delete a robot timer
+    summary: Removes a timer by name.
+    request: '`params`: `[<name>]`.'
+    related: [set_timer]
+
+  - method: get_server_timer
+    title: List server timers
+    summary: Returns the timers kept in the server store.
+    request: '`params`: none (`[]`).'
+    response: '`result` is an array of timer entries; the app deletes them one by one when migrating (`delAllServerTimersFromRobot`).'
+    related: [set_server_timer, del_server_timer]
+
+  - method: set_server_timer
+    title: Create a server timer
+    summary: Creates a timer in the server store (used for FCC state 1).
+    request: '`params`: `[ [<name>, [<cron>, ["start_clean", …]]] ]` (old-logic parameter); the reply `result[0]` is a segment string (`ok` is replaced by `0`).'
+    behaviour: 'Retry-capable. In Mi Home the app additionally creates a Mi automation scene for the timer.'
+    legacy: '⚪ README lists the server-timer methods as "s5e only".'
+    related: [set_timer, upd_server_timer]
+
+  - method: upd_server_timer
+    title: Enable / disable a server timer
+    summary: Switches a server timer.
+    request: '`params`: `[[<name>, "on"|"off"]]`.'
+    related: [upd_timer]
+
+  - method: del_server_timer
+    title: Delete server timers
+    summary: Deletes server timers by name.
+    request: '`params`: `[<name or ids>]`.'
+    related: [set_server_timer]
+
+  - method: get_timer_summary
+    title: List robot timer names
+    summary: Returns the names of all robot timers.
+    request: '`params`: none (`[]`).'
+    response: '`result` is an array of timer names; the plugin calls [`get_timer_detail`](#get_timer_detail) for each.'
+    behaviour: 'Gated by fw feature code 122 (`isSupportFetchTimerSummary`) and not offered for the `Tanos_CN` product (t6).'
+    related: [get_timer_detail]
+
+  - method: get_timer_detail
+    title: Read one robot timer
+    summary: Returns the full entry of a timer.
+    request: '`params`: `[<name>]`.'
+    response: '`result[0]` is the timer `[name, enabled, [cron, [cmd…]]]`: the plugin reads index 2 as the crontab pair `[cron, command]` (a65 m14327).'
+    related: [get_timer_summary]
+
+  - method: get_dnd_timer
+    title: Do-Not-Disturb (read)
+    summary: Returns the DND window and, on newer firmware, its actions.
+    request: '`params`: none (`[]`).'
+    response: |
+      `result[0]` — legacy fields `start_hour`, `start_minute`, `end_hour`, `end_minute`, `enabled`; newer firmware adds an
+      `actions` object `{"resume": 0|1, "vol": 0|1, "led": 0|1, "dust": 0|1, "dry": 0|1}` (✅ Bundle · a65 m14531).
+    legacy: '⚪ Legacy [dnd_timer.md](../../dnd_timer.md).'
+    related: [set_dnd_timer, set_dnd_timer_actions]
+
+  - method: set_dnd_timer
+    title: Do-Not-Disturb (set)
+    summary: Sets and enables the DND window.
+    request: '`params`: `[<start hour>, <start minute>, <end hour>, <end minute>]` (integers, 24 h).'
+    examples:
+      - label: constructed from app code
+        json: |
+          {"id": 110, "method": "set_dnd_timer", "params": [22, 0, 8, 0]}
+    related: [close_dnd_timer, get_dnd_timer]
+
+  - method: close_dnd_timer
+    title: Do-Not-Disturb (disable)
+    summary: Disables DND.
+    request: '`params`: none (`[]`).'
+    related: [set_dnd_timer]
+
+  - method: set_dnd_timer_actions
+    title: Do-Not-Disturb actions
+    summary: Chooses what is suppressed or resumed during DND.
+    request: '`params`: `{"resume": 0|1, "vol": 0|1, "led": 0|1, "dust": 0|1, "dry": 0|1}` (switches in the DND page).'
+    related: [get_dnd_timer]
+
+  - method: get_valley_electricity_timer
+    title: Off-peak charging window (read)
+    summary: Returns the "valley electricity" charging window.
+    request: '`params`: none (`[]`).'
+    response: '`result[0]`: `enabled` (1 = on), `start_hour`, `start_minute` and the matching end fields.'
+    behaviour: 'Needs new-feature bit `isSupportedValleyElectricity` (high word bit 13); the status field `charge_status` and state text "wait for charge" relate to it.'
+    related: [set_valley_electricity_timer]
+
+  - method: set_valley_electricity_timer
+    title: Off-peak charging window (set)
+    summary: Sets the window.
+    request: '`params`: `[<start hour>, <start minute>, <end hour>, <end minute>]`.'
+    related: [close_valley_electricity_timer]
+
+  - method: close_valley_electricity_timer
+    title: Off-peak charging window (disable)
+    summary: Disables the window.
+    request: '`params`: none (`[]`).'
+    related: [set_valley_electricity_timer]

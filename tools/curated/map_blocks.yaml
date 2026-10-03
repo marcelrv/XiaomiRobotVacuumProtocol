@@ -1,0 +1,40 @@
+# Per-block layout as read from the app's own parser (raw/*_parser_workermapparser.jx, `Schema` table).
+# stride/fields are the payload record layout; "scaled" = value divided by 50 by the app (raw values are millimetres).
+# status: confirmed (legacy doc agrees) / extended (legacy incomplete) / new (not in legacy doc) / differs (legacy doc differs)
+blocks:
+  1:  {title: Charger location, legacy_id: charger, status: extended, header: '-', record: 'x u32, y u32 (scaled), angle u32 (angle only when the payload is 12 bytes long)', note: 'The legacy doc lists x and y only; the app reads a third 4-byte field `angle`. The older sample file in this folder has an 8-byte payload (no angle), the newer sample a 12-byte payload.'}
+  2:  {title: Image (map pixels), legacy_id: map, status: extended, header: '[blockNum u32 (newer parsers)], top u32, left u32, height u32, width u32', record: '1 byte per pixel, row-major; low 3 bits = pixel type (0 = outside/unknown, 1 = obstacle/wall, other values = floor), high 5 bits = room (segment) id 0–31', note: 'Pixel byte `FF` of the legacy doc = floor (type 7) with room id 31. The parser caps room ids at 32 (`MaxBlockNum`). Header length 28 vs 24 = presence of `blockNum`; the first parser generation (v1) has no `blockNum`.'}
+  3:  {title: Vacuum path, legacy_id: path, status: confirmed, header: 'num u32, size u32, angle u32', record: 'x u16, y u16 (scaled); `size` bytes per point', note: ''}
+  4:  {title: Go-to path, legacy_id: pathGoto, status: confirmed, header: 'num u32, size u32, angle u32', record: 'x u16, y u16 (scaled)', note: ''}
+  5:  {title: Predicted go-to path, legacy_id: pathGotoPlan, status: confirmed, header: 'num u32, size u32, angle u32', record: 'x u16, y u16 (scaled)', note: ''}
+  6:  {title: Cleaned zones, legacy_id: zones, status: confirmed, header: 'num u32', record: '8 bytes: x1, y1, x2, y2 u16 (scaled)', note: ''}
+  7:  {title: Go-to target, legacy_id: target, status: confirmed, header: '-', record: 'x u16, y u16 (scaled); ignored when both are 0', note: ''}
+  8:  {title: Robot position, legacy_id: robot, status: confirmed, header: '-', record: 'x u32, y u32 (scaled), angle u32 (angle only when the payload is 12 bytes long)', note: 'Same payload sizes as block 1 in the two sample files.'}
+  9:  {title: No-go zones, legacy_id: fbzs, status: confirmed, header: 'num u32', record: '16 bytes: 8 × u16 (scaled) = four corner points', note: ''}
+  10: {title: Virtual walls, legacy_id: walls, status: confirmed, header: 'num u32', record: '8 bytes: 4 × u16 (scaled) = two end points', note: ''}
+  11: {title: Blocks (active segments), legacy_id: blocks, status: confirmed, header: 'num u32', record: '1 byte each (segment id)', note: ''}
+  12: {title: No-mop zones, legacy_id: mfbzs, status: confirmed, header: 'num u32', record: '16 bytes: 8 × u16 (scaled)', note: ''}
+  13: {title: Obstacles (old layout), legacy_id: obstaclesOld, status: confirmed, header: 'num u32', record: '5 bytes: x u16, y u16, type u8 (not scaled)', note: 'Every parser except those of s5 and t4 names block 13 `obstaclesOld`; the s5/t4 parsers call it `obstacles`.'}
+  14: {title: Ignored obstacles (old layout), legacy_id: ignoredObstaclesOld, status: confirmed, header: 'num u32', record: '5 bytes: x u16, y u16, type u8', note: ''}
+  15: {title: Obstacles, legacy_id: obstacles, status: extended, header: 'num u32', record: '16 bytes: x u16, y u16, type u16, u16 (confidence), u32, u32 — or 28 bytes with a photo reference: x, y, type, u16, u32, then 16 ASCII characters (empty when the byte at +12 is 0). The parser decides per block by testing the bytes at +12…+27.', note: 'Coordinates are not scaled. The legacy .ksy names the u16 at +6 `confidence`.'}
+  16: {title: Ignored obstacles, legacy_id: ignoredObstacles, status: confirmed, header: 'num u32', record: '6 bytes: x u16, y u16, type u16', note: ''}
+  17: {title: Carpet map, legacy_id: carpetMap, status: confirmed, header: '-', record: 'one byte per pixel of the image (same geometry as block 2)', note: ''}
+  18: {title: Mop path, legacy_id: mopPath, status: confirmed, header: '-', record: 'bytes, one per pixel', note: ''}
+  19: {title: Carpet forbidden areas, legacy_id: cfbzs, status: confirmed, header: 'num u32', record: '16 bytes: 8 × u16 (scaled)', note: ''}
+  20: {title: Path type, legacy_id: pathType, status: confirmed, header: '-', record: '1 byte', note: ''}
+  21: {title: Smart zones, legacy_id: smartZones, status: extended, header: 'num u32', record: '18 bytes: zone id u16, range = x1,y1,x2,y2 u16 (scaled), 8 further bytes not read by the app', note: ''}
+  22: {title: Custom carpet, legacy_id: customCarpet, status: confirmed, header: 'num u32', record: '16 bytes: 8 × u16 (scaled)', note: ''}
+  23: {title: Carpet-line forbidden zones, legacy_id: clfbzs, status: confirmed, header: 'num u32', record: '16 bytes: 8 × u16 (scaled)', note: ''}
+  24: {title: Floor map, legacy_id: floorMap, status: confirmed, header: '-', record: 'one byte per pixel (floor material)', note: ''}
+  25: {title: Furniture, legacy_id: furnitures, status: extended, header: 'num u32', record: '23 bytes: 8 × u16 corner coordinates (scaled), u16 type, five single bytes', note: 'A block whose length is not `num × 23` is ignored.'}
+  26: {title: Dock type, legacy_id: dockType, status: confirmed, header: '-', record: 'integer of the block length', note: ''}
+  27: {title: Enemies, legacy_id: enemies, status: confirmed, header: 'num u32', record: '6 bytes: x u16, y u16 (scaled), u16', note: ''}
+  28: {title: Door-sill zones, legacy_id: dsfbz, status: extended, header: 'num u32', record: '16 bytes: 8 × u16 (scaled)', note: 'The legacy doc marks the function as uncertain; the app uses the block with the door-sill editing calls ([`app_set_door_sill_blocks`](../docs/commands/rooms-and-areas.md#app_set_door_sill_blocks)).'}
+  29: {title: Stuck points, legacy_id: stuckpts, status: extended, header: 'num u32', record: '6 bytes: x u16, y u16 (scaled), u16', note: ''}
+  30: {title: Cliff zones, legacy_id: clffbz, status: extended, header: 'num u32', record: '16 bytes: 8 × u16 (scaled)', note: ''}
+  31: {title: Smart door sills, legacy_id: smartds, status: extended, header: 'num u32', record: '16 bytes: 8 × u16 (scaled)', note: ''}
+  32: {title: Floor direction, legacy_id: flDirec, status: extended, header: '-', record: '3 bytes per entry: u8, u16', note: ''}
+  33: {title: Date, legacy_id: date, status: extended, header: '-', record: 'integer of the block length', note: ''}
+  34: {title: Nonce data, legacy_id: nonceData, status: extended, header: 'num u32', record: '5 bytes: u8, u32', note: 'Used with incremental map downloads (nonce).'}
+  36: {title: Extra zones, legacy_id: extZones, status: new, header: 'num u32', record: '16 bytes: 8 × u16 (scaled)', note: 'Not in the legacy table or the .ksy; present in the parsers of 10 models. A block whose length is not `num × 16` is ignored.'}
+  1024: {title: Digest, legacy_id: digest, status: extended, header: '-', record: 'Not decoded by the block parser. The app validator (`MapValidator`) treats the last 20 bytes of the file as a SHA-1 digest of all bytes before them.', note: 'Legacy text and the .ksy describe a 12-byte hash field; the validator in the bundles uses the full 20-byte SHA-1 (its digest table has entries for map versions 1.0 and, in most bundles, 1.1). The 8-byte block header lies inside the hashed range.'}

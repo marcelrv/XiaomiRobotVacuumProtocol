@@ -1,0 +1,70 @@
+overview: |
+  Two independent features exist: the older **carpet pressurize** switch (`get_carpet_mode` / `set_carpet_mode`, a current
+  threshold set) and the newer **carpet clean mode** (`set_carpet_clean_mode`). Which one the app offers depends on
+  firmware and product (`isCarpetSupported`, `isNewCarpetPressurize`, product lists in the
+  [feature flags](../concepts/feature-flags.md) page).
+
+commands:
+  - method: get_carpet_mode
+    title: Carpet pressurize (read)
+    summary: Returns the carpet-detection (pressurize) switch and thresholds.
+    request: '`params`: none (`[]`).'
+    response: '`result[0].enable` (1 = on); the thresholds `current_integral`, `current_high`, `current_low`, `stall_time` are written by the app, not read back.'
+    legacy: '⚪ Legacy README lists `get_carpet_mode` / `set_carpet_mode` as "s5e only"; call sites exist in all 42 bundles.'
+    related: [set_carpet_mode, get_carpet_clean_mode]
+
+  - method: set_carpet_mode
+    title: Carpet pressurize (write)
+    summary: Switches carpet detection and writes its current thresholds.
+    request: |
+      `params`: `[{"enable": 0|1, "current_integral": <int>, "current_high": <int>, "current_low": <int>, "stall_time": <int>}]`.
+      The app's default values are `550`, `625`, `500` and `10` (✅ Bundle · a65 `carpetModeParamsEnable`/`Disable`); for some
+      product lines (`isCarpetPressurizeSwitchUseNewPara`) other threshold values are used (a65 m14252).
+    examples:
+      - label: constructed from app code (a65 constants)
+        json: |
+          {"id": 108, "method": "set_carpet_mode", "params": [{"enable": 1, "current_integral": 550, "current_high": 625, "current_low": 500, "stall_time": 10}]}
+    related: [get_carpet_mode]
+
+  - method: get_carpet_clean_mode
+    title: Carpet clean mode (read)
+    summary: Returns the carpet behaviour mode.
+    request: '`params`: none (`[]`).'
+    response: '`result[0].carpet_clean_mode` — one of the codes in the table below.'
+    related: [set_carpet_clean_mode]
+
+  - method: set_carpet_clean_mode
+    title: Carpet clean mode (write)
+    summary: Chooses what the robot does on carpets.
+    request: |
+      `params`: `{"carpet_clean_mode": <code>}` with the codes of `CarPetCleanModeSettingMap`:
+
+      | Code | App name |
+      |---|---|
+      | 0 | `CarpetAvoidMode` |
+      | 1 | `CarpetSelfAdaptionMode` |
+      | 2 | `CarpetIgnoreMode` |
+      | 3 | `CarpetDynamicAdaptionMode` |
+
+      (✅ Bundle · a27 and newer `Protocol` module; the user-visible texts are in the carpet settings page.)
+    behaviour: 'The app refuses to change it while the robot is running and asks to finish the current task first.'
+    related: [get_carpet_clean_mode, app_set_carpet_deep_clean_status]
+
+  - method: app_get_carpet_deep_clean_status
+    title: Carpet deep clean (read)
+    summary: Reads the "carpet deep clean" switch.
+    request: '`params`: `{}`.'
+    response: '`result.status == 1` means on.'
+    related: [app_set_carpet_deep_clean_status]
+
+  - method: app_set_carpet_deep_clean_status
+    title: Carpet deep clean (write)
+    summary: Switches deep cleaning of carpets.
+    request: '`params`: `{"status": 0|1}`.'
+    related: [app_get_carpet_deep_clean_status]
+
+  - method: app_set_priority_carpet_cleaning_status
+    title: Clean carpets first
+    summary: Switches "carpet first" ordering; the status field `switch_status` bit 3 reports it.
+    request: '`params`: `{"status": 0|1}`.'
+    related: [set_carpet_clean_mode]

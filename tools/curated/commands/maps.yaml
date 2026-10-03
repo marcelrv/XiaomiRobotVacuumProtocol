@@ -1,0 +1,274 @@
+overview: |
+  **The map is not returned by the RPC.** In Mi Home the map methods (`get_map_v1`, `get_multi_map`, `get_recover_map`, …)
+  are sent through `getMapData` → `MiMapDownloader.downloadMap`. The robot answers with a *file name* (or `retry` /
+  `locating`); the plugin then asks the Mi smart-home service for a download URL of that object, downloads a gzip file,
+  un-gzips it and validates it. The resulting bytes are the map file described in
+  [map formats](../maps/index.md). Details: [maps overview](../concepts/maps-overview.md).
+
+  Maps use a plugin-side retry loop: up to 8 retries, 1 s after a `retry` reply and 2 s after a failure
+  (✅ Bundle · a65 m10109 `downloadMap`).
+
+commands:
+  - method: get_map_v1
+    title: Get the current map
+    summary: The standard map request; the reply names the file to download.
+    request: |
+      `params` depends on the bundle: `{}` or `[]` (older); `{"nonce": <int>}` when the firmware supports incremental maps
+      (`isSupportIncrementalMap`, a65 m10112: `-1` for the first request).
+    response: |
+      Classic: `result[0]` = object name (the plugin replaces `%2F` by `/`), or the strings `retry` / `locating`
+      (`locating` ends the attempt). Incremental maps: `result` is an object `{"result": "ok"|"retry", "nonce", "file", "snapshot"}`;
+      `retry` carries a `snapshot` that the plugin parses and a new `nonce` to ask with.
+    legacy: |
+      ⚪ Legacy [map_v1.md](../../map_v1.md) and [map.md](../../map.md): same file-name reply; the incremental form is new.
+    related: [get_map, get_multi_map, get_dynamic_map_diff]
+
+  - method: get_map
+    title: Get the map (newer raw request)
+    summary: Raw map request used by the newest plugin generation through an encrypted/compressed path.
+    response: 'Through the encrypted path of generation-B plugins: the request carries a freshly generated public key and a cipher suite (`endpoint`, `security`); `result[0]` is again the object name (`retry` is handled as above). The downloaded file is read as base64, decrypted by the plugin (`Decryptor`) and LZ4-decompressed; the result is a map file ([maps overview](../concepts/maps-overview.md#the-newer-encrypted-path-get_map-get_photo)). ✅ Bundle · a65 m12806 `downloadFile`, m10046 `getAndDecBase64Data`.'
+    request: '`params`: `{}`; called through `getAndDecBase64Data("get_map", {}, Lz4)` (a65 m10046).'
+    behaviour: 'In the plugin the data is returned base64-encoded and decompressed with LZ4; the transport details of that path are not part of the miIO request (❓ Unknown beyond the method name).'
+    related: [get_map_v1, get_photo, get_random_pkey]
+
+  - method: get_map_v2
+    title: Map v2 (declared only)
+    summary: Listed in every Methods table; never called.
+    request: ❓ Unknown — no call site.
+    related: [get_map_v1]
+
+  - method: app_get_map
+    title: Map (alternate-table name)
+    summary: 'The `GetMap` entry of the `saphire`/`tanos` table; no call site.'
+    request: ❓ Unknown.
+    related: [get_map]
+
+  - method: get_fresh_map
+    title: Fresh map (declared only)
+    summary: Declared in 41 bundles; never called (the s5 bundle calls the `_v1` variant).
+    request: ❓ Unknown.
+    related: [get_fresh_map_v1]
+
+  - method: get_fresh_map_v1
+    title: Fresh map (s5)
+    summary: Map request for the "new map" candidate; only the s5 bundle contains the call.
+    response: '`result[0]` is the **object name** of the map file (the plugin replaces `%2F` by `/`), or the string `retry` (ask again after 1 s, at most 8 times) or `locating` (the robot is relocating; the attempt ends without a callback). The app then asks the cloud for a download address of that object, downloads it, un-gzips it and validates it ([maps overview](../concepts/maps-overview.md#how-a-map-reaches-the-app)). ✅ Bundle · a65 m10109 `downloadMap`.'
+    request: '`params`: `{}` via `getMapData`.'
+    related: [use_new_map, get_persist_map_v1]
+
+  - method: get_persist_map
+    title: Persisted map (declared only)
+    summary: Declared in 41 bundles; never called.
+    request: ❓ Unknown.
+    related: [get_persist_map_v1]
+
+  - method: get_persist_map_v1
+    title: Persisted map (s5)
+    summary: Saved-map request; only the s5 bundle contains the call.
+    response: '`result[0]` is the **object name** of the map file (the plugin replaces `%2F` by `/`), or the string `retry` (ask again after 1 s, at most 8 times) or `locating` (the robot is relocating; the attempt ends without a callback). The app then asks the cloud for a download address of that object, downloads it, un-gzips it and validates it ([maps overview](../concepts/maps-overview.md#how-a-map-reaches-the-app)). ✅ Bundle · a65 m10109 `downloadMap`.'
+    request: '`params`: `{}` via `getMapData`.'
+    related: [use_old_map, get_fresh_map_v1]
+
+  - method: get_photo
+    title: Get an obstacle photo
+    summary: Fetches a photo taken by the robot (obstacle recognition).
+    response: 'Same flow as `get_map`: `result[0]` is the object name, the file is downloaded and decrypted, then gunzipped and parsed by `Decryptor.parsePhotoData` (a65 m12806, m10046 `getPhotoBase64Data`). The request names the photo with `data_filter` (`img_id`, `type`).'
+    request: '`params`: `{"data_filter": {"img_id": <id>, "type": <int>}}`, through `getAndDecBase64Data("get_photo", …, gzip)` (a65 m10046).'
+    behaviour: 'Needs the camera/obstacle features; see [camera](camera.md).'
+    related: [get_random_pkey, upload_photo]
+
+  - method: get_random_pkey
+    title: Random public key
+    summary: Returns a public key used for encrypted record data.
+    request: '`params`: none (`[]`).'
+    response: '`result.pub_key` (string) is read (a65 m14657 and m14660); the value is then used by the record viewer. The key is not recorded here.'
+    related: [get_photo]
+
+  - method: get_multi_map
+    title: Get a saved floor map
+    summary: Downloads one saved map of a multi-floor setup.
+    response: '`result[0]` is the **object name** of the map file (the plugin replaces `%2F` by `/`), or the string `retry` (ask again after 1 s, at most 8 times) or `locating` (the robot is relocating; the attempt ends without a callback). The app then asks the cloud for a download address of that object, downloads it, un-gzips it and validates it ([maps overview](../concepts/maps-overview.md#how-a-map-reaches-the-app)). ✅ Bundle · a65 m10109 `downloadMap`. For this call the downloaded file is stored as `map<NN>.gz` (`NN` = last two characters of the object name).'
+    request: |
+      Mi Home: `[<map id>]`, or `[<map id>, 1]` for the backup copy when `isSupportBackupMap` (new-feature high bit 17).
+      Roborock app (not Mi Home): `{"map_index": <id>, "is_bak": 1}` (✅ Bundle · a65 m12527 `getMapData`).
+    related: [get_multi_maps_list, load_multi_map]
+
+  - method: get_multi_maps_list
+    title: List saved floor maps
+    summary: Returns the saved maps and the maximum number of floors.
+    request: '`params`: none (`[]`).'
+    response: |
+      `result[0]` = `{"max_multi_map": <int>, "map_info": [ {"mapFlag", "add_time", "name", "length"}, … ]}` (✅ Bundle · a65 m12527).
+      The list UI uses `mapFlag` as the map id, `add_time` as the creation time, `name` (an empty name is replaced by the app's default
+      floor name plus `mapFlag + 1`) and `length`; the current map is sorted first, the others newest first.
+    legacy: |
+      ⚪ Legacy [multimap.md](../../multimap.md) documents the same keys and adds `max_bak_map` (maximum backup maps), `multi_map_count`
+      (number of stored maps) and a per-map `bak_maps` array (backup maps); the plugin reads none of these three. A legacy capture shows
+      `{"max_multi_map": 4, "max_bak_map": 0, "multi_map_count": 3, "map_info": [{"mapFlag": 0, "add_time": …, "length": 11, "name": …, "bak_maps": []}, …]}`
+      (legacy capture, unverified); the meaning of `length` is not given.
+    related: [load_multi_map, name_multi_map]
+
+  - method: load_multi_map
+    title: Switch to a saved floor map
+    summary: Makes a saved map the active one.
+    request: '`params`: `[<map id>]`.'
+    behaviour: 'In the retry-capable list ([transports](../concepts/transports.md#retry-protocol)). The app does not call it while the robot is cleaning on another map.'
+    related: [get_multi_maps_list, recover_multi_map]
+
+  - method: name_multi_map
+    title: Rename a saved floor map
+    summary: Sets the name of a saved map.
+    request: '`params`: `[{"multi_map": <map id>, "name": "<name>", "length": <int>}]` (`length` = byte/char length passed by the editor).'
+    related: [get_multi_maps_list]
+
+  - method: recover_multi_map
+    title: Restore a saved map from backup
+    summary: Restores a saved floor map from its backup copy.
+    request: '`params`: `{"map_flag": <map id>}`.'
+    related: [manual_bak_map]
+
+  - method: manual_bak_map
+    title: Back up a saved map
+    summary: Creates a manual backup of a saved floor map.
+    request: '`params`: `{"map_flag": <map id>}`.'
+    related: [recover_multi_map]
+
+  - method: save_map
+    title: Save the edited map (walls, no-go zones, floor id)
+    summary: 'Writes map edits: virtual walls, forbidden zones and, with multi-floor, the target map.'
+    request: |
+      `params` is an **array of arrays** built by the map editor: the wall entries and forbidden-zone entries concatenated
+      (`wallsPara.concat(fbzsPara)`); with multi-floor support (fw feature 120) two marker entries are appended:
+      `[100, <replace map id>]` and, when saving the home map, `[200, 0]` (✅ Bundle · a65 m10112 `saveMap`). The element
+      layout of wall/zone entries is described in [maps overview](../concepts/maps-overview.md#virtual-walls-and-forbidden-zones).
+    behaviour: 'In the retry-capable list. The editing session is bracketed by [`start_edit_map`](#start_edit_map) and [`end_edit_map`](#end_edit_map).'
+    legacy: |
+      ⚪ Legacy [map.md](../../map.md) documents the same row layouts: a zone `[0, x1, y1, x2, y2, x3, y3, x4, y4]` (type 0 plus eight integers for the
+      rectangle) and a barrier (virtual wall) `[1, x1, y1, x2, y2]` — confirmed. The legacy page states that the call requires an activated
+      [lab status](#set_lab_status) (map saving); the plugin enables saving before it edits maps. README lists `save_map` as "s5, s6, s5e".
+    related: [start_edit_map, end_edit_map, set_lab_status]
+
+  - method: reset_map
+    title: Reset (clear) the map
+    summary: Deletes the current map on the robot.
+    request: '`params`: none (`[]`).'
+    related: [recover_map, del_map]
+
+  - method: start_edit_map
+    title: Begin a map edit session
+    summary: Tells the robot that the app edits the map.
+    request: '`params`: none (`[]`).'
+    related: [end_edit_map, save_map]
+
+  - method: end_edit_map
+    title: End a map edit session
+    summary: Ends the session (also called when leaving without saving).
+    request: '`params`: none (`[]`).'
+    related: [start_edit_map]
+
+  - method: use_new_map
+    title: Accept the freshly built map
+    summary: 's5-generation "new map / old map" choice: keep the new map.'
+    request: '`params`: none (`[]`); only the s5 bundle contains call sites.'
+    related: [use_old_map]
+
+  - method: use_old_map
+    title: Keep the previous map
+    summary: Counterpart of `use_new_map`.
+    request: '`params`: none (`[]`); only the s5 bundle contains call sites.'
+    related: [use_new_map]
+
+  - method: get_recover_maps
+    title: List map backups
+    summary: Returns the restorable map versions.
+    request: '`params`: none (`[]`).'
+    response: '`result` is an array of `[<map id>, <time>]` pairs (a65 m12527).'
+    related: [get_recover_map, recover_map]
+
+  - method: get_recover_map
+    title: Download a restorable map
+    summary: Downloads the map of a backup entry for preview.
+    response: '`result[0]` is the **object name** of the map file (the plugin replaces `%2F` by `/`), or the string `retry` (ask again after 1 s, at most 8 times) or `locating` (the robot is relocating; the attempt ends without a callback). The app then asks the cloud for a download address of that object, downloads it, un-gzips it and validates it ([maps overview](../concepts/maps-overview.md#how-a-map-reaches-the-app)). ✅ Bundle · a65 m10109 `downloadMap`. The string `unknown_method` makes the plugin report "plugin needs update" (a65 m12527).'
+    request: '`params`: `{"map_index": <id>}`, plus `"is_bak": 0|1` when `isSupportBackupMap`; some bundles pass `[<id>]`.'
+    related: [get_recover_maps, recover_map]
+
+  - method: recover_map
+    title: Restore a map version
+    summary: Restores the chosen backup entry.
+    request: '`params`: `[<map id>]`.'
+    related: [get_recover_maps]
+
+  - method: del_map
+    title: Delete a saved map
+    summary: Deletes a saved floor map.
+    request: '`params`: `[<map id>]`.'
+    behaviour: 'If it is the current map the app also clears its cached map data and removes stored AR-map data for that id.'
+    related: [get_multi_maps_list]
+
+  - method: get_map_status
+    title: Map status (wrapped, unused)
+    summary: Wrapped in every newer bundle; no call site. The map status is taken from the status field `map_status`.
+    request: '`params`: none (`[]`).'
+    related: [get_prop]
+
+  - method: set_switch_map_mode
+    title: Smart map switching
+    summary: Turns automatic switching between saved maps on or off.
+    request: '`params`: `{"mode": 0|1}` (the app sends `0` when the switch was on, `1` otherwise; a27 m14258). The current value is the status field `switch_map_mode`.'
+    behaviour: 'Offered with new-feature bit `isSupportSetSwitchMapMode` (low word bit 28).'
+    related: [set_lab_status]
+
+  - method: app_update_unsave_map
+    title: Handle an unsaved map
+    summary: Tells the robot what to do with a map it did not save.
+    request: '`params`: `{"update": <code>}` with the codes of `UnsaveMapHandle`: Ignore 0, Update 1, Load 2, Done 3 ([enums](../reference/other-enums.md)).'
+    behaviour: 'The reason is the status field `unsave_map_reason` (`UnsaveMapReason`: Saved 0 … MapMess 8).'
+    related: [set_lab_status]
+
+  - method: get_dynamic_map_diff
+    title: Incremental map diff
+    summary: Asks which map layers changed since a nonce.
+    request: '`params`: `{"nonce": <mapNonce>, "round": <ms timestamp>}`.'
+    response: '`result` lists per-layer diffs; the plugin decides per layer whether to fetch data, reset or reload the map.'
+    related: [get_dynamic_data, get_map_v1]
+
+  - method: get_dynamic_data
+    title: Incremental map layer data
+    summary: Fetches the changed data of one map layer.
+    request: '`params`: an object `params` built from the layer description (`dataInst.toJSONString`).'
+    related: [get_dynamic_map_diff]
+
+  - method: get_offline_map_status
+    title: Offline map switch (read)
+    summary: Wrapped; no call site (the app keeps the state locally).
+    request: '`params`: `{}`.'
+    related: [set_offline_map_status]
+
+  - method: set_offline_map_status
+    title: Offline map switch
+    summary: Enables or disables offline map storage.
+    request: '`params`: `{"status": 0|1}`; the status field `switch_status` bit 0 reports it.'
+    related: [get_offline_map_status]
+
+  - method: set_lab_status
+    title: Map saving / multi-floor switch
+    summary: Turns map saving (and multi-floor maps) on or off.
+    request: |
+      `params`: `[0|1]` on firmware without multi-floor; with multi-floor `{"lab_status": 0|1|3}`; `{"lab_status": 1, "reserve_map": <id>}`
+      keeps a map when switching (✅ Bundle · a08, a65 m12527 `mapSaveSwitch`). Reported back as the status field
+      `lab_status` (1 = map saving, 3 = multi-floor).
+    legacy: '⚪ Legacy [lab_status.md](../../lab_status.md); README lists it as "s5, s6, s5e".'
+    related: [load_multi_map, app_update_unsave_map]
+
+  - method: set_map_beautification_status
+    title: Map beautification bits (debug)
+    summary: Writes a bit mask of experimental map-display options.
+    request: '`params`: `{"status": <bit mask>}`; bits: 1 partition map, 2 carpet, 4 mop floor, plus further debug switches (a65 m14375). Debug page only.'
+    related: [get_map_beautification_status]
+
+  - method: get_map_beautification_status
+    title: Map beautification bits (read)
+    summary: Reads the mask.
+    request: '`params`: none (`[]`).'
+    response: '`result.status` (integer bit mask).'
+    related: [set_map_beautification_status]

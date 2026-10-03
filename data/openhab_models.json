@@ -1,0 +1,286 @@
+{
+ "source": "openHAB miio binding, MiIoDevices.java",
+ "openhab": {
+  "ref": "main",
+  "commit": "8d09a0997f6cf1ca817b94d5cdfa647b5b51e1e1",
+  "commit_date": "2026-10-02"
+ },
+ "file": "src/main/java/org/openhab/binding/miio/internal/MiIoDevices.java",
+ "models": {
+  "roborock.sweeper.e2v2": {
+   "enum": "ROBOROCK_SWEEPER_E2V2",
+   "name": "Rockrobo Xiaowa Sweeper v2",
+   "thing_type": "THING_TYPE_UNSUPPORTED"
+  },
+  "roborock.sweeper.e2v3": {
+   "enum": "ROBOROCK_SWEEPER_E2V3",
+   "name": "Rockrobo Xiaowa Sweeper v3",
+   "thing_type": "THING_TYPE_UNSUPPORTED"
+  },
+  "roborock.vacuum.a08": {
+   "enum": "ROBOROCK_VACUUM_A08",
+   "name": "Roborock S6 Pure",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a09": {
+   "enum": "ROBOROCK_VACUUM_A09",
+   "name": "Roborock T7 Pro",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a10": {
+   "enum": "ROBOROCK_VACUUM_A10",
+   "name": "Roborock S6 MaxV",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a11": {
+   "enum": "ROBOROCK_VACUUM_A11",
+   "name": "Roborock T7",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a14": {
+   "enum": "ROBOROCK_VACUUM_A14",
+   "name": "Roborock T7S",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a15": {
+   "enum": "ROBOROCK_VACUUM_A15",
+   "name": "Roborock S7",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a19": {
+   "enum": "ROBOROCK_VACUUM_A19",
+   "name": "Roborock S4 Max",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a23": {
+   "enum": "ROBOROCK_VACUUM_A23",
+   "name": "Roborock T7S Plus",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a26": {
+   "enum": "ROBOROCK_VACUUM_A26",
+   "name": "Roborock G10S Pro",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a27": {
+   "enum": "ROBOROCK_VACUUM_A27",
+   "name": "Roborock S7 MaxV",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a29": {
+   "enum": "ROBOROCK_VACUUM_A29",
+   "name": "Roborock G10",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a30": {
+   "enum": "ROBOROCK_VACUUM_A30",
+   "name": "Roborock G10",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a34": {
+   "enum": "ROBOROCK_VACUUM_A34",
+   "name": "Roborock Q5",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a37": {
+   "enum": "ROBOROCK_VACUUM_A37",
+   "name": "Roborock T8",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a38": {
+   "enum": "ROBOROCK_VACUUM_A38",
+   "name": "Roborock Q7 Max",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a40": {
+   "enum": "ROBOROCK_VACUUM_A40",
+   "name": "Roborock Q7",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a46": {
+   "enum": "ROBOROCK_VACUUM_A46",
+   "name": "Roborock G10S",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a51": {
+   "enum": "ROBOROCK_VACUUM_A51",
+   "name": "Roborock S8",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a52": {
+   "enum": "ROBOROCK_VACUUM_A52",
+   "name": "Roborock T8 Plus",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a62": {
+   "enum": "ROBOROCK_VACUUM_A62",
+   "name": "Roborock S7 Pro Ultra",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a64": {
+   "enum": "ROBOROCK_VACUUM_A64",
+   "name": "Roborock G10S Pure",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a65": {
+   "enum": "ROBOROCK_VACUUM_A65",
+   "name": "Roborock S7 Max Ultra",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a66": {
+   "enum": "ROBOROCK_VACUUM_A66",
+   "name": "Roborock G10 Plus",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a69": {
+   "enum": "ROBOROCK_VACUUM_A69",
+   "name": "Roborock G20",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a70": {
+   "enum": "ROBOROCK_VACUUM_A70",
+   "name": "Roborock S8 Pro Ultra",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a72": {
+   "enum": "ROBOROCK_VACUUM_A72",
+   "name": "Roborock Q5 Pro",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a73": {
+   "enum": "ROBOROCK_VACUUM_A73",
+   "name": "Roborock Q8 Max",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a74": {
+   "enum": "ROBOROCK_VACUUM_A74",
+   "name": "Roborock P10",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a75": {
+   "enum": "ROBOROCK_VACUUM_A75",
+   "name": "Roborock Qrevo",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.a76": {
+   "enum": "ROBOROCK_VACUUM_A78",
+   "name": "Roborock G10S Auto",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.c1": {
+   "enum": "ROBOROCK_VACUUM_C1",
+   "name": "Xiaowa C1",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.e2": {
+   "enum": "ROBOROCK_VACUUM_E2",
+   "name": "Roborock Xiaowa E Series Vacuum v2",
+   "thing_type": "THING_TYPE_UNSUPPORTED"
+  },
+  "roborock.vacuum.m1s": {
+   "enum": "ROBOROCK_VACUUM_M1S",
+   "name": "Mi Robot Vacuum 1S",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.p5": {
+   "enum": "ROBOROCK_VACUUM_P5",
+   "name": "Roborock P5",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.s4": {
+   "enum": "ROBOROCK_VACUUM_S4",
+   "name": "Roborock S4",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.s4v2": {
+   "enum": "ROBOROCK_VACUUM_S4V2",
+   "name": "Roborock Vacuum S4v2",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.s5": {
+   "enum": "ROBOROCK_VACUUM_S5",
+   "name": "Roborock S5",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.s5e": {
+   "enum": "ROBOROCK_VACUUM_S5E",
+   "name": "Roborock S5 Max",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.s6": {
+   "enum": "ROBOROCK_VACUUM_S6",
+   "name": "Roborock S6",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.t4": {
+   "enum": "ROBOROCK_VACUUM_T4",
+   "name": "Roborock T4",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.t4v2": {
+   "enum": "ROBOROCK_VACUUM_T4V2",
+   "name": "Roborock Vacuum T4 v2",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.t4v3": {
+   "enum": "ROBOROCK_VACUUM_T4V3",
+   "name": "Roborock Vacuum T4 v3",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.t6": {
+   "enum": "ROBOROCK_VACUUM_T6",
+   "name": "Roborock T6",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.t6v2": {
+   "enum": "ROBOROCK_VACUUM_T6V2",
+   "name": "Roborock Vacuum T6 v2",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.t6v3": {
+   "enum": "ROBOROCK_VACUUM_T6V3",
+   "name": "Roborock Vacuum T6 v3",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.t7": {
+   "enum": "ROBOROCK_VACUUM_T7",
+   "name": "Roborock Vacuum T7",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.t7p": {
+   "enum": "ROBOROCK_VACUUM_T7P",
+   "name": "Roborock Vacuum T7p",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.t7pv2": {
+   "enum": "ROBOROCK_VACUUM_T7PV2",
+   "name": "Roborock Vacuum T7 v2",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.t7pv3": {
+   "enum": "ROBOROCK_VACUUM_T7PV3",
+   "name": "Roborock Vacuum T7 v3",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.t7v2": {
+   "enum": "ROBOROCK_VACUUM_T7V2",
+   "name": "Roborock Vacuum T7 v2",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "roborock.vacuum.t7v3": {
+   "enum": "ROBOROCK_VACUUM_T7V3",
+   "name": "Roborock Vacuum T7 v3",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "rockrobo.vacuum.s6": {
+   "enum": "ROCKROBO_VACUUM_S6",
+   "name": "Roborock Vacuum S6",
+   "thing_type": "THING_TYPE_VACUUM"
+  },
+  "rockrobo.vacuum.v1": {
+   "enum": "ROCKROBO_VACUUM_V1",
+   "name": "Mi Robot Vacuum",
+   "thing_type": "THING_TYPE_VACUUM"
+  }
+ }
+}

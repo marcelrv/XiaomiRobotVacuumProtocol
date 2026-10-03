@@ -1,0 +1,245 @@
+overview: |
+  ## Conventions used on this page
+
+  - **Success** is decided by the plugin from the JSON-RPC reply: a reply with a truthy `result` other than the string
+    `"unknown_method"` counts as success, anything else (an `error` object, a missing `result`) as failure
+    (✅ Bundle · `RobotApi` wrapper `promiseWrap`, a65). The reply payload of the commands on this page is not evaluated;
+    legacy captures show `{"result":["ok"],"id":…}` (⚪ Legacy).
+  - **Map coordinates** (zones, go-to) are millimetres in the robot's map frame: the app multiplies map-pixel values by 50
+    and flips the y axis (see [map coordinates](../concepts/maps-overview.md#coordinates)).
+  - **Resuming** is not a single command: the app decides from the status field `in_cleaning` which job to resume
+    ([status fields](../reference/status-fields.md#in_cleaning)).
+
+commands:
+  - method: app_start
+    title: Start (or resume) a global clean
+    summary: Starts a whole-map clean; also used to resume an interrupted global clean and to start building a new floor map.
+    request: |
+      `params` is an array with at most one object. Shapes found in the app code:
+
+      | `params` | Used for | Evidence |
+      |---|---|---|
+      | `[]` or omitted | plain start (older bundles, direct call) | ✅ Bundle: a01…a19, s4–s6, t4, t6, v1, e2, c1, m1s, p5 |
+      | `[{"clean_mop": <int>}]` | start / resume a global clean in bundles with the newer wrapper | ✅ Bundle: a14 and newer (`RobotApi.start`) |
+      | `[{"clean_mop": <int>, "map_index": [<map id>]}]` | start on a given saved floor map (multi-floor) | ✅ Bundle: a65 (m12959 `globalStartTask`) |
+      | `[{"use_new_map": 1}]` | start a clean that builds a new floor map (`createNewFloorMap`) | ✅ Bundle: all with wrapper; older bundles send it directly |
+
+      `clean_mop`: the main-screen start button sends `0`; the "resume mopping" alert sends `1` or `2` (mapping from the
+      status field `clean_mop_status`: `2 → 1`, `6 → 2`). The meaning of the values is not named at the call sites
+      (❓ Unknown); the map code names path types `MOPPING_TYPE_BOTH_BOTH=0`, `NONE=1`, `PURE=2`, `BOTH_IN_MOP=6`,
+      `BOTH_IN_CLEAN=7`, which suggests the same value space.
+    examples:
+      - label: constructed from app code (a65 `globalStartTask`)
+        json: |
+          {"id": 101, "method": "app_start", "params": [{"clean_mop": 0}]}
+    behaviour: |
+      - The app does not offer the start button when the battery is below 20 % unless the robot is already cleaning
+        (toast instead; a65 m12959).
+      - After a successful call the app *optimistically* sets its own state to "cleaning" for a few seconds
+        (`preMockState`) so that the UI does not flicker before the next status poll.
+      - Resuming a paused global clean calls `app_start` again; zone, room and quick-map jobs have their own resume
+        commands ([`resume_zoned_clean`](#resume_zoned_clean), [`resume_segment_clean`](#resume_segment_clean),
+        [`app_resume_build_map`](#app_resume_build_map)).
+    legacy: |
+      ⚪ Legacy ([basic.md](../../basic.md)) documented `app_start` without parameters. The parameter forms above are new.
+    related: [app_pause, app_stop, app_charge, app_wakeup_robot, app_zoned_clean, app_segment_clean]
+
+  - method: app_stop
+    title: Stop the current job
+    summary: Ends the running job (the robot stays where it is).
+    request: '`params`: none (`[]`).'
+    behaviour: |
+      The app asks for confirmation first when the robot is running (`RSM.isRunning`). Afterwards the user normally sends
+      [`app_charge`](#app_charge) to send the robot home.
+    related: [app_pause, app_charge]
+
+  - method: app_pause
+    title: Pause the current job
+    summary: Pauses the running clean or spot clean so that it can be resumed.
+    request: '`params`: none (`[]`).'
+    behaviour: |
+      Some bundles send this call through `callMethodForceWay` (local route); the newer wrapper sends it like every other
+      call. For a spot clean the app expects the robot to go to `WAITING` afterwards.
+    related: [app_start, app_stop, app_charge]
+
+  - method: app_charge
+    title: Return to the dock
+    summary: Sends the robot back to the charging dock.
+    request: '`params`: none (`[]`).'
+    behaviour: |
+      After the call the app expects the state `BACK_TO_DOCK` and sets the "resume back to dock" flag (status field
+      `in_returning`). On docks with auto-empty the app sends [`app_start_collect_dust`](dock.md#app_start_collect_dust)
+      instead when the user chose "empty dust bin" (a65 m12959).
+      Alternate table: the `user.*` table calls the same action `user.app_home` ([alternate table](alternate-table.md#user.app_home)).
+    related: [app_pause, app_stop, start_wash_then_charge]
+
+  - method: app_spot
+    title: Spot clean
+    summary: Cleans the area around the robot's current position.
+    request: '`params`: none (`[]`); two older bundles (s5, v1) pass an empty object.'
+    related: [app_start, app_goto_target]
+
+  - method: app_wakeup_robot
+    title: Wake the robot from sleep
+    summary: Wakes a sleeping robot so that it accepts commands.
+    request: '`params`: none (`[]`).'
+    behaviour: |
+      In a65 two pages call it: the go-to-target page sends it when it opens (`_wakeupRobot`, m14147), and the self-clean button of the dock service sends it
+      first when the robot state is `SLEEPING` (code 2; m14546). The main start button (`app_start`, m12959) does not call it. Older bundles also contain call sites
+      (for example s5, t6, v1 through `RRMISDK.callMethod`); their pages were not traced.
+    legacy: |
+      ⚪ Legacy README lists this command as "s5e only". The bundles contain a call site in all 42 bundles; whether a
+      firmware of another model answers it is not determinable from the bundles.
+    related: [app_start]
+
+  - method: app_zoned_clean
+    title: Clean rectangular zones
+    summary: Cleans one or more rectangles of the map, each with its own repeat count.
+    request: |
+      `params` is an array of zones; each zone is `[x1, y1, x2, y2, count]` — the rectangle corners in map
+      coordinates (mm, see [map coordinates](../concepts/maps-overview.md#coordinates)) and the number of passes.
+      The app appends `count` (1–3 selectable in the UI icons; 2 when the active mop mode id is 4) to the rectangle
+      computed from the map view.
+
+      For the `Garnet` product line (`DMM.isGarnet`) the whole parameter is wrapped:
+      `[{"clean_mop": <int>, "zones": [[x1,y1,x2,y2,count], …]}]`.
+    examples:
+      - label: constructed from app code (a65 m12218 `getZoneParams` + m12959)
+        json: |
+          {"id": 102, "method": "app_zoned_clean", "params": [[25500, 25000, 27000, 26500, 1], [24000, 24000, 25000, 25000, 2]]}
+    behaviour: |
+      After the call the app sets its optimistic state to `ZONED_CLEAN` and the resume flag to "zone clean".
+    legacy: |
+      ⚪ Legacy [zoned_clean.md](../../zoned_clean.md) documents the `[x1, y1, x2, y2, iter]` form — confirmed.
+    related: [stop_zoned_clean, resume_zoned_clean, app_segment_clean]
+
+  - method: stop_zoned_clean
+    title: Stop a zone clean
+    summary: Wrapped for every newer bundle; the only call site found is in the s5 bundle.
+    request: '`params`: none (`[]`).'
+    behaviour: |
+      In the a65 plugin the generic [`app_stop`](#app_stop) is used for every job type; no call site of
+      `stop_zoned_clean` was found in the newer bundles although the wrapper `stopZoneClean` exists.
+    related: [app_zoned_clean, app_stop]
+
+  - method: resume_zoned_clean
+    title: Resume a paused zone clean
+    summary: Resumes an interrupted zone clean.
+    request: '`params`: none (`[]`).'
+    behaviour: |
+      Chosen by the app when the status field `in_cleaning` is `2` and the robot is paused/sleeping/waiting/charging/in
+      error (a65 `RSM.isZoneCleanTaskShouldResume`).
+    related: [app_zoned_clean, app_start]
+
+  - method: app_segment_clean
+    title: Clean rooms (segments)
+    summary: Cleans the selected rooms; newer firmware also accepts repeat count, clean method and order.
+    request: |
+      Two shapes, selected by the plugin with the firmware feature `isSupportOrderSegmentClean` (fw feature code 114):
+
+      | Shape | When |
+      |---|---|
+      | `[id, id, …]` — room (segment) ids | firmware without feature 114 |
+      | `[{"clean_mop": <int>, "segments": [id, …], "repeat": <int>, "clean_order_mode": <int>}]` | firmware with feature 114 |
+
+      Room ids come from [`get_room_mapping`](rooms-and-areas.md#get_room_mapping) / the map. `repeat` is 1–3 (2 when the
+      mop mode id is 4); `clean_order_mode` is `1` when the user chose a custom room order, otherwise `0`
+      (✅ Bundle · a65 m12959 and m13001).
+    examples:
+      - label: constructed from app code
+        json: |
+          {"id": 103, "method": "app_segment_clean", "params": [{"clean_mop": 0, "segments": [16, 17], "repeat": 1, "clean_order_mode": 0}]}
+    legacy: |
+      ⚪ Legacy [segment_clean.md](../../segment_clean.md) documents both forms; `repeat` is confirmed. `clean_mop` and
+      `clean_order_mode` are new.
+    related: [get_room_mapping, resume_segment_clean, stop_segment_clean, app_zoned_clean]
+
+  - method: stop_segment_clean
+    title: Stop a room clean
+    summary: Wrapped in all bundles; no call site found (the app uses `app_stop`).
+    request: '`params`: none (`[]`).'
+    related: [app_segment_clean, app_stop]
+
+  - method: resume_segment_clean
+    title: Resume a paused room clean
+    summary: Resumes an interrupted room clean.
+    request: '`params`: none (`[]`).'
+    behaviour: 'Chosen when `in_cleaning` is `3` and the robot is in a resumable state (a65 `isSegmentCleanTaskShouldResume`).'
+    related: [app_segment_clean]
+
+  - method: app_goto_target
+    title: Go to a point
+    summary: Sends the robot to map coordinates.
+    request: |
+      `params` is `[x, y]`, map coordinates in millimetres (map-view position × 50, y axis flipped; a65 m12218
+      `getGotoTarget`).
+    examples:
+      - label: constructed from app code
+        json: |
+          {"id": 104, "method": "app_goto_target", "params": [25500, 25000]}
+    behaviour: |
+      The app first waits until the robot state is not `LOCKED` (103, saving map). While the robot goes, the state is
+      `GOTO_TARGET` (16). [`stop_goto_target`](#stop_goto_target) cancels it.
+    legacy: |
+      ⚪ Legacy [goto_target.md](../../goto_target.md) — confirmed. The README lists the command as "v1, s5, s6, s5e";
+      call sites exist in all 42 bundles.
+    related: [stop_goto_target, app_spot]
+
+  - method: stop_goto_target
+    title: Cancel go-to
+    summary: Cancels a running go-to.
+    request: '`params`: none (`[]`).'
+    related: [app_goto_target]
+
+  - method: find_me
+    title: Locate the robot (play a sound)
+    summary: Makes the robot emit a locator sound.
+    request: '`params`: none (`[]`).'
+    behaviour: |
+      The app debounces the button (ignores presses for 1 s) and shows a toast. A test routine in the plugin also calls it.
+    legacy: |
+      ⚪ Legacy [find_me.md](../../find_me.md) — confirmed. Region gating: the plugin's `isFindMeSupported` is true for
+      some products everywhere and for others only outside the US/DE (FCC/CE) locations
+      ([feature flags](../concepts/feature-flags.md)).
+    related: [app_wakeup_robot]
+
+  - method: start_clean
+    title: Timer start (declared only)
+    summary: Listed in the Methods tables (`TimerStart`) of every bundle but never called by the plugin.
+    request: ❓ Unknown — no call site in any bundle.
+    related: [set_timer]
+
+  - method: start_wash_then_charge
+    title: Wash the mop, then return to the dock
+    summary: Dock action offered when finishing a clean on a washing dock.
+    request: '`params`: none (`[]`).'
+    behaviour: |
+      Offered in the "back to dock" menu as the action `washThenCharge` (a65 m12959), gated by the firmware new-feature
+      bit `isWashThenChargeCmdSupported` (high word bit 5).
+    related: [app_charge, app_start_wash]
+
+  - method: app_start_build_map
+    title: Quick map building
+    summary: Starts a quick-mapping run ("Mapping" state 29).
+    request: '`params`: none (`[]`).'
+    behaviour: 'Gated by the new-feature bit `isSupportQuickMapBuilder` (high word bit 7). While running, the robot state is 29.'
+    related: [app_resume_build_map]
+
+  - method: app_resume_build_map
+    title: Resume quick map building
+    summary: Resumes an interrupted quick-mapping run.
+    request: '`params`: none (`[]`).'
+    behaviour: 'Chosen when `in_cleaning` is `4` (CleanResumeFlag `Quick_Build_Map`).'
+    related: [app_start_build_map]
+
+  - method: app_skip_current_cleaning_area
+    title: Skip the current area
+    summary: Skips the room or zone that is being cleaned.
+    request: '`params`: object `{"source": 2}` (always `2` in the app).'
+    related: [app_start_replenish_clean_area]
+
+  - method: app_start_replenish_clean_area
+    title: Clean supplementary zones
+    summary: Sends the robot to clean extra zones that the user marked on the live map.
+    request: '`params`: `{"zones": <zones>, "source": 2}` in a65, a72, a73; no parameters in a27 and a75.'
+    related: [app_skip_current_cleaning_area]

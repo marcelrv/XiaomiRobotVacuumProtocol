@@ -1,0 +1,289 @@
+{
+ "source": "pre-existing README.md and fw_features.md at git revision be636c7",
+ "status": "legacy, unverified",
+ "models": {
+  "roborock.vacuum.a01": {
+   "readme_name": "Roborock E Series",
+   "fw_features_name": "Roborock E Series",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.a08": {
+   "readme_name": "Roborock S6 Pure",
+   "fw_features_name": "Roborock S6 Pure",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.a09": {
+   "readme_name": "Roborock T7 Pro",
+   "fw_features_name": "Roborock T7 Pro",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.a10": {
+   "readme_name": "Roborock S6 MaxV",
+   "fw_features_name": "Roborock S6 MaxV",
+   "fw_features_firmware": "3.5.8_5850",
+   "fw_features_codes_marked": [
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125
+   ]
+  },
+  "roborock.vacuum.a11": {
+   "readme_name": "Roborock T7",
+   "fw_features_name": "Roborock T7",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.a14": {
+   "readme_name": "Roborock T7S",
+   "fw_features_name": "Roborock T7S",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.a15": {
+   "readme_name": "Roborock S7",
+   "fw_features_name": "Roborock S7",
+   "fw_features_firmware": "4.1.2_1140",
+   "fw_features_codes_marked": [
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    122,
+    123,
+    124,
+    125
+   ]
+  },
+  "roborock.vacuum.a19": {
+   "readme_name": "Roborock S4 Max",
+   "fw_features_name": "Roborock S4 Max",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.a23": {
+   "readme_name": "Roborock T7S Plus",
+   "fw_features_name": "Roborock T7S Plus",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.a27": {
+   "fw_features_name": "Roborock S7 MaxV",
+   "fw_features_firmware": "4.3.5_5602",
+   "fw_features_codes_marked": [
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125
+   ]
+  },
+  "roborock.vacuum.a30": {
+   "fw_features_name": "Roborock G10",
+   "fw_features_firmware": "4.3.5_1258",
+   "fw_features_codes_marked": [
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    122,
+    123,
+    124,
+    125
+   ]
+  },
+  "roborock.vacuum.a38": {
+   "fw_features_name": "Roborock Q7 Max+",
+   "fw_features_firmware": "4.3.5_0866",
+   "fw_features_codes_marked": [
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    122,
+    123,
+    124,
+    125
+   ]
+  },
+  "roborock.vacuum.a40": {
+   "fw_features_name": "Roborock Q7+",
+   "fw_features_firmware": "4.1.5_0680",
+   "fw_features_codes_marked": [
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    122,
+    123,
+    124,
+    125
+   ]
+  },
+  "roborock.vacuum.c1": {
+   "readme_name": "Xiaowa C1",
+   "fw_features_name": "Xiaowa C1",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.e2": {
+   "readme_name": "Roborock Xiaowa E Series",
+   "fw_features_name": "Roborock Xiaowa E Series Vacuum v2",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.m1s": {
+   "readme_name": "Mi Robot Vacuum 1S",
+   "fw_features_name": "Mi Robot Vacuum 1S",
+   "fw_features_firmware": "?",
+   "fw_features_codes_marked": [
+    105
+   ]
+  },
+  "roborock.vacuum.p5": {
+   "readme_name": "Roborock P5",
+   "fw_features_name": "Roborock P5",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.s4": {
+   "readme_name": "Roborock S4",
+   "fw_features_name": "Roborock S4",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.s5": {
+   "readme_name": "Mi Robot Vacuum v2 / Roborock Vacuum S5 / Roborock Vacuum S50",
+   "fw_features_name": "Roborock S5",
+   "fw_features_firmware": "3.5.8_002034",
+   "fw_features_codes_marked": [
+    102,
+    103,
+    104,
+    105,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    122,
+    123,
+    125
+   ]
+  },
+  "roborock.vacuum.s5e": {
+   "readme_name": "Roborock S5 Max",
+   "fw_features_name": "Roborock S5 Max",
+   "fw_features_firmware": "4.1.2_1668",
+   "fw_features_codes_marked": [
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    122,
+    123,
+    124,
+    125
+   ]
+  },
+  "roborock.vacuum.s6": {
+   "readme_name": "Roborock S6",
+   "fw_features_name": "Roborock S6",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.t4": {
+   "readme_name": "Roborock T4",
+   "fw_features_name": "Roborock T4",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.t6": {
+   "readme_name": "Roborock T6",
+   "fw_features_name": "Roborock T6",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "roborock.vacuum.t7": {
+   "readme_name": "Roborock Vacuum T7",
+   "fw_features_name": "Roborock Vacuum T7",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "rockrobo.vacuum.s6": {
+   "fw_features_name": "Roborock Vacuum S6",
+   "fw_features_firmware": null,
+   "fw_features_codes_marked": []
+  },
+  "rockrobo.vacuum.v1": {
+   "readme_name": "Mi Robot Vacuum",
+   "fw_features_name": "Mi Robot Vacuum",
+   "fw_features_firmware": "3.5.8_004018",
+   "fw_features_codes_marked": [
+    101,
+    102,
+    104,
+    105
+   ]
+  }
+ }
+}

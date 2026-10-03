@@ -1,39 +1,7 @@
 # Serial Number
 
-Retreives the serial number from the device.
+> **Moved.** This page is now [docs/commands/status.md#get_serial_number](docs/commands/status.md#get_serial_number). The old description was merged into the bundle-verified reference; the old request and reply examples are kept in [legacy captures](docs/appendix/legacy-captures.md). This file only keeps the old link and section anchors working.
 
 ## Get Serial Number
 
-### Command
-
-| Key    | Value                 | Comment                                                                             |
-| ------ | --------------------- | ----------------------------------------------------------------------------------- |
-| method | `"get_serial_number"` |                                                                                     |
-| id     | `id`                  | Random integer which is returned in the response used to link request and response. |
-
-#### Example
-
-```json
-{
-    "method": "get_serial_number",
-    "id": 1
-}
-```
-
-### Response
-
-| Key             | Example         | Description                   |
-| --------------- | --------------- | ----------------------------- |
-| `serial_number` | _1387100330000_ | Serial nr of the robot vacuum |
-
-#### Example
-
-```json
-{
-    "result": [{
-            "serial_number": "1387100330000"
-        }
-    ],
-    "id": 1
-}
-```
+See [docs/commands/status.md#get_serial_number](docs/commands/status.md#get_serial_number).

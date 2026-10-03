@@ -1,0 +1,2593 @@
+{
+ "meta": {
+  "generator": "tools/build_models.py",
+  "bundled_models": 42,
+  "other_models": 35,
+  "deviceModelManager_source": "roborock.vacuum.a74"
+ },
+ "bundled": {
+  "roborock.vacuum.a01": {
+   "id": "roborock.vacuum.a01",
+   "bundle": "roborock.vacuum.a01",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "SapphireLiteCC"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock E Series",
+      "regions": [
+       "CN",
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "legacy": "Roborock E Series"
+   },
+   "project": {
+    "version": "1.0.51",
+    "sdk_api_level": 10051,
+    "build_date_utc": "2021-03-03",
+    "regions": [
+     "IN",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10047_1000932_41_ANDROID_bundle_7f803c31216ebaa91e33176bf2828588.zip",
+    "hash": "7f803c31216ebaa91e33176bf2828588"
+   },
+   "identical_code_as": [],
+   "product_in_newest_bundle": {
+    "series": "a01",
+    "product": "SAPPHIRELITE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a08": {
+   "id": "roborock.vacuum.a08",
+   "bundle": "roborock.vacuum.a08",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "RubysC"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock S6 Pure",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock S6 Pure",
+    "legacy": "Roborock S6 Pure"
+   },
+   "project": {
+    "version": "1.0.47",
+    "sdk_api_level": 10047,
+    "build_date_utc": "2020-12-04",
+    "regions": [
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10047_1000587_123_ANDROID_bundle_a87b7356662e672b228304f1a74a288c.zip",
+    "hash": "a87b7356662e672b228304f1a74a288c"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.s4",
+    "roborock.vacuum.s6"
+   ],
+   "product_in_newest_bundle": {
+    "series": "a08",
+    "product": "RUBYSC",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a09": {
+   "id": "roborock.vacuum.a09",
+   "bundle": "roborock.vacuum.a09",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "TanosV",
+    "TanosVA09",
+    "TanosV_CN"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock T7 Pro",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock T7 Pro",
+    "legacy": "Roborock T7 Pro"
+   },
+   "project": {
+    "version": "1.0.48",
+    "sdk_api_level": 10048,
+    "build_date_utc": "2020-12-25",
+    "regions": [
+     "CN"
+    ],
+    "file": "signed_10042_1002405_42_ANDROID_bundle_2656668408622b3078096bf2f985667f.zip",
+    "hash": "2656668408622b3078096bf2f985667f"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a10@faa8dbc2"
+   ],
+   "product_in_newest_bundle": {
+    "series": "a09",
+    "product": "TANOSV_CN",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a10": {
+   "id": "roborock.vacuum.a10",
+   "bundle": "roborock.vacuum.a10",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "TanosV",
+    "TanosV_CE"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock S6 MaxV",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock S6 MaxV",
+    "legacy": "Roborock S6 MaxV"
+   },
+   "project": {
+    "version": "1.0.50",
+    "sdk_api_level": 10050,
+    "build_date_utc": "2021-02-08",
+    "regions": [
+     "IN",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10042_1000931_112_ANDROID_bundle_35117b7de8e94f5759ebb057ab62db72.zip",
+    "hash": "35117b7de8e94f5759ebb057ab62db72"
+   },
+   "identical_code_as": [],
+   "product_in_newest_bundle": {
+    "series": "a10",
+    "product": "TANOSV_CE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a11": {
+   "id": "roborock.vacuum.a11",
+   "bundle": "roborock.vacuum.a11",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "TanosE"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock T7",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock T7",
+    "legacy": "Roborock T7"
+   },
+   "project": {
+    "version": "1.0.34",
+    "sdk_api_level": 10034,
+    "build_date_utc": "2020-04-09",
+    "regions": [
+     "CN"
+    ],
+    "file": "signed_10034_1000930_20_ANDROID_bundle_7d6d95bf9e26628fbcc3f9efc1830b23.zip",
+    "hash": "7d6d95bf9e26628fbcc3f9efc1830b23"
+   },
+   "identical_code_as": [],
+   "product_in_newest_bundle": {
+    "series": "a11",
+    "product": "TANOSE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a14": {
+   "id": "roborock.vacuum.a14",
+   "bundle": "roborock.vacuum.a14",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TANOSS"
+   ],
+   "series": "a14",
+   "aliases": [
+    "roborock.vacuum.a14v2",
+    "roborock.vacuum.a14v3",
+    "roborock.vacuum.a14v4",
+    "roborock.vacuum.a14v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock T7S",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock T7S",
+    "legacy": "Roborock T7S"
+   },
+   "project": {
+    "version": "1.0.53",
+    "sdk_api_level": 10053,
+    "build_date_utc": "2021-04-14",
+    "regions": [
+     "CN"
+    ],
+    "file": "signed_10042_1004367_27_ANDROID_bundle_ccbb120c4963cd025fbd9768ef77b997.zip",
+    "hash": "ccbb120c4963cd025fbd9768ef77b997"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a15"
+   ],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 100
+   },
+   "product_in_newest_bundle": {
+    "series": "a14",
+    "product": "TANOSS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a15": {
+   "id": "roborock.vacuum.a15",
+   "bundle": "roborock.vacuum.a15",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TANOSS"
+   ],
+   "series": "a15",
+   "aliases": [
+    "roborock.vacuum.a15v2",
+    "roborock.vacuum.a15v3",
+    "roborock.vacuum.a15v4",
+    "roborock.vacuum.a15v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock S7",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock S7",
+    "legacy": "Roborock S7"
+   },
+   "project": {
+    "version": "1.0.53",
+    "sdk_api_level": 10053,
+    "build_date_utc": "2021-04-14",
+    "regions": [
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10042_1004367_27_ANDROID_bundle_ccbb120c4963cd025fbd9768ef77b997.zip",
+    "hash": "ccbb120c4963cd025fbd9768ef77b997"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a14"
+   ],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 100
+   },
+   "product_in_newest_bundle": {
+    "series": "a15",
+    "product": "TANOSS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a19": {
+   "id": "roborock.vacuum.a19",
+   "bundle": "roborock.vacuum.a19",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "RubysE"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock S4 Max",
+      "regions": [
+       "DE",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock S4 Max",
+    "legacy": "Roborock S4 Max"
+   },
+   "project": {
+    "version": "1.0.52",
+    "sdk_api_level": 10052,
+    "build_date_utc": "2021-03-29",
+    "regions": [
+     "DE",
+     "US"
+    ],
+    "file": "signed_10042_1003911_26_ANDROID_bundle_7307f790359a85dfb8a3ca78def33fe9.zip",
+    "hash": "7307f790359a85dfb8a3ca78def33fe9"
+   },
+   "identical_code_as": [],
+   "product_in_newest_bundle": {
+    "series": "a19",
+    "product": "RUBYSE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a23": {
+   "id": "roborock.vacuum.a23",
+   "bundle": "roborock.vacuum.a23",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TANOSSPLUS"
+   ],
+   "series": "a23",
+   "aliases": [
+    "roborock.vacuum.a23v2",
+    "roborock.vacuum.a23v3",
+    "roborock.vacuum.a23v4",
+    "roborock.vacuum.a23v5",
+    "roborock.vacuum.a23v6"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock T7S Plus",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock T7S Plus",
+    "legacy": "Roborock T7S Plus"
+   },
+   "project": {
+    "version": "1.0.53",
+    "sdk_api_level": 10053,
+    "build_date_utc": "2021-04-01",
+    "regions": [
+     "CN"
+    ],
+    "file": "signed_10042_1003745_109_ANDROID_bundle_5ff2ea2cad074afd9111a88d0c2bc533.zip",
+    "hash": "5ff2ea2cad074afd9111a88d0c2bc533"
+   },
+   "identical_code_as": [],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a23",
+    "product": "TANOSSPLUS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a26": {
+   "id": "roborock.vacuum.a26",
+   "bundle": "roborock.vacuum.a26",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TOPAZSV_CN"
+   ],
+   "series": "a26",
+   "aliases": [
+    "roborock.vacuum.a26v2",
+    "roborock.vacuum.a26v3",
+    "roborock.vacuum.a26v4",
+    "roborock.vacuum.a26v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock G10S Pro",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock G10S Pro"
+   },
+   "project": {
+    "version": "1.0.84",
+    "sdk_api_level": 10084,
+    "build_date_utc": "2023-07-21",
+    "regions": [
+     "CN",
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10084_1007884_95_ANDROID_bundle_842a376be47ff370d0a062ad71bd632b.zip",
+    "hash": "842a376be47ff370d0a062ad71bd632b"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a66"
+   ],
+   "series_members": [],
+   "volume": {
+    "min": 5,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a26",
+    "product": "TOPAZSV_CN",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a27": {
+   "id": "roborock.vacuum.a27",
+   "bundle": "roborock.vacuum.a27",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TOPAZSV_CE"
+   ],
+   "series": "a27",
+   "aliases": [
+    "roborock.vacuum.a27v2",
+    "roborock.vacuum.a27v3",
+    "roborock.vacuum.a27v4",
+    "roborock.vacuum.a27v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock S7 MaxV",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock S7 MaxV",
+    "legacy": "Roborock S7 MaxV"
+   },
+   "project": {
+    "version": "1.0.84",
+    "sdk_api_level": 10084,
+    "build_date_utc": "2023-07-21",
+    "regions": [
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10077_1007883_122_ANDROID_bundle_30bb940dcd38887d9b630e600b4db469.zip",
+    "hash": "30bb940dcd38887d9b630e600b4db469"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a46",
+    "roborock.vacuum.a66"
+   ],
+   "series_members": [],
+   "volume": {
+    "min": 5,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a27",
+    "product": "TOPAZSV_CE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a29": {
+   "id": "roborock.vacuum.a29",
+   "bundle": "roborock.vacuum.a29",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TOPAZS"
+   ],
+   "series": "TopazS",
+   "aliases": [
+    "roborock.vacuum.a29v2",
+    "roborock.vacuum.a29v3",
+    "roborock.vacuum.a29v4",
+    "roborock.vacuum.a29v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock G10",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock G10"
+   },
+   "project": {
+    "version": "1.0.75",
+    "sdk_api_level": 10075,
+    "build_date_utc": "2022-11-04",
+    "regions": [
+     "CN",
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10075_1007104_80_ANDROID_bundle_ebafd1e5b252bfb011f92cec94499650.zip",
+    "hash": "ebafd1e5b252bfb011f92cec94499650"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a30"
+   ],
+   "series_members": [
+    "roborock.vacuum.a76",
+    "roborock.vacuum.a76v2",
+    "roborock.vacuum.a76v3",
+    "roborock.vacuum.a76v4",
+    "roborock.vacuum.a76v5"
+   ],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "TopazS",
+    "product": "TOPAZS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a30": {
+   "id": "roborock.vacuum.a30",
+   "bundle": "roborock.vacuum.a30",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TOPAZS_CE"
+   ],
+   "series": "a30",
+   "aliases": [
+    "roborock.vacuum.a30v2",
+    "roborock.vacuum.a30v3",
+    "roborock.vacuum.a30v4",
+    "roborock.vacuum.a30v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock G10",
+      "regions": [
+       "IN",
+       "SG"
+      ]
+     }
+    ],
+    "openhab": "Roborock G10",
+    "legacy": "Roborock G10"
+   },
+   "project": {
+    "version": "1.0.75",
+    "sdk_api_level": 10075,
+    "build_date_utc": "2022-11-04",
+    "regions": [
+     "IN",
+     "SG"
+    ],
+    "file": "signed_10075_1010129_33_ANDROID_bundle_91562698e7fb8f6dd22fbfd35cf25596.zip",
+    "hash": "91562698e7fb8f6dd22fbfd35cf25596"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a29"
+   ],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a30",
+    "product": "TOPAZS_CE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a34": {
+   "id": "roborock.vacuum.a34",
+   "bundle": "roborock.vacuum.a34",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TANOSSE"
+   ],
+   "series": "a34",
+   "aliases": [
+    "roborock.vacuum.a34v2",
+    "roborock.vacuum.a34v3",
+    "roborock.vacuum.a34v4",
+    "roborock.vacuum.a34v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock Q5",
+      "regions": [
+       "IN",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock Q5"
+   },
+   "project": {
+    "version": "1.0.70",
+    "sdk_api_level": 10070,
+    "build_date_utc": "2022-06-23",
+    "regions": [
+     "IN",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10070_1008192_23_ANDROID_bundle_32e69096f0450c9e735f877879ce708a.zip",
+    "hash": "32e69096f0450c9e735f877879ce708a"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a37",
+    "roborock.vacuum.a40"
+   ],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a34",
+    "product": "TANOSSE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a37": {
+   "id": "roborock.vacuum.a37",
+   "bundle": "roborock.vacuum.a37",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TANOSSL"
+   ],
+   "series": "a37",
+   "aliases": [
+    "roborock.vacuum.a37v2",
+    "roborock.vacuum.a37v3",
+    "roborock.vacuum.a37v4",
+    "roborock.vacuum.a37v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock T8",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock T8"
+   },
+   "project": {
+    "version": "1.0.70",
+    "sdk_api_level": 10070,
+    "build_date_utc": "2022-06-23",
+    "regions": [
+     "CN",
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10070_1008428_27_ANDROID_bundle_1628ce0bb3702feca7b431262f464d05.zip",
+    "hash": "1628ce0bb3702feca7b431262f464d05"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a40"
+   ],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a37",
+    "product": "TANOSSL",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a38": {
+   "id": "roborock.vacuum.a38",
+   "bundle": "roborock.vacuum.a38",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TANOSSL"
+   ],
+   "series": "a38",
+   "aliases": [
+    "roborock.vacuum.a38v2",
+    "roborock.vacuum.a38v3",
+    "roborock.vacuum.a38v4",
+    "roborock.vacuum.a38v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock Q7 Max",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock Q7 Max",
+    "legacy": "Roborock Q7 Max+"
+   },
+   "project": {
+    "version": "1.0.70",
+    "sdk_api_level": 10070,
+    "build_date_utc": "2022-06-24",
+    "regions": [
+     "DE"
+    ],
+    "file": "signed_10070_1008427_27_ANDROID_bundle_35c449b25534f124d1e2fd045453bff4.zip",
+    "hash": "35c449b25534f124d1e2fd045453bff4"
+   },
+   "identical_code_as": [],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a38",
+    "product": "TANOSSL",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a40": {
+   "id": "roborock.vacuum.a40",
+   "bundle": "roborock.vacuum.a40",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TANOSSC"
+   ],
+   "series": "a40",
+   "aliases": [
+    "roborock.vacuum.a40v2",
+    "roborock.vacuum.a40v3",
+    "roborock.vacuum.a40v4",
+    "roborock.vacuum.a40v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock Q7",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock Q7",
+    "legacy": "Roborock Q7+"
+   },
+   "project": {
+    "version": "1.0.70",
+    "sdk_api_level": 10070,
+    "build_date_utc": "2022-06-23",
+    "regions": [
+     "DE"
+    ],
+    "file": "signed_10070_1008193_24_ANDROID_bundle_a69411261211d740aecb6ca4fd5b9fc6.zip",
+    "hash": "a69411261211d740aecb6ca4fd5b9fc6"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a34",
+    "roborock.vacuum.a37"
+   ],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a40",
+    "product": "TANOSSC",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a46": {
+   "id": "roborock.vacuum.a46",
+   "bundle": "roborock.vacuum.a46",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TOPAZSPLUS"
+   ],
+   "series": "a46",
+   "aliases": [
+    "roborock.vacuum.a46v2",
+    "roborock.vacuum.a46v3",
+    "roborock.vacuum.a46v4",
+    "roborock.vacuum.a46v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock G10S",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock G10S"
+   },
+   "project": {
+    "version": "1.0.84",
+    "sdk_api_level": 10084,
+    "build_date_utc": "2023-07-21",
+    "regions": [
+     "CN",
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10084_1007619_55_ANDROID_bundle_5e5b8e0f7a1c87372c2915f5bf3a8a65.zip",
+    "hash": "5e5b8e0f7a1c87372c2915f5bf3a8a65"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a66"
+   ],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a46",
+    "product": "TOPAZSPLUS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a51": {
+   "id": "roborock.vacuum.a51",
+   "bundle": "roborock.vacuum.a51",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "Ultron"
+   ],
+   "series": "Ultron",
+   "aliases": [
+    "roborock.vacuum.a51v2",
+    "roborock.vacuum.a51v3",
+    "roborock.vacuum.a51v4",
+    "roborock.vacuum.a51v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock S8",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock S8"
+   },
+   "project": {
+    "version": "1.0.83",
+    "sdk_api_level": 10083,
+    "build_date_utc": "2023-07-07",
+    "regions": [
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10077_1013405_28_ANDROID_bundle_8aa7de52f1a7a2f7ab56d146fd555df3.zip",
+    "hash": "8aa7de52f1a7a2f7ab56d146fd555df3"
+   },
+   "identical_code_as": [],
+   "series_members": [
+    "roborock.vacuum.a50",
+    "roborock.vacuum.a50v2",
+    "roborock.vacuum.a50v3",
+    "roborock.vacuum.a50v4",
+    "roborock.vacuum.a50v5"
+   ],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "Ultron",
+    "product": "Ultron",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a52": {
+   "id": "roborock.vacuum.a52",
+   "bundle": "roborock.vacuum.a52",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TANOSSMAX"
+   ],
+   "series": "a52",
+   "aliases": [
+    "roborock.vacuum.a52v2",
+    "roborock.vacuum.a52v3",
+    "roborock.vacuum.a52v4",
+    "roborock.vacuum.a52v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock T8 Plus",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock T8 Plus"
+   },
+   "project": {
+    "version": "1.0.70",
+    "sdk_api_level": 10070,
+    "build_date_utc": "2022-07-21",
+    "regions": [
+     "CN",
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10070_1008141_27_ANDROID_bundle_ffbb9479822ade895a4b729e3e487c7a.zip",
+    "hash": "ffbb9479822ade895a4b729e3e487c7a"
+   },
+   "identical_code_as": [],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a52",
+    "product": "TANOSSMAX",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a62": {
+   "id": "roborock.vacuum.a62",
+   "bundle": "roborock.vacuum.a62",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TopazSPower"
+   ],
+   "series": "a62",
+   "aliases": [
+    "roborock.vacuum.a62v2",
+    "roborock.vacuum.a62v3",
+    "roborock.vacuum.a62v4",
+    "roborock.vacuum.a62v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock S7 Pro Ultra",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock S7 Pro Ultra"
+   },
+   "project": {
+    "version": "1.0.69",
+    "sdk_api_level": 10069,
+    "build_date_utc": "2022-05-10",
+    "regions": [
+     "CN",
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10069_1010230_11_ANDROID_bundle_6fdbaa08f0545fd64df289a27444642c.zip",
+    "hash": "6fdbaa08f0545fd64df289a27444642c"
+   },
+   "identical_code_as": [],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a62",
+    "product": "TopazSPower",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a64": {
+   "id": "roborock.vacuum.a64",
+   "bundle": "roborock.vacuum.a64",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TOPAZSC_CN"
+   ],
+   "series": "a64",
+   "aliases": [
+    "roborock.vacuum.a64v2",
+    "roborock.vacuum.a64v3",
+    "roborock.vacuum.a64v4",
+    "roborock.vacuum.a64v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock G10S Pure",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock G10S Pure"
+   },
+   "project": {
+    "version": "1.0.95",
+    "sdk_api_level": 10095,
+    "build_date_utc": "2024-06-27",
+    "regions": [
+     "CN",
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10095_1011719_36_ANDROID_bundle_772b9968fad810b9353f9cc89d00bb3e.zip",
+    "hash": "772b9968fad810b9353f9cc89d00bb3e"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a65"
+   ],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a64",
+    "product": "TOPAZSC_CN",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a65": {
+   "id": "roborock.vacuum.a65",
+   "bundle": "roborock.vacuum.a65",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TOPAZSC_CE"
+   ],
+   "series": "a65",
+   "aliases": [
+    "roborock.vacuum.a65v2",
+    "roborock.vacuum.a65v3",
+    "roborock.vacuum.a65v4",
+    "roborock.vacuum.a65v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock S7 Max Ultra",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock S7 Max Ultra"
+   },
+   "project": {
+    "version": "1.0.95",
+    "sdk_api_level": 10095,
+    "build_date_utc": "2024-06-27",
+    "regions": [
+     "RU",
+     "US"
+    ],
+    "file": "signed_10095_1013572_33_ANDROID_bundle_ca959e57baa19dc89495889ba202f412.zip",
+    "hash": "ca959e57baa19dc89495889ba202f412"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a64"
+   ],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a65",
+    "product": "TOPAZSC_CE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a66": {
+   "id": "roborock.vacuum.a66",
+   "bundle": "roborock.vacuum.a66",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TOPAZSPLUS"
+   ],
+   "series": "a66",
+   "aliases": [
+    "roborock.vacuum.a66v2",
+    "roborock.vacuum.a66v3",
+    "roborock.vacuum.a66v4",
+    "roborock.vacuum.a66v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock G10 Plus",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock G10 Plus"
+   },
+   "project": {
+    "version": "1.0.84",
+    "sdk_api_level": 10084,
+    "build_date_utc": "2023-07-21",
+    "regions": [
+     "CN",
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10084_1010630_18_ANDROID_bundle_4f7ec77a38a7a7a466ca4053fc58003c.zip",
+    "hash": "4f7ec77a38a7a7a466ca4053fc58003c"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a26",
+    "roborock.vacuum.a27",
+    "roborock.vacuum.a46"
+   ],
+   "series_members": [],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "a66",
+    "product": "TOPAZSPLUS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a69": {
+   "id": "roborock.vacuum.a69",
+   "bundle": "roborock.vacuum.a69",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "UltronSPlus"
+   ],
+   "series": "UltronSPlus",
+   "aliases": [
+    "roborock.vacuum.a69v2",
+    "roborock.vacuum.a69v3",
+    "roborock.vacuum.a69v4",
+    "roborock.vacuum.a69v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock G20",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock G20"
+   },
+   "project": {
+    "version": "1.0.86",
+    "sdk_api_level": 10086,
+    "build_date_utc": "2023-10-09",
+    "regions": [
+     "CN",
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10086_1011782_48_ANDROID_bundle_c2c7596b13a6a923bd6b0f31abd5b664.zip",
+    "hash": "c2c7596b13a6a923bd6b0f31abd5b664"
+   },
+   "identical_code_as": [],
+   "series_members": [
+    "roborock.vacuum.a68",
+    "roborock.vacuum.a68v2",
+    "roborock.vacuum.a68v3",
+    "roborock.vacuum.a68v4",
+    "roborock.vacuum.a68v5",
+    "roborock.vacuum.a70",
+    "roborock.vacuum.a70v2",
+    "roborock.vacuum.a70v3",
+    "roborock.vacuum.a70v4",
+    "roborock.vacuum.a70v5"
+   ],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "UltronSPlus",
+    "product": "UltronSPlus",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a70": {
+   "id": "roborock.vacuum.a70",
+   "bundle": "roborock.vacuum.a70",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "UltronSPlus"
+   ],
+   "series": "UltronSPlus",
+   "aliases": [
+    "roborock.vacuum.a70v2",
+    "roborock.vacuum.a70v3",
+    "roborock.vacuum.a70v4",
+    "roborock.vacuum.a70v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock S8 Pro Ultra",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock S8 Pro Ultra"
+   },
+   "project": {
+    "version": "1.0.83",
+    "sdk_api_level": 10083,
+    "build_date_utc": "2023-06-30",
+    "regions": [
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10077_1013690_38_ANDROID_bundle_aa6df0364d1f9b9cce9f48fecbe6622a.zip",
+    "hash": "aa6df0364d1f9b9cce9f48fecbe6622a"
+   },
+   "identical_code_as": [],
+   "series_members": [
+    "roborock.vacuum.a68",
+    "roborock.vacuum.a68v2",
+    "roborock.vacuum.a68v3",
+    "roborock.vacuum.a68v4",
+    "roborock.vacuum.a68v5",
+    "roborock.vacuum.a69",
+    "roborock.vacuum.a69v2",
+    "roborock.vacuum.a69v3",
+    "roborock.vacuum.a69v4",
+    "roborock.vacuum.a69v5"
+   ],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "UltronSPlus",
+    "product": "UltronSPlus",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a72": {
+   "id": "roborock.vacuum.a72",
+   "bundle": "roborock.vacuum.a72",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "UltronE"
+   ],
+   "series": "UltronE",
+   "aliases": [
+    "roborock.vacuum.a72v2",
+    "roborock.vacuum.a72v3",
+    "roborock.vacuum.a72v4",
+    "roborock.vacuum.a72v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock Q5 Pro",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock Q5 Pro"
+   },
+   "project": {
+    "version": "1.0.92",
+    "sdk_api_level": 10092,
+    "build_date_utc": "2024-04-17",
+    "regions": [
+     "IN",
+     "RU",
+     "US"
+    ],
+    "file": "signed_10092_1012816_19_ANDROID_bundle_5ba3547d7b257ac5c7205624a548b6fd.zip",
+    "hash": "5ba3547d7b257ac5c7205624a548b6fd"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a73"
+   ],
+   "series_members": [
+    "roborock.vacuum.a84",
+    "roborock.vacuum.a84v2",
+    "roborock.vacuum.a84v3",
+    "roborock.vacuum.a84v4",
+    "roborock.vacuum.a84v5"
+   ],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "UltronE",
+    "product": "UltronE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a73": {
+   "id": "roborock.vacuum.a73",
+   "bundle": "roborock.vacuum.a73",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "UltronLite"
+   ],
+   "series": "UltronLite",
+   "aliases": [
+    "roborock.vacuum.a73v2",
+    "roborock.vacuum.a73v3",
+    "roborock.vacuum.a73v4",
+    "roborock.vacuum.a73v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock Q8 Max",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock Q8 Max"
+   },
+   "project": {
+    "version": "1.0.92",
+    "sdk_api_level": 10092,
+    "build_date_utc": "2024-04-17",
+    "regions": [
+     "RU",
+     "US"
+    ],
+    "file": "signed_10092_1012728_20_ANDROID_bundle_18ad0dc9e3421f945e7dab4405e70606.zip",
+    "hash": "18ad0dc9e3421f945e7dab4405e70606"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a72"
+   ],
+   "series_members": [
+    "roborock.vacuum.a85",
+    "roborock.vacuum.a85v2",
+    "roborock.vacuum.a85v3",
+    "roborock.vacuum.a85v4",
+    "roborock.vacuum.a85v5"
+   ],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "UltronLite",
+    "product": "UltronLite",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a74": {
+   "id": "roborock.vacuum.a74",
+   "bundle": "roborock.vacuum.a74",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "Pearl"
+   ],
+   "series": "Pearl",
+   "aliases": [
+    "roborock.vacuum.a74v2",
+    "roborock.vacuum.a74v3",
+    "roborock.vacuum.a74v4",
+    "roborock.vacuum.a74v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock P10",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock P10"
+   },
+   "project": {
+    "version": "1.0.96",
+    "sdk_api_level": 10096,
+    "build_date_utc": "2024-08-01",
+    "regions": [
+     "CN",
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10096_1012398_49_ANDROID_bundle_0da0d8ed11f52f55a0deafe1671af808.zip",
+    "hash": "0da0d8ed11f52f55a0deafe1671af808"
+   },
+   "identical_code_as": [],
+   "series_members": [
+    "roborock.vacuum.a75",
+    "roborock.vacuum.a75v2",
+    "roborock.vacuum.a75v3",
+    "roborock.vacuum.a75v4",
+    "roborock.vacuum.a75v5"
+   ],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "Pearl",
+    "product": "Pearl",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a75": {
+   "id": "roborock.vacuum.a75",
+   "bundle": "roborock.vacuum.a75",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "Pearl"
+   ],
+   "series": "Pearl",
+   "aliases": [
+    "roborock.vacuum.a75v2",
+    "roborock.vacuum.a75v3",
+    "roborock.vacuum.a75v4",
+    "roborock.vacuum.a75v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock Qrevo",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock Qrevo"
+   },
+   "project": {
+    "version": "1.0.89",
+    "sdk_api_level": 10089,
+    "build_date_utc": "2023-12-12",
+    "regions": [
+     "DE"
+    ],
+    "file": "signed_10089_1011936_46_ANDROID_bundle_66becc3ab24182d15bb756c4fa00f256.zip",
+    "hash": "66becc3ab24182d15bb756c4fa00f256"
+   },
+   "identical_code_as": [],
+   "series_members": [
+    "roborock.vacuum.a74",
+    "roborock.vacuum.a74v2",
+    "roborock.vacuum.a74v3",
+    "roborock.vacuum.a74v4",
+    "roborock.vacuum.a74v5"
+   ],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "Pearl",
+    "product": "Pearl",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a76": {
+   "id": "roborock.vacuum.a76",
+   "bundle": "roborock.vacuum.a76",
+   "generation": "B (DeviceModelManager)",
+   "product_codenames": [
+    "TOPAZS"
+   ],
+   "series": "TopazS",
+   "aliases": [
+    "roborock.vacuum.a76v2",
+    "roborock.vacuum.a76v3",
+    "roborock.vacuum.a76v4",
+    "roborock.vacuum.a76v5"
+   ],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock G10S Auto",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock G10S Auto"
+   },
+   "project": {
+    "version": "1.0.77",
+    "sdk_api_level": 10077,
+    "build_date_utc": "2023-01-05",
+    "regions": [
+     "CN",
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10077_1012148_18_ANDROID_bundle_b49b68a2fe25514696ba9f9d9cf76d40.zip",
+    "hash": "b49b68a2fe25514696ba9f9d9cf76d40"
+   },
+   "identical_code_as": [],
+   "series_members": [
+    "roborock.vacuum.a29",
+    "roborock.vacuum.a29v2",
+    "roborock.vacuum.a29v3",
+    "roborock.vacuum.a29v4",
+    "roborock.vacuum.a29v5"
+   ],
+   "volume": {
+    "min": 30,
+    "max": 90
+   },
+   "product_in_newest_bundle": {
+    "series": "TopazS",
+    "product": "TOPAZS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.c1": {
+   "id": "roborock.vacuum.c1",
+   "bundle": "roborock.vacuum.c1",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "SapphireCC"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Xiaowa C1",
+      "regions": [
+       "CN",
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Xiaowa C1",
+    "legacy": "Xiaowa C1"
+   },
+   "project": {
+    "version": "1.0.48",
+    "sdk_api_level": 10048,
+    "build_date_utc": "2020-12-30",
+    "regions": [
+     "DE",
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10047_1000933_23_ANDROID_bundle_42c531ced6c55d10fc039d4401d89df9.zip",
+    "hash": "42c531ced6c55d10fc039d4401d89df9"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.e2"
+   ],
+   "product_in_newest_bundle": {
+    "series": "c1",
+    "product": "SAPPHIREC",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.e2": {
+   "id": "roborock.vacuum.e2",
+   "bundle": "roborock.vacuum.e2",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "Sapphire"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Xiaowa E Series",
+      "regions": [
+       "CN",
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock Xiaowa E Series Vacuum v2",
+    "legacy": "Roborock Xiaowa E Series"
+   },
+   "project": {
+    "version": "1.0.48",
+    "sdk_api_level": 10048,
+    "build_date_utc": "2020-12-30",
+    "regions": [
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10047_1000933_23_ANDROID_bundle_42c531ced6c55d10fc039d4401d89df9.zip",
+    "hash": "42c531ced6c55d10fc039d4401d89df9"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.c1"
+   ],
+   "product_in_newest_bundle": {
+    "series": "e2",
+    "product": "SAPPHIRE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.m1s": {
+   "id": "roborock.vacuum.m1s",
+   "bundle": "roborock.vacuum.m1s",
+   "generation": "A (model groups)",
+   "product_codenames": [],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Mi Robot Vacuum 1S",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Mi Robot Vacuum 1S",
+    "legacy": "Mi Robot Vacuum 1S"
+   },
+   "project": {
+    "version": "1.0.34",
+    "sdk_api_level": 10034,
+    "build_date_utc": "2020-04-14",
+    "regions": [
+     "CN"
+    ],
+    "file": "signed_10034_1001012_26_ANDROID_bundle_63599f008aa1f791dcf31176354d9bcc.zip",
+    "hash": "63599f008aa1f791dcf31176354d9bcc"
+   },
+   "identical_code_as": [],
+   "product_in_newest_bundle": {
+    "series": "m1s",
+    "product": "RUBY2",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.p5": {
+   "id": "roborock.vacuum.p5",
+   "bundle": "roborock.vacuum.p5",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "RubysC",
+    "RubysCP5"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock P5",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock P5",
+    "legacy": "Roborock P5"
+   },
+   "project": {
+    "version": "1.0.34",
+    "sdk_api_level": 10034,
+    "build_date_utc": "2020-03-17",
+    "regions": [
+     "CN"
+    ],
+    "file": "signed_10034_1000587_47_ANDROID_bundle_1e129e82a6e68adcf10772aa68086f12.zip",
+    "hash": "1e129e82a6e68adcf10772aa68086f12"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a08@1e129e82"
+   ],
+   "product_in_newest_bundle": {
+    "series": "p5",
+    "product": "RUBYSC",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.s4": {
+   "id": "roborock.vacuum.s4",
+   "bundle": "roborock.vacuum.s4",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "Rubyplus"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock S4",
+      "regions": [
+       "DE",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock S4",
+    "legacy": "Roborock S4"
+   },
+   "project": {
+    "version": "1.0.47",
+    "sdk_api_level": 10047,
+    "build_date_utc": "2020-12-04",
+    "regions": [
+     "US"
+    ],
+    "file": "signed_10047_1000390_126_ANDROID_bundle_2cae915f40be11e04b6cc3838265223a.zip",
+    "hash": "2cae915f40be11e04b6cc3838265223a"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.s6"
+   ],
+   "product_in_newest_bundle": {
+    "series": "s4",
+    "product": "RUBYPLUS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.s5": {
+   "id": "roborock.vacuum.s5",
+   "bundle": "roborock.vacuum.s5",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "Rubys"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock S5",
+      "regions": [
+       "CN",
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock S5",
+    "legacy": "Mi Robot Vacuum v2 / Roborock Vacuum S5 / Roborock Vacuum S50"
+   },
+   "project": {
+    "version": "1.0.47",
+    "sdk_api_level": 10047,
+    "build_date_utc": "2020-12-08",
+    "regions": [
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10047_1000570_39_ANDROID_bundle_d3188909e9299d1f2edac66db048853a.zip",
+    "hash": "d3188909e9299d1f2edac66db048853a"
+   },
+   "identical_code_as": [],
+   "product_in_newest_bundle": {
+    "series": "s5",
+    "product": "RUBYS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.s5e": {
+   "id": "roborock.vacuum.s5e",
+   "bundle": "roborock.vacuum.s5e",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "RubysLite"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock S5 Max",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock S5 Max",
+    "legacy": "Roborock S5 Max"
+   },
+   "project": {
+    "version": "1.0.49",
+    "sdk_api_level": 10049,
+    "build_date_utc": "2021-01-05",
+    "regions": [
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10042_1000775_122_ANDROID_bundle_80ef03cb1e98327abd12fd568368a812.zip",
+    "hash": "80ef03cb1e98327abd12fd568368a812"
+   },
+   "identical_code_as": [],
+   "product_in_newest_bundle": {
+    "series": "s5e",
+    "product": "RUBYSLITE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.s6": {
+   "id": "roborock.vacuum.s6",
+   "bundle": "roborock.vacuum.s6",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "TanosS6"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock S6",
+      "regions": [
+       "DE",
+       "IN",
+       "RU",
+       "SG",
+       "US"
+      ]
+     }
+    ],
+    "openhab": "Roborock S6",
+    "legacy": "Roborock S6"
+   },
+   "project": {
+    "version": "1.0.47",
+    "sdk_api_level": 10047,
+    "build_date_utc": "2020-12-04",
+    "regions": [
+     "IN",
+     "RU",
+     "SG",
+     "US"
+    ],
+    "file": "signed_10047_1000571_108_ANDROID_bundle_2c23ad581b70496f45b01686ca298aab.zip",
+    "hash": "2c23ad581b70496f45b01686ca298aab"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.a08",
+    "roborock.vacuum.s4"
+   ],
+   "product_in_newest_bundle": {
+    "series": "s6",
+    "product": "TANOS_CE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.t4": {
+   "id": "roborock.vacuum.t4",
+   "bundle": "roborock.vacuum.t4",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "Rubyplus"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock T4",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock T4",
+    "legacy": "Roborock T4"
+   },
+   "project": {
+    "version": "1.0.32",
+    "sdk_api_level": 10032,
+    "build_date_utc": "2020-01-03",
+    "regions": [
+     "CN"
+    ],
+    "file": "signed_10032_1000390_65_ANDROID_bundle_634b68fac1005d6a7faf34715fbd6e68.zip",
+    "hash": "634b68fac1005d6a7faf34715fbd6e68"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.s4@634b68fa"
+   ],
+   "product_in_newest_bundle": {
+    "series": "t4",
+    "product": "RUBYPLUS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.t6": {
+   "id": "roborock.vacuum.t6",
+   "bundle": "roborock.vacuum.t6",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "TanosT6"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Roborock T6",
+      "regions": [
+       "CN"
+      ]
+     }
+    ],
+    "openhab": "Roborock T6",
+    "legacy": "Roborock T6"
+   },
+   "project": {
+    "version": "1.0.32",
+    "sdk_api_level": 10032,
+    "build_date_utc": "2020-01-03",
+    "regions": [
+     "CN"
+    ],
+    "file": "signed_10032_1000571_34_ANDROID_bundle_b43ac4785af3fcad80b4556bb139211a.zip",
+    "hash": "b43ac4785af3fcad80b4556bb139211a"
+   },
+   "identical_code_as": [
+    "roborock.vacuum.s6@b43ac478"
+   ],
+   "product_in_newest_bundle": {
+    "series": "t6",
+    "product": "TANOS_CN",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "rockrobo.vacuum.v1": {
+   "id": "rockrobo.vacuum.v1",
+   "bundle": "rockrobo.vacuum.v1",
+   "generation": "A (model groups)",
+   "product_codenames": [
+    "Ruby"
+   ],
+   "series": null,
+   "aliases": [],
+   "family": [],
+   "names": {
+    "catalog": [
+     {
+      "name": "Mi Robot Vacuum",
+      "regions": [
+       "CN",
+       "DE",
+       "IN",
+       "RU",
+       "SG"
+      ]
+     }
+    ],
+    "openhab": "Mi Robot Vacuum",
+    "legacy": "Mi Robot Vacuum"
+   },
+   "project": {
+    "version": "1.0.46",
+    "sdk_api_level": 10046,
+    "build_date_utc": "2020-11-18",
+    "regions": [
+     "IN",
+     "RU",
+     "SG"
+    ],
+    "file": "signed_10046_1000623_33_ANDROID_bundle_97f09a55544fc4890518fd9b4cb4d37b.zip",
+    "hash": "97f09a55544fc4890518fd9b4cb4d37b"
+   },
+   "identical_code_as": [],
+   "product_in_newest_bundle": {
+    "series": "v1",
+    "product": "RUBY",
+    "bundle": "roborock.vacuum.a74"
+   }
+  }
+ },
+ "other": {
+  "roborock.sweeper.e2v2": {
+   "id": "roborock.sweeper.e2v2",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROBOROCK_SWEEPER_E2V2",
+    "name": "Rockrobo Xiaowa Sweeper v2",
+    "thing_type": "THING_TYPE_UNSUPPORTED"
+   },
+   "deviceModelManager": {
+    "series": "e2",
+    "product": "SAPPHIRE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.sweeper.e2v3": {
+   "id": "roborock.sweeper.e2v3",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROBOROCK_SWEEPER_E2V3",
+    "name": "Rockrobo Xiaowa Sweeper v3",
+    "thing_type": "THING_TYPE_UNSUPPORTED"
+   },
+   "deviceModelManager": {
+    "series": "e2",
+    "product": "SAPPHIRE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a05": {
+   "id": "roborock.vacuum.a05",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "a05",
+    "product": "RUBYSLITE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a16": {
+   "id": "roborock.vacuum.a16",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "a16",
+    "product": "GARNET",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a17": {
+   "id": "roborock.vacuum.a17",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "a17",
+    "product": "GARNET",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a20": {
+   "id": "roborock.vacuum.a20",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "Coral",
+    "product": "Coral",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a21": {
+   "id": "roborock.vacuum.a21",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "Coral",
+    "product": "Coral",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a24": {
+   "id": "roborock.vacuum.a24",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "a24",
+    "product": "TANOSSPLUS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a33": {
+   "id": "roborock.vacuum.a33",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "a33",
+    "product": "TANOSSE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a39": {
+   "id": "roborock.vacuum.a39",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "a39",
+    "product": "TANOSSC",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a44": {
+   "id": "roborock.vacuum.a44",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "a44",
+    "product": "TANOSSV",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a45": {
+   "id": "roborock.vacuum.a45",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "a45",
+    "product": "TANOSSV",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a47": {
+   "id": "roborock.vacuum.a47",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "a47",
+    "product": "TOPAZSPLUS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a49": {
+   "id": "roborock.vacuum.a49",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "a49",
+    "product": "SAPPHIREPLUS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a50": {
+   "id": "roborock.vacuum.a50",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "Ultron",
+    "product": "Ultron",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a68": {
+   "id": "roborock.vacuum.a68",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "UltronSPlus",
+    "product": "UltronSPlus",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a84": {
+   "id": "roborock.vacuum.a84",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "UltronE",
+    "product": "UltronE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a85": {
+   "id": "roborock.vacuum.a85",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "UltronLite",
+    "product": "UltronLite",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a86": {
+   "id": "roborock.vacuum.a86",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "PearlPlus",
+    "product": "PearlPlus",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.a87": {
+   "id": "roborock.vacuum.a87",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "PearlPlus",
+    "product": "PearlPlus",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.p6": {
+   "id": "roborock.vacuum.p6",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "p6",
+    "product": "RUBYSLITE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.s4v2": {
+   "id": "roborock.vacuum.s4v2",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROBOROCK_VACUUM_S4V2",
+    "name": "Roborock Vacuum S4v2",
+    "thing_type": "THING_TYPE_VACUUM"
+   },
+   "deviceModelManager": {
+    "series": "s4",
+    "product": "RUBYPLUS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.t4v2": {
+   "id": "roborock.vacuum.t4v2",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROBOROCK_VACUUM_T4V2",
+    "name": "Roborock Vacuum T4 v2",
+    "thing_type": "THING_TYPE_VACUUM"
+   },
+   "deviceModelManager": {
+    "series": "t4",
+    "product": "RUBYPLUS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.t4v3": {
+   "id": "roborock.vacuum.t4v3",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROBOROCK_VACUUM_T4V3",
+    "name": "Roborock Vacuum T4 v3",
+    "thing_type": "THING_TYPE_VACUUM"
+   },
+   "deviceModelManager": {
+    "series": "t4",
+    "product": "RUBYPLUS",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.t6v2": {
+   "id": "roborock.vacuum.t6v2",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROBOROCK_VACUUM_T6V2",
+    "name": "Roborock Vacuum T6 v2",
+    "thing_type": "THING_TYPE_VACUUM"
+   },
+   "deviceModelManager": {
+    "series": "t6",
+    "product": "TANOS_CN",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.t6v3": {
+   "id": "roborock.vacuum.t6v3",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROBOROCK_VACUUM_T6V3",
+    "name": "Roborock Vacuum T6 v3",
+    "thing_type": "THING_TYPE_VACUUM"
+   },
+   "deviceModelManager": {
+    "series": "t6",
+    "product": "TANOS_CN",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.t7": {
+   "id": "roborock.vacuum.t7",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROBOROCK_VACUUM_T7",
+    "name": "Roborock Vacuum T7",
+    "thing_type": "THING_TYPE_VACUUM"
+   },
+   "legacy": {
+    "readme_name": "Roborock Vacuum T7",
+    "fw_features_name": "Roborock Vacuum T7",
+    "fw_features_firmware": null,
+    "fw_features_codes_marked": []
+   },
+   "deviceModelManager": {
+    "series": "t7",
+    "product": "TANOSE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.t7p": {
+   "id": "roborock.vacuum.t7p",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROBOROCK_VACUUM_T7P",
+    "name": "Roborock Vacuum T7p",
+    "thing_type": "THING_TYPE_VACUUM"
+   },
+   "deviceModelManager": {
+    "series": "t7p",
+    "product": "TANOSV_CN",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.t7pv2": {
+   "id": "roborock.vacuum.t7pv2",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROBOROCK_VACUUM_T7PV2",
+    "name": "Roborock Vacuum T7 v2",
+    "thing_type": "THING_TYPE_VACUUM"
+   },
+   "deviceModelManager": {
+    "series": "t7p",
+    "product": "TANOSV_CN",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.t7pv3": {
+   "id": "roborock.vacuum.t7pv3",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROBOROCK_VACUUM_T7PV3",
+    "name": "Roborock Vacuum T7 v3",
+    "thing_type": "THING_TYPE_VACUUM"
+   },
+   "deviceModelManager": {
+    "series": "t7p",
+    "product": "TANOSV_CN",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.t7v2": {
+   "id": "roborock.vacuum.t7v2",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROBOROCK_VACUUM_T7V2",
+    "name": "Roborock Vacuum T7 v2",
+    "thing_type": "THING_TYPE_VACUUM"
+   },
+   "deviceModelManager": {
+    "series": "t7",
+    "product": "TANOSE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "roborock.vacuum.t7v3": {
+   "id": "roborock.vacuum.t7v3",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROBOROCK_VACUUM_T7V3",
+    "name": "Roborock Vacuum T7 v3",
+    "thing_type": "THING_TYPE_VACUUM"
+   },
+   "deviceModelManager": {
+    "series": "t7",
+    "product": "TANOSE",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "rockrobo.sweeper.v1": {
+   "id": "rockrobo.sweeper.v1",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "v1",
+    "product": "RUBY",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "rockrobo.sweeper.v2": {
+   "id": "rockrobo.sweeper.v2",
+   "bundle": null,
+   "deviceModelManager": {
+    "series": "v1",
+    "product": "RUBY",
+    "bundle": "roborock.vacuum.a74"
+   }
+  },
+  "rockrobo.vacuum.s6": {
+   "id": "rockrobo.vacuum.s6",
+   "bundle": null,
+   "openhab": {
+    "enum": "ROCKROBO_VACUUM_S6",
+    "name": "Roborock Vacuum S6",
+    "thing_type": "THING_TYPE_VACUUM"
+   },
+   "legacy": {
+    "fw_features_name": "Roborock Vacuum S6",
+    "fw_features_firmware": null,
+    "fw_features_codes_marked": []
+   }
+  }
+ }
+}

@@ -1,0 +1,60 @@
+overview: |
+  Simple on/off settings. Replies are objects or arrays depending on the call; the read calls below say which. The status
+  object also exposes some of these switches (`lock_status`, `switch_status`, `camera_status`, …), see
+  [status fields](../reference/status-fields.md).
+
+commands:
+  - method: get_led_status
+    title: Status LED (read)
+    summary: Reads the LED switch.
+    request: '`params`: none (`[]`).'
+    response: 'Result layout not decoded for all bundles (`result[0]` is the value in older bundles).'
+    behaviour: 'Shown when `isLedSwitchVisible` (not for the `TanosS` product unless fw feature 119 is present).'
+    related: [set_led_status]
+
+  - method: set_led_status
+    title: Status LED (write)
+    summary: Switches the robot status LED.
+    request: '`params`: `[0|1]`.'
+    related: [get_led_status, set_flow_led_status]
+
+  - method: get_flow_led_status
+    title: Flow LED (read)
+    summary: Reads the "flow" LED switch.
+    request: '`params`: none (`[]`).'
+    response: '`result.status == 1` means on.'
+    behaviour: 'New-feature bit `isFlowLedSettingSupported` (low word bit 24).'
+    related: [set_flow_led_status]
+
+  - method: set_flow_led_status
+    title: Flow LED (write)
+    summary: Switches the flow LED.
+    request: '`params`: `{"status": 0|1}`.'
+    related: [get_flow_led_status]
+
+  - method: get_child_lock_status
+    title: Child lock (read)
+    summary: Reads the child-lock switch (status field `lock_status` also reports it).
+    request: '`params`: none (`[]`).'
+    behaviour: 'Only read when `isSetChildSupported` (new-feature low word bit 8).'
+    related: [set_child_lock_status]
+
+  - method: set_child_lock_status
+    title: Child lock (write)
+    summary: Switches the child lock.
+    request: '`params`: `{"lock_status": 0|1}`.'
+    related: [get_child_lock_status]
+
+  - method: get_collision_avoid_status
+    title: Collision avoidance (read)
+    summary: Reads the "avoid collision" (bumper-sensor) switch.
+    request: '`params`: none (`[]`).'
+    response: '`result.status == 1` means on.'
+    behaviour: 'New-feature bit `isAvoidCollisionSupported` (low word bit 27).'
+    related: [set_collision_avoid_status]
+
+  - method: set_collision_avoid_status
+    title: Collision avoidance (write)
+    summary: Switches the setting.
+    request: '`params`: `{"status": 0|1}`.'
+    related: [get_collision_avoid_status]
