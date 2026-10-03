@@ -1,3 +1,6 @@
 node_modules/
 __pycache__/
 *.pyc
+
+# local helper scripts and working notes (machine-specific, not published)
+tools/local/

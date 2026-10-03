@@ -14,7 +14,7 @@ import urllib.parse
 LINK = re.compile(r'(!?)\[(?:[^\]\\]|\\.)*\]\(\s*(<[^>]*>|[^)\s]*)(?:\s+"[^"]*")?\s*\)')
 HEAD = re.compile(r'^(#{1,6})\s+(.*?)\s*#*\s*$')
 ANCH = re.compile(r'<a\s+(?:id|name)="([^"]+)"', re.I)
-SKIP_DIRS = {'.git', 'node_modules'}
+SKIP_DIRS = {'.git', 'node_modules', 'local'}   # tools/local = git-ignored private helpers
 
 
 def slug(text):
