@@ -66,7 +66,7 @@ MAP = {
     'zoned_clean.md': (C + 'cleaning-control.md#app_zoned_clean', {'start zone cleaning': C + 'cleaning-control.md#app_zoned_clean', 'stop zone cleaning': C + 'cleaning-control.md#stop_zoned_clean',
                                                                     'resume zone cleaning': C + 'cleaning-control.md#resume_zoned_clean'}),
 }
-SKIP = re.compile(r'^(command|response|example.*)$', re.I)
+SKIP = re.compile(r'^(command|response|example)$', re.I)   # bare skeleton headings only; "Example (s5e)" is a named anchor
 
 
 def git_show(ref, path):

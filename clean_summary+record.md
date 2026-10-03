@@ -14,6 +14,14 @@ See [docs/commands/clean-history.md#get_clean_summary](docs/commands/clean-histo
 
 See [docs/commands/clean-history.md#get_clean_record](docs/commands/clean-history.md#get_clean_record).
 
+#### Example (generic)
+
+See [docs/commands/clean-history.md](docs/commands/clean-history.md).
+
+#### Example (s5e)
+
+See [docs/commands/clean-history.md](docs/commands/clean-history.md).
+
 ## Get Clean Record Map
 
 See [docs/commands/clean-history.md#get_clean_record_map](docs/commands/clean-history.md#get_clean_record_map).
