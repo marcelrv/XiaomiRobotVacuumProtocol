@@ -28,6 +28,7 @@ python tools/run_pipeline.py --plugins-root <folder with plugin zips per region>
 python tools/gen_docs.py             # writes README.md, docs/**, RRMapFile/RRFileFormat.md from data/ and tools/curated/
 python tools/make_stubs.py           # writes the pointer pages that replace the old root-level pages
 python tools/check_links.py          # relative links and anchors in all Markdown files
+python tools/check_old_urls.py       # every path and named heading anchor of the published layout (git ref origin/master) still resolves
 python tools/check_coverage.py --corpus <unpacked corpus>   # every method string is documented and vice versa; regression tests of the call-site detection (wrapper-only and called pairs, RAM and plain bundles), of the gate evaluation and a lint of the examples
 python tools/gen_docs.py --check     # fails if a generated file differs from what the data would produce
 ```
@@ -51,7 +52,7 @@ python tools/gen_docs.py --check     # fails if a generated file differs from wh
 | `gen_docs.py`, `gen_reference.py`, `gen_devices.py`, `gen_maps.py`, `gen_concepts.py` | Markdown generation (templates + `tools/curated/`) |
 | `make_stubs.py` | replaces the old root pages by pointers (reads the old text from git) |
 | `gen_legacy.py`, `gen_cloud.py`, `gen_openhab.py`, `examples.py` | generated appendix of legacy captures, the cloud-calls page, the openHAB comparison, and the example builder (typed sample values from the curated request text) used by `gen_docs.py` |
-| `check_links.py`, `check_coverage.py` | quality checks |
+| `check_links.py`, `check_coverage.py`, `check_old_urls.py` | quality checks: links and anchors, method coverage and call-site regression tests, URL stability of the old layout |
 
 ## Curated text
 
